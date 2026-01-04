@@ -43,11 +43,12 @@
 
 ---
 
-## 🌐 Redes Suportadas / Supported Networks
+## 🌐 Algumas Redes onde encontrar / Some Networks where u can find it
 * Undernet
 * PTnet
 * InTheMansion
 * PTirc
+
 
 ---
 
