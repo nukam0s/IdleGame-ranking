@@ -54,4 +54,5 @@
 
 ## 📊 Ranking Web
 [PT] O ranking é atualizado automaticamente a cada 30 minutos e reflete o desempenho global de todos os jogadores na rede.
+
 [EN] The leaderboard is automatically updated every 30 minutes and reflects the global performance of all players on the network.
