@@ -1,20 +1,446 @@
 
-    <html>
+    <!DOCTYPE html>
+    <html lang="pt">
     <head>
-        <title>IdleRPG Rankings</title>
+        <meta charset="UTF-8">
+        <title>IdleGame // Global Leaderboard</title>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
         <style>
-            body { font-family: 'Segoe UI', sans-serif; background: #121212; color: #e0e0e0; text-align: center; }
-            table { margin: 0 auto; border-collapse: collapse; width: 80%; background: #1e1e1e; border-radius: 8px; overflow: hidden; }
-            th, td { padding: 15px; border-bottom: 1px solid #333; }
-            th { background: #2d2d2d; color: #00ff99; }
-            tr:hover { background: #252525; }
-            .rank-1 { color: gold; font-weight: bold; }
+            :root {
+                --neon-green: #00ff99;
+                --neon-red: #ff3e3e;
+                --neon-blue: #00d4ff;
+                --bg-dark: #050505;
+                --card-bg: #111114;
+                --border: #222;
+                --text: #e0e0e0;
+            }
+
+            body { background-color: var(--bg-dark); color: var(--text); font-family: 'Inter', sans-serif; padding: 20px; }
+            .container { max-width: 1100px; margin: 0 auto; }
+
+            /* Animação de Brilho Pulsante */
+            @keyframes pulse-red {
+                0% { text-shadow: 0 0 5px var(--neon-red); }
+                50% { text-shadow: 0 0 15px var(--neon-red), 0 0 25px var(--neon-red); }
+                100% { text-shadow: 0 0 5px var(--neon-red); }
+            }
+
+            .wanted-tag {
+                color: var(--neon-red);
+                font-family: 'Fira Code', monospace;
+                font-weight: bold;
+                animation: pulse-red 2s infinite;
+                margin-left: 10px;
+                font-size: 0.8em;
+            }
+
+            .streak-badge {
+                background: rgba(255, 62, 62, 0.1);
+                border: 1px solid var(--neon-red);
+                color: var(--neon-red);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 0.7em;
+                margin-left: 8px;
+            }
+
+            header { border-left: 4px solid var(--neon-green); padding-left: 20px; margin-bottom: 40px; }
+            .glitch { color: var(--neon-green); font-family: 'Fira Code', monospace; font-size: 2.5em; text-transform: uppercase; }
+
+            /* Restante do Estilo UI */
+            .table-container { background: var(--card-bg); padding: 20px; border: 1px solid var(--border); border-radius: 8px; }
+            table.dataTable { width: 100% !important; background: transparent !important; }
+            table.dataTable thead th { color: var(--neon-green); font-family: 'Fira Code'; text-transform: uppercase; border-bottom: 2px solid var(--neon-green) !important; }
+            table.dataTable tbody td { border-bottom: 1px solid #1f1f23 !important; padding: 12px !important; color: #ccc; }
+            
+            [data-lang] { display: none; }
         </style>
     </head>
     <body>
-        <h1>🏆 IdleRPG Global Leaderboard</h1>
-        <p>Atualizado em: Sat Jan  3 09:34:14 PM GMT 2026
-</p>
-        <table>
-            <tr><th>Posição</th><th>Herói</th><th>Nível</th><th>XP Total</th></tr>
+        <div class="container">
+            <header>
+                <h1 class="glitch">> IDLE_GAME.LOG</h1>
+                <p data-lang="pt">Sistema de RPG passivo. Os alvos 🎯 valem XP bónus!</p>
+                <p data-lang="en">Passive RPG system. Targets 🎯 worth bonus XP!</p>
+            </header>
+
+            <div class="table-container">
+                <table id="rankTable" class="display">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th><span data-lang="pt">Herói</span><span data-lang="en">Hero</span></th>
+                            <th><span data-lang="pt">Rede</span><span data-lang="en">Network</span></th>
+                            <th><span data-lang="pt">Nível</span><span data-lang="en">Level</span></th>
+                            <th>XP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+            <tr>
+                <td>1</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Killua</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>41</td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>bot</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Gon</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>nuke</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>IRC0</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Jarvis</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>v0id</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>R2D2</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Sukuna</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>jupe3636</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>jupe9947</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Frieren</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>peer</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>14</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>ekun</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>15</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>alicia</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>16</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>jupe1596</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>17</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>alexandre</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>18</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Calypso</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>19</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>cuddzy</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>20</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>alicia</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>21</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Owl</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>22</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Ajah</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>23</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>nuke</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>24</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Jarvis</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>25</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>juli-e</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>26</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Kunik</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>27</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Falcon</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>30</td>
+            </tr>
+        
+            <tr>
+                <td>28</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>blablabla</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>20</td>
+            </tr>
+        
+            <tr>
+                <td>29</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>Futebol</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>20</td>
+            </tr>
+        
+            <tr>
+                <td>30</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>news</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>20</td>
+            </tr>
+        
+            <tr>
+                <td>31</td>
+                <td>
+                    <span style='color: white; font-weight: bold;'>payiurtuk</span>
+                    
+                </td>
+                <td style='font-size: 0.8em; color: #777;'>Undernet</td>
+                <td>Lvl 1</td>
+                <td style='color: var(--neon-blue); font-family: "Fira Code";'>20</td>
+            </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#rankTable').DataTable({ "pageLength": 25, "order": [[ 4, "desc" ]] });
+                const savedLang = localStorage.getItem('idleLang') || 'pt';
+                setLang(savedLang);
+            });
+            function setLang(lang) {
+                document.querySelectorAll('[data-lang]').forEach(el => el.style.display = 'none');
+                document.querySelectorAll('[data-lang="' + lang + '"]').forEach(el => {
+                    el.style.display = (el.tagName === 'SPAN') ? 'inline' : 'block';
+                });
+                localStorage.setItem('idleLang', lang);
+            }
+        </script>
+    </body>
+    </html>
     
