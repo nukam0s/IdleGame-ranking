@@ -1,4 +1,4 @@
-# 🎮 IdleGame - Global IRC RPG (2026 Edition)
+# 🎮 IdleGame - Global IRC RPG
 
 [PT] Bem-vindo ao **IdleGame**, um RPG persistente que corre diretamente nos teus canais de IRC favoritos. Acumula XP, encontra itens lendários e sobe no ranking global!
 
