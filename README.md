@@ -10,13 +10,11 @@
 
 ### (PT) Mecânicas Básicas
 * **Progressão Passiva:** Ganhas 1 XP por cada minuto que passas online nos canais do bot.
-* **Atividade no Chat:** Ganhas XP bónus por cada mensagem enviada (incentivando a conversa real).
 * **Quests Interativas:** O Narrador pode lançar um dilema. Tens um tempo limitado (**20 minutos**) para responder. O primeiro a responder decide o destino do grupo!
 * **Equipamento:** Encontra itens épicos que aumentam o teu poder. O bot equipa sempre o teu item mais forte automaticamente.
 
 ### (EN) Basic Mechanics
 * **Passive Progression:** Gain 1 XP for every minute you spend online in the bot's channels.
-* **Chat Activity:** Gain bonus XP for every message sent (encouraging real conversation).
 * **Interactive Quests:** The Narrator may trigger a dilemma. You have limited time (**20 minutes**) to reply. The first one to answer decides the group's fate!
 * **Equipment:** Find epic items to boost your power. The bot always equips your strongest item automatically.
 
