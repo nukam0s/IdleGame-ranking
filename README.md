@@ -1,4 +1,4 @@
-# ⚔️ IdleGame IRC (v2.0)
+# ⚔️ IdleGame IRC
 
 **IdleGame** é um RPG de texto persistente onde a tua presença e a tua interação são o teu poder. Enquanto conversas, o teu herói treina, explora e enfrenta desafios num mundo governado por um Narrador Sarcástico guiado por IA.
 
