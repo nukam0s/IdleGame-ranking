@@ -9,6 +9,7 @@
 ## 🌐 Ranking Online / Web Leaderboard
 
 **PT**: Podes acompanhar o progresso global, os campeões atuais e as recompensas ativas em tempo real na nossa página oficial:
+
 **EN**: You can track global progress, current champions, and active bounties in real-time on our official page:
 
 👉 **[https://nukam0s.github.io/IdleGame-ranking/](https://nukam0s.github.io/IdleGame-ranking/)**
