@@ -91,6 +91,7 @@
 
 ## 🌐 Ranking Web | Web Leaderboard
 **PT**: O nosso ranking utiliza **Tooltips Stats**. Passa o rato sobre qualquer jogador para ver o seu **Inventory Card** completo (Poder, Rank e Itens). Jogadores com streaks elevadas ou Bounties brilham com efeitos Neon.
+
 **EN**: *Our leaderboard uses **Stats Tooltips**. Hover over any player to see their full **Inventory Card** (Power, Rank, and Items). Players with high streaks or bounties glow with special Neon effects.*
 
 ---
