@@ -37,7 +37,7 @@
 
 ### 1. Quests Interativas | Interactive Quests
 **PT**: O bot lança desafios no chat. Tens **1 hora** para responder com `!resp <tua ideia>`. A IA avalia a tua criatividade para decidir o resultado e a recompensa.
-**EN**: *The bot issues challenges in chat. You have **1 hour** to answer with `!resp <your idea>`. The AI evaluates your creativity to decide the outcome and reward.*
+**EN**: *The bot issues challenges in chat. You have **1 hour** to answer with `!ans <your idea>` or `!resp <your idea>`. The AI evaluates your creativity to decide the outcome and reward.*
 
 ### 2. Crónicas Épicas (20/20) | Epic Chronicles
 **PT**: Cada 20 eventos geram uma crónica épica compilada pela IA com um link externo permanente. O histórico faz reset após a geração.
@@ -57,29 +57,41 @@
 
 ---
 
-## 🏆 Glória e Conquistas | Glory & Achievements
-**PT**: Destaca-te com tags dinâmicas no chat e na web:
-* 🔥 **Streak Champion**: Vence 3+ duelos seguidos para brilhar no site e no tópico do canal.
-* 💰 **Most Wanted**: O estatuto dos criminosos com as maiores recompensas (Bounties) pela cabeça.
+## 🕹️ Comandos Disponíveis | Available Commands
 
-**EN**: *Stand out with dynamic tags in chat and on the web:*
-* 🔥 ***Streak Champion**: Win 3+ duels in a row to shine on the site and channel topic.*
-* 💰 ***Most Wanted**: The status for criminals with the highest bounties on their heads.*
+O bot aceita aliases em ambas as línguas. | *The bot accepts aliases in both languages.*
+
+### 🇵🇹 Português
+| Comando | Descrição |
+| :--- | :--- |
+| `!stats` / `!st` | Vê o teu nível, XP, Rank e Poder Total. |
+| `!inv` | Lista os teus 5 slots equipados e itens na mochila. |
+| `!power` | Mostra o poder detalhado de cada item que tens vestido. |
+| `!fight <nick>` | Inicia um duelo contra um jogador (**Risco de 5% de roubo**). |
+| `!historia` / `!h` | Gera a tua Crónica Épica após acumulares 20 eventos. |
+| `!resp <texto>` | Responde a uma Quest interativa da IA (**Limite de 1 hora**). |
+| `!top` | Mostra o Top 10 de jogadores da rede atual. |
+| `!mw` / `!bounties` | Lista os criminosos mais procurados (Most Wanted). |
+| `!nick <nome>` | Altera o teu nickname dentro do jogo. |
+
+### 🇺🇸 English
+| Command | Description |
+| :--- | :--- |
+| `!stats` / `!st` | View your level, XP, Rank, and Total Power. |
+| `!inv` | View your 5 equipped slots and items in your backpack. |
+| `!power` | Shows detailed power for each item you are wearing. |
+| `!fight <nick>` | Start a duel against a player (**5% theft risk**). |
+| `!history` / `!h` | Generate your Epic Chronicle after reaching 20 events. |
+| `!ans` / `!resp` | Respond to an interactive AI Quest (**1-hour limit**). |
+| `!top` | Shows the Top 10 players of the current network. |
+| `!mw` / `!bounties` | Lists the currently wanted criminals (Most Wanted). |
+| `!nick <name>` | Change your in-game nickname. |
 
 ---
 
-## 🕹️ Comandos de Utilizador | User Commands
-
-| Comando / Command | Descrição (PT) | Description (EN) |
-| :--- | :--- | :--- |
-| `!stats` / `!st` | Vê o teu nível, XP, Rank e Poder. | View level, XP, Rank, and Power. |
-| `!inv` | Inventário e os 5 slots equipados. | Inventory and the 5 equipped slots. |
-| `!power` | Detalhe do poder de cada item. | Detailed power of each item. |
-| `!fight <nick>` | Inicia duelo (**Risco de 5% de roubo**). | Start duel (**5% theft risk**). |
-| `!history` / `!h` | Gera Crónica Épica (20/20 eventos). | Generate Epic Chronicle (20/20 events). |
-| `!resp <texto>` | Responde a uma Quest (**Limite 1h**). | Respond to a Quest (**1h Limit**). |
-| `!top` | Top 10 jogadores da rede atual. | Top 10 players of the current network. |
-| `!mw` / `!bounties` | Lista os criminosos procurados. | List the most wanted criminals. |
+## 🌐 Ranking Web | Web Leaderboard
+**PT**: O nosso ranking utiliza **Tooltips Stats**. Passa o rato sobre qualquer jogador para ver o seu **Inventory Card** completo (Poder, Rank e Itens). Jogadores com streaks elevadas ou Bounties brilham com efeitos Neon.
+**EN**: *Our leaderboard uses **Stats Tooltips**. Hover over any player to see their full **Inventory Card** (Power, Rank, and Items). Players with high streaks or bounties glow with special Neon effects.*
 
 ---
 
