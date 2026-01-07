@@ -59,19 +59,19 @@
 
 ## 🕹️ Comandos Disponíveis | Available Commands
 
-O bot aceita aliases em ambas as línguas. | *The bot accepts aliases in both languages.*
+*O bot aceita commands em ambas as línguas. (varias aliases) | The bot accepts commands in both languages. (multiple aliases)*
 
 ### 🇵🇹 Português
 | Comando | Descrição |
 | :--- | :--- |
 | `!stats` / `!st` | Vê o teu nível, XP, Rank e Poder Total. |
 | `!inv` | Lista os teus 5 slots equipados e itens na mochila. |
-| `!power` | Mostra o poder detalhado de cada item que tens vestido. |
-| `!fight <nick>` | Inicia um duelo contra um jogador (**Risco de 5% de roubo**). |
+| `!poder` | Mostra o poder detalhado de cada item que tens vestido. |
+| `!luta <nick>` | Inicia um duelo contra um jogador (**Risco de 5% de roubo**). |
 | `!historia` / `!h` | Gera a tua Crónica Épica após acumulares 20 eventos. |
 | `!resp <texto>` | Responde a uma Quest interativa da IA (**Limite de 1 hora**). |
 | `!top` | Mostra o Top 10 de jogadores da rede atual. |
-| `!mw` / `!bounties` | Lista os criminosos mais procurados (Most Wanted). |
+| `!mw` / `!criminosos` | Lista os criminosos mais procurados (Most Wanted). |
 | `!nick <nome>` | Altera o teu nickname dentro do jogo. |
 
 ### 🇺🇸 English
@@ -82,7 +82,7 @@ O bot aceita aliases em ambas as línguas. | *The bot accepts aliases in both la
 | `!power` | Shows detailed power for each item you are wearing. |
 | `!fight <nick>` | Start a duel against a player (**5% theft risk**). |
 | `!history` / `!h` | Generate your Epic Chronicle after reaching 20 events. |
-| `!ans` / `!resp` | Respond to an interactive AI Quest (**1-hour limit**). |
+| `!ans` | Respond to an interactive AI Quest (**1-hour limit**). |
 | `!top` | Shows the Top 10 players of the current network. |
 | `!mw` / `!bounties` | Lists the currently wanted criminals (Most Wanted). |
 | `!nick <name>` | Change your in-game nickname. |
