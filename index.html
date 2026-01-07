@@ -18,34 +18,41 @@
             
             body { background-color: var(--bg-dark); color: var(--text); font-family: 'Inter', sans-serif; padding: 20px; }
             
-            /* HEADER & DASHBOARD */
+            /* --- HEADER & DASHBOARD REVISADO --- */
             header {
                 display: flex;
                 justify-content: space-between;
-                align-items: flex-start;
+                align-items: center; /* Centraliza verticalmente o título com o dashboard */
                 border-left: 4px solid var(--neon-green);
                 padding-left: 20px;
-                margin-bottom: 15px; /* Compacto */
+                margin-bottom: 25px;
             }
-            .header-left { flex: 1; }
+            
+            .header-left { 
+                margin-right: 50px; /* Cria o espaço solicitado para não colar nas stats */
+                flex-shrink: 0; 
+            }
+
             .dashboard {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
+                gap: 12px;
                 background: #0d0d0f;
                 border: 1px solid #222;
-                padding: 12px;
+                padding: 15px;
                 border-radius: 8px;
                 font-family: 'Fira Code', monospace;
                 font-size: 0.72rem;
-                min-width: 500px;
+                flex-grow: 1; /* Permite ocupar o resto do espaço */
+                max-width: 800px;
                 box-shadow: 0 0 15px rgba(0,0,0,0.5);
             }
-            .dash-section { border-left: 2px solid var(--neon-blue); padding-left: 10px; }
-            .dash-title { color: var(--neon-green); font-weight: bold; margin-bottom: 3px; text-transform: uppercase; font-size: 0.65rem; }
-            .dash-val { color: #ccc; line-height: 1.3; }
 
-            /* GLITCH TITLE (Suave 1px) */
+            .dash-section { border-left: 2px solid var(--neon-blue); padding-left: 10px; }
+            .dash-title { color: var(--neon-green); font-weight: bold; margin-bottom: 4px; text-transform: uppercase; font-size: 0.68rem; }
+            .dash-val { color: #ccc; line-height: 1.4; }
+
+            /* --- GLITCH TITLE SUAVE --- */
             .glitch-wrapper { display: flex; justify-content: flex-start; margin-bottom: 5px; }
             .glitch {
                position: relative; font-size: 2.5rem; font-weight: 900; text-transform: uppercase;
@@ -64,6 +71,7 @@
                80% { transform: translate(1px, -1px); }
                100% { transform: translate(0); }
             }
+
             @keyframes glitch-anim2 {
                0% { transform: translate(0); }
                20% { transform: translate(1px, -1px); }
@@ -72,13 +80,8 @@
                80% { transform: translate(-1px, 1px); }
                100% { transform: translate(0); }
             }
-            .glitch:hover { animation: neon-flicker 1.5s infinite alternate; }
-            @keyframes neon-flicker {
-               0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green); }
-               20%, 22%, 24%, 55% { text-shadow: none; }
-            }
 
-            /* TOOLTIP & TABLE */
+            /* --- TOOLTIP & TAGS --- */
             .player-cell { position: relative; display: inline-block; cursor: help; }
             .stats-tooltip {
                 visibility: hidden; width: 280px; background-color: #0d0d0f; color: #eee;
@@ -86,32 +89,29 @@
                 padding: 15px; position: absolute; z-index: 100; bottom: 125%; left: 50%;
                 margin-left: -140px; opacity: 0; transition: all 0.3s ease;
                 font-family: 'Fira Code', monospace; font-size: 0.82em;
+                box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
             }
             .player-cell:hover .stats-tooltip { visibility: visible; opacity: 1; transform: translateY(-5px); }
             .tooltip-header { color: var(--neon-green); border-bottom: 1px solid #333; padding-bottom: 5px; margin-bottom: 10px; font-weight: bold; display: flex; justify-content: space-between; }
-            .tooltip-stat { display: flex; justify-content: space-between; margin-bottom: 3px; border-bottom: 1px solid #1a1a1c; }
             
-            .champion-tag { background: var(--neon-yellow); color: #000; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.7em; margin-left: 8px; animation: pulse-gold 2s infinite; display: inline-block; }
-            .wanted-tag { background: var(--neon-red); color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.7em; margin-left: 8px; animation: pulse-red 2s infinite; display: inline-block; }
-            
-            @keyframes pulse-gold { 0%, 100% { box-shadow: 0 0 5px var(--neon-yellow); } 50% { box-shadow: 0 0 15px var(--neon-yellow); } }
-            @keyframes pulse-red { 0%, 100% { box-shadow: 0 0 5px var(--neon-red); } 50% { box-shadow: 0 0 15px var(--neon-red); } }
+            .champion-tag { background: var(--neon-yellow); color: #000; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.7em; margin-left: 8px; display: inline-block; }
+            .wanted-tag { background: var(--neon-red); color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.7em; margin-left: 8px; display: inline-block; }
 
+            /* --- ELEMENTOS GERAIS --- */
             .lang-switch { margin-bottom: 15px; display: flex; gap: 10px; }
             .lang-btn { background: #000; border: 1px solid #333; color: #888; padding: 5px 12px; cursor: pointer; font-family: 'Fira Code'; border-radius: 4px; }
-            .lang-btn.active { border-color: var(--neon-green); color: var(--neon-green); }
-            
+            .lang-btn.active { border-color: var(--neon-green); color: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); }
             body.lang-en [data-lang="pt"] { display: none !important; }
             body.lang-pt [data-lang="en"] { display: none !important; }
             
             .table-container { background: var(--card-bg); padding: 20px; border: 1px solid var(--border); border-radius: 8px; }
-            table.dataTable thead th { color: var(--neon-green); font-family: 'Fira Code'; border-bottom: 2px solid var(--neon-green) !important; }
+            table.dataTable thead th { color: var(--neon-green); font-family: 'Fira Code'; border-bottom: 2px solid var(--neon-green) !important; text-align: left; }
             .power-val { color: var(--neon-yellow); font-family: 'Fira Code'; font-weight: bold; }
             footer { margin-top: 30px; text-align: center; color: #555; font-size: 0.8em; padding-bottom: 20px; }
         </style>
     </head>
     <body class="lang-en">
-        <div style="max-width: 1300px; margin: 0 auto;">
+        <div style="max-width: 1400px; margin: 0 auto;">
             <div class="lang-switch">
                 <button class="lang-btn" onclick="setLang('pt')">PT</button>
                 <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -128,19 +128,19 @@
 
                 <div class="dashboard">
                     <div class="dash-section">
-                        <div class="dash-title"><span data-lang="pt">🌍 Redes & Jogadores</span><span data-lang="en">🌍 Networks & Players</span></div>
-                        <div class="dash-val"><b>Undernet</b>: 34 | <b>PTnet</b>: 13 | <b>InTheMansion</b>: 6 | <b>PTirc</b>: 3 | <b>Libera</b>: 2 | <b>DALnet</b>: 1 | <b>Quakenet</b>: 1 | <b>Rizon</b>: 1 | <b>Snoonet</b>: 1</div>
+                        <div class="dash-title"><span data-lang="pt">🌍 Redes & População</span><span data-lang="en">🌍 Networks & Population</span></div>
+                        <div class="dash-val"><b>Undernet</b>: 33 | <b>PTnet</b>: 13 | <b>InTheMansion</b>: 6 | <b>PTirc</b>: 3 | <b>Libera</b>: 2 | <b>DALnet</b>: 1 | <b>Quakenet</b>: 1 | <b>Rizon</b>: 1 | <b>Snoonet</b>: 1</div>
                     </div>
                     <div class="dash-section">
                         <div class="dash-title"><span data-lang="pt">🏛️ Recordes Mundiais</span><span data-lang="en">🏛️ World Records</span></div>
                         <div class="dash-val">
-        🔥 <b>Streak:</b> juanjocerero (6)<br>
-        💰 <b>Wanted:</b> nuke (992 XP)
+        🔥 <b>Streak:</b> juanjocerero@InTheMansion (6)<br>
+        💰 <b>Wanted:</b> nuke@Libera (992 XP)
     </div>
                     </div>
                     <div class="dash-section" style="grid-column: span 2; border-color: var(--neon-yellow);">
-                        <div class="dash-title"><span data-lang="pt">🗡️ Arsenal Lendário (Top por Slot)</span><span data-lang="en">🗡️ Legendary Arsenal (Top per Slot)</span></div>
-                        <div class="dash-val" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                        <div class="dash-title"><span data-lang="pt">🗡️ Arsenal Lendário (Melhor por Slot)</span><span data-lang="en">🗡️ Legendary Arsenal (Best per Slot)</span></div>
+                        <div class="dash-val" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
                             <div><b style='color:var(--neon-blue)'>Head:</b> Quantum Flux Crown (+123)<br><small>nuke@Quakenet</small></div><div><b style='color:var(--neon-blue)'>Body:</b> Celestial Wyrm Exosuit (+63)<br><small>user@PTirc</small></div><div><b style='color:var(--neon-blue)'>Weapon:</b> Droidy McJokeBot (+142)<br><small>R2D2@Undernet</small></div><div><b style='color:var(--neon-blue)'>Feet:</b> Botas do Sombras Vivas (+84)<br><small>Nezuko@Undernet</small></div><div><b style='color:var(--neon-blue)'>Accessory:</b> Celestial Synapse Ring (+62)<br><small>juanjocerero@InTheMansion</small></div>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 NUKE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>6</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>5342</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>5375</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 134</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Nuclear Fumble Bomb (+76)<br>[Body] Quantum Reactor Suit (+27)<br>[Head] Quantum Mind Crown (+10)<br>[Feet] Quantum Boots of Tranquility (+15)</div>
                             </div>
@@ -179,7 +179,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Libera</td>
                     <td>6</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">5342</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">5375</td>
                     <td class="power-val">⚔️ 134</td>
                 </tr>
         
@@ -192,7 +192,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 USER</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>5</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>4339</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>4372</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 153</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Body] Celestial Wyrm Exosuit (+63)<br>[Feet] Chrono-Boots of Flux (+6)<br>[Accessory] Chrono-Sigil Amulet (+9)<br>[Head] Circuitweave Crown (+8)<br>[Weapon] Quantum Thornblade (+62)</div>
                             </div>
@@ -200,7 +200,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">PTirc</td>
                     <td>5</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">4339</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">4372</td>
                     <td class="power-val">⚔️ 153</td>
                 </tr>
         
@@ -213,7 +213,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 NUKE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>4</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>3904</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>3937</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 73</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Head] Quantum Dreambreaker Helm (+24)<br>[Weapon] Nuclear Wraith Cannon (+15)<br>[Accessory] Quantum Cat Ears (+28)<br>[Body] Quantum Essence Exosuit (+2)</div>
                             </div>
@@ -221,7 +221,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">PTirc</td>
                     <td>4</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3904</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3937</td>
                     <td class="power-val">⚔️ 73</td>
                 </tr>
         
@@ -234,7 +234,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 JUANJOCERERO</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>4</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>3601</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>3634</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 103</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Juantastic Bug Zapper (+30)<br>[Body] Quantum Wyrmskin Harness (+7)<br>[Accessory] Celestial Synapse Ring (+62)</div>
                             </div>
@@ -242,7 +242,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">InTheMansion</td>
                     <td>4</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3601</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3634</td>
                     <td class="power-val">⚔️ 103</td>
                 </tr>
         
@@ -255,7 +255,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 NUKE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>4</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>3595</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>3628</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 91</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Quantum Oblivion Sphere (+66)<br>[Accessory] Quantum Echo Amulet (+6)<br>[Body] Nuclear Aegis Shrouds (+9)<br>[Head] Quantum Attenuator Helm (+6)</div>
                             </div>
@@ -263,7 +263,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">InTheMansion</td>
                     <td>4</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3595</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3628</td>
                     <td class="power-val">⚔️ 91</td>
                 </tr>
         
@@ -276,7 +276,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 AVATAR</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>4</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>3588</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>3621</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 103</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Glitchy Grappling Hook (+29)<br>[Feet] Quantum Frostwalkers (+70)</div>
                             </div>
@@ -284,7 +284,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">InTheMansion</td>
                     <td>4</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3588</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3621</td>
                     <td class="power-val">⚔️ 103</td>
                 </tr>
         
@@ -297,7 +297,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 MUIRTHEMNE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>4</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>3308</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>3341</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 14</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Muirthemne's Mischief Cloak (+10)</div>
                             </div>
@@ -305,7 +305,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">InTheMansion</td>
                     <td>4</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3308</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">3341</td>
                     <td class="power-val">⚔️ 14</td>
                 </tr>
         
@@ -318,7 +318,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 TOFFEE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2946</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2979</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 49</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Sticky Sugar Bomb (+12)<br>[Body] Gleaming Etherweave Cloak (+28)<br>[Head] Glowing Sugarbeet Helm (+6)</div>
                             </div>
@@ -326,7 +326,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">InTheMansion</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2946</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2979</td>
                     <td class="power-val">⚔️ 49</td>
                 </tr>
         
@@ -339,7 +339,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 V0ID</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2737</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2770</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 13</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Debugging Whimsy Wand (+10)</div>
                             </div>
@@ -347,7 +347,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2737</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2770</td>
                     <td class="power-val">⚔️ 13</td>
                 </tr>
         
@@ -360,7 +360,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 R0B0T</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2703</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2736</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 11</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Mechanical Mayhem Module (+8)</div>
                             </div>
@@ -368,7 +368,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2703</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2736</td>
                     <td class="power-val">⚔️ 11</td>
                 </tr>
         
@@ -381,7 +381,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 AJAH</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2698</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2731</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 13</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Debugging Rod (+10)</div>
                             </div>
@@ -389,7 +389,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2698</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2731</td>
                     <td class="power-val">⚔️ 13</td>
                 </tr>
         
@@ -402,7 +402,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 NICOLE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2672</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2705</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 3</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>---</div>
                             </div>
@@ -410,7 +410,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2672</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2705</td>
                     <td class="power-val">⚔️ 3</td>
                 </tr>
         
@@ -423,7 +423,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 R2D2</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2667</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2700</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 145</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Droidy McJokeBot (+142)</div>
                             </div>
@@ -431,7 +431,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2667</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2700</td>
                     <td class="power-val">⚔️ 145</td>
                 </tr>
         
@@ -444,7 +444,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 FRIEREN</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2658</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2691</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 27</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Mage's Coffee Cup (+24)</div>
                             </div>
@@ -452,7 +452,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2658</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2691</td>
                     <td class="power-val">⚔️ 27</td>
                 </tr>
         
@@ -465,7 +465,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 SLUAGH</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2634</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2667</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 14</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Spectral Prankster Cloak (+11)</div>
                             </div>
@@ -473,7 +473,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2634</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2667</td>
                     <td class="power-val">⚔️ 14</td>
                 </tr>
         
@@ -486,7 +486,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 PEER</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2596</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2629</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 6</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Peer Pressure Shield (+2)<br>[Head] Capacete de Névoa Anímica (+1)</div>
                             </div>
@@ -494,7 +494,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2596</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2629</td>
                     <td class="power-val">⚔️ 6</td>
                 </tr>
         
@@ -507,7 +507,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 GON</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2593</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2626</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 3</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>---</div>
                             </div>
@@ -515,7 +515,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2593</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2626</td>
                     <td class="power-val">⚔️ 3</td>
                 </tr>
         
@@ -528,7 +528,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 SUKUNA</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2587</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2620</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 30</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Sukuna's Snack Stash (+27)</div>
                             </div>
@@ -536,7 +536,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2587</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2620</td>
                     <td class="power-val">⚔️ 30</td>
                 </tr>
         
@@ -549,7 +549,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 EIGHTYTWO</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2586</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2619</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 23</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Debugging Spoon (+10)<br>[Body] Revestimento de Plasma (+10)</div>
                             </div>
@@ -557,7 +557,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2586</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2619</td>
                     <td class="power-val">⚔️ 23</td>
                 </tr>
         
@@ -570,7 +570,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 JUPE1596</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2573</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2606</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 10</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Body] Peitoral de Alquimia Celestial (+7)</div>
                             </div>
@@ -578,7 +578,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2573</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2606</td>
                     <td class="power-val">⚔️ 10</td>
                 </tr>
         
@@ -591,7 +591,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 NEZUKO</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2569</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2602</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 87</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Feet] Botas do Sombras Vivas (+84)</div>
                             </div>
@@ -599,7 +599,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2569</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2602</td>
                     <td class="power-val">⚔️ 87</td>
                 </tr>
         
@@ -612,7 +612,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 CAMILA</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2553</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2586</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 6</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Body] Armadura de Ébano Etéreo (+3)</div>
                             </div>
@@ -620,7 +620,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2553</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2586</td>
                     <td class="power-val">⚔️ 6</td>
                 </tr>
         
@@ -633,7 +633,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 NUKE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2535</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2568</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 4</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Nuclear Overkill Widget (+1)</div>
                             </div>
@@ -641,7 +641,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2535</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2568</td>
                     <td class="power-val">⚔️ 4</td>
                 </tr>
         
@@ -654,7 +654,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 KILLUA</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2533</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2566</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 20</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Void Spark Scythe (+17)</div>
                             </div>
@@ -662,7 +662,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2533</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2566</td>
                     <td class="power-val">⚔️ 20</td>
                 </tr>
         
@@ -675,7 +675,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 EKUN</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2529</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2562</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 21</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Ekun's Prankster Pouch (+3)<br>[Head] Coroa dos Sonhos (+13)<br>[Feet] Botas de Terra Imortal (+2)</div>
                             </div>
@@ -683,7 +683,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2529</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2562</td>
                     <td class="power-val">⚔️ 21</td>
                 </tr>
         
@@ -696,7 +696,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 BOT</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>3</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>2474</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>2507</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 23</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Debugging Sword 3000 (+15)<br>[Accessory] Anel de Neve Eterna (+5)</div>
                             </div>
@@ -704,7 +704,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>3</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2474</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">2507</td>
                     <td class="power-val">⚔️ 23</td>
                 </tr>
         
@@ -717,7 +717,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 ALICIA</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>2</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>1846</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>1879</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 2</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>---</div>
                             </div>
@@ -725,7 +725,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Undernet</td>
                     <td>2</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">1846</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">1879</td>
                     <td class="power-val">⚔️ 2</td>
                 </tr>
         
@@ -738,7 +738,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 NUKE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>2</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>1541</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>1574</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 271</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Weapon] Quantum Oblivion Core (+78)<br>[Body] Radiant Fusion Shell (+27)<br>[Accessory] Quantum Energy Loop (+24)<br>[Feet] Warpwalker Boots (+17)<br>[Head] Quantum Flux Crown (+123)</div>
                             </div>
@@ -746,7 +746,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Quakenet</td>
                     <td>2</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">1541</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">1574</td>
                     <td class="power-val">⚔️ 271</td>
                 </tr>
         
@@ -759,7 +759,7 @@
                             <div class="stats-tooltip">
                                 <div class="tooltip-header"><span>📊 NUKE</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>1</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>802</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>835</span></div>
                                 <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 93</span></div>
                                 <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Accessory] Quantum Drift Pendant (+7)<br>[Body] Quantum Etheric Weave (+10)<br>[Head] Cranial Energy Matrix (+9)<br>[Feet] Quantum Leap Boots (+59)<br>[Weapon] Quantum Cinderblade (+7)</div>
                             </div>
@@ -767,7 +767,7 @@
                     </td>
                     <td style="color:#666; font-size:0.9em;">Rizon</td>
                     <td>1</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">802</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">835</td>
                     <td class="power-val">⚔️ 93</td>
                 </tr>
         
@@ -920,6 +920,48 @@
         
                 <tr>
                     <td>37</td>
+                    <td style="color:#00ff99">🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style="color:white; font-weight:bold;">nuke</span>
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header"><span>📊 NUKE</span></div>
+                                <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>1</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>716</span></div>
+                                <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 44</span></div>
+                                <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Feet] Quantum Flux Sandals (+6)<br>[Accessory] Quantum Flux Amulet (+8)<br>[Head] Radiant Psionics Helm (+29)</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="color:#666; font-size:0.9em;">Snoonet</td>
+                    <td>1</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">716</td>
+                    <td class="power-val">⚔️ 44</td>
+                </tr>
+        
+                <tr>
+                    <td>38</td>
+                    <td style="color:#00ff99">🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style="color:white; font-weight:bold;">nuke</span>
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header"><span>📊 NUKE</span></div>
+                                <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>1</span></div>
+                                <div class="tooltip-stat"><span>XP:</span><span>709</span></div>
+                                <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 12</span></div>
+                                <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Accessory] Nuclear Singularity Pendant (+7)<br>[Body] Quantum Infusion Shell (+4)</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="color:#666; font-size:0.9em;">DALnet</td>
+                    <td>1</td>
+                    <td style="color:var(--neon-blue); font-family:'Fira Code';">709</td>
+                    <td class="power-val">⚔️ 12</td>
+                </tr>
+        
+                <tr>
+                    <td>39</td>
                     <td style="color:#444">🔴</td>
                     <td>
                         <div class="player-cell">
@@ -937,48 +979,6 @@
                     <td>1</td>
                     <td style="color:var(--neon-blue); font-family:'Fira Code';">692</td>
                     <td class="power-val">⚔️ 1</td>
-                </tr>
-        
-                <tr>
-                    <td>38</td>
-                    <td style="color:#00ff99">🟢</td>
-                    <td>
-                        <div class="player-cell">
-                            <span class="" style="color:white; font-weight:bold;">nuke</span>
-                            <div class="stats-tooltip">
-                                <div class="tooltip-header"><span>📊 NUKE</span></div>
-                                <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>1</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>683</span></div>
-                                <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 44</span></div>
-                                <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Feet] Quantum Flux Sandals (+6)<br>[Accessory] Quantum Flux Amulet (+8)<br>[Head] Radiant Psionics Helm (+29)</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td style="color:#666; font-size:0.9em;">Snoonet</td>
-                    <td>1</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">683</td>
-                    <td class="power-val">⚔️ 44</td>
-                </tr>
-        
-                <tr>
-                    <td>39</td>
-                    <td style="color:#00ff99">🟢</td>
-                    <td>
-                        <div class="player-cell">
-                            <span class="" style="color:white; font-weight:bold;">nuke</span>
-                            <div class="stats-tooltip">
-                                <div class="tooltip-header"><span>📊 NUKE</span></div>
-                                <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>1</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>676</span></div>
-                                <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 12</span></div>
-                                <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>[Accessory] Nuclear Singularity Pendant (+7)<br>[Body] Quantum Infusion Shell (+4)</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td style="color:#666; font-size:0.9em;">DALnet</td>
-                    <td>1</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">676</td>
-                    <td class="power-val">⚔️ 12</td>
                 </tr>
         
                 <tr>
@@ -1443,35 +1443,14 @@
                     <td class="power-val">⚔️ 1</td>
                 </tr>
         
-                <tr>
-                    <td>62</td>
-                    <td style="color:#444">🔴</td>
-                    <td>
-                        <div class="player-cell">
-                            <span class="" style="color:white; font-weight:bold;">alexandre</span>
-                            <div class="stats-tooltip">
-                                <div class="tooltip-header"><span>📊 ALEXANDRE</span></div>
-                                <div class="tooltip-stat"><span data-lang="pt">Nível:</span><span data-lang="en">Level:</span><span>1</span></div>
-                                <div class="tooltip-stat"><span>XP:</span><span>0</span></div>
-                                <div class="tooltip-stat"><span data-lang="pt">Poder:</span><span data-lang="en">Power:</span><span>⚔️ 1</span></div>
-                                <div class="tooltip-items"><div style="border-bottom: 1px solid #333; margin-bottom:5px;">🛡️ EQUIPMENT</div>---</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td style="color:#666; font-size:0.9em;">Undernet</td>
-                    <td>1</td>
-                    <td style="color:var(--neon-blue); font-family:'Fira Code';">0</td>
-                    <td class="power-val">⚔️ 1</td>
-                </tr>
-        
                     </tbody>
                 </table>
             </div>
 
             <footer>
-                <p>© 2026 IdleGame Project | <a href="https://github.com/nukam0s/IdleGame-ranking" style="color: #777;">GitHub</a></p>
-                <p data-lang="pt">Última atualização: 2026-01-07 21:22</p>
-                <p data-lang="en">Last update: 2026-01-07 21:22</p>
+                <p>© 2026 IdleGame Project | <a href="https://github.com/nukam0s/IdleGame-ranking" style="color: #777;">GitHub Source</a></p>
+                <p data-lang="pt">Última atualização: 2026-01-07 21:56</p>
+                <p data-lang="en">Last update: 2026-01-07 21:56</p>
             </footer>
         </div>
 
@@ -1487,13 +1466,13 @@
                 });
                 setLang(localStorage.getItem('idleLang') || 'en');
             });
-            function setLang(lang) {
+            function setLang(lang) {{
                 document.body.className = 'lang-' + lang;
                 localStorage.setItem('idleLang', lang);
-                document.querySelectorAll('.lang-btn').forEach(btn => {
+                document.querySelectorAll('.lang-btn').forEach(btn => {{
                     btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
-                });
-            }
+                }});
+            }}
         </script>
     </body>
     </html>
