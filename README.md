@@ -37,10 +37,12 @@
 
 ### 1. Quests Interativas | Interactive Quests
 **PT**: O bot lança desafios no chat. Tens **1 hora** para responder com `!resp <tua ideia>`. A IA avalia a tua criatividade para decidir o resultado e a recompensa.
+
 **EN**: *The bot issues challenges in chat. You have **1 hour** to answer with `!ans <your idea>` or `!resp <your idea>`. The AI evaluates your creativity to decide the outcome and reward.*
 
 ### 2. Crónicas Épicas (20/20) | Epic Chronicles
 **PT**: Cada 20 eventos geram uma crónica épica compilada pela IA com um link externo permanente. O histórico faz reset após a geração.
+
 **EN**: *Every 20 events generate an epic chronicle compiled by AI with a permanent external link. History resets after generation.*
 
 ---
