@@ -15,127 +15,55 @@
                 --neon-yellow: #f0f000; --bg-dark: #050505; --card-bg: #111114;
                 --border: #222; --text: #e0e0e0;
             }
+            
+            /* Tooltip Style (Igual ao !stats) */
+            .player-cell { position: relative; display: inline-block; cursor: help; }
+            .stats-tooltip {
+                visibility: hidden; width: 300px; background-color: #0d0d0f; color: #e0e0e0;
+                text-align: left; border: 1px solid var(--neon-green); border-radius: 8px;
+                padding: 15px; position: absolute; z-index: 100; bottom: 125%; left: 50%;
+                margin-left: -150px; opacity: 0; transition: all 0.3s ease;
+                font-family: 'Fira Code', monospace; font-size: 0.85em;
+                box-shadow: 0 0 25px rgba(0, 255, 153, 0.2);
+            }
+            .stats-tooltip::after {
+                content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px;
+                border-width: 5px; border-style: solid; border-color: var(--neon-green) transparent transparent transparent;
+            }
+            .player-cell:hover .stats-tooltip { visibility: visible; opacity: 1; transform: translateY(-5px); }
 
-            /* Esconde a língua inativa com prioridade máxima */
+            .tooltip-header { 
+                color: var(--neon-green); border-bottom: 1px solid #333; 
+                padding-bottom: 8px; margin-bottom: 10px; font-weight: bold; font-size: 1em;
+                display: flex; justify-content: space-between;
+            }
+            .tooltip-stat { display: flex; justify-content: space-between; margin-bottom: 4px; border-bottom: 1px solid #1a1a1c; }
+            .tooltip-items { 
+                margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--neon-green); 
+                color: var(--neon-yellow); font-size: 0.8em; line-height: 1.5;
+            }
+
+            /* ... (Resto do CSS das Tags e Neon igual ao que tinhas) ... */
             body.lang-en [data-lang="pt"] { display: none !important; }
             body.lang-pt [data-lang="en"] { display: none !important; }
-            
-            /* Garante que o span não quebre o layout do DataTables */
-            [data-lang] { 
-                display: inline-block;
-                white-space: nowrap;
-            }
-
-            /* --- NOVOS BOTÕES NEON --- */
-            .lang-switch {
-                margin-bottom: 30px;
-                display: flex;
-                gap: 15px;
-                justify-content: flex-start;
-            }
-
-            .lang-btn {
-                background: #050505;
-                border: 1px solid var(--border);
-                color: var(--text);
-                padding: 8px 20px;
-                cursor: pointer;
-                border-radius: 4px;
-                font-family: 'Fira Code', monospace;
-                font-size: 0.85em;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                transition: all 0.3s ease;
-            }
-
-            .lang-btn:hover {
-                border-color: var(--neon-green);
-                color: var(--neon-green);
-                box-shadow: 0 0 10px var(--neon-green);
-            }
-
-            .lang-btn.active {
-                background: var(--neon-green);
-                color: #000;
-                border-color: var(--neon-green);
-                font-weight: 900;
-                box-shadow: 0 0 20px var(--neon-green);
-            }
-
-            /* --- STATUS E GLOW --- */
-            .status-on { color: var(--neon-green); font-size: 0.8em; }
-            .status-off { color: #444; font-size: 0.8em; }            
-            
-            .admin-item-glow { 
-                color: var(--neon-blue) !important; 
-                text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-                font-weight: 900 !important;
-            }
-
+            .status-on { color: var(--neon-green); } .status-off { color: #444; }
+            .admin-item-glow { color: var(--neon-blue) !important; text-shadow: 0 0 10px var(--neon-blue); }
+            .champion-tag { background: var(--neon-yellow); color: #000; padding: 2px 5px; border-radius: 3px; font-size: 0.7em; }
+            .wanted-tag { background: var(--neon-red); color: #fff; padding: 2px 5px; border-radius: 3px; font-size: 0.7em; }
             body { background-color: var(--bg-dark); color: var(--text); font-family: 'Inter', sans-serif; padding: 20px; }
-            .container { max-width: 1200px; margin: 0 auto; }
-
-            /* --- ANIMAÇÕES E TAGS --- */
-            @keyframes pulse-gold {
-                0% { text-shadow: 0 0 5px var(--neon-yellow); box-shadow: 0 0 5px var(--neon-yellow); }
-                50% { text-shadow: 0 0 15px var(--neon-yellow), 0 0 25px var(--neon-yellow); box-shadow: 0 0 15px var(--neon-yellow); }
-                100% { text-shadow: 0 0 5px var(--neon-yellow); box-shadow: 0 0 5px var(--neon-yellow); }
-            }
-
-            .champion-tag { 
-                color: #000; background: var(--neon-yellow); font-family: 'Fira Code'; 
-                font-weight: bold; animation: pulse-gold 2s infinite; font-size: 0.75em; 
-                margin-left: 10px; padding: 2px 6px; border-radius: 4px;
-            }
-            
-            @keyframes pulse-red {
-                0% { text-shadow: 0 0 5px var(--neon-red); box-shadow: 0 0 5px var(--neon-red); }
-                50% { text-shadow: 0 0 15px var(--neon-red), 0 0 25px var(--neon-red); box-shadow: 0 0 15px var(--neon-red); }
-                100% { text-shadow: 0 0 5px var(--neon-red); box-shadow: 0 0 5px var(--neon-red); }
-            }
-
-            .wanted-tag { 
-                color: #fff; background: var(--neon-red); font-family: 'Fira Code'; 
-                font-weight: bold; animation: pulse-red 2s infinite; font-size: 0.75em; 
-                margin-left: 10px; padding: 2px 6px; border-radius: 4px;
-            }
-
-            /* --- LAYOUT E TABELA --- */
-            header { border-left: 4px solid var(--neon-green); padding-left: 20px; margin-bottom: 40px; }
-            .glitch { color: var(--neon-green); font-family: 'Fira Code'; font-size: 2.5em; text-transform: uppercase; }
             .table-container { background: var(--card-bg); padding: 20px; border: 1px solid var(--border); border-radius: 8px; }
-            
-            table.dataTable { width: 100% !important; background: transparent !important; border: none !important; }
-            table.dataTable thead th { color: var(--neon-green); font-family: 'Fira Code'; text-transform: uppercase; border-bottom: 2px solid var(--neon-green) !important; text-align: left; }
-            table.dataTable tbody td { border-bottom: 1px solid #1f1f23 !important; padding: 12px !important; color: #ccc; }
-            
-            .power-val { color: var(--neon-yellow); font-weight: bold; font-family: 'Fira Code'; min-width: 90px; }
-            .net-val { color: #777; font-size: 0.85em; font-family: 'Fira Code'; }
-            
-            .wiki-link {
-                margin-top: 10px; display: block; color: var(--neon-green);
-                text-decoration: none; font-family: 'Fira Code', monospace;
-                font-size: 0.9em; transition: all 0.3s;
-            }
-            .wiki-link:hover { text-shadow: 0 0 10px var(--neon-green); text-decoration: underline; }
+            table.dataTable thead th { color: var(--neon-green); font-family: 'Fira Code'; }
         </style>
     </head>
     <body class="lang-en">
-        <div class="container">
-            <div class="lang-switch">
-                <button class="lang-btn" onclick="setLang('pt')">PT</button>
-                <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div style="margin-bottom: 20px;">
+                <button onclick="setLang('pt')" style="padding: 5px 15px; cursor: pointer;">PT</button>
+                <button onclick="setLang('en')" style="padding: 5px 15px; cursor: pointer;">EN</button>
             </div>
 
-            <header>
-                <h1 class="glitch">IDLEGAME RANKING</h1>
-                <p data-lang="pt">O Top 100 Geral de todas as redes.</p>
-                <p data-lang="en">The Global Top 100 from all networks.</p>
-                
-                <a href="https://github.com/nukam0s/IdleGame-ranking#readme" class="wiki-link" target="_blank">
-                    <span data-lang="pt">📖 Como jogar / Guia de Comandos</span>
-                    <span data-lang="en">📖 How to play / Command Guide</span>
-                </a>
+            <header style="border-left: 4px solid var(--neon-green); padding-left: 20px; margin-bottom: 30px;">
+                <h1 style="color: var(--neon-green); font-family: 'Fira Code';">IDLEGAME RANKING</h1>
             </header>
 
             <div class="table-container">
@@ -143,640 +71,2771 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>
-                                <span data-lang="pt">Estado</span>
-                                <span data-lang="en">Status</span>
-                            </th>
-                            <th>
-                                <span data-lang="pt">Jogador</span>
-                                <span data-lang="en">Player</span>
-                            </th>
-                            <th>
-                                <span data-lang="pt">Rede</span>
-                                <span data-lang="en">Network</span>
-                            </th>
-                            <th>
-                                <span data-lang="pt">Nível</span>
-                                <span data-lang="en">Level</span>
-                            </th>
+                            <th>Status</th>
+                            <th>Player</th>
+                            <th>Network</th>
+                            <th>Level</th>
                             <th>XP</th>
-                            <th>
-                                <span data-lang="pt">Poder</span>
-                                <span data-lang="en">Power</span>
-                            </th>
+                            <th>Power</th>
                         </tr>
                     </thead>
                     <tbody>
     
                 <tr>
                     <td>1</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>nuke</span><span class='wanted-tag'>💰 WANTED (698 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>nuke</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NUKE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#1 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>5</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>4477</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 132</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">808 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Nuclear Fumble Bomb (+76)<br>[Feet] Quantum Flux Boots (+9)<br>[Body] Quantum Reactor Suit (+27)<br>[Head] Quantum Mind Crown (+10)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Libera</td>
                     <td>Lvl 5</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>4148</td>
-                    <td class="power-val " data-order="86">⚔️ 86</td>
+                    <td style='color: var(--neon-blue);'>4477</td>
+                    <td class="power-val">⚔️ 132</td>
                 </tr>
         
                 <tr>
                     <td>2</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>user</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>user</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 USER</span>
+                                    <span style="color: #666; font-size: 0.8em;">#2 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>3600</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 96</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Debugging Wizard Hat (+8)<br>[Body] Celestial Wyrm Exosuit (+63)<br>[Feet] Chrono-Boots of Flux (+6)<br>[Accessory] Chrono-Sigil Amulet (+9)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTirc</td>
                     <td>Lvl 4</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>3391</td>
-                    <td class="power-val " data-order="18">⚔️ 18</td>
+                    <td style='color: var(--neon-blue);'>3600</td>
+                    <td class="power-val">⚔️ 96</td>
                 </tr>
         
                 <tr>
                     <td>3</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>nuke</span><span class='champion-tag'>🏆 CHAMPION (3)</span><span class='wanted-tag'>💰 WANTED (349 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>nuke</span><span class='champion-tag'>🏆 CHAMP</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NUKE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#3 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>3267</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 17</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">460 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Micro Nuke Launcher (+7)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTirc</td>
                     <td>Lvl 4</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>3072</td>
-                    <td class="power-val " data-order="17">⚔️ 17</td>
+                    <td style='color: var(--neon-blue);'>3267</td>
+                    <td class="power-val">⚔️ 17</td>
                 </tr>
         
                 <tr>
                     <td>4</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>juanjocerero</span><span class='champion-tag'>🏆 CHAMPION (3)</span><span class='wanted-tag'>💰 WANTED (82 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Avatar</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 AVATAR</span>
+                                    <span style="color: #666; font-size: 0.8em;">#4 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>3044</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 109</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Glitchy Grappling Hook (+29)<br>[Feet] Quantum Frostwalkers (+70)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">InTheMansion</td>
-                    <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2842</td>
-                    <td class="power-val " data-order="40">⚔️ 40</td>
+                    <td>Lvl 4</td>
+                    <td style='color: var(--neon-blue);'>3044</td>
+                    <td class="power-val">⚔️ 109</td>
                 </tr>
         
                 <tr>
                     <td>5</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Avatar</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>nuke</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NUKE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#5 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2998</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 91</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Quantum Oblivion Sphere (+66)<br>[Accessory] Quantum Echo Amulet (+6)<br>[Body] Nuclear Aegis Shrouds (+9)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">InTheMansion</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2710</td>
-                    <td class="power-val " data-order="39">⚔️ 39</td>
+                    <td style='color: var(--neon-blue);'>2998</td>
+                    <td class="power-val">⚔️ 91</td>
                 </tr>
         
                 <tr>
                     <td>6</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>nuke</span><span class='wanted-tag'>💰 WANTED (163 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>juanjocerero</span><span class='champion-tag'>🏆 CHAMP</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 JUANJOCERERO</span>
+                                    <span style="color: #666; font-size: 0.8em;">#6 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2985</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 47</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">82 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Juantastic Bug Zapper (+30)<br>[Body] Quantum Wyrmskin Harness (+7)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">InTheMansion</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2637</td>
-                    <td class="power-val " data-order="34">⚔️ 34</td>
+                    <td style='color: var(--neon-blue);'>2985</td>
+                    <td class="power-val">⚔️ 47</td>
                 </tr>
         
                 <tr>
                     <td>7</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>muirthemne</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>muirthemne</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 MUIRTHEMNE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#7 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2775</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 20</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Muirthemne's Mischief Cloak (+10)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">InTheMansion</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2578</td>
-                    <td class="power-val " data-order="20">⚔️ 20</td>
+                    <td style='color: var(--neon-blue);'>2775</td>
+                    <td class="power-val">⚔️ 20</td>
                 </tr>
         
                 <tr>
                     <td>8</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>toffee</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>toffee</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 TOFFEE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#8 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2480</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 50</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Sticky Sugar Bomb (+12)<br>[Body] Gleaming Etherweave Cloak (+28)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">InTheMansion</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2359</td>
-                    <td class="power-val " data-order="22">⚔️ 22</td>
+                    <td style='color: var(--neon-blue);'>2480</td>
+                    <td class="power-val">⚔️ 50</td>
                 </tr>
         
                 <tr>
                     <td>9</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>R2D2</span><span class='wanted-tag'>💰 WANTED (58 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>R2D2</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 R2D2</span>
+                                    <span style="color: #666; font-size: 0.8em;">#9 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2238</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 152</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">58 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Droidy McJokeBot (+142)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2117</td>
-                    <td class="power-val " data-order="152">⚔️ 152</td>
+                    <td style='color: var(--neon-blue);'>2238</td>
+                    <td class="power-val">⚔️ 152</td>
                 </tr>
         
                 <tr>
                     <td>10</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>nicole</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>r0b0t</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 R0B0T</span>
+                                    <span style="color: #666; font-size: 0.8em;">#10 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2228</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 18</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Mechanical Mayhem Module (+8)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2104</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>2228</td>
+                    <td class="power-val">⚔️ 18</td>
                 </tr>
         
                 <tr>
                     <td>11</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>r0b0t</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>nicole</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NICOLE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#11 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2225</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2093</td>
-                    <td class="power-val " data-order="18">⚔️ 18</td>
+                    <td style='color: var(--neon-blue);'>2225</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>12</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>v0id</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>v0id</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 V0ID</span>
+                                    <span style="color: #666; font-size: 0.8em;">#12 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2222</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 20</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Debugging Whimsy Wand (+10)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2084</td>
-                    <td class="power-val " data-order="20">⚔️ 20</td>
+                    <td style='color: var(--neon-blue);'>2222</td>
+                    <td class="power-val">⚔️ 20</td>
                 </tr>
         
                 <tr>
                     <td>13</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Frieren</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Frieren</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 FRIEREN</span>
+                                    <span style="color: #666; font-size: 0.8em;">#13 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2208</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 34</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Mage's Coffee Cup (+24)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2077</td>
-                    <td class="power-val " data-order="34">⚔️ 34</td>
+                    <td style='color: var(--neon-blue);'>2208</td>
+                    <td class="power-val">⚔️ 34</td>
                 </tr>
         
                 <tr>
                     <td>14</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Ajah</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Ajah</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 AJAH</span>
+                                    <span style="color: #666; font-size: 0.8em;">#14 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2207</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 20</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Debugging Rod (+10)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2059</td>
-                    <td class="power-val " data-order="20">⚔️ 20</td>
+                    <td style='color: var(--neon-blue);'>2207</td>
+                    <td class="power-val">⚔️ 20</td>
                 </tr>
         
                 <tr>
                     <td>15</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Sluagh</span><span class='wanted-tag'>💰 WANTED (67 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Sluagh</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 SLUAGH</span>
+                                    <span style="color: #666; font-size: 0.8em;">#15 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2180</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 21</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">67 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Spectral Prankster Cloak (+11)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2059</td>
-                    <td class="power-val " data-order="21">⚔️ 21</td>
+                    <td style='color: var(--neon-blue);'>2180</td>
+                    <td class="power-val">⚔️ 21</td>
                 </tr>
         
                 <tr>
                     <td>16</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>EightyTwo</span><span class='wanted-tag'>💰 WANTED (68 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Nezuko</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NEZUKO</span>
+                                    <span style="color: #666; font-size: 0.8em;">#16 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2163</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 94</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Feet] Botas do Sombras Vivas (+84)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2017</td>
-                    <td class="power-val " data-order="20">⚔️ 20</td>
+                    <td style='color: var(--neon-blue);'>2163</td>
+                    <td class="power-val">⚔️ 94</td>
                 </tr>
         
                 <tr>
                     <td>17</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Gon</span><span class='wanted-tag'>💰 WANTED (94 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>EightyTwo</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 EIGHTYTWO</span>
+                                    <span style="color: #666; font-size: 0.8em;">#17 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2138</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 20</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">68 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Debugging Spoon (+10)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2016</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>2138</td>
+                    <td class="power-val">⚔️ 20</td>
                 </tr>
         
                 <tr>
                     <td>18</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Nezuko</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>peer</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 PEER</span>
+                                    <span style="color: #666; font-size: 0.8em;">#18 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2134</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 13</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Peer Pressure Shield (+2)<br>[Head] Capacete de Névoa Anímica (+1)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 3</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2002</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>2134</td>
+                    <td class="power-val">⚔️ 13</td>
                 </tr>
         
                 <tr>
                     <td>19</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>alexandre</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Sukuna</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 SUKUNA</span>
+                                    <span style="color: #666; font-size: 0.8em;">#19 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2131</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 37</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">253 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Sukuna's Snack Stash (+27)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
-                    <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1997</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td>Lvl 3</td>
+                    <td style='color: var(--neon-blue);'>2131</td>
+                    <td class="power-val">⚔️ 37</td>
                 </tr>
         
                 <tr>
                     <td>20</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>camila</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Gon</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 GON</span>
+                                    <span style="color: #666; font-size: 0.8em;">#20 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2127</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">94 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
-                    <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1992</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td>Lvl 3</td>
+                    <td style='color: var(--neon-blue);'>2127</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>21</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>peer</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>camila</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 CAMILA</span>
+                                    <span style="color: #666; font-size: 0.8em;">#21 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2124</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
-                    <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1988</td>
-                    <td class="power-val " data-order="12">⚔️ 12</td>
+                    <td>Lvl 3</td>
+                    <td style='color: var(--neon-blue);'>2124</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>22</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Sukuna</span><span class='wanted-tag'>💰 WANTED (253 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>alexandre</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 ALEXANDRE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#22 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2118</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 17</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Body] Peitoral de Alquimia Celestial (+7)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
-                    <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1966</td>
-                    <td class="power-val " data-order="37">⚔️ 37</td>
+                    <td>Lvl 3</td>
+                    <td style='color: var(--neon-blue);'>2118</td>
+                    <td class="power-val">⚔️ 17</td>
                 </tr>
         
                 <tr>
                     <td>23</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>nuke</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>nuke</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NUKE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#23 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2075</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 11</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Nuclear Overkill Widget (+1)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
-                    <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1954</td>
-                    <td class="power-val " data-order="11">⚔️ 11</td>
+                    <td>Lvl 3</td>
+                    <td style='color: var(--neon-blue);'>2075</td>
+                    <td class="power-val">⚔️ 11</td>
                 </tr>
         
                 <tr>
                     <td>24</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>ekun</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>ekun</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 EKUN</span>
+                                    <span style="color: #666; font-size: 0.8em;">#24 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2075</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 26</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Ekun's Prankster Pouch (+3)<br>[Head] Coroa dos Sonhos (+13)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
-                    <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1954</td>
-                    <td class="power-val " data-order="13">⚔️ 13</td>
+                    <td>Lvl 3</td>
+                    <td style='color: var(--neon-blue);'>2075</td>
+                    <td class="power-val">⚔️ 26</td>
                 </tr>
         
                 <tr>
                     <td>25</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>bot</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Killua</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 KILLUA</span>
+                                    <span style="color: #666; font-size: 0.8em;">#25 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2073</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 18</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Lightning Snack Gauntlet (+8)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
-                    <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1924</td>
-                    <td class="power-val " data-order="25">⚔️ 25</td>
+                    <td>Lvl 3</td>
+                    <td style='color: var(--neon-blue);'>2073</td>
+                    <td class="power-val">⚔️ 18</td>
                 </tr>
         
                 <tr>
                     <td>26</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Killua</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>bot</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 BOT</span>
+                                    <span style="color: #666; font-size: 0.8em;">#26 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2045</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 30</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Debugging Sword 3000 (+15)<br>[Accessory] Anel de Neve Eterna (+5)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
-                    <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1921</td>
-                    <td class="power-val " data-order="18">⚔️ 18</td>
+                    <td>Lvl 3</td>
+                    <td style='color: var(--neon-blue);'>2045</td>
+                    <td class="power-val">⚔️ 30</td>
                 </tr>
         
                 <tr>
                     <td>27</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>alicia</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>alicia</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 ALICIA</span>
+                                    <span style="color: #666; font-size: 0.8em;">#27 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>2</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>1601</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 2</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>1480</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>1601</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>28</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>nuke</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>nuke</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NUKE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#28 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>798</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 17</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Nuclear Noodle Launcher (+7)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>798</td>
-                    <td class="power-val " data-order="17">⚔️ 17</td>
+                    <td style='color: var(--neon-blue);'>798</td>
+                    <td class="power-val">⚔️ 17</td>
                 </tr>
         
                 <tr>
                     <td>29</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>IdleGame</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>IdleGame</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 IDLEGAME</span>
+                                    <span style="color: #666; font-size: 0.8em;">#29 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>782</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 13</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Debugging Scepter of Awkwardness (+3)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Libera</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>782</td>
-                    <td class="power-val " data-order="13">⚔️ 13</td>
+                    <td style='color: var(--neon-blue);'>782</td>
+                    <td class="power-val">⚔️ 13</td>
                 </tr>
         
                 <tr>
                     <td>30</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Genuina</span><span class='wanted-tag'>💰 WANTED (71 XP)</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Genuina</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 GENUINA</span>
+                                    <span style="color: #666; font-size: 0.8em;">#30 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>763</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 19</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">71 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Genuina's Glitch Goggles (+9)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>763</td>
-                    <td class="power-val " data-order="19">⚔️ 19</td>
+                    <td style='color: var(--neon-blue);'>763</td>
+                    <td class="power-val">⚔️ 19</td>
                 </tr>
         
                 <tr>
                     <td>31</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Benfica</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Benfica</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 BENFICA</span>
+                                    <span style="color: #666; font-size: 0.8em;">#31 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>745</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 15</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Eagle Eye Scope (+5)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>745</td>
-                    <td class="power-val " data-order="15">⚔️ 15</td>
+                    <td style='color: var(--neon-blue);'>745</td>
+                    <td class="power-val">⚔️ 15</td>
                 </tr>
         
                 <tr>
                     <td>32</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>tuga</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>tuga</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 TUGA</span>
+                                    <span style="color: #666; font-size: 0.8em;">#32 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>727</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>727</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>727</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>33</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Futebol</span><span class='wanted-tag'>💰 WANTED (114 XP)</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Futebol</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 FUTEBOL</span>
+                                    <span style="color: #666; font-size: 0.8em;">#33 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>725</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">114 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>725</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>725</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>34</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Tempo</span><span class='wanted-tag'>💰 WANTED (50 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Tempo</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 TEMPO</span>
+                                    <span style="color: #666; font-size: 0.8em;">#34 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>723</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 18</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">50 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Tempo Tuner Trousers (+8)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>723</td>
-                    <td class="power-val " data-order="18">⚔️ 18</td>
+                    <td style='color: var(--neon-blue);'>723</td>
+                    <td class="power-val">⚔️ 18</td>
                 </tr>
         
                 <tr>
                     <td>35</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Bodyguard</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Bodyguard</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 BODYGUARD</span>
+                                    <span style="color: #666; font-size: 0.8em;">#35 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>692</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>692</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>692</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>36</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>pybot</span></td>
-                    <td class="net-val">PTnet</td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>nuke</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NUKE</span>
+                                    <span style="color: #666; font-size: 0.8em;">#36 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>684</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 163</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">224 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Quantum Oblivion Core (+78)<br>[Body] Radiant Fusion Shell (+27)<br>[Accessory] Quantum Energy Loop (+24)<br>[Head] Radiant Cerebral Enhancer (+7)<br>[Feet] Warpwalker Boots (+17)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="net-val">Quakenet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>653</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>684</td>
+                    <td class="power-val">⚔️ 163</td>
                 </tr>
         
                 <tr>
                     <td>37</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>egg</span><span class='wanted-tag'>💰 WANTED (80 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>pybot</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 PYBOT</span>
+                                    <span style="color: #666; font-size: 0.8em;">#37 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>653</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>629</td>
-                    <td class="power-val " data-order="11">⚔️ 11</td>
+                    <td style='color: var(--neon-blue);'>653</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>38</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>robot</span><span class='wanted-tag'>💰 WANTED (230 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>egg</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 EGG</span>
+                                    <span style="color: #666; font-size: 0.8em;">#38 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>629</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 11</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">80 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Overcooked Egg Bomb (+1)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>629</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>629</td>
+                    <td class="power-val">⚔️ 11</td>
                 </tr>
         
                 <tr>
                     <td>39</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>nuke</span><span class='wanted-tag'>💰 WANTED (137 XP)</span></td>
-                    <td class="net-val">Quakenet</td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>robot</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 ROBOT</span>
+                                    <span style="color: #666; font-size: 0.8em;">#39 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>629</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">329 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>371</td>
-                    <td class="power-val " data-order="88">⚔️ 88</td>
+                    <td style='color: var(--neon-blue);'>629</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>40</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>R0B0T</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>R0B0T</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 R0B0T</span>
+                                    <span style="color: #666; font-size: 0.8em;">#40 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>349</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>349</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>349</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>41</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>CebolaImovel52</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>CebolaImovel52</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 CEBOLAIMOVEL52</span>
+                                    <span style="color: #666; font-size: 0.8em;">#41 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>223</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>223</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>223</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>42</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>FeetLoverLisboa</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>FeetLoverLisboa</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 FEETLOVERLISBOA</span>
+                                    <span style="color: #666; font-size: 0.8em;">#42 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>185</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">PTnet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>185</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>185</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>43</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>payiurtuk</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>payiurtuk</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 PAYIURTUK</span>
+                                    <span style="color: #666; font-size: 0.8em;">#43 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>44</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Falcon</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Falcon</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 FALCON</span>
+                                    <span style="color: #666; font-size: 0.8em;">#44 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>45</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>news</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>news</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 NEWS</span>
+                                    <span style="color: #666; font-size: 0.8em;">#45 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>46</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>juli-e</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>juli-e</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 JULI-E</span>
+                                    <span style="color: #666; font-size: 0.8em;">#46 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>47</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Owl</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Owl</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 OWL</span>
+                                    <span style="color: #666; font-size: 0.8em;">#47 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>48</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Kunik</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Kunik</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 KUNIK</span>
+                                    <span style="color: #666; font-size: 0.8em;">#48 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>49</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Futebol</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Futebol</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 FUTEBOL</span>
+                                    <span style="color: #666; font-size: 0.8em;">#49 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>50</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Calypso</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Calypso</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 CALYPSO</span>
+                                    <span style="color: #666; font-size: 0.8em;">#50 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>51</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>cuddzy</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>cuddzy</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 CUDDZY</span>
+                                    <span style="color: #666; font-size: 0.8em;">#51 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>16</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>16</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>16</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>52</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>HaCkeD</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>HaCkeD</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 HACKED</span>
+                                    <span style="color: #666; font-size: 0.8em;">#52 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>4</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>4</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>53</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>juanjocerero6</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>juanjocerero6</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 JUANJOCERERO6</span>
+                                    <span style="color: #666; font-size: 0.8em;">#53 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>2</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">InTheMansion</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>2</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>2</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>54</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>WeatherBot</span></td>
+                    <td>🔴</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>WeatherBot</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 WEATHERBOT</span>
+                                    <span style="color: #666; font-size: 0.8em;">#54 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ None</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">0 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>0</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>0</td>
+                    <td class="power-val">⚔️ None</td>
                 </tr>
         
                 <tr>
                     <td>55</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Egg</span><span class='wanted-tag'>💰 WANTED (91 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Egg</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 EGG</span>
+                                    <span style="color: #666; font-size: 0.8em;">#55 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 17</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">91 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Body] Armadura Cristalina de Ether (+7)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>0</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>0</td>
+                    <td class="power-val">⚔️ 17</td>
                 </tr>
         
                 <tr>
                     <td>56</td>
-                    <td>🟢 <span class='status-on' data-lang='pt'>Online</span><span class='status-on' data-lang='en'>Online</span></td>
-                    <td><span style='color: white; font-weight: bold;'>Jarvis</span><span class='wanted-tag'>💰 WANTED (112 XP)</span></td>
+                    <td>🟢</td>
+                    <td>
+                        <div class="player-cell">
+                            <span class="" style='color: white; font-weight: bold;'>Jarvis</span><span class='wanted-tag'>💰 WANTED</span>
+                            
+                            <div class="stats-tooltip">
+                                <div class="tooltip-header">
+                                    <span>📊 JARVIS</span>
+                                    <span style="color: #666; font-size: 0.8em;">#56 Global</span>
+                                </div>
+                                
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Nível:</span><span data-lang="en">Level:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>XP:</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Poder:</span><span data-lang="en">Power:</span>
+                                    <span style="color: var(--neon-yellow);">⚔️ 41</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span>
+                                    <span>🔥 0</span>
+                                </div>
+                                <div class="tooltip-stat">
+                                    <span>Bounty:</span>
+                                    <span style="color: var(--neon-red);">112 XP</span>
+                                </div>
+
+                                <div class="tooltip-items">
+                                    <div style="border-bottom: 1px solid #333; margin-bottom: 5px; font-weight: bold;">
+                                        🛡️ <span data-lang="pt">EQUIPAMENTO</span><span data-lang="en">EQUIPMENT</span>
+                                    </div>
+                                    [Weapon] Jarvis Jester Joystick (+31)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                     <td class="net-val">Undernet</td>
                     <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>0</td>
-                    <td class="power-val " data-order="41">⚔️ 41</td>
-                </tr>
-        
-                <tr>
-                    <td>57</td>
-                    <td>🔴 <span class='status-off' data-lang='pt'>Offline</span><span class='status-off' data-lang='en'>Offline</span></td>
-                    <td><span style='color: white; font-weight: bold;'>jupe3636</span></td>
-                    <td class="net-val">Undernet</td>
-                    <td>Lvl 1</td>
-                    <td style='color: var(--neon-blue); font-family: "Fira Code";'>0</td>
-                    <td class="power-val " data-order="10">⚔️ 10</td>
+                    <td style='color: var(--neon-blue);'>0</td>
+                    <td class="power-val">⚔️ 41</td>
                 </tr>
         
                     </tbody>
                 </table>
             </div>
-            <footer style="margin-top: 50px; padding: 20px; border-top: 1px solid var(--border); text-align: center; font-size: 0.8em; color: #555;">
-                <p>© 2026 IdleGame Project | 
-                   <a href="https://github.com/nukam0s/IdleGame-ranking" style="color: #777;">GitHub Source</a>
-                </p>
-                <p data-lang="pt">Onde o teu IDLE se torna uma Lenda.</p>
-                <p data-lang="en">Where your IDLE becomes a Legend.</p>
-            </footer>
         </div>
         <script>
             $(document).ready(function() {
-                $('#rankTable').DataTable({ 
-                    "pageLength": 25, 
-                    "order": [[ 5, "desc" ]],
-                    "responsive": true,
-                    "language": {
-                        // Colocamos o token _MENU_ fora dos spans para ele ser processado corretamente
-                        "lengthMenu": "<span data-lang='pt'>Mostrar</span><span data-lang='en'>Show</span> _MENU_ <span data-lang='pt'>por página</span><span data-lang='en'>per page</span>",
-                        "search": "<span data-lang='pt'>> PESQUISA:</span><span data-lang='en'>> SEARCH:</span>",
-                        "info": "<span data-lang='pt'>A mostrar _START_ a _END_ de _TOTAL_ jogadores</span><span data-lang='en'>Showing _START_ to _END_ of _TOTAL_ players</span>",
-                        "paginate": {
-                            "next": "<span data-lang='pt'>Próximo</span><span data-lang='en'>Next</span>",
-                            "previous": "<span data-lang='pt'>Anterior</span><span data-lang='en'>Previous</span>"
-                        }
-                    }
-                });
-                
-                const savedLang = localStorage.getItem('idleLang') || 'en';
-                setLang(savedLang);
+                $('#rankTable').DataTable({ "pageLength": 25, "order": [[ 5, "desc" ]] });
+                setLang(localStorage.getItem('idleLang') || 'en');
             });
-
             function setLang(lang) {
                 document.body.className = 'lang-' + lang;
-                document.querySelectorAll('.lang-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if(btn.getAttribute('onclick').includes(lang)) btn.classList.add('active');
-                });
                 localStorage.setItem('idleLang', lang);
             }
         </script>
