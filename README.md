@@ -51,10 +51,12 @@
 
 ### ⚔️ Duelos (PvP)
 **PT**: Desafia outros com `!fight` (Limite: 3/24h). Vencer um criminoso garante o seu **Bounty** (XP acumulado).
+
 **EN**: *Challenge others with `!fight` (Limit: 3/24h). Defeating a criminal grants you their **Bounty** (accumulated XP).*
 
 ### ⚠️ Sistema de Saque (Full Loot)
 **PT**: Cada duelo tem **5% de probabilidade** de o vencedor **roubar** um item aleatório do perdedor e equipá-lo no momento!
+
 **EN**: *Every duel has a **5% probability** of the winner **stealing** a random item from the loser and equipping it instantly!*
 
 ---
