@@ -16,6 +16,7 @@
 
 ## 🧠 Aventuras Dinâmicas com IA | Dynamic AI Adventures
 **PT**: O **IdleGame** utiliza a tecnologia **OpenAI gpt-4o-mini** para gerar quests, loots e narrativas em tempo real. Isto garante que a tua jornada seja sempre única; cada item e situação são produzidos exclusivamente para ti e baseados no teu nickname, evitando repetições aborrecidas.
+
 **EN**: * **IdleGame** uses **OpenAI gpt-4o-mini** technology to generate quests, loot, and narratives in real-time. This ensures your journey is always unique; every item and situation is produced exclusively for you and based on your nickname, avoiding boring repetitions.*
 
 ---
