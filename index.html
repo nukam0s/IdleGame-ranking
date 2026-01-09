@@ -15,6 +15,14 @@
                 --neon-yellow: #f0f000; --bg-dark: #050505; --card-bg: #111114;
                 --border: #222; --text: #e0e0e0;
             }
+            .admin-item-glow { 
+                text-shadow: 0 0 10px rgba(0, 212, 255, 0.8); 
+                animation: glow 2s ease-in-out infinite alternate; 
+            }
+            @keyframes glow {
+                from { text-shadow: 0 0 5px var(--neon-blue); }
+                to { text-shadow: 0 0 15px var(--neon-blue), 0 0 20px var(--neon-blue); }
+            }
             .rarity-Common { color: #aaaaaa; }
             .rarity-Rare { color: var(--neon-blue); }
             .rarity-Epic { color: #a335ee; }
@@ -70,8 +78,10 @@
                     <div class="dash-section">
                         <div class="dash-title"><span data-lang="pt">🏛️ Recordes Históricos</span><span data-lang="en">🏛️ Hall of Fame</span></div>
                         <div class="dash-val">
-        🔥 <b>All-time Streak:</b> nuke@PTnet (0)<br>
-        💰 <b>All-time Bounty:</b> nuke@InTheMansion (370 XP)
+        🔥 <b><span data-lang="pt">Vitórias:</span><span data-lang="en">Streak:</span></b> 
+        nuke@PTnet (0)<br>
+        💰 <b><span data-lang="pt">Recompensa:</span><span data-lang="en">Bounty:</span></b> 
+        nuke@DALnet (1061 XP)
     </div>
                     </div>
                     <div class="dash-section" style="grid-column: span 2;">
@@ -99,8 +109,8 @@
                 </div>
                 <div>
                     <b style='color:var(--neon-blue)'><span data-lang='pt'>Acessório</span><span data-lang='en'>Accessory</span>:</b> 
-                    <span class="rarity-Legendary">Quantum Prism Pendant</span> (+98)<br>
-                    <small>nuke@DALnet</small>
+                    <span class="rarity-Legendary">Celestial Prism Cufflinks</span> (+149)<br>
+                    <small>style@DALnet</small>
                 </div></div>
                     </div>
                 </div>
@@ -130,7 +140,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
                             <div>Level: 10</div>
-                            <div>XP: 9183</div>
+                            <div>XP: 9240</div>
                             <div>Power: ⚔️ 213</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Legendary">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Nuclear Fumble Bomb (+76)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Reactor Suit (+27)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Quantum Mind Crown (+10)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Tread Boosters (+21)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Quantum Prism Ankh (+69)</span>
@@ -139,7 +149,7 @@
                 </td>
                 <td style="color:#666;">Libera</td>
                 <td data-order="10">10</td>
-                <td data-order="9183" style="color:var(--neon-blue); font-family:'Fira Code';">9183</td>
+                <td data-order="9240" style="color:var(--neon-blue); font-family:'Fira Code';">9240</td>
                 <td class="power-val" data-order="213">⚔️ 213</td>
             </tr>
         
@@ -152,7 +162,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 USER</div>
                             <div>Level: 8</div>
-                            <div>XP: 7524</div>
+                            <div>XP: 7618</div>
                             <div>Power: ⚔️ 238</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Epic">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Celestial Wyrm Exosuit (+63)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Thornblade (+62)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Chrono-Woven Bandlet (+25)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Treadboots (+13)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Neural Mirage Crown (+67)</span>
@@ -161,7 +171,7 @@
                 </td>
                 <td style="color:#666;">PTirc</td>
                 <td data-order="8">8</td>
-                <td data-order="7524" style="color:var(--neon-blue); font-family:'Fira Code';">7524</td>
+                <td data-order="7618" style="color:var(--neon-blue); font-family:'Fira Code';">7618</td>
                 <td class="power-val" data-order="238">⚔️ 238</td>
             </tr>
         
@@ -174,7 +184,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
                             <div>Level: 7</div>
-                            <div>XP: 6548</div>
+                            <div>XP: 6622</div>
                             <div>Power: ⚔️ 194</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Quantum Echo Amulet (+6)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Nuclear Aegis Shrouds (+9)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Radiant Conduit Crown (+10)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Step Boosters (+32)</span><span class="item-line rarity-Legendary">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Pulse Sabre (+130)</span>
@@ -183,7 +193,7 @@
                 </td>
                 <td style="color:#666;">InTheMansion</td>
                 <td data-order="7">7</td>
-                <td data-order="6548" style="color:var(--neon-blue); font-family:'Fira Code';">6548</td>
+                <td data-order="6622" style="color:var(--neon-blue); font-family:'Fira Code';">6622</td>
                 <td class="power-val" data-order="194">⚔️ 194</td>
             </tr>
         
@@ -196,7 +206,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 AVATAR</div>
                             <div>Level: 7</div>
-                            <div>XP: 6314</div>
+                            <div>XP: 6396</div>
                             <div>Power: ⚔️ 186</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Glitchy Grappling Hook (+29)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Frostwalkers (+70)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Nebula-infused Exoshell (+28)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Celestial Emblem Of Whispers (+52)</span>
@@ -205,7 +215,7 @@
                 </td>
                 <td style="color:#666;">InTheMansion</td>
                 <td data-order="7">7</td>
-                <td data-order="6314" style="color:var(--neon-blue); font-family:'Fira Code';">6314</td>
+                <td data-order="6396" style="color:var(--neon-blue); font-family:'Fira Code';">6396</td>
                 <td class="power-val" data-order="186">⚔️ 186</td>
             </tr>
         
@@ -218,7 +228,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 JUANJOCERERO</div>
                             <div>Level: 7</div>
-                            <div>XP: 6294</div>
+                            <div>XP: 6351</div>
                             <div>Power: ⚔️ 135</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Juantastic Bug Zapper (+30)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Wyrmskin Harness (+7)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Celestial Synapse Ring (+62)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Synthesis Boots (+10)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Chrono-Phase Visor (+19)</span>
@@ -227,7 +237,7 @@
                 </td>
                 <td style="color:#666;">InTheMansion</td>
                 <td data-order="7">7</td>
-                <td data-order="6294" style="color:var(--neon-blue); font-family:'Fira Code';">6294</td>
+                <td data-order="6351" style="color:var(--neon-blue); font-family:'Fira Code';">6351</td>
                 <td class="power-val" data-order="135">⚔️ 135</td>
             </tr>
         
@@ -240,7 +250,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 MUIRTHEMNE</div>
                             <div>Level: 7</div>
-                            <div>XP: 6140</div>
+                            <div>XP: 6189</div>
                             <div>Power: ⚔️ 60</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Weapon">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Muirthemne's Mischief Cloak (+10)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Spore Treads (+8)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Chrono-Mantle Shimmer (+30)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Celestial Bias Helmet (+5)</span>
@@ -249,7 +259,7 @@
                 </td>
                 <td style="color:#666;">InTheMansion</td>
                 <td data-order="7">7</td>
-                <td data-order="6140" style="color:var(--neon-blue); font-family:'Fira Code';">6140</td>
+                <td data-order="6189" style="color:var(--neon-blue); font-family:'Fira Code';">6189</td>
                 <td class="power-val" data-order="60">⚔️ 60</td>
             </tr>
         
@@ -262,7 +272,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
                             <div>Level: 6</div>
-                            <div>XP: 5690</div>
+                            <div>XP: 5803</div>
                             <div>Power: ⚔️ 250</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Radiant Psionics Helm (+29)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Soul Container (+10)</span><span class="item-line rarity-Legendary">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Nerve Scythe (+141)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Quantum Pouch of Oblivion (+30)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Stomp Boots (+34)</span>
@@ -271,7 +281,7 @@
                 </td>
                 <td style="color:#666;">Snoonet</td>
                 <td data-order="6">6</td>
-                <td data-order="5690" style="color:var(--neon-blue); font-family:'Fira Code';">5690</td>
+                <td data-order="5803" style="color:var(--neon-blue); font-family:'Fira Code';">5803</td>
                 <td class="power-val" data-order="250">⚔️ 250</td>
             </tr>
         
@@ -284,7 +294,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 TOFFEE</div>
                             <div>Level: 6</div>
-                            <div>XP: 5683</div>
+                            <div>XP: 5740</div>
                             <div>Power: ⚔️ 69</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Sticky Sugar Bomb (+12)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Gleaming Etherweave Cloak (+28)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Glowing Sugarbeet Helm (+6)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Chrono-Sugar Locket (+17)</span>
@@ -293,7 +303,7 @@
                 </td>
                 <td style="color:#666;">InTheMansion</td>
                 <td data-order="6">6</td>
-                <td data-order="5683" style="color:var(--neon-blue); font-family:'Fira Code';">5683</td>
+                <td data-order="5740" style="color:var(--neon-blue); font-family:'Fira Code';">5740</td>
                 <td class="power-val" data-order="69">⚔️ 69</td>
             </tr>
         
@@ -306,7 +316,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
                             <div>Level: 6</div>
-                            <div>XP: 5590</div>
+                            <div>XP: 5624</div>
                             <div>Power: ⚔️ 377</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Body">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Oblivion Core (+78)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Radiant Fusion Shell (+27)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Quantum Energy Loop (+24)</span><span class="item-line rarity-Legendary">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Quantum Flux Crown (+123)</span><span class="item-line rarity-Legendary">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Echo Boots (+119)</span>
@@ -315,7 +325,7 @@
                 </td>
                 <td style="color:#666;">Quakenet</td>
                 <td data-order="6">6</td>
-                <td data-order="5590" style="color:var(--neon-blue); font-family:'Fira Code';">5590</td>
+                <td data-order="5624" style="color:var(--neon-blue); font-family:'Fira Code';">5624</td>
                 <td class="power-val" data-order="377">⚔️ 377</td>
             </tr>
         
@@ -350,7 +360,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 V0ID</div>
                             <div>Level: 6</div>
-                            <div>XP: 5047</div>
+                            <div>XP: 5104</div>
                             <div>Power: ⚔️ 17</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Debugging Whimsy Wand (+10)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Armadura Neural Quântica (+1)</span>
@@ -359,7 +369,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="6">6</td>
-                <td data-order="5047" style="color:var(--neon-blue); font-family:'Fira Code';">5047</td>
+                <td data-order="5104" style="color:var(--neon-blue); font-family:'Fira Code';">5104</td>
                 <td class="power-val" data-order="17">⚔️ 17</td>
             </tr>
         
@@ -372,7 +382,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 R2D2</div>
                             <div>Level: 6</div>
-                            <div>XP: 5020</div>
+                            <div>XP: 5077</div>
                             <div>Power: ⚔️ 197</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Legendary">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Droidy McJokeBot (+142)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Cápsula de Aço Galáctico (+1)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Capacete de Cibervigia (+44)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Botas Cibernéticas de Holo-reconhecimento (+4)</span>
@@ -381,7 +391,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="6">6</td>
-                <td data-order="5020" style="color:var(--neon-blue); font-family:'Fira Code';">5020</td>
+                <td data-order="5077" style="color:var(--neon-blue); font-family:'Fira Code';">5077</td>
                 <td class="power-val" data-order="197">⚔️ 197</td>
             </tr>
         
@@ -393,18 +403,18 @@
                         <span class="" style="color:white; font-weight:bold;">r0b0t</span><span class='wanted-tag'>WANTED 💰188</span>
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 R0B0T</div>
-                            <div>Level: 5</div>
-                            <div>XP: 4992</div>
-                            <div>Power: ⚔️ 30</div>
+                            <div>Level: 6</div>
+                            <div>XP: 5049</div>
+                            <div>Power: ⚔️ 32</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            <span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Coroa de Luminância (+7)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Lâmina Eclipsante (+18)</span>
+                            <span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Coroa de Luminância (+7)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Lâmina Eclipsante (+18)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Alloy Exosuit (+1)</span>
                         </div>
                     </div>
                 </td>
                 <td style="color:#666;">Undernet</td>
-                <td data-order="5">5</td>
-                <td data-order="4992" style="color:var(--neon-blue); font-family:'Fira Code';">4992</td>
-                <td class="power-val" data-order="30">⚔️ 30</td>
+                <td data-order="6">6</td>
+                <td data-order="5049" style="color:var(--neon-blue); font-family:'Fira Code';">5049</td>
+                <td class="power-val" data-order="32">⚔️ 32</td>
             </tr>
         
             <tr>
@@ -412,11 +422,33 @@
                 <td style="color:#00ff99">🟢</td>
                 <td>
                     <div class="player-cell">
+                        <span class="" style="color:white; font-weight:bold;">nuke</span><span class='wanted-tag'>WANTED 💰1061</span>
+                        <div class="stats-tooltip">
+                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
+                            <div>Level: 6</div>
+                            <div>XP: 5002</div>
+                            <div>Power: ⚔️ 223</div>
+                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
+                            <span class="item-line rarity-Legendary">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Quantum Synapse Crown (+71)</span><span class="item-line rarity-Legendary">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Quantum Prism Pendant (+98)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Leap Boots (+6)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Shard Launcher (+32)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Exoskeletal Frame (+10)</span>
+                        </div>
+                    </div>
+                </td>
+                <td style="color:#666;">DALnet</td>
+                <td data-order="6">6</td>
+                <td data-order="5002" style="color:var(--neon-blue); font-family:'Fira Code';">5002</td>
+                <td class="power-val" data-order="223">⚔️ 223</td>
+            </tr>
+        
+            <tr>
+                <td>15</td>
+                <td style="color:#00ff99">🟢</td>
+                <td>
+                    <div class="player-cell">
                         <span class="" style="color:white; font-weight:bold;">jupe</span>
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 JUPE</div>
                             <div>Level: 5</div>
-                            <div>XP: 4930</div>
+                            <div>XP: 4987</div>
                             <div>Power: ⚔️ 48</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Ekun's Prankster Pouch (+3)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Coroa dos Sonhos (+13)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Botas de Terra Imortal (+2)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Armadura de Vento Sussurrante (+25)</span>
@@ -425,30 +457,8 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4930" style="color:var(--neon-blue); font-family:'Fira Code';">4930</td>
+                <td data-order="4987" style="color:var(--neon-blue); font-family:'Fira Code';">4987</td>
                 <td class="power-val" data-order="48">⚔️ 48</td>
-            </tr>
-        
-            <tr>
-                <td>15</td>
-                <td style="color:#00ff99">🟢</td>
-                <td>
-                    <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">Frieren</span>
-                        <div class="stats-tooltip">
-                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 FRIEREN</div>
-                            <div>Level: 5</div>
-                            <div>XP: 4903</div>
-                            <div>Power: ⚔️ 31</div>
-                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Mage's Coffee Cup (+24)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Celestial Aegis Weave (+2)</span>
-                        </div>
-                    </div>
-                </td>
-                <td style="color:#666;">Undernet</td>
-                <td data-order="5">5</td>
-                <td data-order="4903" style="color:var(--neon-blue); font-family:'Fira Code';">4903</td>
-                <td class="power-val" data-order="31">⚔️ 31</td>
             </tr>
         
             <tr>
@@ -460,7 +470,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
                             <div>Level: 5</div>
-                            <div>XP: 4900</div>
+                            <div>XP: 4987</div>
                             <div>Power: ⚔️ 162</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Epic">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Leap Boots (+59)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Shatterblade (+33)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Radiant Fusion Carapace (+23)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Quantum Pulse Ring (+21)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Quantum Echo Helm (+21)</span>
@@ -469,7 +479,7 @@
                 </td>
                 <td style="color:#666;">Rizon</td>
                 <td data-order="5">5</td>
-                <td data-order="4900" style="color:var(--neon-blue); font-family:'Fira Code';">4900</td>
+                <td data-order="4987" style="color:var(--neon-blue); font-family:'Fira Code';">4987</td>
                 <td class="power-val" data-order="162">⚔️ 162</td>
             </tr>
         
@@ -478,21 +488,21 @@
                 <td style="color:#00ff99">🟢</td>
                 <td>
                     <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">nuke</span><span class='wanted-tag'>WANTED 💰863</span>
+                        <span class="" style="color:white; font-weight:bold;">Frieren</span>
                         <div class="stats-tooltip">
-                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
+                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 FRIEREN</div>
                             <div>Level: 5</div>
-                            <div>XP: 4891</div>
-                            <div>Power: ⚔️ 222</div>
+                            <div>XP: 4960</div>
+                            <div>Power: ⚔️ 31</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            <span class="item-line rarity-Legendary">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Quantum Synapse Crown (+71)</span><span class="item-line rarity-Legendary">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Quantum Prism Pendant (+98)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Leap Boots (+6)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Shard Launcher (+32)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Exoskeletal Frame (+10)</span>
+                            <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Mage's Coffee Cup (+24)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Celestial Aegis Weave (+2)</span>
                         </div>
                     </div>
                 </td>
-                <td style="color:#666;">DALnet</td>
+                <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4891" style="color:var(--neon-blue); font-family:'Fira Code';">4891</td>
-                <td class="power-val" data-order="222">⚔️ 222</td>
+                <td data-order="4960" style="color:var(--neon-blue); font-family:'Fira Code';">4960</td>
+                <td class="power-val" data-order="31">⚔️ 31</td>
             </tr>
         
             <tr>
@@ -504,7 +514,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 SUKUNA</div>
                             <div>Level: 5</div>
-                            <div>XP: 4882</div>
+                            <div>XP: 4954</div>
                             <div>Power: ⚔️ 44</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Sukuna's Snack Stash (+27)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Armadura de Sombra Etérea (+5)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Crowned Echo Mask (+7)</span>
@@ -513,7 +523,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4882" style="color:var(--neon-blue); font-family:'Fira Code';">4882</td>
+                <td data-order="4954" style="color:var(--neon-blue); font-family:'Fira Code';">4954</td>
                 <td class="power-val" data-order="44">⚔️ 44</td>
             </tr>
         
@@ -526,7 +536,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 GON</div>
                             <div>Level: 5</div>
-                            <div>XP: 4880</div>
+                            <div>XP: 4937</div>
                             <div>Power: ⚔️ 53</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Anel de Luminância Cósmica (+11)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Botas do Vento Etéreo (+31)</span><span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Lâmina Estelar Quebrada (+6)</span>
@@ -535,7 +545,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4880" style="color:var(--neon-blue); font-family:'Fira Code';">4880</td>
+                <td data-order="4937" style="color:var(--neon-blue); font-family:'Fira Code';">4937</td>
                 <td class="power-val" data-order="53">⚔️ 53</td>
             </tr>
         
@@ -548,7 +558,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 BOT</div>
                             <div>Level: 5</div>
-                            <div>XP: 4853</div>
+                            <div>XP: 4931</div>
                             <div>Power: ⚔️ 31</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Debugging Sword 3000 (+15)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Armadura de Etherium (+5)</span><span class="item-line rarity-Common">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Bracelete de Éter (+6)</span>
@@ -557,7 +567,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4853" style="color:var(--neon-blue); font-family:'Fira Code';">4853</td>
+                <td data-order="4931" style="color:var(--neon-blue); font-family:'Fira Code';">4931</td>
                 <td class="power-val" data-order="31">⚔️ 31</td>
             </tr>
         
@@ -570,7 +580,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 AJAH</div>
                             <div>Level: 5</div>
-                            <div>XP: 4809</div>
+                            <div>XP: 4866</div>
                             <div>Power: ⚔️ 39</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Debugging Rod (+10)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Quantum Mindveil (+4)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Arcane Nimbus Sandals (+20)</span>
@@ -579,7 +589,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4809" style="color:var(--neon-blue); font-family:'Fira Code';">4809</td>
+                <td data-order="4866" style="color:var(--neon-blue); font-family:'Fira Code';">4866</td>
                 <td class="power-val" data-order="39">⚔️ 39</td>
             </tr>
         
@@ -592,7 +602,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NEZUKO</div>
                             <div>Level: 5</div>
-                            <div>XP: 4772</div>
+                            <div>XP: 4829</div>
                             <div>Power: ⚔️ 89</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Legendary">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Botas do Sombras Vivas (+84)</span>
@@ -601,7 +611,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4772" style="color:var(--neon-blue); font-family:'Fira Code';">4772</td>
+                <td data-order="4829" style="color:var(--neon-blue); font-family:'Fira Code';">4829</td>
                 <td class="power-val" data-order="89">⚔️ 89</td>
             </tr>
         
@@ -614,7 +624,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 KILLUA</div>
                             <div>Level: 5</div>
-                            <div>XP: 4761</div>
+                            <div>XP: 4818</div>
                             <div>Power: ⚔️ 24</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Void Spark Scythe (+17)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Botas de Sombras Cortantes (+2)</span>
@@ -623,7 +633,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4761" style="color:var(--neon-blue); font-family:'Fira Code';">4761</td>
+                <td data-order="4818" style="color:var(--neon-blue); font-family:'Fira Code';">4818</td>
                 <td class="power-val" data-order="24">⚔️ 24</td>
             </tr>
         
@@ -636,7 +646,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NICOLE</div>
                             <div>Level: 5</div>
-                            <div>XP: 4756</div>
+                            <div>XP: 4813</div>
                             <div>Power: ⚔️ 11</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Precarious Quantum Skin (+3)</span><span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Lâmina de Plasma Arcana (+3)</span>
@@ -645,7 +655,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4756" style="color:var(--neon-blue); font-family:'Fira Code';">4756</td>
+                <td data-order="4813" style="color:var(--neon-blue); font-family:'Fira Code';">4813</td>
                 <td class="power-val" data-order="11">⚔️ 11</td>
             </tr>
         
@@ -658,7 +668,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
                             <div>Level: 5</div>
-                            <div>XP: 4732</div>
+                            <div>XP: 4789</div>
                             <div>Power: ⚔️ 9</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Singularity Blaster (+4)</span>
@@ -667,7 +677,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4732" style="color:var(--neon-blue); font-family:'Fira Code';">4732</td>
+                <td data-order="4789" style="color:var(--neon-blue); font-family:'Fira Code';">4789</td>
                 <td class="power-val" data-order="9">⚔️ 9</td>
             </tr>
         
@@ -680,7 +690,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 CAMILA</div>
                             <div>Level: 5</div>
-                            <div>XP: 4729</div>
+                            <div>XP: 4786</div>
                             <div>Power: ⚔️ 12</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Armadura de Ébano Etéreo (+3)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Capacete de Cibernético Alquímico (+4)</span>
@@ -689,7 +699,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4729" style="color:var(--neon-blue); font-family:'Fira Code';">4729</td>
+                <td data-order="4786" style="color:var(--neon-blue); font-family:'Fira Code';">4786</td>
                 <td class="power-val" data-order="12">⚔️ 12</td>
             </tr>
         
@@ -702,7 +712,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 SLUAGH</div>
                             <div>Level: 5</div>
-                            <div>XP: 4626</div>
+                            <div>XP: 4706</div>
                             <div>Power: ⚔️ 44</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Spectral Prankster Cloak (+11)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Crown of Whispers (+28)</span>
@@ -711,7 +721,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4626" style="color:var(--neon-blue); font-family:'Fira Code';">4626</td>
+                <td data-order="4706" style="color:var(--neon-blue); font-family:'Fira Code';">4706</td>
                 <td class="power-val" data-order="44">⚔️ 44</td>
             </tr>
         
@@ -724,7 +734,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 EIGHTYTWO</div>
                             <div>Level: 5</div>
-                            <div>XP: 4604</div>
+                            <div>XP: 4661</div>
                             <div>Power: ⚔️ 40</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Debugging Spoon (+10)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Revestimento de Plasma (+10)</span><span class="item-line rarity-Common">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Temporal Echo Gem (+7)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Quantum Crown of Whispers (+8)</span>
@@ -733,7 +743,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="5">5</td>
-                <td data-order="4604" style="color:var(--neon-blue); font-family:'Fira Code';">4604</td>
+                <td data-order="4661" style="color:var(--neon-blue); font-family:'Fira Code';">4661</td>
                 <td class="power-val" data-order="40">⚔️ 40</td>
             </tr>
         
@@ -746,7 +756,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 ALICIA</div>
                             <div>Level: 4</div>
-                            <div>XP: 3219</div>
+                            <div>XP: 3276</div>
                             <div>Power: ⚔️ 4</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             ---
@@ -755,7 +765,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="4">4</td>
-                <td data-order="3219" style="color:var(--neon-blue); font-family:'Fira Code';">3219</td>
+                <td data-order="3276" style="color:var(--neon-blue); font-family:'Fira Code';">3276</td>
                 <td class="power-val" data-order="4">⚔️ 4</td>
             </tr>
         
@@ -768,7 +778,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 STYLE</div>
                             <div>Level: 3</div>
-                            <div>XP: 2411</div>
+                            <div>XP: 2515</div>
                             <div>Power: ⚔️ 98</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Whispering Starlink Skin (+27)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Echo Sandals (+5)</span><span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Cursed Gauntlet (+8)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Celestial Neural Helm (+25)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Veil Armor (+30)</span>
@@ -777,7 +787,7 @@
                 </td>
                 <td style="color:#666;">Quakenet</td>
                 <td data-order="3">3</td>
-                <td data-order="2411" style="color:var(--neon-blue); font-family:'Fira Code';">2411</td>
+                <td data-order="2515" style="color:var(--neon-blue); font-family:'Fira Code';">2515</td>
                 <td class="power-val" data-order="98">⚔️ 98</td>
             </tr>
         
@@ -790,7 +800,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 STYLE</div>
                             <div>Level: 2</div>
-                            <div>XP: 1591</div>
+                            <div>XP: 1668</div>
                             <div>Power: ⚔️ 112</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Epic">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Chrono-Crystal Locket (+41)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Phantom Echo Boots (+9)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Celestial Biome Armor (+12)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Thornblade (+47)</span><span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Nebula Crown Amplifier (+1)</span>
@@ -799,7 +809,7 @@
                 </td>
                 <td style="color:#666;">Rizon</td>
                 <td data-order="2">2</td>
-                <td data-order="1591" style="color:var(--neon-blue); font-family:'Fira Code';">1591</td>
+                <td data-order="1668" style="color:var(--neon-blue); font-family:'Fira Code';">1668</td>
                 <td class="power-val" data-order="112">⚔️ 112</td>
             </tr>
         
@@ -812,17 +822,17 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 STYLE</div>
                             <div>Level: 2</div>
-                            <div>XP: 1545</div>
-                            <div>Power: ⚔️ 57</div>
+                            <div>XP: 1617</div>
+                            <div>Power: ⚔️ 196</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            <span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Celestial Neural Halo (+28)</span><span class="item-line rarity-Common">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Glacial Prism Pendant (+10)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Biorhythm Suit (+2)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Voidblade Scepter (+15)</span>
+                            <span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Celestial Neural Halo (+28)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Biorhythm Suit (+2)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Voidblade Scepter (+15)</span><span class="item-line rarity-Legendary">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Celestial Prism Cufflinks (+149)</span>
                         </div>
                     </div>
                 </td>
                 <td style="color:#666;">DALnet</td>
                 <td data-order="2">2</td>
-                <td data-order="1545" style="color:var(--neon-blue); font-family:'Fira Code';">1545</td>
-                <td class="power-val" data-order="57">⚔️ 57</td>
+                <td data-order="1617" style="color:var(--neon-blue); font-family:'Fira Code';">1617</td>
+                <td class="power-val" data-order="196">⚔️ 196</td>
             </tr>
         
             <tr>
@@ -834,7 +844,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 JUPE4316</div>
                             <div>Level: 2</div>
-                            <div>XP: 1539</div>
+                            <div>XP: 1596</div>
                             <div>Power: ⚔️ 2</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             ---
@@ -843,7 +853,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="2">2</td>
-                <td data-order="1539" style="color:var(--neon-blue); font-family:'Fira Code';">1539</td>
+                <td data-order="1596" style="color:var(--neon-blue); font-family:'Fira Code';">1596</td>
                 <td class="power-val" data-order="2">⚔️ 2</td>
             </tr>
         
@@ -856,7 +866,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 STYLE</div>
                             <div>Level: 2</div>
-                            <div>XP: 1364</div>
+                            <div>XP: 1440</div>
                             <div>Power: ⚔️ 36</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Quantum Etherwalkers (+12)</span><span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Voidfire Chakram (+4)</span><span class="item-line rarity-Rare">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Nebula-Crown Visor (+18)</span>
@@ -865,7 +875,7 @@
                 </td>
                 <td style="color:#666;">Libera</td>
                 <td data-order="2">2</td>
-                <td data-order="1364" style="color:var(--neon-blue); font-family:'Fira Code';">1364</td>
+                <td data-order="1440" style="color:var(--neon-blue); font-family:'Fira Code';">1440</td>
                 <td class="power-val" data-order="36">⚔️ 36</td>
             </tr>
         
@@ -878,7 +888,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 GGORE665</div>
                             <div>Level: 2</div>
-                            <div>XP: 1191</div>
+                            <div>XP: 1262</div>
                             <div>Power: ⚔️ 56</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Bioplasmic Vitality Shell (+20)</span><span class="item-line rarity-Epic">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Etheric Tendril Boots (+34)</span>
@@ -887,7 +897,7 @@
                 </td>
                 <td style="color:#666;">Quakenet</td>
                 <td data-order="2">2</td>
-                <td data-order="1191" style="color:var(--neon-blue); font-family:'Fira Code';">1191</td>
+                <td data-order="1262" style="color:var(--neon-blue); font-family:'Fira Code';">1262</td>
                 <td class="power-val" data-order="56">⚔️ 56</td>
             </tr>
         
@@ -900,7 +910,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 MTN</div>
                             <div>Level: 2</div>
-                            <div>XP: 1154</div>
+                            <div>XP: 1222</div>
                             <div>Power: ⚔️ 11</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Nebula Strider Boots (+2)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Skinweave Armor (+7)</span>
@@ -909,12 +919,34 @@
                 </td>
                 <td style="color:#666;">Quakenet</td>
                 <td data-order="2">2</td>
-                <td data-order="1154" style="color:var(--neon-blue); font-family:'Fira Code';">1154</td>
+                <td data-order="1222" style="color:var(--neon-blue); font-family:'Fira Code';">1222</td>
                 <td class="power-val" data-order="11">⚔️ 11</td>
             </tr>
         
             <tr>
                 <td>37</td>
+                <td style="color:#00ff99">🟢</td>
+                <td>
+                    <div class="player-cell">
+                        <span class="" style="color:white; font-weight:bold;">|DarkRis3</span><span class='wanted-tag'>WANTED 💰64</span>
+                        <div class="stats-tooltip">
+                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 |DARKRIS3</div>
+                            <div>Level: 2</div>
+                            <div>XP: 1190</div>
+                            <div>Power: ⚔️ 23</div>
+                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
+                            <span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Nebula Wraith Mask (+8)</span><span class="item-line rarity-Common">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Celestial Echo Pendant (+5)</span><span class="item-line rarity-Common">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Chronoweave Exosuit (+4)</span><span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Quantum Thornblade (+4)</span>
+                        </div>
+                    </div>
+                </td>
+                <td style="color:#666;">Libera</td>
+                <td data-order="2">2</td>
+                <td data-order="1190" style="color:var(--neon-blue); font-family:'Fira Code';">1190</td>
+                <td class="power-val" data-order="23">⚔️ 23</td>
+            </tr>
+        
+            <tr>
+                <td>38</td>
                 <td style="color:#444">🔴</td>
                 <td>
                     <div class="player-cell">
@@ -936,28 +968,6 @@
             </tr>
         
             <tr>
-                <td>38</td>
-                <td style="color:#00ff99">🟢</td>
-                <td>
-                    <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">|DarkRis3</span><span class='wanted-tag'>WANTED 💰64</span>
-                        <div class="stats-tooltip">
-                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 |DARKRIS3</div>
-                            <div>Level: 2</div>
-                            <div>XP: 1119</div>
-                            <div>Power: ⚔️ 18</div>
-                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            <span class="item-line rarity-Common">[<span data-lang="pt">Cabeça</span><span data-lang="en">Head</span>] Nebula Wraith Mask (+8)</span><span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Nebulae Shard Blade (+3)</span><span class="item-line rarity-Common">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Celestial Echo Pendant (+5)</span>
-                        </div>
-                    </div>
-                </td>
-                <td style="color:#666;">Libera</td>
-                <td data-order="2">2</td>
-                <td data-order="1119" style="color:var(--neon-blue); font-family:'Fira Code';">1119</td>
-                <td class="power-val" data-order="18">⚔️ 18</td>
-            </tr>
-        
-            <tr>
                 <td>39</td>
                 <td style="color:#00ff99">🟢</td>
                 <td>
@@ -966,7 +976,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 STYLE</div>
                             <div>Level: 2</div>
-                            <div>XP: 1003</div>
+                            <div>XP: 1060</div>
                             <div>Power: ⚔️ 2</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             ---
@@ -975,7 +985,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="2">2</td>
-                <td data-order="1003" style="color:var(--neon-blue); font-family:'Fira Code';">1003</td>
+                <td data-order="1060" style="color:var(--neon-blue); font-family:'Fira Code';">1060</td>
                 <td class="power-val" data-order="2">⚔️ 2</td>
             </tr>
         
@@ -984,11 +994,11 @@
                 <td style="color:#00ff99">🟢</td>
                 <td>
                     <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">|DarkRis3</span>
+                        <span class="" style="color:white; font-weight:bold;">|DarkRis3</span><span class='wanted-tag'>WANTED 💰65</span>
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 |DARKRIS3</div>
                             <div>Level: 1</div>
-                            <div>XP: 898</div>
+                            <div>XP: 955</div>
                             <div>Power: ⚔️ 9</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Phantom Edge Blaster (+6)</span><span class="item-line rarity-Common">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Chrono-Flux Pendant (+2)</span>
@@ -997,7 +1007,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="1">1</td>
-                <td data-order="898" style="color:var(--neon-blue); font-family:'Fira Code';">898</td>
+                <td data-order="955" style="color:var(--neon-blue); font-family:'Fira Code';">955</td>
                 <td class="power-val" data-order="9">⚔️ 9</td>
             </tr>
         
@@ -1010,7 +1020,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 NUKE</div>
                             <div>Level: 1</div>
-                            <div>XP: 798</div>
+                            <div>XP: 859</div>
                             <div>Power: ⚔️ 8</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Nuclear Noodle Launcher (+7)</span>
@@ -1019,12 +1029,56 @@
                 </td>
                 <td style="color:#666;">PTnet</td>
                 <td data-order="1">1</td>
-                <td data-order="798" style="color:var(--neon-blue); font-family:'Fira Code';">798</td>
+                <td data-order="859" style="color:var(--neon-blue); font-family:'Fira Code';">859</td>
                 <td class="power-val" data-order="8">⚔️ 8</td>
             </tr>
         
             <tr>
                 <td>42</td>
+                <td style="color:#00ff99">🟢</td>
+                <td>
+                    <div class="player-cell">
+                        <span class="" style="color:white; font-weight:bold;">Genuina</span><span class='wanted-tag'>WANTED 💰71</span>
+                        <div class="stats-tooltip">
+                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 GENUINA</div>
+                            <div>Level: 1</div>
+                            <div>XP: 813</div>
+                            <div>Power: ⚔️ 10</div>
+                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
+                            <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Genuina's Glitch Goggles (+9)</span>
+                        </div>
+                    </div>
+                </td>
+                <td style="color:#666;">PTnet</td>
+                <td data-order="1">1</td>
+                <td data-order="813" style="color:var(--neon-blue); font-family:'Fira Code';">813</td>
+                <td class="power-val" data-order="10">⚔️ 10</td>
+            </tr>
+        
+            <tr>
+                <td>43</td>
+                <td style="color:#00ff99">🟢</td>
+                <td>
+                    <div class="player-cell">
+                        <span class="" style="color:white; font-weight:bold;">Benfica</span><span class='wanted-tag'>WANTED 💰139</span>
+                        <div class="stats-tooltip">
+                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 BENFICA</div>
+                            <div>Level: 1</div>
+                            <div>XP: 795</div>
+                            <div>Power: ⚔️ 6</div>
+                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
+                            <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Eagle Eye Scope (+5)</span>
+                        </div>
+                    </div>
+                </td>
+                <td style="color:#666;">PTnet</td>
+                <td data-order="1">1</td>
+                <td data-order="795" style="color:var(--neon-blue); font-family:'Fira Code';">795</td>
+                <td class="power-val" data-order="6">⚔️ 6</td>
+            </tr>
+        
+            <tr>
+                <td>44</td>
                 <td style="color:#444">🔴</td>
                 <td>
                     <div class="player-cell">
@@ -1046,51 +1100,73 @@
             </tr>
         
             <tr>
-                <td>43</td>
-                <td style="color:#444">🔴</td>
-                <td>
-                    <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">Genuina</span><span class='wanted-tag'>WANTED 💰71</span>
-                        <div class="stats-tooltip">
-                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 GENUINA</div>
-                            <div>Level: 1</div>
-                            <div>XP: 763</div>
-                            <div>Power: ⚔️ 10</div>
-                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Genuina's Glitch Goggles (+9)</span>
-                        </div>
-                    </div>
-                </td>
-                <td style="color:#666;">PTnet</td>
-                <td data-order="1">1</td>
-                <td data-order="763" style="color:var(--neon-blue); font-family:'Fira Code';">763</td>
-                <td class="power-val" data-order="10">⚔️ 10</td>
-            </tr>
-        
-            <tr>
-                <td>44</td>
-                <td style="color:#444">🔴</td>
-                <td>
-                    <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">Benfica</span><span class='wanted-tag'>WANTED 💰139</span>
-                        <div class="stats-tooltip">
-                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 BENFICA</div>
-                            <div>Level: 1</div>
-                            <div>XP: 745</div>
-                            <div>Power: ⚔️ 6</div>
-                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Eagle Eye Scope (+5)</span>
-                        </div>
-                    </div>
-                </td>
-                <td style="color:#666;">PTnet</td>
-                <td data-order="1">1</td>
-                <td data-order="745" style="color:var(--neon-blue); font-family:'Fira Code';">745</td>
-                <td class="power-val" data-order="6">⚔️ 6</td>
-            </tr>
-        
-            <tr>
                 <td>45</td>
+                <td style="color:#00ff99">🟢</td>
+                <td>
+                    <div class="player-cell">
+                        <span class="" style="color:white; font-weight:bold;">Futebol</span><span class='wanted-tag'>WANTED 💰114</span>
+                        <div class="stats-tooltip">
+                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 FUTEBOL</div>
+                            <div>Level: 1</div>
+                            <div>XP: 775</div>
+                            <div>Power: ⚔️ 17</div>
+                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
+                            <span class="item-line rarity-Rare">[<span data-lang="pt">Acessório</span><span data-lang="en">Accessory</span>] Brazucas de Plasma (+16)</span>
+                        </div>
+                    </div>
+                </td>
+                <td style="color:#666;">PTnet</td>
+                <td data-order="1">1</td>
+                <td data-order="775" style="color:var(--neon-blue); font-family:'Fira Code';">775</td>
+                <td class="power-val" data-order="17">⚔️ 17</td>
+            </tr>
+        
+            <tr>
+                <td>46</td>
+                <td style="color:#00ff99">🟢</td>
+                <td>
+                    <div class="player-cell">
+                        <span class="" style="color:white; font-weight:bold;">Tempo</span><span class='wanted-tag'>WANTED 💰50</span>
+                        <div class="stats-tooltip">
+                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 TEMPO</div>
+                            <div>Level: 1</div>
+                            <div>XP: 773</div>
+                            <div>Power: ⚔️ 19</div>
+                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
+                            <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Tempo Tuner Trousers (+8)</span><span class="item-line rarity-Common">[<span data-lang="pt">Pés</span><span data-lang="en">Feet</span>] Botas do Relógio Viajante (+10)</span>
+                        </div>
+                    </div>
+                </td>
+                <td style="color:#666;">PTnet</td>
+                <td data-order="1">1</td>
+                <td data-order="773" style="color:var(--neon-blue); font-family:'Fira Code';">773</td>
+                <td class="power-val" data-order="19">⚔️ 19</td>
+            </tr>
+        
+            <tr>
+                <td>47</td>
+                <td style="color:#00ff99">🟢</td>
+                <td>
+                    <div class="player-cell">
+                        <span class="" style="color:white; font-weight:bold;">Bodyguard</span>
+                        <div class="stats-tooltip">
+                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 BODYGUARD</div>
+                            <div>Level: 1</div>
+                            <div>XP: 742</div>
+                            <div>Power: ⚔️ 1</div>
+                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
+                            ---
+                        </div>
+                    </div>
+                </td>
+                <td style="color:#666;">PTnet</td>
+                <td data-order="1">1</td>
+                <td data-order="742" style="color:var(--neon-blue); font-family:'Fira Code';">742</td>
+                <td class="power-val" data-order="1">⚔️ 1</td>
+            </tr>
+        
+            <tr>
+                <td>48</td>
                 <td style="color:#444">🔴</td>
                 <td>
                     <div class="player-cell">
@@ -1112,72 +1188,6 @@
             </tr>
         
             <tr>
-                <td>46</td>
-                <td style="color:#444">🔴</td>
-                <td>
-                    <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">Futebol</span><span class='wanted-tag'>WANTED 💰114</span>
-                        <div class="stats-tooltip">
-                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 FUTEBOL</div>
-                            <div>Level: 1</div>
-                            <div>XP: 725</div>
-                            <div>Power: ⚔️ 1</div>
-                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            ---
-                        </div>
-                    </div>
-                </td>
-                <td style="color:#666;">PTnet</td>
-                <td data-order="1">1</td>
-                <td data-order="725" style="color:var(--neon-blue); font-family:'Fira Code';">725</td>
-                <td class="power-val" data-order="1">⚔️ 1</td>
-            </tr>
-        
-            <tr>
-                <td>47</td>
-                <td style="color:#00ff99">🟢</td>
-                <td>
-                    <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">Tempo</span><span class='wanted-tag'>WANTED 💰50</span>
-                        <div class="stats-tooltip">
-                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 TEMPO</div>
-                            <div>Level: 1</div>
-                            <div>XP: 723</div>
-                            <div>Power: ⚔️ 9</div>
-                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Tempo Tuner Trousers (+8)</span>
-                        </div>
-                    </div>
-                </td>
-                <td style="color:#666;">PTnet</td>
-                <td data-order="1">1</td>
-                <td data-order="723" style="color:var(--neon-blue); font-family:'Fira Code';">723</td>
-                <td class="power-val" data-order="9">⚔️ 9</td>
-            </tr>
-        
-            <tr>
-                <td>48</td>
-                <td style="color:#444">🔴</td>
-                <td>
-                    <div class="player-cell">
-                        <span class="" style="color:white; font-weight:bold;">Bodyguard</span>
-                        <div class="stats-tooltip">
-                            <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 BODYGUARD</div>
-                            <div>Level: 1</div>
-                            <div>XP: 692</div>
-                            <div>Power: ⚔️ 1</div>
-                            <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
-                            ---
-                        </div>
-                    </div>
-                </td>
-                <td style="color:#666;">PTnet</td>
-                <td data-order="1">1</td>
-                <td data-order="692" style="color:var(--neon-blue); font-family:'Fira Code';">692</td>
-                <td class="power-val" data-order="1">⚔️ 1</td>
-            </tr>
-        
-            <tr>
                 <td>49</td>
                 <td style="color:#00ff99">🟢</td>
                 <td>
@@ -1186,7 +1196,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 PYBOT</div>
                             <div>Level: 1</div>
-                            <div>XP: 653</div>
+                            <div>XP: 703</div>
                             <div>Power: ⚔️ 1</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             ---
@@ -1195,7 +1205,7 @@
                 </td>
                 <td style="color:#666;">PTnet</td>
                 <td data-order="1">1</td>
-                <td data-order="653" style="color:var(--neon-blue); font-family:'Fira Code';">653</td>
+                <td data-order="703" style="color:var(--neon-blue); font-family:'Fira Code';">703</td>
                 <td class="power-val" data-order="1">⚔️ 1</td>
             </tr>
         
@@ -1208,7 +1218,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 EGG</div>
                             <div>Level: 1</div>
-                            <div>XP: 629</div>
+                            <div>XP: 698</div>
                             <div>Power: ⚔️ 2</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Common">[<span data-lang="pt">Arma</span><span data-lang="en">Weapon</span>] Overcooked Egg Bomb (+1)</span>
@@ -1217,20 +1227,20 @@
                 </td>
                 <td style="color:#666;">PTnet</td>
                 <td data-order="1">1</td>
-                <td data-order="629" style="color:var(--neon-blue); font-family:'Fira Code';">629</td>
+                <td data-order="698" style="color:var(--neon-blue); font-family:'Fira Code';">698</td>
                 <td class="power-val" data-order="2">⚔️ 2</td>
             </tr>
         
             <tr>
                 <td>51</td>
-                <td style="color:#444">🔴</td>
+                <td style="color:#00ff99">🟢</td>
                 <td>
                     <div class="player-cell">
                         <span class="" style="color:white; font-weight:bold;">robot</span><span class='wanted-tag'>WANTED 💰329</span>
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 ROBOT</div>
                             <div>Level: 1</div>
-                            <div>XP: 629</div>
+                            <div>XP: 679</div>
                             <div>Power: ⚔️ 1</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             ---
@@ -1239,7 +1249,7 @@
                 </td>
                 <td style="color:#666;">PTnet</td>
                 <td data-order="1">1</td>
-                <td data-order="629" style="color:var(--neon-blue); font-family:'Fira Code';">629</td>
+                <td data-order="679" style="color:var(--neon-blue); font-family:'Fira Code';">679</td>
                 <td class="power-val" data-order="1">⚔️ 1</td>
             </tr>
         
@@ -1296,7 +1306,7 @@
                         <div class="stats-tooltip">
                             <div style="border-bottom: 1px solid #333; margin-bottom:5px;">📊 OLD1</div>
                             <div>Level: 1</div>
-                            <div>XP: 224</div>
+                            <div>XP: 281</div>
                             <div>Power: ⚔️ 13</div>
                             <div style="margin-top:10px; border-top: 1px solid #333; padding-top:5px;">🛡️ EQUIPMENT</div>
                             <span class="item-line rarity-Rare">[<span data-lang="pt">Corpo</span><span data-lang="en">Body</span>] Quantum Spun Exosuit (+12)</span>
@@ -1305,7 +1315,7 @@
                 </td>
                 <td style="color:#666;">Undernet</td>
                 <td data-order="1">1</td>
-                <td data-order="224" style="color:var(--neon-blue); font-family:'Fira Code';">224</td>
+                <td data-order="281" style="color:var(--neon-blue); font-family:'Fira Code';">281</td>
                 <td class="power-val" data-order="13">⚔️ 13</td>
             </tr>
         
@@ -1821,8 +1831,8 @@
             <footer>
                 <p>© 2026 IdleGame Project | <a href="https://github.com/nukam0s/IdleGame-ranking" target="_blank">
                     <span data-lang="pt">Como Jogar?</span><span data-lang="en">How to Play?</span></a></p>
-                <p data-lang="pt">Última atualização: 2026-01-09 13:04</p>
-                <p data-lang="en">Last update: 2026-01-09 13:04</p>
+                <p data-lang="pt">Última atualização: 2026-01-09 14:05</p>
+                <p data-lang="en">Last update: 2026-01-09 14:05</p>
             </footer>
         </div>
 
