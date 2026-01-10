@@ -78,11 +78,11 @@
 ---
 
 ## 💎 Raridades de Itens | Item Rarities
-* ⬜ **Common** (Base)
-* 🟦 **Rare** (Poderoso)
-* 🟪 **Epic** (Muito Forte)
-* 🟧 **Legendary** (Extremamente Raro - Glow Laranja)
-* 🟥 **MYTHIC** (Apenas em Raids - Glow Vermelho Pulsante)
+* ⬜ **Common** (Base / *Standard*)
+* 🟦 **Rare** (Poderoso / *Powerful*)
+* 🟪 **Epic** (Muito Forte / *Very Strong*)
+* 🟧 **Legendary** (Extremamente Raro - Glow Laranja / *Extremely Rare - Orange Glow*)
+* 🟥 **MYTHIC** (Apenas em Raids - Glow Vermelho Pulsante / *Only in Raids - Pulsing Red Glow*)
 
 ---
 
