@@ -34,18 +34,42 @@
 
 ---
 
+## ⚒️ A Forja (Crafting) | The Forge
+**PT**: Transforma o teu lixo em ouro! O inventário enche rápido, usa a Forja para reciclar.
+- **Como funciona**: `!forge` funde os teus 2 itens mais fracos (não equipados) num novo item mais forte.
+- **Chance de Upgrade**: Se fundires dois itens da mesma raridade, tens **30% de chance** de o novo item subir de raridade (ex: Rare + Rare = Epic).
+- **Modo Massa**: Usa `!forge 100` para fundir *todos* os itens com menos de 100 Poder de uma vez.
+
+**EN**: *Turn trash into gold! Inventory fills up fast, use the Forge to recycle.*
+- ***How it works**: `!forge` fuses your 2 weakest items (unequipped) into a stronger new one.*
+- ***Upgrade Chance**: If you fuse two items of the same rarity, you have a **30% chance** to upgrade rarity (e.g., Rare + Rare = Epic).*
+- ***Bulk Mode**: Use `!forge 100` to fuse *all* items with less than 100 Power at once.*
+
+---
+
 ## 👹 World Bosses (Raids) | Titãs Mundiais
 **PT**: Ocasionalmente, um Titã colossal ameaça o canal!
 - **Cooperação**: Todos os jogadores devem unir-se. O HP do Boss escala com o número de jogadores.
-- **Ataque**: Use `!attack` ou `!atacar` para causar dano (Baseado no seu Poder).
+- **Ataque**: Use `!attack` para causar dano (Baseado no teu Poder + Nível).
 - **Loot Mítico**: O jogador que causar mais dano (**MVP**) recebe um item de raridade **MYTHIC** (3x Poder) e sobe no ranking de "Boss Kills".
 - **Recompensas**: Todos os participantes ganham XP proporcional ao dano causado.
 
 **EN**: *Occasionally, a colossal Titan threatens the channel!*
 - ***Co-op**: All players must unite. Boss HP scales with the number of players.*
-- ***Attack**: Use `!attack` or `!raid` to deal damage (Based on your Power).*
+- ***Attack**: Use `!attack` to deal damage (Based on your Power + Level).*
 - ***Mythic Loot**: The player who deals the most damage (**MVP**) receives a **MYTHIC** rarity item (3x Power) and climbs the "Boss Kills" ranking.*
 - ***Rewards**: All participants earn XP proportional to the damage dealt.*
+
+---
+
+## 📦 A Caixa de Pandora | Pandora's Box
+**PT**: Um evento raro de **Risco Extremo**. Quando a caixa aparece, digita `!open`.
+- 🟢 **Sorte (50%)**: Ganhas XP massivo ou um Item Épico/Lendário instantâneo.
+- 🔴 **Azar (50%)**: O "Vazio" consome a tua alma. Perdes **10% a 15% do teu XP Total**. Só para os corajosos.
+
+**EN**: *A rare **Extreme Risk** event. When the box appears, type `!open`.*
+- 🟢 ***Luck (50%)**: Gain massive XP or an instant Epic/Legendary Item.*
+- 🔴 ***Doom (50%)**: The "Void" consumes your soul. You lose **10% to 15% of your Total XP**. Only for the brave.*
 
 ---
 
@@ -95,7 +119,10 @@
 | :--- | :--- |
 | `!stats` / `!st` | Vê Nível, XP, Boss Kills e Tempo para Duelo. |
 | `!inv` | Lista os teus 5 slots equipados e itens na mochila. |
+| `!forja` / `!recycle` | Funde os 2 itens mais fracos da mochila num melhor. |
+| `!forja <numero>` | Funde TODOS os itens com poder abaixo desse número. |
 | `!atacar` / `!raid` | Ataca o World Boss ativo (Cooldown: 60s). |
+| `!abrir` / `!open` | Abre a Caixa de Pandora (Risco de perder XP!). |
 | `!luta <nick>` | Inicia um duelo contra um jogador (**Risco de 5% de roubo**). |
 | `!historia` / `!h` | Gera a tua Crónica Épica após acumulares 20 eventos. |
 | `!resp <texto>` | Responde a uma Quest interativa da IA (**Limite de 1 hora**). |
@@ -109,7 +136,10 @@
 | :--- | :--- |
 | `!stats` / `!st` | View Level, XP, Boss Kills, and Duel Timer. |
 | `!inv` | View your 5 equipped slots and items in your backpack. |
+| `!forge` / `!recycle` | Fuses your 2 weakest backpack items into a better one. |
+| `!forge <number>` | Fuses ALL items with power below that number. |
 | `!attack` / `!raid` | Attack the active World Boss (Cooldown: 60s). |
+| `!open` | Opens Pandora's Box (Risk of losing XP!). |
 | `!fight <nick>` | Start a duel against a player (**5% theft risk**). |
 | `!history` / `!h` | Generate your Epic Chronicle after reaching 20 events. |
 | `!ans` | Respond to an interactive AI Quest (**1-hour limit**). |
