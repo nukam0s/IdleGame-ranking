@@ -15,22 +15,37 @@
 ---
 
 ## 🧠 Aventuras Dinâmicas com IA | Dynamic AI Adventures
-**PT**: O **IdleGame** utiliza a tecnologia **OpenAI gpt-4o-mini** para gerar quests, loots e narrativas em tempo real. Isto garante que a tua jornada seja sempre única; cada item e situação são produzidos exclusivamente para ti e baseados no teu nickname, evitando repetições aborrecidas.
+**PT**: O **IdleGame** utiliza a tecnologia **OpenAI gpt-4o-mini** para gerar quests, loots, pets e narrativas em tempo real. Isto garante que a tua jornada seja sempre única; cada item e situação são produzidos exclusivamente para ti e baseados no teu nickname, evitando repetições aborrecidas.
 
-**EN**: * **IdleGame** uses **OpenAI gpt-4o-mini** technology to generate quests, loot, and narratives in real-time. This ensures your journey is always unique; every item and situation is produced exclusively for you and based on your nickname, avoiding boring repetitions.*
+**EN**: * **IdleGame** uses **OpenAI gpt-4o-mini** technology to generate quests, loot, pets, and narratives in real-time. This ensures your journey is always unique; every item and situation is produced exclusively for you and based on your nickname, avoiding boring repetitions.*
 
 ---
 
 ## ⚔️ Mecânicas de Poder | Power Mechanics
 **PT**: O teu progresso é medido pelo **Poder Total**, que dita o teu sucesso em duelos e eventos.
-* **Fórmula**: `Poder = Nível + Soma do Poder dos 5 Itens Equipados`.
+* **Fórmula**: `Poder = Nível + Itens Equipados + Bónus do Pet`.
 * **Os 5 Slots**: 🪖 Cabeça, 🛡️ Corpo, 🗡️ Arma, 🥾 Pés e 💍 Acessório.
 * **Auto-Equip**: O bot equipa automaticamente o item mais forte de cada categoria.
 
 **EN**: *Your progress is measured by **Total Power**, dictating your success in duels and events.*
-* ***Formula**: Power = Level + Sum of Power of the 5 Equipped Items.*
+* ***Formula**: Power = Level + Equipped Items + Pet Bonus.*
 * ***The 5 Slots**: 🪖 Head, 🛡️ Body, 🗡️ Weapon, 🥾 Feet, and 💍 Accessory.*
 * ***Auto-Equip**: The bot automatically equips the strongest item in each category.*
+
+---
+
+## 🐉 Pets & Companheiros | Pets & Companions
+**PT**: Encontra ovos raros e cria monstros leais!
+- **Como obter**: Ovos Misteriosos caem em **World Bosses** (MVP) ou na **Caixa de Pandora**.
+- **Nascimento (`!hatch`)**: A IA gera uma espécie única baseada no teu nome (ex: "Dragão de Nuke").
+- **Evolução (`!feed`)**: Alimenta o teu pet com itens "lixo" do inventário para ele subir de nível.
+- **Bónus**: Pets dão um multiplicador massivo de poder ao dono.
+
+**EN**: *Find rare eggs and raise loyal monsters!*
+- ***How to get**: Mystery Eggs drop from **World Bosses** (MVP) or **Pandora's Box**.*
+- ***Hatching (`!hatch`)**: The AI generates a unique species based on your name (e.g., "Nuke's Dragon").*
+- ***Evolution (`!feed`)**: Feed your pet with "trash" items to level it up.*
+- ***Bonus**: Pets provide a massive power multiplier to the owner.*
 
 ---
 
@@ -50,31 +65,41 @@
 ## 👹 World Bosses (Raids) | Titãs Mundiais
 **PT**: Ocasionalmente, um Titã colossal ameaça o canal!
 - **Cooperação**: Todos os jogadores devem unir-se. O HP do Boss escala com o número de jogadores.
-- **Ataque**: Use `!attack` para causar dano (Baseado no teu Poder + Nível).
-- **Loot Mítico**: O jogador que causar mais dano (**MVP**) recebe um item de raridade **MYTHIC** (3x Poder) e sobe no ranking de "Boss Kills".
+- **Ataque**: Use `!attack` para causar dano (Baseado no teu Poder + Nível + Pet).
+- **Drops**: O MVP tem 20% de chance de ganhar um **Mystery Egg** ou um item **MYTHIC**.
 - **Recompensas**: Todos os participantes ganham XP proporcional ao dano causado.
 
 **EN**: *Occasionally, a colossal Titan threatens the channel!*
 - ***Co-op**: All players must unite. Boss HP scales with the number of players.*
-- ***Attack**: Use `!attack` to deal damage (Based on your Power + Level).*
-- ***Mythic Loot**: The player who deals the most damage (**MVP**) receives a **MYTHIC** rarity item (3x Power) and climbs the "Boss Kills" ranking.*
+- ***Attack**: Use `!attack` to deal damage (Based on your Power + Level + Pet).*
+- ***Drops**: The MVP has a 20% chance to get a **Mystery Egg** or a **MYTHIC** item.*
 - ***Rewards**: All participants earn XP proportional to the damage dealt.*
+
+---
+
+## 🌍 World War | Guerra Mundial
+**PT**: Um evento global onde todos os servidores conectados lutam entre si!
+- **O Evento**: A IA narra uma batalha épica entre os Campeões de cada rede (ex: PTirc vs Libera).
+- **Glória**: A rede vencedora garante XP extra para todos os seus jogadores ativos.
+
+**EN**: *A global event where all connected servers fight each other!*
+- ***The Event**: The AI narrates an epic battle between the Champions of each network (e.g., PTirc vs Libera).*
+- ***Glory**: The winning network secures extra XP for all its active players.*
 
 ---
 
 ## 📦 A Caixa de Pandora | Pandora's Box
 **PT**: Um evento raro de **Risco Extremo**. Quando a caixa aparece, digita `!open`.
-- 🟢 **Sorte (50%)**: Ganhas XP massivo ou um Item Épico/Lendário instantâneo.
-- 🔴 **Azar (50%)**: O "Vazio" consome a tua alma. Perdes **10% a 15% do teu XP Total**. Só para os corajosos.
+- 🟢 **Sorte**: Ganhas XP massivo, um Item Lendário ou um **Ovo de Pet**.
+- 🔴 **Azar**: O "Vazio" consome a tua alma. Perdes **10% do teu XP Total**. Só para os corajosos.
 
 **EN**: *A rare **Extreme Risk** event. When the box appears, type `!open`.*
-- 🟢 ***Luck (50%)**: Gain massive XP or an instant Epic/Legendary Item.*
-- 🔴 ***Doom (50%)**: The "Void" consumes your soul. You lose **10% to 15% of your Total XP**. Only for the brave.*
+- 🟢 ***Luck**: Gain massive XP, a Legendary Item, or a **Pet Egg**.*
+- 🔴 ***Doom**: The "Void" consumes your soul. You lose **10% of your Total XP**. Only for the brave.*
 
 ---
 
 ## 📜 Quests & Crónicas | Quests & Chronicles
-
 ### 1. Quests Interativas | Interactive Quests
 **PT**: O bot lança desafios no chat (Solo ou Grupo). Tens **1 hora** para responder com `!resp <tua ideia>`. A IA avalia a tua criatividade para decidir o resultado e a recompensa.
 
@@ -88,15 +113,12 @@
 ---
 
 ## 🤺 Combate e Risco Real | Combat & Real Risk
-
 ### ⚔️ Duelos (PvP)
-**PT**: Desafia outros com `!fight` (Limite: 3/24h). Vencer um criminoso garante o seu **Bounty** (XP acumulado).
-
-**EN**: *Challenge others with `!fight` (Limit: 3/24h). Defeating a criminal grants you their **Bounty** (accumulated XP).*
+**PT**: Desafia outros com `!fight` (Limite: 3/24h). O Pet do jogador também ajuda no combate!
+**EN**: *Challenge others with `!fight` (Limit: 3/24h). The player's Pet also assists in combat!*
 
 ### ⚠️ Sistema de Saque (Full Loot)
 **PT**: Cada duelo tem **5% de probabilidade** de o vencedor **roubar** um item aleatório do perdedor e equipá-lo no momento!
-
 **EN**: *Every duel has a **5% probability** of the winner **stealing** a random item from the loser and equipping it instantly!*
 
 ---
@@ -117,8 +139,11 @@
 ### 🇵🇹 Português
 | Comando | Descrição |
 | :--- | :--- |
-| `!stats` / `!st` | Vê Nível, XP, Boss Kills e Tempo para Duelo. |
+| `!stats` / `!st` | Vê Nível, XP, Boss Kills e Pet ativo. |
 | `!inv` | Lista os teus 5 slots equipados e itens na mochila. |
+| `!pet` | Vê o estado do teu animal de estimação. |
+| `!feed` | Alimenta o Pet com o item mais fraco da mochila (Dá XP). |
+| `!hatch` | Choca um "Ovo Misterioso" (Se tiveres um). |
 | `!forja` / `!recycle` | Funde os 2 itens mais fracos da mochila num melhor. |
 | `!forja <numero>` | Funde TODOS os itens com poder abaixo desse número. |
 | `!atacar` / `!raid` | Ataca o World Boss ativo (Cooldown: 60s). |
@@ -134,8 +159,11 @@
 ### 🇺🇸 English
 | Command | Description |
 | :--- | :--- |
-| `!stats` / `!st` | View Level, XP, Boss Kills, and Duel Timer. |
+| `!stats` / `!st` | View Level, XP, Boss Kills, and active Pet. |
 | `!inv` | View your 5 equipped slots and items in your backpack. |
+| `!pet` | Check your Pet status and stats. |
+| `!feed` | Feed your Pet with the weakest backpack item (Grants XP). |
+| `!hatch` | Hatch a "Mystery Egg" (If you possess one). |
 | `!forge` / `!recycle` | Fuses your 2 weakest backpack items into a better one. |
 | `!forge <number>` | Fuses ALL items with power below that number. |
 | `!attack` / `!raid` | Attack the active World Boss (Cooldown: 60s). |
@@ -151,13 +179,11 @@
 ---
 
 ## 🌐 Ranking Web | Web Leaderboard
-**PT**: O nosso ranking utiliza **Tooltips Stats**. Passa o rato sobre qualquer jogador para ver o seu **Inventory Card** completo.
-* **Destaques**: Jogadores "Wanted" (Criminosos) e "Champions" (Streak) têm badges especiais.
-* **Boss Kills**: Nova coluna dedicada aos caçadores de titãs.
+**PT**: O nosso ranking utiliza **Tooltips Stats**. Passa o rato sobre qualquer jogador para ver o seu **Inventory Card** completo e o seu **Pet**.
+* **Destaques**: Jogadores "Wanted", "Champions" e Pets Míticos têm brilhos especiais.
 
-**EN**: *Our leaderboard uses **Stats Tooltips**. Hover over any player to see their full **Inventory Card**.*
-* ***Highlights**: "Wanted" (Criminals) and "Champions" (Streak) players have special badges.*
-* ***Boss Kills**: New column dedicated to titan hunters.*
+**EN**: *Our leaderboard uses **Stats Tooltips**. Hover over any player to see their full **Inventory Card** and **Pet**.*
+* ***Highlights**: "Wanted" players, "Champions", and Mythic Pets have special glows.*
 
 ---
 
