@@ -79,11 +79,11 @@
 
 ## 🌍 World War | Guerra Mundial
 **PT**: Um evento global onde todos os servidores conectados lutam entre si!
-- **O Evento**: A IA narra uma batalha épica entre os Campeões de cada rede (ex: PTirc vs Libera).
+- **O Evento**: A IA narra uma batalha épica entre o Campeão de cada rede + 2 jogadores aleatorios (ex: PTirc vs Libera).
 - **Glória**: A rede vencedora garante XP extra para todos os seus jogadores ativos.
 
 **EN**: *A global event where all connected servers fight each other!*
-- ***The Event**: The AI narrates an epic battle between the Champions of each network (e.g., PTirc vs Libera).*
+- ***The Event**: The AI narrates an epic battle between the Champion of each network +2 random players (e.g., PTirc vs Libera).*
 - ***Glory**: The winning network secures extra XP for all its active players.*
 
 ---
