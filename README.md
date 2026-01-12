@@ -78,13 +78,13 @@
 ---
 
 ## 🌍 World War | Guerra Mundial
-**PT**: Um evento global onde todos os servidores conectados lutam entre si!
-- **O Evento**: A IA narra uma batalha épica entre o Campeão de cada rede +2 jogadores aleatorios (ex: PTirc vs Libera).
-- **Glória**: A rede vencedora garante XP extra para todos os seus jogadores ativos.
+**PT**: Um evento diário global onde todos os servidores conectados lutam entre si!
+- **O Evento**: A IA narra uma batalha épica entre o Campeão de cada rede +2 soldados.
+- **Recompensas**: A rede vencedora garante **+500 XP** para todos os seus jogadores ativos e **30% de chance** de receber um item exclusivo dos destroços.
 
-**EN**: *A global event where all connected servers fight each other!*
-- ***The Event**: The AI narrates an epic battle between the Champion of each network +2 random players (e.g., PTirc vs Libera).*
-- ***Glory**: The winning network secures extra XP for all its active players.*
+**EN**: *A daily global event where all connected servers fight each other!*
+- ***The Event**: The AI narrates an epic battle between the Champion of each network +2 soldiers.*
+- ***Rewards**: The winning network secures **+500 XP** for all its active players and a **30% chance** to loot an exclusive item from the debris.*
 
 ---
 
@@ -134,7 +134,7 @@
 
 ## 🕹️ Comandos Disponíveis | Available Commands
 
-*O bot aceita commands em ambas as línguas. (varias aliases) | The bot accepts commands in both languages. (multiple aliases)*
+*O bot aceita comandos em ambas as línguas. (varias aliases) | The bot accepts commands in both languages. (multiple aliases)*
 
 ### 🇵🇹 Português
 | Comando | Descrição |
@@ -170,7 +170,7 @@
 | `!open` | Opens Pandora's Box (Risk of losing XP!). |
 | `!fight <nick>` | Start a duel against a player (**5% theft risk**). |
 | `!history` / `!h` | Generate your Epic Chronicle after reaching 20 events. |
-| `!ans` | Respond to an interactive AI Quest (**1-hour limit**). |
+| `!ans` / `!resp` | Respond to an interactive AI Quest (**1-hour limit**). |
 | `!top` | Shows the Top 10 players of the current network. |
 | `!mw` / `!bounties` | Lists the currently wanted criminals (Most Wanted). |
 | `!champs` | Lists players with active win streaks (Streak 3+). |
