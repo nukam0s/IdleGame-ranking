@@ -115,10 +115,12 @@
 ## 🤺 Combate e Risco Real | Combat & Real Risk
 ### ⚔️ Duelos (PvP)
 **PT**: Desafia outros com `!fight` (Limite: 3/24h). O Pet do jogador também ajuda no combate!
+
 **EN**: *Challenge others with `!fight` (Limit: 3/24h). The player's Pet also assists in combat!*
 
 ### ⚠️ Sistema de Saque (Full Loot)
 **PT**: Cada duelo tem **5% de probabilidade** de o vencedor **roubar** um item aleatório do perdedor e equipá-lo no momento!
+
 **EN**: *Every duel has a **5% probability** of the winner **stealing** a random item from the loser and equipping it instantly!*
 
 ---
