@@ -119,17 +119,17 @@
 ---
 
 ## 🤺 Combate & Apostas | Combat & Betting
-### ⚔️ Duelos (PvP)
+### ⚔️ Duelos/Duels (PvP)
 **PT**: Desafia outros com `!fight` (Limite: 3/24h). O Pet do jogador também ajuda no combate!
 
 **EN**: *Challenge others with `!fight` (Limit: 3/24h). The player's Pet also assists in combat!*
 
-### ⚠️ Sistema de Saque (Full Loot)
+### ⚠️ Sistema de Saque/Item Steal (Full Loot)
 **PT**: Cada duelo tem **1% de probabilidade** de o vencedor **roubar** um item aleatório do perdedor e equipá-lo no momento!
 
 **EN**: *Every duel has a **1% probability** of the winner **stealing** a random item from the loser and equipping it instantly!*
 
-### 💸 Apostas (Clube da Luta)
+### 💸 Apostas/Bets (Fight Club/Clube da Luta)
 **PT**: Usa `!duel <nick> <xp>` para apostar XP real. O vencedor leva a aposta do perdedor (menos 10% de taxa da casa). Sem limite diário!
 
 **EN**: *Use `!duel <nick> <xp>` to bet real XP. The winner takes the loser's bet (minus 10% house tax). No daily limit!*
