@@ -1,166 +1,206 @@
+```markdown
 # 🎮 IdleGame: The AI-Powered Persistent RPG
 > **"Where your IDLE becomes a Legend."** | *"Onde o teu IDLE se torna uma Lenda."*
 
-![RPG](https://img.shields.io/badge/Genre-Idle_RPG-green?style=for-the-badge) ![AI](https://img.shields.io/badge/Powered_by-OpenAI_gpt--4o--mini-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/System-Active-neon?style=for-the-badge) ![Language](https://img.shields.io/badge/Language-Bilingual_PT/EN-orange?style=for-the-badge)
+![RPG](https://img.shields.io/badge/Genre-Idle_RPG-green?style=for-the-badge)
+![AI](https://img.shields.io/badge/Powered_by-OpenAI_gpt--4o--mini-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/System-Active-neon?style=for-the-badge)
+![Language](https://img.shields.io/badge/Language-Bilingual_PT/EN-orange?style=for-the-badge)
 
 ---
 
 ## 🌐 Onde Jogar | Where to Play
 **PT**: Encontra o canal **#idlegame** nas principais redes IRC: **Libera.Chat**, **PTirc**, **Undernet**, **InTheMansion**, **PTnet**, **Quakenet**, entre outras.
 
-**EN**: *Find the **#idlegame** channel on major IRC networks: **Libera.Chat**, **PTirc**, **Undernet**, **InTheMansion**, **PTnet**, **Quakenet**, and more.*
+**EN**: Find the **#idlegame** channel on major IRC networks: **Libera.Chat**, **PTirc**, **Undernet**, **InTheMansion**, **PTnet**, **Quakenet**, and more.
 
-🔗 **Ranking Web:** [https://nukam0s.github.io/IdleGame-ranking/](https://nukam0s.github.io/IdleGame-ranking/)
+🔗 **Ranking Web:** https://nukam0s.github.io/IdleGame-ranking/
+
+---
+
+## ⏳ Progressão Passiva (Idle Real) | True Idle Progression
+**PT**: No IdleGame, o teu personagem evolui **mesmo sem escrever comandos**. Basta estares presente no canal. O tempo conta, a experiência acumula e o mundo avança contigo ou sem ti.
+
+**EN**: In IdleGame, your character progresses **even without typing commands**. Just stay in the channel. Time matters, experience accumulates, and the world moves forward with or without you.
+
+---
+
+## 🧬 Progresso Permanente | Persistent World
+**PT**: O teu progresso é **permanente**. Nível, itens, pets e conquistas acompanham-te entre sessões e até entre **diferentes redes IRC**. Não existem resets escondidos.
+
+**EN**: Your progress is **permanent**. Levels, items, pets, and achievements persist across sessions and even across **different IRC networks**. No hidden resets.
 
 ---
 
 ## 🧠 Aventuras Dinâmicas com IA | Dynamic AI Adventures
-**PT**: O **IdleGame** utiliza a tecnologia **OpenAI gpt-4o-mini** para gerar quests, loots, pets e narrativas em tempo real. Isto garante que a tua jornada seja sempre única; cada item e situação são produzidos exclusivamente para ti e baseados no teu nickname, evitando repetições.
+**PT**: O **IdleGame** utiliza a tecnologia **OpenAI gpt-4o-mini** para gerar quests, loots, pets e narrativas em tempo real. Cada evento é criado dinamicamente e pode gerar **consequências reais** no teu personagem.
 
-**EN**: **IdleGame** uses **OpenAI gpt-4o-mini** technology to generate quests, loot, pets, and narratives in real-time. This ensures your journey is always unique; every item and situation is produced exclusively for you and based on your nickname, avoiding repetitions.
+**EN**: **IdleGame** uses **OpenAI gpt-4o-mini** to generate quests, loot, pets, and narratives in real time. Each event is dynamically created and can trigger **real consequences** on your character.
+
+---
+
+## 🎭 Escolhas com Consequências | Choices Matter
+**PT**: As quests da IA não são apenas texto. **As tuas respostas influenciam diretamente o teu progresso**, podendo gerar ganhos, perdas ou eventos inesperados.
+
+**EN**: AI quests are not just narrative. **Your answers directly affect your progression**, potentially causing gains, losses, or unexpected outcomes.
 
 ---
 
 ## ⚔️ Mecânicas de Poder | Power Mechanics
 **PT**: O teu progresso é medido pelo **Poder Total**, que dita o teu sucesso em duelos e eventos.
-* **Fórmula**: `Poder = Nível + Itens Equipados + Bónus do Pet`.
-* **Os 5 Slots**: 🪖 Cabeça, 🛡️ Corpo, 🗡️ Arma, 🥾 Pés e 💍 Acessório.
-* **Auto-Equip**: O bot equipa automaticamente o item mais forte de cada categoria.
+- **Fórmula**: `Poder = Nível + Itens Equipados + Bónus do Pet`
+- **5 Slots**: 🪖 Cabeça, 🛡️ Corpo, 🗡️ Arma, 🥾 Pés, 💍 Acessório
+- **Auto-Equip**: O bot equipa automaticamente o item mais forte de cada categoria
 
-**EN**: *Your progress is measured by **Total Power**, dictating your success in duels and events.*
-* ***Formula**: Power = Level + Equipped Items + Pet Bonus.*
-* ***The 5 Slots**: 🪖 Head, 🛡️ Body, 🗡️ Weapon, 🥾 Feet, and 💍 Accessory.*
-* ***Auto-Equip**: The bot automatically equips the strongest item in each category.*
+**EN**:
+- **Formula**: `Power = Level + Equipped Items + Pet Bonus`
+- **5 Slots**: Head, Body, Weapon, Feet, Accessory
+- **Auto-Equip** enabled
 
 ---
 
 ## ⚖️ Equilíbrio de XP & População | XP Balancing & Population
-**PT**: O IdleGame utiliza um sistema de **XP Dinâmico** para garantir justiça entre canais de diferentes tamanhos.
-* **Multiplicador de População**: As recompensas de XP em Quests e Eventos aumentam **+10% por cada jogador** presente no canal durante o evento.
-* **Escalabilidade**: Canais com mais atividade geram desafios mais difíceis com recompensas superiores.
+**PT**:
+- Recompensas de XP aumentam **+10% por jogador presente**
+- Canais mais ativos geram eventos mais difíceis e mais recompensadores
 
-**EN**: *IdleGame uses a **Dynamic XP** system to ensure fairness across different channel sizes.*
-* ***Population Multiplier**: XP rewards in Quests and Events increase by **+10% for each player** present in the channel during the event.*
-* ***Scalability**: Channels with higher activity generate harder challenges with higher rewards.*
+**EN**:
+- XP rewards increase **+10% per player present**
+- Higher activity scales difficulty and rewards
 
 ---
 
-## 📜 Contratos de Recompensa | Bounty Contracts (Mercenaries)
-**PT**: Criminosos com alto **Bounty** (procurados) podem ter a sua cabeça a prémio!
-- **O Evento**: O bot anuncia um contrato sobre o criminoso mais procurado da rede.
-- **Como Reclamar**: O primeiro jogador a derrotar o alvo num `!duel` ou `!fight` dentro da janela de tempo (2h) recebe o triplo do Bounty em XP!
+## ⚠️ Risco Intencional | Designed Risk
+**PT**: Todo o poder envolve risco. Duelos, apostas, eventos raros e a Caixa de Pandora podem acelerar o progresso ou causar perdas reais. **Nada é gratuito.**
 
-**EN**: *Criminals with high **Bounty** may have a price on their heads!*
-- ***The Event**: The bot announces a contract on the most wanted criminal of the network.*
-- ***How to Claim**: The first player to defeat the target in an official `!duel` or `!fight` within the time window (2h) receives triple the Bounty in XP!*
+**EN**: All power comes with risk. Duels, wagers, rare events, and Pandora’s Box can boost progress or cause real losses. **Nothing is free.**
+
+---
+
+## 📜 Contratos de Recompensa | Bounty Contracts
+**PT**:
+- Alvos procurados são anunciados globalmente
+- Derrotar o alvo em `!duel` ou `!fight` dentro de 2h concede **3× o bounty em XP**
+
+**EN**:
+- Wanted targets are announced globally
+- Defeat them within 2h to earn **3× bounty XP**
 
 ---
 
 ## 🐉 Pets & Companheiros | Pets & Companions
-**PT**: Encontra ovos raros e cria monstros leais!
-- **Como obter**: Ovos Misteriosos caem em **World Bosses** (MVP), **Invasões de Goblins** ou na **Caixa de Pandora**.
-- **Nascimento (`!hatch`)**: A IA gera uma espécie única baseada no teu nome.
-- **Evolução (`!feed`)**: Alimenta o teu pet com itens "lixo" ou outros pets para ele subir de nível.
-- **Fusão (`!absorber`)**: O teu pet ativo devora outro pet para ganhar XP massivo.
+**PT**:
+- Ovos caem em Bosses, Invasões e Pandora
+- `!hatch` cria um pet único
+- `!feed` e `!absorver` evoluem e fundem pets
 
-**EN**: *Find rare eggs and raise loyal monsters!*
-- ***How to get**: Mystery Eggs drop from **World Bosses** (MVP), **Goblin Raids**, or **Pandora's Box**.*
-- ***Hatching (`!hatch`)**: The AI generates a unique species based on your name.*
-- ***Evolution (`!feed`)**: Feed your pet with "trash" items or other pets to level it up.*
-- ***Fusion (`!absorb`)**: Your active pet devours another pet to gain massive XP.*
+**EN**:
+- Eggs drop from Bosses, Raids, and Pandora
+- Hatch, feed, and absorb to evolve pets
 
 ---
 
-## ⚒️ A Forja (Crafting) | The Forge
-**PT**: Transforma o teu lixo em ouro! O inventário enche rápido, usa a Forja para reciclar.
-- **Como funciona**: `!forge` funde os teus 2 itens mais fracos num novo item mais forte.
-- **Chance de Upgrade**: Se fundires dois itens da mesma raridade, tens **30% de chance** de subir a raridade.
-- **Modo Massa**: Usa `!forge 100` para fundir *todos* os itens com menos de 100 Poder de uma vez.
+## ⚒️ A Forja | The Forge
+**PT**:
+- `!forge` funde itens fracos
+- 30% de chance de upgrade ao fundir raridades iguais
+- `!forge 100` para reciclagem em massa
 
-**EN**: *Turn trash into gold! Inventory fills up fast, use the Forge to recycle.*
-- ***How it works**: `!forge` fuses your 2 weakest items into a stronger new one.*
-- ***Upgrade Chance**: Fusing two items of the same rarity gives a **30% chance** to upgrade rarity.*
-- ***Bulk Mode**: Use `!forge 100` to fuse *all* items with less than 100 Power.*
+**EN**:
+- Fuse weak items
+- 30% rarity upgrade chance
+- Bulk recycling supported
 
 ---
 
 ## 👺 Invasão de Goblins | Goblin Raid
-**PT**: Bandos de Goblins ladrões podem invadir o canal a qualquer momento!
-- **O Evento**: Carregam um saco com **3 a 10 tesouros**.
-- **Como Jogar**: Tens **60 segundos** para usar `!atacar` (ou `!attack`). Cada ataque tem **35% de chance** de saquear um item.
+**PT**:
+- Evento aleatório com 3–10 tesouros
+- 60s para `!atacar`
+- 35% de chance por ataque
 
-**EN**: *Packs of thieving Goblins can invade the channel at any time!*
-- ***The Event**: They carry a bag with **3 to 10 treasures**.*
-- ***How to Play**: You have **60 seconds** to use `!attack`. Each attack has a **35% chance** to snatch an item.*
+**EN**:
+- Random raid
+- 60s attack window
+- 35% chance per hit
 
 ---
 
-## 👹 World Bosses (Raids) | Titãs Mundiais
-**PT**: Um Titã colossal aparece ocasionalmente! Todos devem unir-se para o derrotar.
-- **Ataque**: Usa `!attack` para causar dano. Re-usa o comando para alternar o **Auto-Ataque** (a cada 60s).
-- **Recompensas**: O MVP ganha itens **MYTHIC** ou Ovos. Todos ganham XP proporcional ao dano.
+## 👹 World Bosses | Titans
+**PT**:
+- Ataques manuais ou auto-attack
+- MVP recebe loot MYTHIC ou ovos
+- XP proporcional ao dano
 
-**EN**: *A colossal Titan appears occasionally! Everyone must unite to defeat it.*
-- ***Attack**: Use `!attack` to deal damage. Re-use the command to toggle **Auto-Attack** (every 60s) by typing the command again.*
-- ***Rewards**: MVP wins **MYTHIC** items or Eggs. Everyone earns XP proportional to damage.*
+**EN**:
+- Manual or auto-attack
+- MVP gets MYTHIC loot
+- Damage-based XP
 
 ---
 
 ## 🌍 World War | Guerra Mundial
-**PT**: Evento diário global (22:00h) onde todas as redes ligadas lutam entre si com crónicas bilingues de IA.
-- **Recompensas**: A rede vencedora ganha XP global para todos os jogadores ativos e chance de loot extra.
+**PT**: Evento diário global às **22:00** entre todas as redes.
 
-**EN**: *Daily global event (10:00 PM) where all connected networks fight each other with bilingual AI chronicles.*
-- ***Rewards**: The winning network gains global XP for all active players and extra loot chances.*
+**EN**: Daily global war at **10:00 PM** across all networks.
 
 ---
 
-## 📦 A Caixa de Pandora | Pandora's Box
-**PT**: Evento raro de **Risco Extremo**. Digita `!open` para testar o teu destino.
-- 🟢 **Sorte**: Ganhas XP massivo, um Item Lendário ou um raro **Ovo Misterioso**.
-- 🔴 **Azar**: O "Vazio" consome parte do teu conhecimento. Perdes entre **5% a 15% do teu XP Total** (Limitado a um máximo de 2000 XP).
+## 📦 Caixa de Pandora | Pandora’s Box
+**PT**:
+- Evento raro de risco extremo
+- Ganhos massivos ou perda de 5–15% de XP (máx. 2000)
 
-**EN**: *Rare **Extreme Risk** event. Type `!open` to test your fate.*
-- 🟢 ***Luck**: Massive XP, Legendary Item, or a rare **Mystery Egg**.*
-- 🔴 ***Doom**: The "Void" consumes part of your knowledge. Lose between **5% to 15% of your Total XP** (Capped at a maximum of 2000 XP).*
+**EN**:
+- Extreme risk event
+- Massive gains or capped XP loss
 
 ---
 
 ## 🤺 Combate & Apostas | Combat & Betting
-### ⚔️ Duelos & Roubo
-**PT**: Luta com `!fight <nick>` (3x/dia). Existe **1% de chance** de o vencedor **roubar** um item equipado do perdedor!
+- `!fight <nick>` — 3× por dia, 1% de roubo de item
+- `!duel <nick> <xp>` — aposta de XP real (10% taxa)
 
-**EN**: *Fight with `!fight <nick>` (3x/day). There is a **1% chance** for the winner to **steal** an equipped item from the loser!*
+---
 
-### 💸 Apostas (Fight Club)
-**PT**: `!duel <nick> <xp>` para apostar XP real. O vencedor leva o pote (Taxa da casa: 10%).
+## 🌌 Um Mundo Sempre Ativo | A Living World
+**PT**: O IdleGame funciona **24/7**. Eventos podem acontecer a qualquer momento. Mesmo inativo, o mundo continua.
 
-**EN**: *`!duel <nick> <xp>` to wager real XP. Winner takes the pot (House tax: 10%).*
+**EN**: IdleGame runs **24/7**. Events can happen anytime. Even while idle, the world continues.
+
+---
+
+## 🧠 Estratégia além dos Comandos | Strategy Beyond Commands
+**PT**: Saber quando agir, quando arriscar e quando esperar é parte essencial do jogo.
+
+**EN**: Knowing when to act, risk, or wait is core gameplay.
 
 ---
 
 ## 🕹️ Comandos Disponíveis | Available Commands
 
-| PT (Português) | EN (English) | Descrição / Description |
-| :--- | :--- | :--- |
-| `!stats` / `!st` | `!stats` / `!st` | Ver ficha técnica & Pet. |
-| `!inv` | `!inv` | Inventário & Ovos. |
-| `!top` | `!top` | Top 5 jogadores (Power/XP). |
-| `!pet` | `!pet` | Status do Pet ativo. |
-| `!feed` | `!feed` | Alimentar Pet com itens (XP). |
-| `!absorver <id>`| `!absorb <id>` | Fundir Pets (XP massivo). |
-| `!trocar <id>` | `!switch <id>` | Trocar Pet ativo. |
-| `!hatch` | `!hatch` | Chocar Ovo Misterioso. |
-| `!forja` | `!forge` | Fundir itens fracos (Reciclar). |
-| `!atacar` | `!attack` | Atacar Boss ou Goblins ativos. |
-| `!abrir` | `!open` | Abrir Caixa de Pandora. |
-| `!luta <nick>` | `!fight <nick>` | Duelo amigável (Risco de Roubo). |
-| `!aposta <nk><xp>`| `!duel <nk><xp>` | Desafio de aposta de XP real. |
-| `!aceitar` | `!accept` | Aceitar aposta pendente. |
-| `!resp <texto>` | `!ans <text>` | Responder a Quest da IA. |
-| `!historia` | `!history` | Gerar Crónica Épica (20 eventos). |
-| `!mw` / `!bounties`| `!mw` / `!bounties`| Lista de Mais Procurados. |
+| PT | EN | Description |
+|----|----|-------------|
+| `!stats` | `!stats` | Status & Pet |
+| `!inv` | `!inv` | Inventory |
+| `!top` | `!top` | Rankings |
+| `!pet` | `!pet` | Active Pet |
+| `!feed` | `!feed` | Feed Pet |
+| `!absorver` | `!absorb` | Absorb Pet |
+| `!trocar` | `!switch` | Switch Pet |
+| `!hatch` | `!hatch` | Hatch Egg |
+| `!forja` | `!forge` | Forge Items |
+| `!atacar` | `!attack` | Attack Event |
+| `!abrir` | `!open` | Pandora |
+| `!luta` | `!fight` | Friendly Fight |
+| `!aposta` | `!duel` | XP Wager |
+| `!aceitar` | `!accept` | Accept Duel |
+| `!resp` | `!ans` | Quest Answer |
+| `!historia` | `!history` | Epic Chronicle |
+| `!mw` | `!bounties` | Most Wanted |
 
 ---
-**© 2026 IdleGame Project**
+
+**© 2026 IdleGame Project**  
 *Transformando o teu IDLE numa aventura épica.*
+```
