@@ -38,13 +38,15 @@
 **PT**: Encontra ovos raros e cria monstros leais!
 - **Como obter**: Ovos Misteriosos caem em **World Bosses** (MVP) ou na **Caixa de Pandora**.
 - **Nascimento (`!hatch`)**: A IA gera uma espécie única baseada no teu nome (ex: "Dragão de Nuke").
-- **Evolução (`!feed`)**: Alimenta o teu pet com itens "lixo" do inventário para ele subir de nível.
+- **Evolução (`!feed`)**: Alimenta o teu pet com itens "lixo" da mochila para ele subir de nível.
+- **Fusão (`!absorb`)**: O teu pet ativo devora outro pet para ganhar XP massivo.
 - **Bónus**: Pets dão um multiplicador massivo de poder ao dono.
 
 **EN**: *Find rare eggs and raise loyal monsters!*
 - ***How to get**: Mystery Eggs drop from **World Bosses** (MVP) or **Pandora's Box**.*
 - ***Hatching (`!hatch`)**: The AI generates a unique species based on your name (e.g., "Nuke's Dragon").*
 - ***Evolution (`!feed`)**: Feed your pet with "trash" items to level it up.*
+- ***Fusion (`!absorb`)**: Your active pet devours another pet to gain massive XP.*
 - ***Bonus**: Pets provide a massive power multiplier to the owner.*
 
 ---
@@ -91,19 +93,23 @@
 ## 📦 A Caixa de Pandora | Pandora's Box
 **PT**: Um evento raro de **Risco Extremo**. Quando a caixa aparece, digita `!open`.
 - 🟢 **Sorte**: Ganhas XP massivo, um Item Lendário ou um **Ovo de Pet**.
-- 🔴 **Azar**: O "Vazio" consome a tua alma. Perdes **10% do teu XP Total**. Só para os corajosos.
+- 🔴 **Azar**: O "Vazio" consome a tua alma. Perdes **10% do teu XP Total** (Max 3000 XP). Só para os corajosos.
 
 **EN**: *A rare **Extreme Risk** event. When the box appears, type `!open`.*
 - 🟢 ***Luck**: Gain massive XP, a Legendary Item, or a **Pet Egg**.*
-- 🔴 ***Doom**: The "Void" consumes your soul. You lose **10% of your Total XP**. Only for the brave.*
+- 🔴 ***Doom**: The "Void" consumes your soul. You lose **10% of your Total XP** (Max 3000 XP). Only for the brave.*
 
 ---
 
 ## 📜 Quests & Crónicas | Quests & Chronicles
 ### 1. Quests Interativas | Interactive Quests
-**PT**: O bot lança desafios no chat (Solo ou Grupo). Tens **1 hora** para responder com `!resp <tua ideia>`. A IA avalia a tua criatividade para decidir o resultado e a recompensa.
+**PT**: O bot lança desafios no chat.
+* **Solo**: Resolve-se instantaneamente com `!ans <ação>`.
+* **Grupo**: Os jogadores têm **60 segundos** para responder. A IA avalia a cooperação do grupo.
 
-**EN**: *The bot issues challenges in chat (Solo or Group). You have **1 hour** to answer with `!ans <your idea>` or `!resp <your idea>`. The AI evaluates your creativity to decide the outcome and reward.*
+**EN**: *The bot issues challenges in chat.*
+* ***Solo**: Resolves instantly with `!ans <action>`.*
+* ***Group**: Players have **60 seconds** to respond. The AI evaluates group cooperation.*
 
 ### 2. Crónicas Épicas (20/20) | Epic Chronicles
 **PT**: Cada 20 eventos geram uma crónica épica compilada pela IA com um link externo permanente. O histórico faz reset após a geração.
@@ -112,16 +118,21 @@
 
 ---
 
-## 🤺 Combate e Risco Real | Combat & Real Risk
+## 🤺 Combate & Apostas | Combat & Betting
 ### ⚔️ Duelos (PvP)
 **PT**: Desafia outros com `!fight` (Limite: 3/24h). O Pet do jogador também ajuda no combate!
 
 **EN**: *Challenge others with `!fight` (Limit: 3/24h). The player's Pet also assists in combat!*
 
 ### ⚠️ Sistema de Saque (Full Loot)
-**PT**: Cada duelo tem **5% de probabilidade** de o vencedor **roubar** um item aleatório do perdedor e equipá-lo no momento!
+**PT**: Cada duelo tem **1% de probabilidade** de o vencedor **roubar** um item aleatório do perdedor e equipá-lo no momento!
 
-**EN**: *Every duel has a **5% probability** of the winner **stealing** a random item from the loser and equipping it instantly!*
+**EN**: *Every duel has a **1% probability** of the winner **stealing** a random item from the loser and equipping it instantly!*
+
+### 💸 Apostas (Clube da Luta)
+**PT**: Usa `!duel <nick> <xp>` para apostar XP real. O vencedor leva a aposta do perdedor (menos 10% de taxa da casa). Sem limite diário!
+
+**EN**: *Use `!duel <nick> <xp>` to bet real XP. The winner takes the loser's bet (minus 10% house tax). No daily limit!*
 
 ---
 
@@ -136,46 +147,50 @@
 
 ## 🕹️ Comandos Disponíveis | Available Commands
 
-*O bot aceita comandos em ambas as línguas. (varias aliases) | The bot accepts commands in both languages. (multiple aliases)*
+*O bot aceita comandos em ambas as línguas (várias aliases). | The bot accepts commands in both languages (multiple aliases).*
 
 ### 🇵🇹 Português
 | Comando | Descrição |
 | :--- | :--- |
-| `!stats` / `!st` | Vê Nível, XP, Boss Kills e Pet ativo. |
+| `!stats` / `!st` | Vê Nível, XP, Poder, Rankings, Boss Kills e Pet ativo. |
 | `!inv` | Lista os teus 5 slots equipados e itens na mochila. |
+| `!top` | Mostra o Top 5 de jogadores (Power) da rede atual. |
 | `!pet` | Vê o estado do teu animal de estimação. |
-| `!feed` | Alimenta o Pet com o item mais fraco da mochila (Dá XP). |
+| `!feed` | Alimenta o Pet com itens "lixo" da mochila (Dá XP). |
+| `!absorver <id>` | O Pet ativo come outro Pet para ganhar XP massivo. |
+| `!trocar <id>` | Troca o teu Pet ativo por outro do canil. |
 | `!hatch` | Choca um "Ovo Misterioso" (Se tiveres um). |
-| `!forja` / `!recycle` | Funde os 2 itens mais fracos da mochila num melhor. |
-| `!forja <numero>` | Funde TODOS os itens com poder abaixo desse número. |
+| `!forja` | Funde os 2 itens mais fracos da mochila num melhor. |
 | `!atacar` / `!raid` | Ataca o World Boss ativo (Cooldown: 60s). |
-| `!abrir` / `!open` | Abre a Caixa de Pandora (Risco de perder XP!). |
-| `!luta <nick>` | Inicia um duelo contra um jogador (**Risco de 5% de roubo**). |
-| `!historia` / `!h` | Gera a tua Crónica Épica após acumulares 20 eventos. |
-| `!resp <texto>` | Responde a uma Quest interativa da IA (**Limite de 1 hora**). |
-| `!top` | Mostra o Top 10 de jogadores da rede atual. |
-| `!mw` / `!criminosos` | Lista os criminosos mais procurados (Most Wanted). |
-| `!campeoes` | Lista jogadores com sequências de vitórias ativas (Streak 3+). |
+| `!abrir` | Abre a Caixa de Pandora (Risco de perder XP!). |
+| `!luta <nick>` | Inicia um duelo amigável (**Risco de 1% de roubo**). |
+| `!aposta <nick> <xp>` | Desafia alguém para um duelo a dinheiro (XP). |
+| `!aceitar` | Aceita um desafio de aposta pendente. |
+| `!resp <texto>` | Responde a uma Quest interativa da IA. |
+| `!historia` | Gera a tua Crónica Épica após 20 eventos. |
+| `!mw` / `!bounties` | Lista os criminosos mais procurados. |
 | `!nick <nome>` | Altera o teu nickname dentro do jogo. |
 
 ### 🇺🇸 English
 | Command | Description |
 | :--- | :--- |
-| `!stats` / `!st` | View Level, XP, Boss Kills, and active Pet. |
+| `!stats` / `!st` | View Level, XP, Power, Rankings, Boss Kills, and active Pet. |
 | `!inv` | View your 5 equipped slots and items in your backpack. |
+| `!top` | Shows the Top 5 players (Power) of the current network. |
 | `!pet` | Check your Pet status and stats. |
-| `!feed` | Feed your Pet with the weakest backpack item (Grants XP). |
+| `!feed` | Feed your Pet with "trash" items (Grants XP). |
+| `!absorb <id>` | Active Pet devours another Pet for massive XP. |
+| `!switch <id>` | Swap your active Pet with one from the kennel. |
 | `!hatch` | Hatch a "Mystery Egg" (If you possess one). |
-| `!forge` / `!recycle` | Fuses your 2 weakest backpack items into a better one. |
-| `!forge <number>` | Fuses ALL items with power below that number. |
+| `!forge` | Fuses your 2 weakest backpack items into a better one. |
 | `!attack` / `!raid` | Attack the active World Boss (Cooldown: 60s). |
 | `!open` | Opens Pandora's Box (Risk of losing XP!). |
-| `!fight <nick>` | Start a duel against a player (**5% theft risk**). |
-| `!history` / `!h` | Generate your Epic Chronicle after reaching 20 events. |
-| `!ans` / `!resp` | Respond to an interactive AI Quest (**1-hour limit**). |
-| `!top` | Shows the Top 10 players of the current network. |
-| `!mw` / `!bounties` | Lists the currently wanted criminals (Most Wanted). |
-| `!champs` | Lists players with active win streaks (Streak 3+). |
+| `!fight <nick>` | Start a friendly duel (**1% theft risk**). |
+| `!duel <nick> <xp>` | Challenge someone to a wager duel (XP). |
+| `!accept` | Accept a pending duel challenge. |
+| `!ans` / `!resp` | Respond to an interactive AI Quest. |
+| `!history` | Generate your Epic Chronicle after 20 events. |
+| `!mw` / `!bounties` | Lists the currently wanted criminals. |
 | `!nick <name>` | Change your in-game nickname. |
 
 ---
