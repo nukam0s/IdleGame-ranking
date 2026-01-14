@@ -36,11 +36,11 @@
 
 ## ⚖️ Equilíbrio de XP & População | XP Balancing & Population
 **PT**: O IdleGame utiliza um sistema de **XP Dinâmico** para garantir justiça entre canais de diferentes tamanhos.
-* **Multiplicador de População**: As recompensas de XP aumentam **+10% por cada jogador** presente no canal durante o evento.
+* **Multiplicador de População**: As recompensas de XP em Quests e Eventos aumentam **+10% por cada jogador** presente no canal durante o evento.
 * **Escalabilidade**: Canais com mais atividade geram desafios mais difíceis com recompensas superiores.
 
 **EN**: *IdleGame uses a **Dynamic XP** system to ensure fairness across different channel sizes.*
-* ***Population Multiplier**: XP rewards increase by **+10% for each player** present in the channel during the event.*
+* ***Population Multiplier**: XP rewards in Quests and Events increase by **+10% for each player** present in the channel during the event.*
 * ***Scalability**: Channels with higher activity generate harder challenges with higher rewards.*
 
 ---
@@ -75,7 +75,7 @@
 **PT**: Transforma o teu lixo em ouro! O inventário enche rápido, usa a Forja para reciclar.
 - **Como funciona**: `!forge` funde os teus 2 itens mais fracos num novo item mais forte.
 - **Chance de Upgrade**: Se fundires dois itens da mesma raridade, tens **30% de chance** de subir a raridade.
-- **Modo Massa**: Usa `!forge 100` para fundir *todos* os itens com menos de 100 Poder.
+- **Modo Massa**: Usa `!forge 100` para fundir *todos* os itens com menos de 100 Poder de uma vez.
 
 **EN**: *Turn trash into gold! Inventory fills up fast, use the Forge to recycle.*
 - ***How it works**: `!forge` fuses your 2 weakest items into a stronger new one.*
@@ -101,41 +101,41 @@
 - **Recompensas**: O MVP ganha itens **MYTHIC** ou Ovos. Todos ganham XP proporcional ao dano.
 
 **EN**: *A colossal Titan appears occasionally! Everyone must unite to defeat it.*
-- ***Attack**: Use `!attack` to deal damage. Re-use the command to toggle **Auto-Attack** (every 60s).*
+- ***Attack**: Use `!attack` to deal damage. Re-use the command to toggle **Auto-Attack** (every 60s) by typing the command again.*
 - ***Rewards**: MVP wins **MYTHIC** items or Eggs. Everyone earns XP proportional to damage.*
 
 ---
 
 ## 🌍 World War | Guerra Mundial
-**PT**: Evento diário global (22:00h) onde todas as redes lutam entre si com crónicas bilingues de IA.
-- **Recompensas**: Rede vencedora ganha **+500 XP** global e chance de loot extra.
+**PT**: Evento diário global (22:00h) onde todas as redes ligadas lutam entre si com crónicas bilingues de IA.
+- **Recompensas**: A rede vencedora ganha XP global para todos os jogadores ativos e chance de loot extra.
 
-**EN**: *Daily global event (10:00 PM) where networks fight each other with bilingual AI chronicles.*
-- ***Rewards**: Winning network gains global **+500 XP** and extra loot chances.*
+**EN**: *Daily global event (10:00 PM) where all connected networks fight each other with bilingual AI chronicles.*
+- ***Rewards**: The winning network gains global XP for all active players and extra loot chances.*
 
 ---
 
 ## 📦 A Caixa de Pandora | Pandora's Box
-**PT**: Evento raro de **Risco Extremo**. Digita `!open`.
-- 🟢 **Sorte**: Ganhas XP massivo, Item Lendário ou Ovo.
-- 🔴 **Azar**: Perdes **10% do teu XP Total** (Max 3000 XP).
+**PT**: Evento raro de **Risco Extremo**. Digita `!open` para testar o teu destino.
+- 🟢 **Sorte**: Ganhas XP massivo, um Item Lendário ou um raro **Ovo Misterioso**.
+- 🔴 **Azar**: O "Vazio" consome parte do teu conhecimento. Perdes entre **5% a 15% do teu XP Total** (Limitado a um máximo de 2000 XP).
 
-**EN**: *Rare **Extreme Risk** event. Type `!open`.*
-- 🟢 ***Luck**: Massive XP, Legendary Item, or Egg.*
-- 🔴 ***Doom**: Lose **10% of your Total XP** (Max 3000 XP).*
+**EN**: *Rare **Extreme Risk** event. Type `!open` to test your fate.*
+- 🟢 ***Luck**: Massive XP, Legendary Item, or a rare **Mystery Egg**.*
+- 🔴 ***Doom**: The "Void" consumes part of your knowledge. Lose between **5% to 15% of your Total XP** (Capped at a maximum of 2000 XP).*
 
 ---
 
 ## 🤺 Combate & Apostas | Combat & Betting
 ### ⚔️ Duelos & Roubo
-**PT**: Luta com `!fight` (3x/dia). Existe **1% de chance** de o vencedor **roubar** um item do perdedor!
+**PT**: Luta com `!fight <nick>` (3x/dia). Existe **1% de chance** de o vencedor **roubar** um item equipado do perdedor!
 
-**EN**: *Fight with `!fight` (3x/day). There is a **1% chance** for the winner to **steal** an item!*
+**EN**: *Fight with `!fight <nick>` (3x/day). There is a **1% chance** for the winner to **steal** an equipped item from the loser!*
 
 ### 💸 Apostas (Fight Club)
-**PT**: `!duel <nick> <xp>` para apostar XP real. O vencedor leva o pote (Taxa: 10%).
+**PT**: `!duel <nick> <xp>` para apostar XP real. O vencedor leva o pote (Taxa da casa: 10%).
 
-**EN**: *`!duel <nick> <xp>` to wager real XP. Winner takes the pot (Tax: 10%).*
+**EN**: *`!duel <nick> <xp>` to wager real XP. Winner takes the pot (House tax: 10%).*
 
 ---
 
@@ -151,24 +151,15 @@
 | `!absorver <id>`| `!absorb <id>` | Fundir Pets (XP massivo). |
 | `!trocar <id>` | `!switch <id>` | Trocar Pet ativo. |
 | `!hatch` | `!hatch` | Chocar Ovo Misterioso. |
-| `!forja` | `!forge` | Fundir itens fracos. |
-| `!atacar` | `!attack` | Atacar Boss ou Goblins. |
+| `!forja` | `!forge` | Fundir itens fracos (Reciclar). |
+| `!atacar` | `!attack` | Atacar Boss ou Goblins ativos. |
 | `!abrir` | `!open` | Abrir Caixa de Pandora. |
-| `!luta <nick>` | `!fight <nick>` | Duelo amigável (Risco Roubo). |
-| `!aposta <nk><xp>`| `!duel <nk><xp>` | Desafio de aposta de XP. |
+| `!luta <nick>` | `!fight <nick>` | Duelo amigável (Risco de Roubo). |
+| `!aposta <nk><xp>`| `!duel <nk><xp>` | Desafio de aposta de XP real. |
 | `!aceitar` | `!accept` | Aceitar aposta pendente. |
 | `!resp <texto>` | `!ans <text>` | Responder a Quest da IA. |
 | `!historia` | `!history` | Gerar Crónica Épica (20 eventos). |
-| `!mw` / `!bounties`| `!mw` / `!bounties`| Mais Procurados. |
-
----
-
-## 🛠️ Comandos de Admin | Admin Commands
-* `!event <goblins|boss|war|pandora>`: Spawn imediato de evento.
-* `!giveitem <nick> <slot> <pwr> <nome>`: Dar item customizado.
-* `!givepet <nick> <raridade> <nome>`: Dar Pet específico.
-* `!speed <1-3>`: Ajustar frequência de eventos.
-* `!webupdate`: Forçar atualização do ranking web.
+| `!mw` / `!bounties`| `!mw` / `!bounties`| Lista de Mais Procurados. |
 
 ---
 **© 2026 IdleGame Project**
