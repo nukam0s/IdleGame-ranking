@@ -21,10 +21,10 @@
 
 ---
 
-## 🧬 Progresso Permanente | Persistent World
-**PT**: O teu progresso é **permanente**. Nível, itens, pets e conquistas acompanham-te entre sessões e até entre **diferentes redes IRC**. Não existem resets escondidos.
+## 🧬 Progresso Local | Network-Based Progression
+**PT**: O teu progresso é **permanente dentro de cada rede IRC**. Nível, itens e conquistas acompanham-te entre sessões, mas cada rede representa um universo distinto e independente.
 
-**EN**: *Your progress is **permanent**. Levels, items, pets, and achievements persist across sessions and even across **different IRC networks**. No hidden resets.*
+**EN**: *Your progress is **permanent within each IRC network**. Levels, items, and achievements persist across sessions, but each network represents a distinct and independent universe.*
 
 ---
 
@@ -66,15 +66,8 @@
 
 ---
 
-## ⚠️ Risco Intencional | Designed Risk
-**PT**: Todo o poder vem acompanhado de risco. Duelos, apostas, eventos raros e a Caixa de Pandora podem acelerar o teu progresso… ou fazê-lo regredir. **Nada é gratuito**.
-
-**EN**: *Power always comes with risk. Duels, wagers, rare events and Pandora’s Box can boost your progress… or set you back. **Nothing is free.***
-
----
-
 ## 📜 Contratos de Recompensa | Bounty Contracts (Mercenaries)
-**PT**: Criminosos com alto **Bounty** podem ter a sua cabeça a prémio!
+**PT**: Criminosos com alto **Bounty** (procurados) podem ter a sua cabeça a prémio!
 - **O Evento**: O bot anuncia um contrato sobre o criminoso mais procurado da rede.
 - **Como Reclamar**: O primeiro jogador a derrotar o alvo num `!duel` ou `!fight` dentro da janela de tempo (2h) recebe o triplo do Bounty em XP!
 
@@ -135,9 +128,9 @@
 ---
 
 ## 🌍 World War | Guerra Mundial
-**PT**: Evento diário global (22:00h) entre todas as redes com crónicas de IA.
+**PT**: Evento diário global (22:00h) entre todas as redes com crónicas bilingues narradas por IA.
 
-**EN**: *Daily global event (10:00 PM) across all networks with AI chronicles.*
+**EN**: *Daily global event (10:00 PM) across all networks with AI-narrated bilingual chronicles.*
 
 ---
 
@@ -148,10 +141,32 @@
 
 ---
 
-## 🌌 Um Mundo Sempre Ativo | A Living World
-**PT**: O IdleGame funciona **24/7**. Mesmo inativo, o mundo continua a evoluir e as aventuras a acontecer.
+## 💎 Raridades de Itens | Item Rarities
+* ⬜ **Common** (Base / *Standard*)
+* 🟦 **Rare** (Poderoso / *Powerful*)
+* 🟪 **Epic** (Muito Forte / *Very Strong*)
+* 🟧 **Legendary** (Glow Laranja / *Orange Glow*)
+* 🟥 **MYTHIC** (Apenas em Raids - Glow Pulsante / *Raids only - Pulsing Glow*)
 
-**EN**: *IdleGame runs **24/7**. Even while idle, the world keeps evolving and adventures keep happening.*
+---
+
+## 📜 Crónicas Épicas (20/20) | Epic Chronicles
+**PT**: Cada 20 eventos da tua jornada geram uma crónica única compilada pela IA com link externo permanente.
+
+**EN**: *Every 20 journey events generate a unique AI chronicle with a permanent external link.*
+
+---
+
+## 🤺 Combate & Apostas | Combat & Betting
+### ⚔️ Duelos & Roubo
+**PT**: Luta com `!fight <nick>` (3x/dia). Existe **1% de chance** de o vencedor **roubar** um item equipado do perdedor!
+
+**EN**: *Fight with `!fight <nick>` (3x/day). There is a **1% chance** for the winner to **steal** an equipped item from the loser!*
+
+### 💸 Apostas (Fight Club)
+**PT**: `!duel <nick> <xp>` para apostar XP real. O vencedor leva o pote (Taxa da casa: 10%).
+
+**EN**: *`!duel <nick> <xp>` to wager real XP. Winner takes the pot (House tax: 10%).*
 
 ---
 
@@ -167,14 +182,14 @@
 | `!absorver <id>` | `!absorb <id>` | Fundir Pets (XP massivo). |
 | `!trocar <id>` | `!switch <id>` | Trocar Pet ativo. |
 | `!hatch` | `!hatch` | Chocar Ovo Misterioso. |
-| `!forja` | `!forge` | Fundir itens fracos. |
-| `!atacar` | `!attack` | Atacar Boss ou Goblins. |
+| `!forja` | `!forge` | Fundir itens fracos (Reciclar). |
+| `!atacar` | `!attack` | Atacar Boss ou Goblins ativos. |
 | `!abrir` | `!open` | Abrir Caixa de Pandora. |
-| `!luta <nick>` | `!fight <nick>` | Duelo amigável (1% risco roubo). |
-| `!aposta <nk><xp>` | `!duel <nk><xp>` | Aposta de XP real. |
+| `!luta <nick>` | `!fight <nick>` | Duelo amigável (Risco Roubo). |
+| `!aposta <nk><xp>` | `!duel <nk><xp>` | Desafio de aposta de XP real. |
 | `!aceitar` | `!accept` | Aceitar aposta pendente. |
 | `!resp <texto>` | `!ans <text>` | Responder Quest da IA. |
-| `!historia` | `!history` | Crónica Épica (20 eventos). |
+| `!historia` | `!history` | Gerar Crónica Épica (20 eventos). |
 | `!mw` / `!bounties` | `!mw` / `!bounties` | Lista de Mais Procurados. |
 
 ---
