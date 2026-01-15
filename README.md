@@ -145,16 +145,32 @@
 
 ## 🕹️ Comandos Disponíveis | Available Commands
 
-| PT (Português) | EN (English) | Descrição / Description |
+| Comando / Command | PT (Português) | EN (English) |
 | :--- | :--- | :--- |
-| `!stats` / `!st` | `!stats` / `!st` | Ver ficha técnica & Pet. |
-| `!inv` | `!inv` | Inventário & Ovos. |
-| `!top [global] [xp]` | `!top [global] [xp]` | Ranking de Power ou XP. |
-| `!absorver <id>` | `!absorb <id>` | Fundir Pets para XP massivo. |
-| `!forja [all]` | `!forge [all]` | Fundir itens fracos (Reciclar). |
-| `!atacar` | `!attack` | Atacar Boss ou Goblins. |
-| `!resp <texto>` | `!ans <text>` | Responder Quest da IA. |
-| `!historia` | `!history` | Crónica épica (20 eventos). |
+| `!stats` / `!st` | Ver ficha técnica: Nível, XP, Poder, Duelos, Pet e Ranks. | View character sheet: Level, XP, Power, Duels, Pet, and Ranks. |
+| `!inv` / `!items` | Lista itens equipados, mochila e Ovos Misteriosos. | List equipped items, backpack, and Mystery Eggs. |
+| `!power` / `!pwr` | Detalhe do Poder Total (Base + Nível + Itens + Pet). | Breakdown of Total Power (Base + Level + Items + Pet). |
+| `!top [g] [xp]` | Ranking Top 5. Usa `g` para Global ou `xp` para ordenar por experiência. | Top 5 Ranking. Use `g` for Global or `xp` to sort by experience. |
+| `!pet` / `!p` | Status detalhado do teu companheiro ativo e bónus de combate. | Detailed active pet status and combat bonus. |
+| `!pets` | Canil: Lista todos os teus pets guardados e os seus IDs. | Kennel: List all your stored pets and their IDs. |
+| `!hatch` | Choca um Ovo Misterioso para obter um novo Pet aleatório. | Hatch a Mystery Egg to obtain a new random Pet. |
+| `!feed [all]` | Alimenta o pet com itens da mochila para ganhar XP. | Feed your pet with backpack items to gain XP. |
+| `!absorver <id>` | O Pet Ativo devora o Pet <id> para um ganho massivo de XP. | Active Pet devours Pet <id> for a massive XP gain. |
+| `!trocar <id>` | Substitui o teu pet atual por outro do teu canil usando o ID. | Swap your active pet with another from your kennel using ID. |
+| `!forja [all]` | Funde os itens mais fracos para criar algo superior (30% upgrade). | Fuse your weakest items to create superior gear (30% upgrade). |
+| `!atacar` / `!f` | Ataca (ou liga Auto-Ataque) contra Bosses ou Goblins ativos. | Attack (or toggle Auto-Attack) against active Bosses or Goblins. |
+| `!abrir` / `!open` | Abre a Caixa de Pandora (Risco: Prémio Épico ou Perda de XP). | Open Pandora's Box (Risk: Epic Reward or XP Loss). |
+| `!fight <nick>` | Duelo amigável (3x/dia). 1% chance de ROUBAR um item! | Friendly duel (3x/day). 1% chance to STEAL an item! |
+| `!duel <nk> <xp>` | Desafia um jogador para uma aposta de XP real (Taxa: 10%). | Challenge a player for a real XP wager (10% Fee). |
+| `!aceitar` | Aceita um desafio de Duelo/Aposta pendente. | Accept a pending Duel/Bet challenge. |
+| `!resp <texto>` | Responde a uma Quest interativa da IA (Solo ou Grupo). | Answer an interactive AI Quest (Solo or Group). |
+| `!quests` / `!q` | Lista todas as missões e eventos ativos no canal. | Lists all active missions and events in the channel. |
+| `!historia` | Gera uma Crónica Épica baseada nos teus últimos 20 eventos. | Generate an Epic Chronicle based on your last 20 events. |
+| `!mw` | Lista dos criminosos "Mais Procurados" (Maiores Bounties). | List of the "Most Wanted" criminals (Highest Bounties). |
+| `!champs` | Lista dos jogadores com as maiores sequências de vitórias. | List of players with the highest win streaks. |
+| `!nick <nome>` | Muda o teu nome no jogo (3-15 caracteres alfanuméricos). | Change your in-game name (3-15 alphanumeric chars). |
+| `!token` | (Privado) Recebe o teu código para recuperar a conta no futuro. | (Private) Receive your code to recover your account in the future. |
+| `!recover <tk>` | (Privado) Recupera o teu progresso usando o teu token pessoal. | (Private) Recover your progress using your personal token. |
 
 ---
 
