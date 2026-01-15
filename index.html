@@ -79,129 +79,129 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        const chartData = {chart_data_json};
+        const chartData = {"econ_labels": ["Common", "Rare", "Epic", "Legendary"], "econ_data": [410, 313, 206, 76], "econ_colors": ["#b0b0b0", "#3498db", "#9b59b6", "#e67e22"], "net_labels": ["Undernet", "PTnet", "InTheMansion", "Quakenet", "Libera", "Efnet", "PTirc", "Rizon", "DALnet", "Snoonet"], "net_data": [53, 16, 8, 10, 8, 7, 4, 2, 2, 2]};
 
-        function initCharts() {{
+        function initCharts() {
             Chart.defaults.color = '#a0a0b0';
             Chart.defaults.borderColor = '#2a2a35';
 
-            new Chart(document.getElementById('economyChart'), {{
+            new Chart(document.getElementById('economyChart'), {
                 type: 'doughnut',
-                data: {{
+                data: {
                     labels: chartData.econ_labels,
-                    datasets: [{{
+                    datasets: [{
                         data: chartData.econ_data,
                         backgroundColor: chartData.econ_colors,
                         borderWidth: 0
-                    }}]
-                }},
-                options: {{
+                    }]
+                },
+                options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: {{ legend: {{ position: 'right' }} }}
-                }}
-            }});
+                    plugins: { legend: { position: 'right' } }
+                }
+            });
 
             const netColors = chartData.net_labels.map(() => '#' + Math.floor(Math.random()*16777215).toString(16));
 
-            new Chart(document.getElementById('networkChart'), {{
+            new Chart(document.getElementById('networkChart'), {
                 type: 'pie',
-                data: {{
+                data: {
                     labels: chartData.net_labels,
-                    datasets: [{{
+                    datasets: [{
                         data: chartData.net_data,
                         backgroundColor: netColors,
                         borderWidth: 0
-                    }}]
-                }},
-                options: {{
+                    }]
+                },
+                options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: {{ legend: {{ position: 'right' }} }}
-                }}
-            }});
-        }}
+                    plugins: { legend: { position: 'right' } }
+                }
+            });
+        }
 
-        function updateTime() {{
+        function updateTime() {
             const now = new Date();
             const timeStr = now.toLocaleTimeString();
             document.getElementById('lastUpdated').innerText = timeStr;
-        }}
+        }
 
-        function toggleLang() {{
+        function toggleLang() {
             const btn = document.getElementById('langBtn');
             const isPt = btn.innerText.includes('EN'); 
             const ptEls = document.querySelectorAll('.lang-pt');
             const enEls = document.querySelectorAll('.lang-en');
-            if (isPt) {{
+            if (isPt) {
                 ptEls.forEach(el => el.classList.add('hidden'));
                 enEls.forEach(el => el.classList.remove('hidden'));
                 btn.innerText = '🇵🇹 PT';
                 localStorage.setItem('idle_lang', 'en');
-            }} else {{
+            } else {
                 enEls.forEach(el => el.classList.add('hidden'));
                 ptEls.forEach(el => el.classList.remove('hidden'));
                 btn.innerText = '🇬🇧 EN';
                 localStorage.setItem('idle_lang', 'pt');
-            }}
-        }}
+            }
+        }
         
-        function filterTable() {{
+        function filterTable() {
             var input, filter, table, tr, td, i;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
             table = document.getElementById("playersTable");
             tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {{
+            for (i = 0; i < tr.length; i++) {
                 tdNick = tr[i].getElementsByTagName("td")[1];
                 tdNet = tr[i].getElementsByTagName("td")[2];
-                if (tdNick || tdNet) {{
+                if (tdNick || tdNet) {
                     txtNick = tdNick.textContent || tdNick.innerText;
                     txtNet = tdNet.textContent || tdNet.innerText;
-                    if (txtNick.toUpperCase().indexOf(filter) > -1 || txtNet.toUpperCase().indexOf(filter) > -1) {{
+                    if (txtNick.toUpperCase().indexOf(filter) > -1 || txtNet.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
-                    }} else {{
+                    } else {
                         tr[i].style.display = "none";
-                    }}
-                }}       
-            }}
-        }}
+                    }
+                }       
+            }
+        }
 
-        function sortTable(n) {{
+        function sortTable(n) {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("playersTable");
             switching = true;
             dir = "asc"; 
-            while (switching) {{
+            while (switching) {
                 switching = false;
                 rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {{
+                for (i = 1; i < (rows.length - 1); i++) {
                     shouldSwitch = false;
                     x = rows[i].getElementsByTagName("TD")[n];
                     y = rows[i + 1].getElementsByTagName("TD")[n];
                     var xVal = x.getAttribute("data-val") ? parseInt(x.getAttribute("data-val")) : x.innerHTML.toLowerCase();
                     var yVal = y.getAttribute("data-val") ? parseInt(y.getAttribute("data-val")) : y.innerHTML.toLowerCase();
-                    if (dir == "asc") {{
-                        if (xVal > yVal) {{ shouldSwitch = true; break; }}
-                    }} else if (dir == "desc") {{
-                        if (xVal < yVal) {{ shouldSwitch = true; break; }}
-                    }}
-                }}
-                if (shouldSwitch) {{
+                    if (dir == "asc") {
+                        if (xVal > yVal) { shouldSwitch = true; break; }
+                    } else if (dir == "desc") {
+                        if (xVal < yVal) { shouldSwitch = true; break; }
+                    }
+                }
+                if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
                     switchcount ++;      
-                }} else {{
-                    if (switchcount == 0 && dir == "asc") {{ dir = "desc"; switching = true; }}
-                }}
-            }}
-        }}
+                } else {
+                    if (switchcount == 0 && dir == "asc") { dir = "desc"; switching = true; }
+                }
+            }
+        }
 
-        window.onload = function() {{ 
+        window.onload = function() { 
             if(localStorage.getItem('idle_lang') === 'en') toggleLang(); 
             initCharts();
             updateTime();
-        }}
+        }
     </script>
     </head>
     <body>
@@ -225,7 +225,7 @@
         </div>
         <div class="card stat-card">
             <div class="icon">✨</div>
-            <div class="value">1,154,636</div>
+            <div class="value">1,156,345</div>
             <div class="label"><span class="lang-pt">XP Total Global</span><span class="lang-en hidden">Global Total XP</span></div>
         </div>
     </div>
@@ -260,7 +260,7 @@
         <div class="card"><div class="card-header"><h4><span class="lang-pt">🐉 Top Pets</span><span class="lang-en hidden">🐉 Top Pets</span></h4></div><table class="mini-table"><tr><td><span class='rar-epic'>Juancoceri Fiendling</span><br><span class='subtle'>juanjocerero@InTheMansion</span></td><td class='text-right'>Lvl 7</td></tr><tr><td><span class='rar-rare'>Radiant Cinderfox</span><br><span class='subtle'>nuke@PTirc</span></td><td class='text-right'>Lvl 1</td></tr><tr><td><span class='rar-common'>Nuke Pheromone Hounds</span><br><span class='subtle'>nuke@InTheMansion</span></td><td class='text-right'>Lvl 5</td></tr><tr><td><span class='rar-common'>Blast Hound</span><br><span class='subtle'>nuke@Quakenet</span></td><td class='text-right'>Lvl 2</td></tr><tr><td><span class='rar-common'>Shadowtail Liushou</span><br><span class='subtle'>teamrat@Efnet</span></td><td class='text-right'>Lvl 1</td></tr></table></div>
         <div class="card"><div class="card-header"><h4><span class="lang-pt">⚡ God Tier</span><span class="lang-en hidden">⚡ God Tier</span></h4></div><table class="mini-table"><tr><td><span class='subtle'>[Head]</span> <span class='rar-legendary'>Neural Interface Crown</span><br><span class='subtle'>NullPointer@PTirc</span></td><td class='text-right'>+175</td></tr><tr><td><span class='subtle'>[Body]</span> <span class='rar-legendary'>Capa de Toffee Celestial</span><br><span class='subtle'>toffee@InTheMansion</span></td><td class='text-right'>+173</td></tr><tr><td><span class='subtle'>[Weapon]</span> <span class='rar-legendary'>Genetic Disruption Blade</span><br><span class='subtle'>Avatar@InTheMansion</span></td><td class='text-right'>+173</td></tr><tr><td><span class='subtle'>[Accessory]</span> <span class='rar-legendary'>Phantom Resonance Amulet</span><br><span class='subtle'>nuke@Rizon</span></td><td class='text-right'>+169</td></tr><tr><td><span class='subtle'>[Feet]</span> <span class='rar-legendary'>Avatar Quantum Boots</span><br><span class='subtle'>Avatar@InTheMansion</span></td><td class='text-right'>+146</td></tr></table></div>
         <div class="card"><div class="card-header"><h4><span class="lang-pt">🌍 Guerras</span><span class="lang-en hidden">🌍 World Wars</span></h4></div><table class="mini-table"><tr><td>Rizon</td><td class='text-right'>1 🏆</td></tr><tr><td>InTheMansion</td><td class='text-right'>1 🏆</td></tr><tr><td>Efnet</td><td class='text-right'>1 🏆</td></tr></table></div>
-        <div class="card"><div class="card-header"><h4><span class="lang-pt">🌐 Redes</span><span class="lang-en hidden">🌐 Networks</span></h4></div><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>53 👤 <span class='subtle'>(459,866)</span></td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>16 👤 <span class='subtle'>(130,692)</span></td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>8 👤 <span class='subtle'>(121,778)</span></td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>10 👤 <span class='subtle'>(94,841)</span></td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>8 👤 <span class='subtle'>(92,904)</span></td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>7 👤 <span class='subtle'>(71,259)</span></td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>4 👤 <span class='subtle'>(68,642)</span></td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>2 👤 <span class='subtle'>(40,120)</span></td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>2 👤 <span class='subtle'>(39,351)</span></td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>2 👤 <span class='subtle'>(35,183)</span></td></tr></table></div>
+        <div class="card"><div class="card-header"><h4><span class="lang-pt">🌐 Redes</span><span class="lang-en hidden">🌐 Networks</span></h4></div><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>53 👤 <span class='subtle'>(460,721)</span></td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>16 👤 <span class='subtle'>(130,866)</span></td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>8 👤 <span class='subtle'>(121,866)</span></td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>10 👤 <span class='subtle'>(94,993)</span></td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>8 👤 <span class='subtle'>(93,006)</span></td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>7 👤 <span class='subtle'>(71,375)</span></td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>4 👤 <span class='subtle'>(68,719)</span></td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>2 👤 <span class='subtle'>(40,230)</span></td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>2 👤 <span class='subtle'>(39,373)</span></td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>2 👤 <span class='subtle'>(35,196)</span></td></tr></table></div>
         <div class="card"><div class="card-header"><h4><span class="lang-pt">🏛️ Hall of Fame</span><span class="lang-en hidden">🏛️ Hall of Fame</span></h4></div><table class="mini-table"><tr><td>nuke<span class='net-tag'>@Libera</span></td><td class='text-right'><span class='hof-wins-text'>6 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@Snoonet</span></td><td class='text-right'><span class='hof-wins-text'>6 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@InTheMansion</span></td><td class='text-right'><span class='hof-wins-text'>5 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@PTirc</span></td><td class='text-right'><span class='hof-wins-text'>5 Wins</span></td></tr><tr><td>doc<span class='net-tag'>@PTirc</span></td><td class='text-right'><span class='hof-wins-text'>4 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@DALnet</span></td><td class='text-right'><span class='hof-wins-text'>4 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@Quakenet</span></td><td class='text-right'><span class='hof-wins-text'>4 Wins</span></td></tr><tr><td>~nuke<span class='net-tag'>@Rizon</span></td><td class='text-right'><span class='hof-wins-text'>4 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@PTnet</span></td><td class='text-right'><span class='hof-wins-text'>3 Wins</span></td></tr><tr><td>Avatar<span class='net-tag'>@InTheMansion</span></td><td class='text-right'><span class='hof-wins-text'>2 Wins</span></td></tr></table></div>
     </div>
     
@@ -298,7 +298,7 @@
             </td>
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">24</span></td>
-            <td class="text-right" data-val="23720">23,720</td>
+            <td class="text-right" data-val="23724">23,724</td>
             <td class="text-right power-val" data-val="631">⚔️ 631</td>
         </tr>
         
@@ -315,7 +315,7 @@
             </td>
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right" data-val="21920">21,920</td>
+            <td class="text-right" data-val="21952">21,952</td>
             <td class="text-right power-val" data-val="561">⚔️ 561</td>
         </tr>
         
@@ -332,7 +332,7 @@
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right" data-val="21938">21,938</td>
+            <td class="text-right" data-val="21957">21,957</td>
             <td class="text-right power-val" data-val="541">⚔️ 541</td>
         </tr>
         
@@ -349,7 +349,7 @@
             </td>
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">33</span></td>
-            <td class="text-right" data-val="32210">32,210</td>
+            <td class="text-right" data-val="32229">32,229</td>
             <td class="text-right power-val" data-val="522">⚔️ 522</td>
         </tr>
         
@@ -366,7 +366,7 @@
             </td>
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17938">17,938</td>
+            <td class="text-right" data-val="17941">17,941</td>
             <td class="text-right power-val" data-val="521">⚔️ 521</td>
         </tr>
         
@@ -383,7 +383,7 @@
             </td>
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right" data-val="21413">21,413</td>
+            <td class="text-right" data-val="21432">21,432</td>
             <td class="text-right power-val" data-val="515">⚔️ 515</td>
         </tr>
         
@@ -400,7 +400,7 @@
             </td>
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">12</span></td>
-            <td class="text-right" data-val="11463">11,463</td>
+            <td class="text-right" data-val="11472">11,472</td>
             <td class="text-right power-val" data-val="505">⚔️ 505</td>
         </tr>
         
@@ -417,7 +417,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right" data-val="21881">21,881</td>
+            <td class="text-right" data-val="21900">21,900</td>
             <td class="text-right power-val" data-val="486">⚔️ 486</td>
         </tr>
         
@@ -434,7 +434,7 @@
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">27</span></td>
-            <td class="text-right" data-val="26270">26,270</td>
+            <td class="text-right" data-val="26282">26,282</td>
             <td class="text-right power-val" data-val="429">⚔️ 429</td>
         </tr>
         
@@ -451,7 +451,7 @@
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">25</span></td>
-            <td class="text-right" data-val="24425">24,425</td>
+            <td class="text-right" data-val="24444">24,444</td>
             <td class="text-right power-val" data-val="423">⚔️ 423</td>
         </tr>
         
@@ -468,7 +468,7 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15704">15,704</td>
+            <td class="text-right" data-val="15723">15,723</td>
             <td class="text-right power-val" data-val="417">⚔️ 417</td>
         </tr>
         
@@ -485,7 +485,7 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">25</span></td>
-            <td class="text-right" data-val="24296">24,296</td>
+            <td class="text-right" data-val="24315">24,315</td>
             <td class="text-right power-val" data-val="412">⚔️ 412</td>
         </tr>
         
@@ -502,7 +502,7 @@
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">21</span></td>
-            <td class="text-right" data-val="20342">20,342</td>
+            <td class="text-right" data-val="20361">20,361</td>
             <td class="text-right power-val" data-val="409">⚔️ 409</td>
         </tr>
         
@@ -519,7 +519,7 @@
             </td>
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right" data-val="14358">14,358</td>
+            <td class="text-right" data-val="14397">14,397</td>
             <td class="text-right power-val" data-val="399">⚔️ 399</td>
         </tr>
         
@@ -536,7 +536,7 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15348">15,348</td>
+            <td class="text-right" data-val="15367">15,367</td>
             <td class="text-right power-val" data-val="383">⚔️ 383</td>
         </tr>
         
@@ -553,7 +553,7 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12174">12,174</td>
+            <td class="text-right" data-val="12193">12,193</td>
             <td class="text-right power-val" data-val="369">⚔️ 369</td>
         </tr>
         
@@ -570,7 +570,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">17</span></td>
-            <td class="text-right" data-val="16492">16,492</td>
+            <td class="text-right" data-val="16511">16,511</td>
             <td class="text-right power-val" data-val="368">⚔️ 368</td>
         </tr>
         
@@ -587,7 +587,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13001">13,001</td>
+            <td class="text-right" data-val="13020">13,020</td>
             <td class="text-right power-val" data-val="363">⚔️ 363</td>
         </tr>
         
@@ -604,7 +604,7 @@
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8390">8,390</td>
+            <td class="text-right" data-val="8409">8,409</td>
             <td class="text-right power-val" data-val="347">⚔️ 347</td>
         </tr>
         
@@ -621,7 +621,7 @@
             </td>
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">23</span></td>
-            <td class="text-right" data-val="22026">22,026</td>
+            <td class="text-right" data-val="22045">22,045</td>
             <td class="text-right power-val" data-val="340">⚔️ 340</td>
         </tr>
         
@@ -638,7 +638,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17500">17,500</td>
+            <td class="text-right" data-val="17519">17,519</td>
             <td class="text-right power-val" data-val="320">⚔️ 320</td>
         </tr>
         
@@ -655,7 +655,7 @@
             </td>
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">19</span></td>
-            <td class="text-right" data-val="18200">18,200</td>
+            <td class="text-right" data-val="18278">18,278</td>
             <td class="text-right power-val" data-val="319">⚔️ 319</td>
         </tr>
         
@@ -672,7 +672,7 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15491">15,491</td>
+            <td class="text-right" data-val="15510">15,510</td>
             <td class="text-right power-val" data-val="292">⚔️ 292</td>
         </tr>
         
@@ -689,7 +689,7 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8700">8,700</td>
+            <td class="text-right" data-val="8719">8,719</td>
             <td class="text-right power-val" data-val="289">⚔️ 289</td>
         </tr>
         
@@ -706,7 +706,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13800">13,800</td>
+            <td class="text-right" data-val="13819">13,819</td>
             <td class="text-right power-val" data-val="277">⚔️ 277</td>
         </tr>
         
@@ -723,7 +723,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13863">13,863</td>
+            <td class="text-right" data-val="13882">13,882</td>
             <td class="text-right power-val" data-val="277">⚔️ 277</td>
         </tr>
         
@@ -740,7 +740,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12451">12,451</td>
+            <td class="text-right" data-val="12470">12,470</td>
             <td class="text-right power-val" data-val="262">⚔️ 262</td>
         </tr>
         
@@ -757,7 +757,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15657">15,657</td>
+            <td class="text-right" data-val="15676">15,676</td>
             <td class="text-right power-val" data-val="260">⚔️ 260</td>
         </tr>
         
@@ -774,7 +774,7 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8424">8,424</td>
+            <td class="text-right" data-val="8443">8,443</td>
             <td class="text-right power-val" data-val="253">⚔️ 253</td>
         </tr>
         
@@ -791,7 +791,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17890">17,890</td>
+            <td class="text-right" data-val="17909">17,909</td>
             <td class="text-right power-val" data-val="249">⚔️ 249</td>
         </tr>
         
@@ -808,7 +808,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">11</span></td>
-            <td class="text-right" data-val="10654">10,654</td>
+            <td class="text-right" data-val="10673">10,673</td>
             <td class="text-right power-val" data-val="232">⚔️ 232</td>
         </tr>
         
@@ -825,7 +825,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">7</span></td>
-            <td class="text-right" data-val="6783">6,783</td>
+            <td class="text-right" data-val="6802">6,802</td>
             <td class="text-right power-val" data-val="231">⚔️ 231</td>
         </tr>
         
@@ -842,7 +842,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12412">12,412</td>
+            <td class="text-right" data-val="12431">12,431</td>
             <td class="text-right power-val" data-val="230">⚔️ 230</td>
         </tr>
         
@@ -859,7 +859,7 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">11</span></td>
-            <td class="text-right" data-val="10571">10,571</td>
+            <td class="text-right" data-val="10578">10,578</td>
             <td class="text-right power-val" data-val="229">⚔️ 229</td>
         </tr>
         
@@ -876,7 +876,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">12</span></td>
-            <td class="text-right" data-val="11552">11,552</td>
+            <td class="text-right" data-val="11571">11,571</td>
             <td class="text-right power-val" data-val="225">⚔️ 225</td>
         </tr>
         
@@ -893,7 +893,7 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8230">8,230</td>
+            <td class="text-right" data-val="8232">8,232</td>
             <td class="text-right power-val" data-val="215">⚔️ 215</td>
         </tr>
         
@@ -904,14 +904,14 @@
                     pybot <span title='Most Wanted' style='cursor:help'>🎯</span>
                     <div class="tooltip-content">
                         <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-epic">Exoesqueleto Cibernético</span> (+64)<br>Head: <span class="rar-epic">Capacete do Eclipse Sombrio</span> (+52)<br>Accessory: <span class="rar-epic">Anel do Vento Sussurrante</span> (+54)<br>Weapon: <span class="rar-common">Lâmina do Culto Ancião</span> (+13)<br>Feet: <span class="rar-common">Botas da Tempestade Machinista</span> (+15)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-epic">Exoesqueleto Cibernético</span> (+64)<br>Head: <span class="rar-epic">Capacete do Eclipse Sombrio</span> (+52)<br>Accessory: <span class="rar-epic">Anel do Vento Sussurrante</span> (+54)<br>Feet: <span class="rar-common">Botas da Tempestade Machinista</span> (+15)<br>Weapon: <span class="rar-common">Espada das Mil Piadas</span> (+14)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right" data-val="14037">14,037</td>
-            <td class="text-right power-val" data-val="213">⚔️ 213</td>
+            <td class="text-right" data-val="14056">14,056</td>
+            <td class="text-right power-val" data-val="214">⚔️ 214</td>
         </tr>
         
         <tr class="">
@@ -927,7 +927,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12557">12,557</td>
+            <td class="text-right" data-val="12576">12,576</td>
             <td class="text-right power-val" data-val="212">⚔️ 212</td>
         </tr>
         
@@ -978,7 +978,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15459">15,459</td>
+            <td class="text-right" data-val="15478">15,478</td>
             <td class="text-right power-val" data-val="207">⚔️ 207</td>
         </tr>
         
@@ -994,13 +994,30 @@
                 </div>
             </td>
             <td class="subtle">PTnet</td>
-            <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13976">13,976</td>
-            <td class="text-right power-val" data-val="191">⚔️ 191</td>
+            <td class="text-center"><span class="badge">15</span></td>
+            <td class="text-right" data-val="14017">14,017</td>
+            <td class="text-right power-val" data-val="192">⚔️ 192</td>
         </tr>
         
         <tr class="">
             <td>43</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    nuke
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-epic">Nuke’s Nuanced Noggin Norm</span> (+51)<br>Accessory: <span class="rar-common">Celestial Amulet of Shadows</span> (+9)<br>Weapon: <span class="rar-epic">Gene-Splicer Armament</span> (+69)<br>Feet: <span class="rar-common">Boots of Celestial Stride</span> (+15)<br>Body: <span class="rar-rare">Spectral Skin Suit</span> (+29)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Efnet</td>
+            <td class="text-center"><span class="badge">14</span></td>
+            <td class="text-right" data-val="13505">13,505</td>
+            <td class="text-right power-val" data-val="187">⚔️ 187</td>
+        </tr>
+        
+        <tr class="">
+            <td>44</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     mIrc-OP
@@ -1012,12 +1029,12 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">4</span></td>
-            <td class="text-right" data-val="3126">3,126</td>
+            <td class="text-right" data-val="3145">3,145</td>
             <td class="text-right power-val" data-val="175">⚔️ 175</td>
         </tr>
         
         <tr class="">
-            <td>44</td>
+            <td>45</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Sukuna <span title='Most Wanted' style='cursor:help'>🎯</span>
@@ -1029,25 +1046,8 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8378">8,378</td>
+            <td class="text-right" data-val="8397">8,397</td>
             <td class="text-right power-val" data-val="174">⚔️ 174</td>
-        </tr>
-        
-        <tr class="">
-            <td>45</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    nuke
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-epic">Nuke’s Nuanced Noggin Norm</span> (+51)<br>Accessory: <span class="rar-common">Celestial Amulet of Shadows</span> (+9)<br>Body: <span class="rar-common">Cuirass of Eternal Shadows</span> (+13)<br>Weapon: <span class="rar-epic">Gene-Splicer Armament</span> (+69)<br>Feet: <span class="rar-common">Boots of Celestial Stride</span> (+15)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Efnet</td>
-            <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13486">13,486</td>
-            <td class="text-right power-val" data-val="171">⚔️ 171</td>
         </tr>
         
         <tr class="">
@@ -1063,7 +1063,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13716">13,716</td>
+            <td class="text-right" data-val="13735">13,735</td>
             <td class="text-right power-val" data-val="157">⚔️ 157</td>
         </tr>
         
@@ -1080,7 +1080,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12932">12,932</td>
+            <td class="text-right" data-val="12951">12,951</td>
             <td class="text-right power-val" data-val="156">⚔️ 156</td>
         </tr>
         
@@ -1097,7 +1097,7 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8337">8,337</td>
+            <td class="text-right" data-val="8356">8,356</td>
             <td class="text-right power-val" data-val="147">⚔️ 147</td>
         </tr>
         
@@ -1114,7 +1114,7 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">10</span></td>
-            <td class="text-right" data-val="9242">9,242</td>
+            <td class="text-right" data-val="9261">9,261</td>
             <td class="text-right power-val" data-val="146">⚔️ 146</td>
         </tr>
         
@@ -1131,7 +1131,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17455">17,455</td>
+            <td class="text-right" data-val="17474">17,474</td>
             <td class="text-right power-val" data-val="143">⚔️ 143</td>
         </tr>
         
@@ -1148,7 +1148,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17343">17,343</td>
+            <td class="text-right" data-val="17362">17,362</td>
             <td class="text-right power-val" data-val="139">⚔️ 139</td>
         </tr>
         
@@ -1165,7 +1165,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12409">12,409</td>
+            <td class="text-right" data-val="12428">12,428</td>
             <td class="text-right power-val" data-val="137">⚔️ 137</td>
         </tr>
         
@@ -1182,7 +1182,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17114">17,114</td>
+            <td class="text-right" data-val="17133">17,133</td>
             <td class="text-right power-val" data-val="136">⚔️ 136</td>
         </tr>
         
@@ -1199,7 +1199,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8427">8,427</td>
+            <td class="text-right" data-val="8446">8,446</td>
             <td class="text-right power-val" data-val="136">⚔️ 136</td>
         </tr>
         
@@ -1216,7 +1216,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12535">12,535</td>
+            <td class="text-right" data-val="12554">12,554</td>
             <td class="text-right power-val" data-val="134">⚔️ 134</td>
         </tr>
         
@@ -1250,7 +1250,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17417">17,417</td>
+            <td class="text-right" data-val="17436">17,436</td>
             <td class="text-right power-val" data-val="131">⚔️ 131</td>
         </tr>
         
@@ -1267,7 +1267,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17473">17,473</td>
+            <td class="text-right" data-val="17492">17,492</td>
             <td class="text-right power-val" data-val="120">⚔️ 120</td>
         </tr>
         
@@ -1284,7 +1284,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5507">5,507</td>
+            <td class="text-right" data-val="5526">5,526</td>
             <td class="text-right power-val" data-val="119">⚔️ 119</td>
         </tr>
         
@@ -1301,7 +1301,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17240">17,240</td>
+            <td class="text-right" data-val="17259">17,259</td>
             <td class="text-right power-val" data-val="111">⚔️ 111</td>
         </tr>
         
@@ -1318,7 +1318,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13768">13,768</td>
+            <td class="text-right" data-val="13787">13,787</td>
             <td class="text-right power-val" data-val="106">⚔️ 106</td>
         </tr>
         
@@ -1335,7 +1335,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right" data-val="2630">2,630</td>
+            <td class="text-right" data-val="2649">2,649</td>
             <td class="text-right power-val" data-val="103">⚔️ 103</td>
         </tr>
         
@@ -1352,7 +1352,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17850">17,850</td>
+            <td class="text-right" data-val="17869">17,869</td>
             <td class="text-right power-val" data-val="100">⚔️ 100</td>
         </tr>
         
@@ -1369,7 +1369,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17440">17,440</td>
+            <td class="text-right" data-val="17459">17,459</td>
             <td class="text-right power-val" data-val="98">⚔️ 98</td>
         </tr>
         
@@ -1386,7 +1386,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17541">17,541</td>
+            <td class="text-right" data-val="17560">17,560</td>
             <td class="text-right power-val" data-val="91">⚔️ 91</td>
         </tr>
         
@@ -1403,7 +1403,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right" data-val="14097">14,097</td>
+            <td class="text-right" data-val="14116">14,116</td>
             <td class="text-right power-val" data-val="89">⚔️ 89</td>
         </tr>
         
@@ -1420,7 +1420,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">10</span></td>
-            <td class="text-right" data-val="9243">9,243</td>
+            <td class="text-right" data-val="9262">9,262</td>
             <td class="text-right power-val" data-val="86">⚔️ 86</td>
         </tr>
         
@@ -1437,7 +1437,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5540">5,540</td>
+            <td class="text-right" data-val="5559">5,559</td>
             <td class="text-right power-val" data-val="77">⚔️ 77</td>
         </tr>
         
@@ -1454,7 +1454,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17519">17,519</td>
+            <td class="text-right" data-val="17538">17,538</td>
             <td class="text-right power-val" data-val="76">⚔️ 76</td>
         </tr>
         
@@ -1471,7 +1471,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5463">5,463</td>
+            <td class="text-right" data-val="5482">5,482</td>
             <td class="text-right power-val" data-val="71">⚔️ 71</td>
         </tr>
         
@@ -1505,7 +1505,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8427">8,427</td>
+            <td class="text-right" data-val="8446">8,446</td>
             <td class="text-right power-val" data-val="68">⚔️ 68</td>
         </tr>
         
@@ -1522,7 +1522,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17459">17,459</td>
+            <td class="text-right" data-val="17478">17,478</td>
             <td class="text-right power-val" data-val="67">⚔️ 67</td>
         </tr>
         
@@ -1539,7 +1539,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17413">17,413</td>
+            <td class="text-right" data-val="17432">17,432</td>
             <td class="text-right power-val" data-val="65">⚔️ 65</td>
         </tr>
         
@@ -1573,7 +1573,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right" data-val="2880">2,880</td>
+            <td class="text-right" data-val="2899">2,899</td>
             <td class="text-right power-val" data-val="60">⚔️ 60</td>
         </tr>
         
@@ -1590,7 +1590,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5426">5,426</td>
+            <td class="text-right" data-val="5445">5,445</td>
             <td class="text-right power-val" data-val="49">⚔️ 49</td>
         </tr>
         
@@ -1624,7 +1624,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5728">5,728</td>
+            <td class="text-right" data-val="5747">5,747</td>
             <td class="text-right power-val" data-val="42">⚔️ 42</td>
         </tr>
         
@@ -1641,7 +1641,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12841">12,841</td>
+            <td class="text-right" data-val="12860">12,860</td>
             <td class="text-right power-val" data-val="42">⚔️ 42</td>
         </tr>
         
@@ -1658,7 +1658,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5548">5,548</td>
+            <td class="text-right" data-val="5567">5,567</td>
             <td class="text-right power-val" data-val="39">⚔️ 39</td>
         </tr>
         
@@ -1675,7 +1675,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5869">5,869</td>
+            <td class="text-right" data-val="5888">5,888</td>
             <td class="text-right power-val" data-val="32">⚔️ 32</td>
         </tr>
         
@@ -1692,7 +1692,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5610">5,610</td>
+            <td class="text-right" data-val="5629">5,629</td>
             <td class="text-right power-val" data-val="27">⚔️ 27</td>
         </tr>
         
@@ -1709,7 +1709,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5586">5,586</td>
+            <td class="text-right" data-val="5605">5,605</td>
             <td class="text-right power-val" data-val="26">⚔️ 26</td>
         </tr>
         
@@ -1726,7 +1726,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5507">5,507</td>
+            <td class="text-right" data-val="5526">5,526</td>
             <td class="text-right power-val" data-val="24">⚔️ 24</td>
         </tr>
         
@@ -1760,7 +1760,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">4</span></td>
-            <td class="text-right" data-val="3076">3,076</td>
+            <td class="text-right" data-val="3095">3,095</td>
             <td class="text-right power-val" data-val="17">⚔️ 17</td>
         </tr>
         
@@ -1794,7 +1794,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">8</span></td>
-            <td class="text-right" data-val="7137">7,137</td>
+            <td class="text-right" data-val="7156">7,156</td>
             <td class="text-right power-val" data-val="15">⚔️ 15</td>
         </tr>
         
@@ -1811,7 +1811,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right" data-val="2947">2,947</td>
+            <td class="text-right" data-val="2966">2,966</td>
             <td class="text-right power-val" data-val="13">⚔️ 13</td>
         </tr>
         
@@ -1828,7 +1828,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">1</span></td>
-            <td class="text-right" data-val="528">528</td>
+            <td class="text-right" data-val="547">547</td>
             <td class="text-right power-val" data-val="12">⚔️ 12</td>
         </tr>
         
@@ -1845,7 +1845,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
-            <td class="text-right" data-val="1278">1,278</td>
+            <td class="text-right" data-val="1297">1,297</td>
             <td class="text-right power-val" data-val="11">⚔️ 11</td>
         </tr>
         
@@ -1862,7 +1862,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5407">5,407</td>
+            <td class="text-right" data-val="5426">5,426</td>
             <td class="text-right power-val" data-val="10">⚔️ 10</td>
         </tr>
         
@@ -1913,7 +1913,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right" data-val="2932">2,932</td>
+            <td class="text-right" data-val="2951">2,951</td>
             <td class="text-right power-val" data-val="3">⚔️ 3</td>
         </tr>
         
@@ -1930,7 +1930,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
-            <td class="text-right" data-val="1318">1,318</td>
+            <td class="text-right" data-val="1337">1,337</td>
             <td class="text-right power-val" data-val="2">⚔️ 2</td>
         </tr>
         
