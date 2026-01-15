@@ -116,12 +116,12 @@
 
 ## 👹 World Bosses (Raids) | Titãs Mundiais
 **PT**:
-- Ataque manual ou **Auto-Ataque** (ataca a cada 60s).
+- **Auto-Ataque** (ataca a cada 60s).
 - MVP recebe loot **MYTHIC** ou Ovos.
 - XP proporcional ao dano causado.
 
 **EN**:
-- *Manual or auto-attack (every 60s).*
+- **Auto-attack** (every 60s).
 - *MVP gets **MYTHIC** loot or Eggs.*
 - *Damage-based XP rewards.*
 
