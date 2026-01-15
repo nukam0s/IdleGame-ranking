@@ -20,7 +20,8 @@
         .stat-card:hover { transform: translateY(-5px); border-color: var(--accent); }
         .stat-card .icon { font-size: 2rem; } .stat-card .value { font-size: 2rem; font-weight: 800; }
         
-        .chart-container { position: relative; height: 250px; padding: 15px; }
+        /* Gráficos compactos */
+        .chart-container { position: relative; height: 180px; padding: 10px; }
 
         .table-responsive { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; }
@@ -39,7 +40,6 @@
         .power-val { color: #f1c40f; font-weight: 600; }
         .hof-wins-text { color: var(--accent); font-weight: bold; }
         
-        /* NOVAS CLASSES PARA OS VALORES DE BOUNTY E STREAK */
         .streak-val { color: #ff9f43; font-size: 0.75rem; vertical-align: middle; margin-left: 2px; }
         .bounty-val { color: #ff6b6b; font-size: 0.75rem; vertical-align: middle; margin-left: 2px; }
         
@@ -77,7 +77,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        const chartData = {"econ_labels": ["Common", "Rare", "Epic", "Legendary"], "econ_data": [410, 313, 206, 76], "econ_colors": ["#b0b0b0", "#3498db", "#9b59b6", "#e67e22"], "net_labels": ["Undernet", "PTnet", "InTheMansion", "Quakenet", "Libera", "Efnet", "PTirc", "Rizon", "DALnet", "Snoonet"], "net_data": [53, 16, 8, 10, 8, 7, 4, 2, 2, 2]};
+        const chartData = {"econ_labels": ["Common", "Rare", "Epic", "Legendary", "MYTHIC"], "econ_data": [401, 307, 200, 75, 1], "econ_colors": ["#b0b0b0", "#3498db", "#9b59b6", "#e67e22", "#e74c3c"], "net_labels": ["Undernet", "PTnet", "InTheMansion", "Quakenet", "Libera", "Efnet", "PTirc", "Rizon", "DALnet", "Snoonet"], "net_data": [53, 16, 8, 10, 8, 7, 4, 2, 2, 2]};
 
         function initCharts() {
             Chart.defaults.color = '#a0a0b0';
@@ -223,7 +223,7 @@
         </div>
         <div class="card stat-card">
             <div class="icon">✨</div>
-            <div class="value">1,159,313</div>
+            <div class="value">1,168,434</div>
             <div class="label"><span class="lang-pt">XP Total Global</span><span class="lang-en hidden">Global Total XP</span></div>
         </div>
     </div>
@@ -250,15 +250,15 @@
     </div>
     
           
-          <section class="card boss-section"><div class="card-header"><h2><span class="lang-pt">☠️ Raids Ativas</span><span class="lang-en hidden">☠️ Active Raids</span></h2></div><div class="boss-grid"><div class="boss-card"><div class="boss-header"><span class="boss-net">PTnet</span><span>5000 HP</span></div><h3 class="boss-name">Erro, O Bug</h3><div class="progress-track"><div class="progress-fill" style="width:100%;background:#2ecc71;"></div></div></div><div class="boss-card"><div class="boss-header"><span class="boss-net">Quakenet</span><span>4600 HP</span></div><h3 class="boss-name">Elysium Shade, The Divine Enigma</h3><div class="progress-track"><div class="progress-fill" style="width:100%;background:#2ecc71;"></div></div></div></div></section>
+          <section class="card boss-section"><div class="card-header"><h2><span class="lang-pt">☠️ Raids Ativas</span><span class="lang-en hidden">☠️ Active Raids</span></h2></div><div class="boss-grid"><div class="boss-card"><div class="boss-header"><span class="boss-net">PTnet</span><span>5000 HP</span></div><h3 class="boss-name">Erro, O Bug</h3><div class="progress-track"><div class="progress-fill" style="width:100%;background:#2ecc71;"></div></div></div><div class="boss-card"><div class="boss-header"><span class="boss-net">Undernet</span><span>11922 HP</span></div><h3 class="boss-name">Omni-Engine, The Divine Mechanism</h3><div class="progress-track"><div class="progress-fill" style="width:99%;background:#2ecc71;"></div></div></div></div></section>
           
           
     <div class="extra-stats-grid">
-        <div class="card"><div class="card-header"><h4><span class="lang-pt">☠️ Boss Killers</span><span class="lang-en hidden">☠️ Boss Killers</span></h4></div><table class="mini-table"><tr><td>juanjocerero<span class='net-tag'>@InTheMansion</span></td><td class='text-right'>10 💀</td></tr><tr><td>nuke<span class='net-tag'>@PTirc</span></td><td class='text-right'>7 💀</td></tr><tr><td>nuke<span class='net-tag'>@InTheMansion</span></td><td class='text-right'>7 💀</td></tr><tr><td>nuke<span class='net-tag'>@Quakenet</span></td><td class='text-right'>2 💀</td></tr><tr><td>nuke<span class='net-tag'>@Efnet</span></td><td class='text-right'>2 💀</td></tr></table></div>
-        <div class="card"><div class="card-header"><h4><span class="lang-pt">🐉 Top Pets</span><span class="lang-en hidden">🐉 Top Pets</span></h4></div><table class="mini-table"><tr><td><span class='rar-epic'>Juancoceri Fiendling</span><br><span class='subtle'>juanjocerero@InTheMansion</span></td><td class='text-right'>Lvl 7</td></tr><tr><td><span class='rar-rare'>Radiant Cinderfox</span><br><span class='subtle'>nuke@PTirc</span></td><td class='text-right'>Lvl 1</td></tr><tr><td><span class='rar-common'>Nuke Pheromone Hounds</span><br><span class='subtle'>nuke@InTheMansion</span></td><td class='text-right'>Lvl 5</td></tr><tr><td><span class='rar-common'>Blast Hound</span><br><span class='subtle'>nuke@Quakenet</span></td><td class='text-right'>Lvl 2</td></tr><tr><td><span class='rar-common'>Shadowtail Liushou</span><br><span class='subtle'>teamrat@Efnet</span></td><td class='text-right'>Lvl 1</td></tr></table></div>
+        <div class="card"><div class="card-header"><h4><span class="lang-pt">☠️ Boss Killers</span><span class="lang-en hidden">☠️ Boss Killers</span></h4></div><table class="mini-table"><tr><td>juanjocerero<span class='net-tag'>@InTheMansion</span></td><td class='text-right'>10 💀</td></tr><tr><td>nuke<span class='net-tag'>@PTirc</span></td><td class='text-right'>7 💀</td></tr><tr><td>nuke<span class='net-tag'>@InTheMansion</span></td><td class='text-right'>7 💀</td></tr><tr><td>nuke<span class='net-tag'>@Quakenet</span></td><td class='text-right'>3 💀</td></tr><tr><td>nuke<span class='net-tag'>@Efnet</span></td><td class='text-right'>2 💀</td></tr></table></div>
+        <div class="card"><div class="card-header"><h4><span class="lang-pt">🐉 Top Pets</span><span class="lang-en hidden">🐉 Top Pets</span></h4></div><table class="mini-table"><tr><td><span class='rar-epic'>Juancoceri Fiendling</span><br><span class='subtle'>juanjocerero@InTheMansion</span></td><td class='text-right'>Lvl 7</td></tr><tr><td><span class='rar-rare'>Nuclear Shadow Prowlers</span><br><span class='subtle'>nuke@PTirc</span></td><td class='text-right'>Lvl 6</td></tr><tr><td><span class='rar-common'>Nuke Pheromone Hounds</span><br><span class='subtle'>nuke@InTheMansion</span></td><td class='text-right'>Lvl 5</td></tr><tr><td><span class='rar-common'>Blast Hound</span><br><span class='subtle'>nuke@Quakenet</span></td><td class='text-right'>Lvl 3</td></tr><tr><td><span class='rar-common'>Shadowtail Liushou</span><br><span class='subtle'>teamrat@Efnet</span></td><td class='text-right'>Lvl 1</td></tr></table></div>
         <div class="card"><div class="card-header"><h4><span class="lang-pt">⚡ God Tier</span><span class="lang-en hidden">⚡ God Tier</span></h4></div><table class="mini-table"><tr><td><span class='subtle'>[Head]</span> <span class='rar-legendary'>Neural Interface Crown</span><br><span class='subtle'>NullPointer@PTirc</span></td><td class='text-right'>+175</td></tr><tr><td><span class='subtle'>[Body]</span> <span class='rar-legendary'>Capa de Toffee Celestial</span><br><span class='subtle'>toffee@InTheMansion</span></td><td class='text-right'>+173</td></tr><tr><td><span class='subtle'>[Weapon]</span> <span class='rar-legendary'>Genetic Disruption Blade</span><br><span class='subtle'>Avatar@InTheMansion</span></td><td class='text-right'>+173</td></tr><tr><td><span class='subtle'>[Accessory]</span> <span class='rar-legendary'>Phantom Resonance Amulet</span><br><span class='subtle'>nuke@Rizon</span></td><td class='text-right'>+169</td></tr><tr><td><span class='subtle'>[Feet]</span> <span class='rar-legendary'>Avatar Quantum Boots</span><br><span class='subtle'>Avatar@InTheMansion</span></td><td class='text-right'>+146</td></tr></table></div>
         <div class="card"><div class="card-header"><h4><span class="lang-pt">🌍 Guerras</span><span class="lang-en hidden">🌍 World Wars</span></h4></div><table class="mini-table"><tr><td>Rizon</td><td class='text-right'>1 🏆</td></tr><tr><td>InTheMansion</td><td class='text-right'>1 🏆</td></tr><tr><td>Efnet</td><td class='text-right'>1 🏆</td></tr></table></div>
-        <div class="card"><div class="card-header"><h4><span class="lang-pt">🌐 Redes</span><span class="lang-en hidden">🌐 Networks</span></h4></div><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>53 👤 <span class='subtle'>(462,165)</span></td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>16 👤 <span class='subtle'>(131,218)</span></td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>8 👤 <span class='subtle'>(122,081)</span></td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>10 👤 <span class='subtle'>(95,245)</span></td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>8 👤 <span class='subtle'>(93,202)</span></td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>7 👤 <span class='subtle'>(71,605)</span></td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>4 👤 <span class='subtle'>(68,799)</span></td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>2 👤 <span class='subtle'>(40,319)</span></td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>2 👤 <span class='subtle'>(39,431)</span></td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>2 👤 <span class='subtle'>(35,248)</span></td></tr></table></div>
+        <div class="card"><div class="card-header"><h4><span class="lang-pt">🌐 Redes</span><span class="lang-en hidden">🌐 Networks</span></h4></div><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>53 👤 <span class='subtle'>(466,345)</span></td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>16 👤 <span class='subtle'>(132,085)</span></td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>8 👤 <span class='subtle'>(120,533)</span></td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>10 👤 <span class='subtle'>(97,160)</span></td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>8 👤 <span class='subtle'>(95,385)</span></td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>7 👤 <span class='subtle'>(72,303)</span></td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>4 👤 <span class='subtle'>(68,966)</span></td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>2 👤 <span class='subtle'>(40,593)</span></td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>2 👤 <span class='subtle'>(39,643)</span></td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>2 👤 <span class='subtle'>(35,421)</span></td></tr></table></div>
         <div class="card"><div class="card-header"><h4><span class="lang-pt">🏛️ Hall of Fame</span><span class="lang-en hidden">🏛️ Hall of Fame</span></h4></div><table class="mini-table"><tr><td>nuke<span class='net-tag'>@Libera</span></td><td class='text-right'><span class='hof-wins-text'>6 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@Snoonet</span></td><td class='text-right'><span class='hof-wins-text'>6 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@InTheMansion</span></td><td class='text-right'><span class='hof-wins-text'>5 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@PTirc</span></td><td class='text-right'><span class='hof-wins-text'>5 Wins</span></td></tr><tr><td>doc<span class='net-tag'>@PTirc</span></td><td class='text-right'><span class='hof-wins-text'>4 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@DALnet</span></td><td class='text-right'><span class='hof-wins-text'>4 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@Quakenet</span></td><td class='text-right'><span class='hof-wins-text'>4 Wins</span></td></tr><tr><td>~nuke<span class='net-tag'>@Rizon</span></td><td class='text-right'><span class='hof-wins-text'>4 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@PTnet</span></td><td class='text-right'><span class='hof-wins-text'>3 Wins</span></td></tr><tr><td>Avatar<span class='net-tag'>@InTheMansion</span></td><td class='text-right'><span class='hof-wins-text'>2 Wins</span></td></tr></table></div>
     </div>
     
@@ -296,7 +296,7 @@
             </td>
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">24</span></td>
-            <td class="text-right" data-val="23744">23,744</td>
+            <td class="text-right" data-val="23843">23,843</td>
             <td class="text-right power-val" data-val="641">⚔️ 641</td>
         </tr>
         
@@ -304,7 +304,24 @@
             <td>2</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
-                    🥈 nuke <span class='bounty-val' title='Bounty'>🎯 2527</span>
+                    🥈 nuke <span class='streak-val' title='Streak'>🔥 4</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-rare">Nuclear Shadow Prowlers</span> (Rare)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-legendary">Gale-Swept Starlight Sandals</span> (+76)<br>Head: <span class="rar-legendary">Nuclear Void Top Crown</span> (+127)<br>Body: <span class="rar-legendary">Cloak of Forgotten Secrets</span> (+160)<br>Weapon: <span class="rar-legendary">Fused Weapon</span> (+116)<br>Accessory: <span class="rar-epic">Ancient Accessory</span> (+77)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">PTirc</td>
+            <td class="text-center"><span class="badge">36</span></td>
+            <td class="text-right" data-val="35661">35,661</td>
+            <td class="text-right power-val" data-val="632">⚔️ 632</td>
+        </tr>
+        
+        <tr class="rank-3">
+            <td>3</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    🥉 nuke <span class='bounty-val' title='Bounty'>🎯 2527</span>
                     <div class="tooltip-content">
                         <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
                         <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-legendary">Quantum Shielded Exosuit</span> (+111)<br>Feet: <span class="rar-epic">Quantum Step Slippers</span> (+65)<br>Weapon: <span class="rar-legendary">Nuke’s Boomstick of Doom</span> (+118)<br>Head: <span class="rar-epic">Bicorne of the Duelist</span> (+76)<br>Accessory: <span class="rar-legendary">Phantom Resonance Amulet</span> (+169)</div>
@@ -312,16 +329,16 @@
                 </div>
             </td>
             <td class="subtle">Rizon</td>
-            <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right" data-val="21981">21,981</td>
-            <td class="text-right power-val" data-val="571">⚔️ 571</td>
+            <td class="text-center"><span class="badge">23</span></td>
+            <td class="text-right" data-val="22112">22,112</td>
+            <td class="text-right power-val" data-val="572">⚔️ 572</td>
         </tr>
         
-        <tr class="rank-3">
-            <td>3</td>
+        <tr class="">
+            <td>4</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
-                    🥉 Avatar
+                    Avatar
                     <div class="tooltip-content">
                         <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
                         <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-epic">Celestial Emblem Of Whispers</span> (+52)<br>Head: <span class="rar-legendary">Quantum Sigil Circlet</span> (+84)<br>Body: <span class="rar-epic">Celestial Armor Shell</span> (+64)<br>Weapon: <span class="rar-legendary">Genetic Disruption Blade</span> (+173)<br>Feet: <span class="rar-legendary">Avatar Quantum Boots</span> (+146)</div>
@@ -329,30 +346,30 @@
                 </div>
             </td>
             <td class="subtle">InTheMansion</td>
-            <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right" data-val="21986">21,986</td>
-            <td class="text-right power-val" data-val="551">⚔️ 551</td>
-        </tr>
-        
-        <tr class="">
-            <td>4</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    nuke
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-rare">Radiant Cinderfox</span> (Rare)</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-legendary">Gale-Swept Starlight Sandals</span> (+76)<br>Accessory: <span class="rar-epic">Celestial Aetherstone Band</span> (+66)<br>Weapon: <span class="rar-epic">Eclipsed Vortex Blade</span> (+60)<br>Head: <span class="rar-legendary">Nuclear Void Top Crown</span> (+127)<br>Body: <span class="rar-legendary">Cloak of Forgotten Secrets</span> (+160)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">PTirc</td>
-            <td class="text-center"><span class="badge">33</span></td>
-            <td class="text-right" data-val="32258">32,258</td>
-            <td class="text-right power-val" data-val="537">⚔️ 537</td>
+            <td class="text-center"><span class="badge">23</span></td>
+            <td class="text-right" data-val="22094">22,094</td>
+            <td class="text-right power-val" data-val="552">⚔️ 552</td>
         </tr>
         
         <tr class="">
             <td>5</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    nuke <span class='bounty-val' title='Bounty'>🎯 172</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-common">Blast Hound</span> (Common)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-legendary">Quantum Flux Crown</span> (+123)<br>Feet: <span class="rar-legendary">Quantum Echo Boots</span> (+119)<br>Weapon: <span class="rar-legendary">Fused Weapon</span> (+90)<br>Body: <span class="rar-epic">Armour of the Celestial Guardian</span> (+60)<br>Accessory: <span class="rar-legendary">Tempered Accessory</span> (+116)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Quakenet</td>
+            <td class="text-center"><span class="badge">24</span></td>
+            <td class="text-right" data-val="23038">23,038</td>
+            <td class="text-right power-val" data-val="548">⚔️ 548</td>
+        </tr>
+        
+        <tr class="">
+            <td>6</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     style <span class='bounty-val' title='Bounty'>🎯 1273</span>
@@ -363,13 +380,13 @@
                 </div>
             </td>
             <td class="subtle">DALnet</td>
-            <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17970">17,970</td>
-            <td class="text-right power-val" data-val="531">⚔️ 531</td>
+            <td class="text-center"><span class="badge">19</span></td>
+            <td class="text-right" data-val="18078">18,078</td>
+            <td class="text-right power-val" data-val="532">⚔️ 532</td>
         </tr>
         
         <tr class="">
-            <td>6</td>
+            <td>7</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     nuke <span class='bounty-val' title='Bounty'>🎯 2255</span>
@@ -381,12 +398,12 @@
             </td>
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right" data-val="21461">21,461</td>
+            <td class="text-right" data-val="21565">21,565</td>
             <td class="text-right power-val" data-val="525">⚔️ 525</td>
         </tr>
         
         <tr class="">
-            <td>7</td>
+            <td>8</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     style <span class='bounty-val' title='Bounty'>🎯 466</span>
@@ -398,12 +415,12 @@
             </td>
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">12</span></td>
-            <td class="text-right" data-val="11504">11,504</td>
+            <td class="text-right" data-val="11578">11,578</td>
             <td class="text-right power-val" data-val="515">⚔️ 515</td>
         </tr>
         
         <tr class="">
-            <td>8</td>
+            <td>9</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     juanjocerero
@@ -415,25 +432,8 @@
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">27</span></td>
-            <td class="text-right" data-val="26311">26,311</td>
+            <td class="text-right" data-val="26385">26,385</td>
             <td class="text-right power-val" data-val="509">⚔️ 509</td>
-        </tr>
-        
-        <tr class="">
-            <td>9</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    nuke <span class='bounty-val' title='Bounty'>🎯 172</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-common">Blast Hound</span> (Common)</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-legendary">Quantum Flux Crown</span> (+123)<br>Feet: <span class="rar-legendary">Quantum Echo Boots</span> (+119)<br>Weapon: <span class="rar-legendary">Fused Weapon</span> (+90)<br>Accessory: <span class="rar-epic">Chrono-gear Charmed Amulet</span> (+72)<br>Body: <span class="rar-epic">Armour of the Celestial Guardian</span> (+60)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Quakenet</td>
-            <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right" data-val="21929">21,929</td>
-            <td class="text-right power-val" data-val="500">⚔️ 500</td>
         </tr>
         
         <tr class="">
@@ -448,13 +448,30 @@
                 </div>
             </td>
             <td class="subtle">InTheMansion</td>
-            <td class="text-center"><span class="badge">25</span></td>
-            <td class="text-right" data-val="24518">24,518</td>
-            <td class="text-right power-val" data-val="443">⚔️ 443</td>
+            <td class="text-center"><span class="badge">23</span></td>
+            <td class="text-right" data-val="22608">22,608</td>
+            <td class="text-right power-val" data-val="441">⚔️ 441</td>
         </tr>
         
         <tr class="">
             <td>11</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    nuke
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-legendary">Nuclear Fumble Bomb</span> (+76)<br>Accessory: <span class="rar-epic">Quantum Prism Ankh</span> (+69)<br>Body: <span class="rar-legendary">Quantum Exosuit of Eternity</span> (+140)<br>Feet: <span class="rar-rare">Ancient Feet</span> (+50)<br>Head: <span class="rar-epic">Fused Head</span> (+68)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Libera</td>
+            <td class="text-center"><span class="badge">25</span></td>
+            <td class="text-right" data-val="24441">24,441</td>
+            <td class="text-right power-val" data-val="438">⚔️ 438</td>
+        </tr>
+        
+        <tr class="">
+            <td>12</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     teamrat
@@ -466,25 +483,8 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15752">15,752</td>
+            <td class="text-right" data-val="15893">15,893</td>
             <td class="text-right power-val" data-val="429">⚔️ 429</td>
-        </tr>
-        
-        <tr class="">
-            <td>12</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    nuke <span class='bounty-val' title='Bounty'>🎯 1490</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-legendary">Nuclear Fumble Bomb</span> (+76)<br>Accessory: <span class="rar-epic">Quantum Prism Ankh</span> (+69)<br>Head: <span class="rar-epic">Neural Flux Helmet</span> (+62)<br>Feet: <span class="rar-epic">Celestial Step Sandals</span> (+40)<br>Body: <span class="rar-legendary">Quantum Exosuit of Eternity</span> (+140)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Libera</td>
-            <td class="text-center"><span class="badge">25</span></td>
-            <td class="text-right" data-val="24344">24,344</td>
-            <td class="text-right power-val" data-val="422">⚔️ 422</td>
         </tr>
         
         <tr class="">
@@ -500,7 +500,7 @@
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">21</span></td>
-            <td class="text-right" data-val="20415">20,415</td>
+            <td class="text-right" data-val="20505">20,505</td>
             <td class="text-right power-val" data-val="419">⚔️ 419</td>
         </tr>
         
@@ -516,9 +516,9 @@
                 </div>
             </td>
             <td class="subtle">PTirc</td>
-            <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right" data-val="14419">14,419</td>
-            <td class="text-right power-val" data-val="409">⚔️ 409</td>
+            <td class="text-center"><span class="badge">12</span></td>
+            <td class="text-right" data-val="11064">11,064</td>
+            <td class="text-right power-val" data-val="406">⚔️ 406</td>
         </tr>
         
         <tr class="">
@@ -534,7 +534,7 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15396">15,396</td>
+            <td class="text-right" data-val="15508">15,508</td>
             <td class="text-right power-val" data-val="393">⚔️ 393</td>
         </tr>
         
@@ -551,7 +551,7 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12222">12,222</td>
+            <td class="text-right" data-val="12312">12,312</td>
             <td class="text-right power-val" data-val="379">⚔️ 379</td>
         </tr>
         
@@ -568,7 +568,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">17</span></td>
-            <td class="text-right" data-val="16540">16,540</td>
+            <td class="text-right" data-val="16621">16,621</td>
             <td class="text-right power-val" data-val="378">⚔️ 378</td>
         </tr>
         
@@ -585,7 +585,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13049">13,049</td>
+            <td class="text-right" data-val="13140">13,140</td>
             <td class="text-right power-val" data-val="373">⚔️ 373</td>
         </tr>
         
@@ -602,12 +602,29 @@
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8438">8,438</td>
+            <td class="text-right" data-val="8528">8,528</td>
             <td class="text-right power-val" data-val="357">⚔️ 357</td>
         </tr>
         
         <tr class="">
             <td>20</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    Killua <span class='bounty-val' title='Bounty'>🎯 132</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Cobalt Stormblade of Fury</span> (+8)<br>Accessory: <span class="rar-epic">Ethereal Sigil of Affinity</span> (+35)<br>Head: <span class="rar-epic">Crown of Shadows</span> (+52)<br>Feet: <span class="rar-epic">Astral Propulsion Boots</span> (+72)<br>Body: <span class="rar-legendary">Cloak of Whispers</span> (+165)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Efnet</td>
+            <td class="text-center"><span class="badge">9</span></td>
+            <td class="text-right" data-val="8562">8,562</td>
+            <td class="text-right power-val" data-val="351">⚔️ 351</td>
+        </tr>
+        
+        <tr class="">
+            <td>21</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     user <span class='bounty-val' title='Bounty'>🎯 118</span>
@@ -619,12 +636,12 @@
             </td>
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">23</span></td>
-            <td class="text-right" data-val="22074">22,074</td>
+            <td class="text-right" data-val="22193">22,193</td>
             <td class="text-right power-val" data-val="350">⚔️ 350</td>
         </tr>
         
         <tr class="">
-            <td>21</td>
+            <td>22</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     jupe <span class='bounty-val' title='Bounty'>🎯 110</span>
@@ -636,12 +653,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17548">17,548</td>
+            <td class="text-right" data-val="17639">17,639</td>
             <td class="text-right power-val" data-val="330">⚔️ 330</td>
         </tr>
         
         <tr class="">
-            <td>22</td>
+            <td>23</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     style <span class='bounty-val' title='Bounty'>🎯 994</span>
@@ -653,12 +670,12 @@
             </td>
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">19</span></td>
-            <td class="text-right" data-val="18338">18,338</td>
+            <td class="text-right" data-val="18481">18,481</td>
             <td class="text-right power-val" data-val="329">⚔️ 329</td>
         </tr>
         
         <tr class="">
-            <td>23</td>
+            <td>24</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     |DarkRis3 <span class='bounty-val' title='Bounty'>🎯 538</span>
@@ -670,12 +687,12 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15561">15,561</td>
+            <td class="text-right" data-val="15735">15,735</td>
             <td class="text-right power-val" data-val="302">⚔️ 302</td>
         </tr>
         
         <tr class="">
-            <td>24</td>
+            <td>25</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Egg0 <span class='bounty-val' title='Bounty'>🎯 110</span>
@@ -687,25 +704,8 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8748">8,748</td>
+            <td class="text-right" data-val="8838">8,838</td>
             <td class="text-right power-val" data-val="299">⚔️ 299</td>
-        </tr>
-        
-        <tr class="">
-            <td>25</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    Genuina <span class='bounty-val' title='Bounty'>🎯 353</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Lâmina Estelar Vortex</span> (+10)<br>Accessory: <span class="rar-legendary">Luvas de Etherium</span> (+125)<br>Body: <span class="rar-epic">Cota de Escamas Celestiais</span> (+63)<br>Feet: <span class="rar-epic">Botas do Vento Sussurrante</span> (+58)<br>Head: <span class="rar-common">Coroa do Pensamento Torto</span> (+7)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">PTnet</td>
-            <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13848">13,848</td>
-            <td class="text-right power-val" data-val="287">⚔️ 287</td>
         </tr>
         
         <tr class="">
@@ -720,13 +720,47 @@
                 </div>
             </td>
             <td class="subtle">PTnet</td>
-            <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13964">13,964</td>
-            <td class="text-right power-val" data-val="287">⚔️ 287</td>
+            <td class="text-center"><span class="badge">15</span></td>
+            <td class="text-right" data-val="14054">14,054</td>
+            <td class="text-right power-val" data-val="288">⚔️ 288</td>
         </tr>
         
         <tr class="">
             <td>27</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    Genuina <span class='bounty-val' title='Bounty'>🎯 353</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Lâmina Estelar Vortex</span> (+10)<br>Accessory: <span class="rar-legendary">Luvas de Etherium</span> (+125)<br>Body: <span class="rar-epic">Cota de Escamas Celestiais</span> (+63)<br>Feet: <span class="rar-epic">Botas do Vento Sussurrante</span> (+58)<br>Head: <span class="rar-common">Coroa do Pensamento Torto</span> (+7)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">PTnet</td>
+            <td class="text-center"><span class="badge">14</span></td>
+            <td class="text-right" data-val="13938">13,938</td>
+            <td class="text-right power-val" data-val="287">⚔️ 287</td>
+        </tr>
+        
+        <tr class="">
+            <td>28</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    GGore665 <span class='bounty-val' title='Bounty'>🎯 609</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-epic">Etheric Tendril Boots</span> (+34)<br>Accessory: <span class="rar-epic">Quantum Dreamcatcher Amulet</span> (+63)<br>Head: <span class="rar-epic">Celestial Voltage Helm</span> (+46)<br>Weapon: <span class="rar-epic">Moonlit Serpent Talon</span> (+60)<br>Body: <span class="rar-epic">Shroud of Eternal Sorrow</span> (+48)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Quakenet</td>
+            <td class="text-center"><span class="badge">16</span></td>
+            <td class="text-right" data-val="15800">15,800</td>
+            <td class="text-right power-val" data-val="277">⚔️ 277</td>
+        </tr>
+        
+        <tr class="">
+            <td>29</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     termure <span class='bounty-val' title='Bounty'>🎯 237</span>
@@ -738,42 +772,8 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12499">12,499</td>
+            <td class="text-right" data-val="12665">12,665</td>
             <td class="text-right power-val" data-val="272">⚔️ 272</td>
-        </tr>
-        
-        <tr class="">
-            <td>28</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    GGore665 <span class='bounty-val' title='Bounty'>🎯 609</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-epic">Etheric Tendril Boots</span> (+34)<br>Accessory: <span class="rar-epic">Quantum Dreamcatcher Amulet</span> (+63)<br>Body: <span class="rar-epic">Quantum Ethereal Exosuit</span> (+41)<br>Head: <span class="rar-epic">Celestial Voltage Helm</span> (+46)<br>Weapon: <span class="rar-epic">Moonlit Serpent Talon</span> (+60)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Quakenet</td>
-            <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15680">15,680</td>
-            <td class="text-right power-val" data-val="270">⚔️ 270</td>
-        </tr>
-        
-        <tr class="">
-            <td>29</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    Killua <span class='bounty-val' title='Bounty'>🎯 132</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Cobalt Stormblade of Fury</span> (+8)<br>Accessory: <span class="rar-epic">Ethereal Sigil of Affinity</span> (+35)<br>Head: <span class="rar-epic">Crown of Shadows</span> (+52)<br>Body: <span class="rar-epic">Killua's Biomech Exoskeleton</span> (+77)<br>Feet: <span class="rar-epic">Astral Propulsion Boots</span> (+72)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Efnet</td>
-            <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8472">8,472</td>
-            <td class="text-right power-val" data-val="263">⚔️ 263</td>
         </tr>
         
         <tr class="">
@@ -788,9 +788,9 @@
                 </div>
             </td>
             <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17938">17,938</td>
-            <td class="text-right power-val" data-val="259">⚔️ 259</td>
+            <td class="text-center"><span class="badge">19</span></td>
+            <td class="text-right" data-val="18029">18,029</td>
+            <td class="text-right power-val" data-val="260">⚔️ 260</td>
         </tr>
         
         <tr class="">
@@ -806,12 +806,29 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">11</span></td>
-            <td class="text-right" data-val="10702">10,702</td>
+            <td class="text-right" data-val="10793">10,793</td>
             <td class="text-right power-val" data-val="242">⚔️ 242</td>
         </tr>
         
         <tr class="">
             <td>32</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    taco <span class='bounty-val' title='Bounty'>🎯 392</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-legendary">Quantum Salsa Mediator</span> (+90)<br>Body: <span class="rar-rare">Celestial Aegis of Echoes</span> (+15)<br>Weapon: <span class="rar-rare">Aetheric Shadowblade</span> (+18)<br>Feet: <span class="rar-rare">Taco Treads of Fate</span> (+36)<br>Head: <span class="rar-epic">Tinfoil Hat of Confusion</span> (+59)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Libera</td>
+            <td class="text-center"><span class="badge">13</span></td>
+            <td class="text-right" data-val="12207">12,207</td>
+            <td class="text-right power-val" data-val="241">⚔️ 241</td>
+        </tr>
+        
+        <tr class="">
+            <td>33</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Razvan
@@ -823,12 +840,12 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">7</span></td>
-            <td class="text-right" data-val="6831">6,831</td>
+            <td class="text-right" data-val="6966">6,966</td>
             <td class="text-right power-val" data-val="241">⚔️ 241</td>
         </tr>
         
         <tr class="">
-            <td>33</td>
+            <td>34</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     old1
@@ -840,25 +857,8 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12460">12,460</td>
+            <td class="text-right" data-val="12551">12,551</td>
             <td class="text-right power-val" data-val="240">⚔️ 240</td>
-        </tr>
-        
-        <tr class="">
-            <td>34</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    taco <span class='bounty-val' title='Bounty'>🎯 392</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-legendary">Quantum Salsa Mediator</span> (+90)<br>Body: <span class="rar-rare">Celestial Aegis of Echoes</span> (+15)<br>Weapon: <span class="rar-rare">Aetheric Shadowblade</span> (+18)<br>Feet: <span class="rar-rare">Taco Treads of Fate</span> (+36)<br>Head: <span class="rar-epic">Tinfoil Hat of Confusion</span> (+59)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Libera</td>
-            <td class="text-center"><span class="badge">11</span></td>
-            <td class="text-right" data-val="10607">10,607</td>
-            <td class="text-right power-val" data-val="239">⚔️ 239</td>
         </tr>
         
         <tr class="">
@@ -874,7 +874,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">12</span></td>
-            <td class="text-right" data-val="11584">11,584</td>
+            <td class="text-right" data-val="11622">11,622</td>
             <td class="text-right power-val" data-val="235">⚔️ 235</td>
         </tr>
         
@@ -891,7 +891,7 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8261">8,261</td>
+            <td class="text-right" data-val="8351">8,351</td>
             <td class="text-right power-val" data-val="225">⚔️ 225</td>
         </tr>
         
@@ -908,7 +908,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right" data-val="14085">14,085</td>
+            <td class="text-right" data-val="14175">14,175</td>
             <td class="text-right power-val" data-val="224">⚔️ 224</td>
         </tr>
         
@@ -925,7 +925,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12605">12,605</td>
+            <td class="text-right" data-val="12708">12,708</td>
             <td class="text-right power-val" data-val="222">⚔️ 222</td>
         </tr>
         
@@ -959,7 +959,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13390">13,390</td>
+            <td class="text-right" data-val="13480">13,480</td>
             <td class="text-right power-val" data-val="220">⚔️ 220</td>
         </tr>
         
@@ -976,7 +976,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right" data-val="15507">15,507</td>
+            <td class="text-right" data-val="15597">15,597</td>
             <td class="text-right power-val" data-val="217">⚔️ 217</td>
         </tr>
         
@@ -993,7 +993,7 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right" data-val="14085">14,085</td>
+            <td class="text-right" data-val="14175">14,175</td>
             <td class="text-right power-val" data-val="202">⚔️ 202</td>
         </tr>
         
@@ -1010,7 +1010,7 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13561">13,561</td>
+            <td class="text-right" data-val="13651">13,651</td>
             <td class="text-right power-val" data-val="197">⚔️ 197</td>
         </tr>
         
@@ -1027,7 +1027,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">4</span></td>
-            <td class="text-right" data-val="3174">3,174</td>
+            <td class="text-right" data-val="3237">3,237</td>
             <td class="text-right power-val" data-val="185">⚔️ 185</td>
         </tr>
         
@@ -1044,12 +1044,29 @@
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8426">8,426</td>
+            <td class="text-right" data-val="8503">8,503</td>
             <td class="text-right power-val" data-val="184">⚔️ 184</td>
         </tr>
         
         <tr class="">
             <td>46</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    R0B0T <span class='bounty-val' title='Bounty'>🎯 191</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Botas Neurais de Aço</span> (+7)<br>Head: <span class="rar-epic">Capa de Memória Neural</span> (+41)<br>Body: <span class="rar-epic">Armadura de Ébano Celestial</span> (+45)<br>Accessory: <span class="rar-epic">Selo de Azathoth Sombrio</span> (+66)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">PTnet</td>
+            <td class="text-center"><span class="badge">5</span></td>
+            <td class="text-right" data-val="4338">4,338</td>
+            <td class="text-right power-val" data-val="174">⚔️ 174</td>
+        </tr>
+        
+        <tr class="">
+            <td>47</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     egg <span class='bounty-val' title='Bounty'>🎯 360</span>
@@ -1061,12 +1078,12 @@
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13764">13,764</td>
+            <td class="text-right" data-val="13854">13,854</td>
             <td class="text-right power-val" data-val="167">⚔️ 167</td>
         </tr>
         
         <tr class="">
-            <td>47</td>
+            <td>48</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     alicia
@@ -1077,30 +1094,30 @@
                 </div>
             </td>
             <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12964">12,964</td>
-            <td class="text-right power-val" data-val="166">⚔️ 166</td>
+            <td class="text-center"><span class="badge">14</span></td>
+            <td class="text-right" data-val="13002">13,002</td>
+            <td class="text-right power-val" data-val="167">⚔️ 167</td>
         </tr>
         
         <tr class="">
-            <td>48</td>
+            <td>49</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Frieren <span class='bounty-val' title='Bounty'>🎯 233</span>
                     <div class="tooltip-content">
                         <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-rare">Frieren's Frosted Flareblade</span> (+30)<br>Body: <span class="rar-epic">Radiant Survival Exo-Suit</span> (+56)<br>Accessory: <span class="rar-common">Gears of Chrono Manipulation</span> (+15)<br>Feet: <span class="rar-common">Sandalha Encantada da Jurema</span> (+12)<br>Head: <span class="rar-rare">Helm of the Titans</span> (+25)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-epic">Radiant Survival Exo-Suit</span> (+56)<br>Accessory: <span class="rar-common">Gears of Chrono Manipulation</span> (+15)<br>Feet: <span class="rar-common">Sandalha Encantada da Jurema</span> (+12)<br>Head: <span class="rar-rare">Helm of the Titans</span> (+25)<br>Weapon: <span class="rar-rare">Stellar Reaver Blade</span> (+31)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8385">8,385</td>
-            <td class="text-right power-val" data-val="157">⚔️ 157</td>
+            <td class="text-right" data-val="8505">8,505</td>
+            <td class="text-right power-val" data-val="158">⚔️ 158</td>
         </tr>
         
         <tr class="">
-            <td>49</td>
+            <td>50</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     BlackApple <span class='bounty-val' title='Bounty'>🎯 126</span>
@@ -1112,12 +1129,12 @@
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">10</span></td>
-            <td class="text-right" data-val="9290">9,290</td>
+            <td class="text-right" data-val="9400">9,400</td>
             <td class="text-right power-val" data-val="156">⚔️ 156</td>
         </tr>
         
         <tr class="">
-            <td>50</td>
+            <td>51</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Nezuko <span class='bounty-val' title='Bounty'>🎯 122</span>
@@ -1129,12 +1146,29 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17503">17,503</td>
+            <td class="text-right" data-val="17594">17,594</td>
             <td class="text-right power-val" data-val="153">⚔️ 153</td>
         </tr>
         
         <tr class="">
-            <td>51</td>
+            <td>52</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    v0id <span class='bounty-val' title='Bounty'>🎯 599</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Armadura Neural Quântica</span> (+1)<br>Head: <span class="rar-rare">Capacete Nebuloso</span> (+20)<br>Accessory: <span class="rar-rare">Bracelete de Nebulosa</span> (+14)<br>Weapon: <span class="rar-legendary">Lâmina de Fogo Perene</span> (+86)<br>Feet: <span class="rar-common">v0id's Dusty Spurs</span> (+6)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Undernet</td>
+            <td class="text-center"><span class="badge">13</span></td>
+            <td class="text-right" data-val="12674">12,674</td>
+            <td class="text-right power-val" data-val="150">⚔️ 150</td>
+        </tr>
+        
+        <tr class="">
+            <td>53</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Killua
@@ -1146,12 +1180,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17391">17,391</td>
+            <td class="text-right" data-val="17482">17,482</td>
             <td class="text-right power-val" data-val="149">⚔️ 149</td>
         </tr>
         
         <tr class="">
-            <td>52</td>
+            <td>54</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Ajah <span class='bounty-val' title='Bounty'>🎯 195</span>
@@ -1163,12 +1197,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12457">12,457</td>
+            <td class="text-right" data-val="12536">12,536</td>
             <td class="text-right power-val" data-val="147">⚔️ 147</td>
         </tr>
         
         <tr class="">
-            <td>53</td>
+            <td>55</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     nicole
@@ -1180,12 +1214,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17162">17,162</td>
+            <td class="text-right" data-val="17253">17,253</td>
             <td class="text-right power-val" data-val="146">⚔️ 146</td>
         </tr>
         
         <tr class="">
-            <td>54</td>
+            <td>56</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Jarvis <span class='bounty-val' title='Bounty'>🎯 178</span>
@@ -1197,42 +1231,8 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8475">8,475</td>
+            <td class="text-right" data-val="8566">8,566</td>
             <td class="text-right power-val" data-val="146">⚔️ 146</td>
-        </tr>
-        
-        <tr class="">
-            <td>55</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    v0id <span class='bounty-val' title='Bounty'>🎯 599</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Armadura Neural Quântica</span> (+1)<br>Head: <span class="rar-rare">Capacete Nebuloso</span> (+20)<br>Accessory: <span class="rar-rare">Bracelete de Nebulosa</span> (+14)<br>Weapon: <span class="rar-legendary">Lâmina de Fogo Perene</span> (+86)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12583">12,583</td>
-            <td class="text-right power-val" data-val="144">⚔️ 144</td>
-        </tr>
-        
-        <tr class="">
-            <td>56</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    R0B0T <span class='bounty-val' title='Bounty'>🎯 191</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Botas Neurais de Aço</span> (+7)<br>Head: <span class="rar-epic">Capa de Memória Neural</span> (+41)<br>Body: <span class="rar-epic">Armadura de Ébano Celestial</span> (+45)<br>Accessory: <span class="rar-rare">Nexus de Sinapses Viventes</span> (+35)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">PTnet</td>
-            <td class="text-center"><span class="badge">5</span></td>
-            <td class="text-right" data-val="4286">4,286</td>
-            <td class="text-right power-val" data-val="143">⚔️ 143</td>
         </tr>
         
         <tr class="">
@@ -1248,7 +1248,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17465">17,465</td>
+            <td class="text-right" data-val="17556">17,556</td>
             <td class="text-right power-val" data-val="141">⚔️ 141</td>
         </tr>
         
@@ -1265,7 +1265,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17521">17,521</td>
+            <td class="text-right" data-val="17612">17,612</td>
             <td class="text-right power-val" data-val="130">⚔️ 130</td>
         </tr>
         
@@ -1282,12 +1282,29 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5555">5,555</td>
+            <td class="text-right" data-val="5646">5,646</td>
             <td class="text-right power-val" data-val="129">⚔️ 129</td>
         </tr>
         
         <tr class="">
             <td>60</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    Futebol <span class='bounty-val' title='Bounty'>🎯 416</span>
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-rare">Botas de Neon Arcano</span> (+23)<br>Weapon: <span class="rar-common">Lâmina do Crepúsculo Eterno</span> (+9)<br>Head: <span class="rar-common">Capacete de Infinito Estelar</span> (+12)<br>Body: <span class="rar-rare">Véu Espectral de Rivenwood</span> (+21)<br>Accessory: <span class="rar-rare">Escudo de Plasma Energizado</span> (+38)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">PTnet</td>
+            <td class="text-center"><span class="badge">14</span></td>
+            <td class="text-right" data-val="13963">13,963</td>
+            <td class="text-right power-val" data-val="127">⚔️ 127</td>
+        </tr>
+        
+        <tr class="">
+            <td>61</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     EightyTwo <span class='bounty-val' title='Bounty'>🎯 168</span>
@@ -1299,25 +1316,8 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17288">17,288</td>
+            <td class="text-right" data-val="17379">17,379</td>
             <td class="text-right power-val" data-val="121">⚔️ 121</td>
-        </tr>
-        
-        <tr class="">
-            <td>61</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    Futebol <span class='bounty-val' title='Bounty'>🎯 416</span>
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-rare">Botas de Neon Arcano</span> (+23)<br>Weapon: <span class="rar-common">Lâmina do Crepúsculo Eterno</span> (+9)<br>Head: <span class="rar-common">Capacete de Infinito Estelar</span> (+12)<br>Body: <span class="rar-rare">Véu Espectral de Rivenwood</span> (+21)<br>Accessory: <span class="rar-rare">Anel de Pulsar Celestial</span> (+27)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">PTnet</td>
-            <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right" data-val="13816">13,816</td>
-            <td class="text-right power-val" data-val="116">⚔️ 116</td>
         </tr>
         
         <tr class="">
@@ -1333,7 +1333,7 @@
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right" data-val="2723">2,723</td>
+            <td class="text-right" data-val="2861">2,861</td>
             <td class="text-right power-val" data-val="113">⚔️ 113</td>
         </tr>
         
@@ -1350,7 +1350,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17898">17,898</td>
+            <td class="text-right" data-val="17989">17,989</td>
             <td class="text-right power-val" data-val="110">⚔️ 110</td>
         </tr>
         
@@ -1367,12 +1367,29 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17488">17,488</td>
+            <td class="text-right" data-val="17579">17,579</td>
             <td class="text-right power-val" data-val="108">⚔️ 108</td>
         </tr>
         
         <tr class="">
             <td>65</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    nuke
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Quantum Singularity Blaster</span> (+4)<br>Feet: <span class="rar-rare">Voidwalker Sandals</span> (+11)<br>Head: <span class="rar-common">Coroa de Radiação</span> (+10)<br>Body: <span class="rar-common">Celestial Dragon Robe</span> (+9)<br>Accessory: <span class="rar-rare">Fused Accessory</span> (+45)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Undernet</td>
+            <td class="text-center"><span class="badge">18</span></td>
+            <td class="text-right" data-val="17598">17,598</td>
+            <td class="text-right power-val" data-val="107">⚔️ 107</td>
+        </tr>
+        
+        <tr class="">
+            <td>66</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Sukuna <span class='bounty-val' title='Bounty'>🎯 379</span>
@@ -1384,12 +1401,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17589">17,589</td>
+            <td class="text-right" data-val="17680">17,680</td>
             <td class="text-right power-val" data-val="101">⚔️ 101</td>
         </tr>
         
         <tr class="">
-            <td>66</td>
+            <td>67</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     jupe4316
@@ -1401,12 +1418,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right" data-val="14145">14,145</td>
+            <td class="text-right" data-val="14236">14,236</td>
             <td class="text-right power-val" data-val="99">⚔️ 99</td>
         </tr>
         
         <tr class="">
-            <td>67</td>
+            <td>68</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     hltv <span class='bounty-val' title='Bounty'>🎯 143</span>
@@ -1418,12 +1435,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">10</span></td>
-            <td class="text-right" data-val="9291">9,291</td>
+            <td class="text-right" data-val="9382">9,382</td>
             <td class="text-right power-val" data-val="96">⚔️ 96</td>
         </tr>
         
         <tr class="">
-            <td>68</td>
+            <td>69</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Falcon
@@ -1435,12 +1452,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5588">5,588</td>
+            <td class="text-right" data-val="5679">5,679</td>
             <td class="text-right power-val" data-val="87">⚔️ 87</td>
         </tr>
         
         <tr class="">
-            <td>69</td>
+            <td>70</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Frieren <span class='bounty-val' title='Bounty'>🎯 293</span>
@@ -1452,12 +1469,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17567">17,567</td>
+            <td class="text-right" data-val="17658">17,658</td>
             <td class="text-right power-val" data-val="86">⚔️ 86</td>
         </tr>
         
         <tr class="">
-            <td>70</td>
+            <td>71</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Egg <span class='bounty-val' title='Bounty'>🎯 232</span>
@@ -1469,12 +1486,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5511">5,511</td>
+            <td class="text-right" data-val="5602">5,602</td>
             <td class="text-right power-val" data-val="81">⚔️ 81</td>
         </tr>
         
         <tr class="">
-            <td>71</td>
+            <td>72</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Rapha-Q
@@ -1491,7 +1508,7 @@
         </tr>
         
         <tr class="">
-            <td>72</td>
+            <td>73</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     ekun <span class='bounty-val' title='Bounty'>🎯 141</span>
@@ -1503,25 +1520,8 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right" data-val="8475">8,475</td>
+            <td class="text-right" data-val="8566">8,566</td>
             <td class="text-right power-val" data-val="78">⚔️ 78</td>
-        </tr>
-        
-        <tr class="">
-            <td>73</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    nuke
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Quantum Singularity Blaster</span> (+4)<br>Feet: <span class="rar-rare">Voidwalker Sandals</span> (+11)<br>Accessory: <span class="rar-rare">Pulseira do Caos Quântico</span> (+15)<br>Head: <span class="rar-common">Coroa de Radiação</span> (+10)<br>Body: <span class="rar-common">Celestial Dragon Robe</span> (+9)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17507">17,507</td>
-            <td class="text-right power-val" data-val="77">⚔️ 77</td>
         </tr>
         
         <tr class="">
@@ -1537,12 +1537,29 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right" data-val="17461">17,461</td>
+            <td class="text-right" data-val="17552">17,552</td>
             <td class="text-right power-val" data-val="75">⚔️ 75</td>
         </tr>
         
         <tr class="">
             <td>75</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    mIrc-OP
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Shadowed Justice Piece</span> (+15)<br>Head: <span class="rar-epic">mIrc-OP's Wacky Hat of Nonsense</span> (+42)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Undernet</td>
+            <td class="text-center"><span class="badge">4</span></td>
+            <td class="text-right" data-val="3019">3,019</td>
+            <td class="text-right power-val" data-val="71">⚔️ 71</td>
+        </tr>
+        
+        <tr class="">
+            <td>76</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     mtN <span class='bounty-val' title='Bounty'>🎯 234</span>
@@ -1559,23 +1576,6 @@
         </tr>
         
         <tr class="">
-            <td>76</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    mIrc-OP
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Shadowed Justice Piece</span> (+15)<br>Head: <span class="rar-epic">mIrc-OP's Wacky Hat of Nonsense</span> (+42)</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right" data-val="2928">2,928</td>
-            <td class="text-right power-val" data-val="70">⚔️ 70</td>
-        </tr>
-        
-        <tr class="">
             <td>77</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
@@ -1588,7 +1588,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5536">5,536</td>
+            <td class="text-right" data-val="5627">5,627</td>
             <td class="text-right power-val" data-val="59">⚔️ 59</td>
         </tr>
         
@@ -1622,7 +1622,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5776">5,776</td>
+            <td class="text-right" data-val="5924">5,924</td>
             <td class="text-right power-val" data-val="52">⚔️ 52</td>
         </tr>
         
@@ -1639,7 +1639,7 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right" data-val="12889">12,889</td>
+            <td class="text-right" data-val="12980">12,980</td>
             <td class="text-right power-val" data-val="52">⚔️ 52</td>
         </tr>
         
@@ -1656,12 +1656,29 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5596">5,596</td>
+            <td class="text-right" data-val="5687">5,687</td>
             <td class="text-right power-val" data-val="49">⚔️ 49</td>
         </tr>
         
         <tr class="">
             <td>82</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    GGore
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-rare">Vengeance of the Valkyries</span> (+37)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Undernet</td>
+            <td class="text-center"><span class="badge">2</span></td>
+            <td class="text-right" data-val="1457">1,457</td>
+            <td class="text-right power-val" data-val="49">⚔️ 49</td>
+        </tr>
+        
+        <tr class="">
+            <td>83</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Razvan`
@@ -1672,13 +1689,13 @@
                 </div>
             </td>
             <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5917">5,917</td>
-            <td class="text-right power-val" data-val="42">⚔️ 42</td>
+            <td class="text-center"><span class="badge">7</span></td>
+            <td class="text-right" data-val="6101">6,101</td>
+            <td class="text-right power-val" data-val="43">⚔️ 43</td>
         </tr>
         
         <tr class="">
-            <td>83</td>
+            <td>84</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     pybot
@@ -1690,12 +1707,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5658">5,658</td>
+            <td class="text-right" data-val="5749">5,749</td>
             <td class="text-right power-val" data-val="37">⚔️ 37</td>
         </tr>
         
         <tr class="">
-            <td>84</td>
+            <td>85</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     blablabla
@@ -1707,12 +1724,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5634">5,634</td>
+            <td class="text-right" data-val="5725">5,725</td>
             <td class="text-right power-val" data-val="36">⚔️ 36</td>
         </tr>
         
         <tr class="">
-            <td>85</td>
+            <td>86</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     cuddzey
@@ -1724,12 +1741,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5555">5,555</td>
+            <td class="text-right" data-val="5646">5,646</td>
             <td class="text-right power-val" data-val="34">⚔️ 34</td>
         </tr>
         
         <tr class="">
-            <td>86</td>
+            <td>87</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Ionut-
@@ -1746,7 +1763,7 @@
         </tr>
         
         <tr class="">
-            <td>87</td>
+            <td>88</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Irc0p
@@ -1758,12 +1775,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">4</span></td>
-            <td class="text-right" data-val="3124">3,124</td>
+            <td class="text-right" data-val="3215">3,215</td>
             <td class="text-right power-val" data-val="27">⚔️ 27</td>
         </tr>
         
         <tr class="">
-            <td>88</td>
+            <td>89</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     ao_makse
@@ -1780,7 +1797,7 @@
         </tr>
         
         <tr class="">
-            <td>89</td>
+            <td>90</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     payiurtuk
@@ -1792,12 +1809,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">8</span></td>
-            <td class="text-right" data-val="7185">7,185</td>
+            <td class="text-right" data-val="7276">7,276</td>
             <td class="text-right power-val" data-val="25">⚔️ 25</td>
         </tr>
         
         <tr class="">
-            <td>90</td>
+            <td>91</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     GMonster
@@ -1808,13 +1825,30 @@
                 </div>
             </td>
             <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right" data-val="2995">2,995</td>
+            <td class="text-center"><span class="badge">4</span></td>
+            <td class="text-right" data-val="3086">3,086</td>
+            <td class="text-right power-val" data-val="24">⚔️ 24</td>
+        </tr>
+        
+        <tr class="">
+            <td>92</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
+                    oldschool`
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-common">Mystic Sigil Amulet</span> (+9)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Undernet</td>
+            <td class="text-center"><span class="badge">4</span></td>
+            <td class="text-right" data-val="3164">3,164</td>
             <td class="text-right power-val" data-val="23">⚔️ 23</td>
         </tr>
         
         <tr class="">
-            <td>91</td>
+            <td>93</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     cuddzy
@@ -1826,12 +1860,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">1</span></td>
-            <td class="text-right" data-val="576">576</td>
+            <td class="text-right" data-val="667">667</td>
             <td class="text-right power-val" data-val="22">⚔️ 22</td>
         </tr>
         
         <tr class="">
-            <td>92</td>
+            <td>94</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Skinner
@@ -1843,12 +1877,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
-            <td class="text-right" data-val="1326">1,326</td>
+            <td class="text-right" data-val="1417">1,417</td>
             <td class="text-right power-val" data-val="21">⚔️ 21</td>
         </tr>
         
         <tr class="">
-            <td>93</td>
+            <td>95</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     news
@@ -1860,12 +1894,12 @@
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right" data-val="5455">5,455</td>
+            <td class="text-right" data-val="5546">5,546</td>
             <td class="text-right power-val" data-val="20">⚔️ 20</td>
         </tr>
         
         <tr class="">
-            <td>94</td>
+            <td>96</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     Calypso
@@ -1882,7 +1916,7 @@
         </tr>
         
         <tr class="">
-            <td>95</td>
+            <td>97</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     IdleGame
@@ -1896,40 +1930,6 @@
             <td class="text-center"><span class="badge">1</span></td>
             <td class="text-right" data-val="782">782</td>
             <td class="text-right power-val" data-val="14">⚔️ 14</td>
-        </tr>
-        
-        <tr class="">
-            <td>96</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    oldschool`
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>---</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">4</span></td>
-            <td class="text-right" data-val="3073">3,073</td>
-            <td class="text-right power-val" data-val="14">⚔️ 14</td>
-        </tr>
-        
-        <tr class="">
-            <td>97</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    GGore
-                    <div class="tooltip-content">
-                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>---</div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">2</span></td>
-            <td class="text-right" data-val="1366">1,366</td>
-            <td class="text-right power-val" data-val="12">⚔️ 12</td>
         </tr>
         
         <tr class="">
