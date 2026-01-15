@@ -1,484 +1,208 @@
 
     <!DOCTYPE html>
     <html lang="pt">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>IdleRPG Dashboard</title>
-      
+    <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>IdleRPG Rankings</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-        
-        :root {
-            --bg-body: #0f0f13;
-            --bg-card: #1a1a1f;
-            --bg-hover: #25252b;
-            --text-main: #ffffff;
-            --text-sub: #a0a0b0;
-            --accent: #7c4dff;
-            --accent-glow: rgba(124, 77, 255, 0.4);
-            --border: #2a2a35;
-        }
-
-        body { 
-            background: var(--bg-body); 
-            color: var(--text-main); 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 20px;
-        }
-
+        :root { --bg-body: #0f0f13; --bg-card: #1a1a1f; --bg-hover: #25252b; --text-main: #ffffff; --text-sub: #a0a0b0; --accent: #7c4dff; --border: #2a2a35; }
+        body { background: var(--bg-body); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 1100px; margin: 0 auto; position: relative; }
+        h2, h4 { margin: 0; color: var(--text-main); }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .card-header { padding: 15px 20px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); }
         
-        /* Language Switcher */
-        .lang-switch {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-        .lang-switch:hover { border-color: var(--accent); }
-        .hidden { display: none !important; }
-
-        h2 { margin: 0; font-size: 1.2rem; color: var(--text-main); }
-        
-        .card { 
-            background: var(--bg-card); 
-            border: 1px solid var(--border); 
-            border-radius: 12px; 
-            margin-bottom: 24px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-        
-        .card-header {
-            padding: 20px;
-            border-bottom: 1px solid var(--border);
-            background: rgba(255,255,255,0.02);
-        }
-
-        /* TOOLTIP CSS */
-        .tooltip-wrapper {
-            position: relative;
-            display: inline-block;
-            cursor: help;
-        }
-        
-        .tooltip-content {
-            visibility: hidden;
-            width: 250px;
-            background-color: rgba(0, 0, 0, 0.95);
-            color: #fff;
-            text-align: left;
-            border-radius: 8px;
-            padding: 12px;
-            position: absolute;
-            z-index: 100;
-            bottom: 125%; /* Posição acima */
-            left: 50%;
-            margin-left: -125px; /* Centrar */
-            opacity: 0;
-            transition: opacity 0.3s;
-            border: 1px solid var(--accent);
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
-            font-size: 0.85rem;
-            font-weight: normal;
-            pointer-events: none; /* Não atrapalha o rato */
-        }
-        
-        .tooltip-wrapper:hover .tooltip-content {
-            visibility: visible;
-            opacity: 1;
-        }
-        
-        .tooltip-content::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: var(--accent) transparent transparent transparent;
-        }
-        
-        .tt-section { margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 8px; }
-        .tt-section:last-child { border-bottom: none; margin-bottom: 0; }
-
-        /* Resto do CSS igual */
+        /* Grid Layouts */
         .grid-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .stat-card { text-align: center; padding: 25px; border: 1px solid var(--border); transition: transform 0.2s; }
-        .stat-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .stat-card .icon { font-size: 2rem; margin-bottom: 10px; }
-        .stat-card .value { font-size: 2.5rem; font-weight: 800; color: #fff; }
-        .stat-card .label { color: var(--text-sub); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .extra-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 24px; }
+        .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+        @media (max-width: 768px) { .two-col-grid { grid-template-columns: 1fr; } }
 
+        /* Stat Cards */
+        .stat-card { text-align: center; padding: 20px; border: 1px solid var(--border); transition: transform 0.2s; }
+        .stat-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .stat-card .icon { font-size: 2rem; } .stat-card .value { font-size: 2rem; font-weight: 800; }
+        
+        /* Tables */
         .table-responsive { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; }
-        th { text-align: left; padding: 15px 20px; color: var(--text-sub); font-size: 0.85rem; text-transform: uppercase; border-bottom: 1px solid var(--border); }
-        td { padding: 15px 20px; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
-        tr:last-child td { border-bottom: none; }
+        th, td { padding: 12px 15px; border-bottom: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
+        .mini-table td { padding: 8px 12px; font-size: 0.85rem; }
         tbody tr:hover { background: var(--bg-hover); }
-
-        .text-center { text-align: center; }
-        .text-right { text-align: right; }
-        .font-bold { font-weight: 600; }
-        .subtle { color: var(--text-sub); font-size: 0.85rem; }
-        .badge { background: #333; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; }
+        .text-right { text-align: right; } .text-center { text-align: center; }
+        .font-bold { font-weight: 600; } .subtle { color: var(--text-sub); font-size: 0.8rem; }
+        .badge { background: #333; padding: 3px 6px; border-radius: 4px; font-size: 0.8rem; }
         .power-val { color: #f1c40f; font-weight: 600; }
         
-        .rank-1 td { color: #ffd700; background: rgba(255, 215, 0, 0.05); }
-        .rank-2 td { color: #c0c0c0; background: rgba(192, 192, 192, 0.05); }
-        .rank-3 td { color: #cd7f32; background: rgba(205, 127, 50, 0.05); }
+        /* RARITY COLORS */
+        .rar-common { color: #b0b0b0; }
+        .rar-rare { color: #3498db; font-weight: 600; }
+        .rar-epic { color: #9b59b6; font-weight: 600; text-shadow: 0 0 5px rgba(155, 89, 182, 0.3); }
+        .rar-legendary { color: #e67e22; font-weight: 800; text-shadow: 0 0 8px rgba(230, 126, 34, 0.4); }
+        .rar-mythic { color: #e74c3c; font-weight: 900; text-shadow: 0 0 10px rgba(231, 76, 60, 0.6); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; text-shadow: 0 0 15px red; } 100% { opacity: 0.8; } }
 
-        .boss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
-        .boss-card { background: #222; border-radius: 8px; padding: 15px; border: 1px solid #e74c3c; }
-        .boss-header { display: flex; justify-content: space-between; font-size: 0.8rem; color: #aaa; margin-bottom: 5px; }
-        .boss-name { margin: 0 0 15px 0; font-size: 1.1rem; color: #fff; }
-        .progress-track { background: #444; height: 10px; border-radius: 5px; overflow: hidden; }
-        .progress-fill { height: 100%; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
-
-        .hof-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; padding: 20px; }
-        .hof-item { display: flex; align-items: center; background: #222; padding: 15px; border-radius: 8px; border: 1px solid var(--border); }
-        .hof-icon { font-size: 1.5rem; margin-right: 15px; }
-        .hof-details { flex-grow: 1; }
-        .hof-nick { font-weight: bold; color: #fff; }
-        .hof-net { font-size: 0.8rem; color: var(--text-sub); }
-        .hof-wins { font-size: 0.9rem; color: var(--accent); font-weight: bold; }
+        /* TOOLTIPS FIX */
+        .tooltip-wrapper { position: relative; display: inline-block; cursor: help; }
+        .tooltip-content { 
+            visibility: hidden; width: 260px; background: rgba(0,0,0,0.95); color: #fff; 
+            padding: 12px; position: absolute; z-index: 999; 
+            bottom: 125%; left: 50%; transform: translateX(-50%);
+            border: 1px solid var(--accent); border-radius: 6px; opacity: 0; transition: opacity 0.2s; pointer-events: none;
+        }
+        .tooltip-wrapper:hover .tooltip-content { visibility: visible; opacity: 1; }
+        /* A MAGIA: Para as primeiras 3 linhas, mostra EM BAIXO */
+        tr:nth-child(-n+3) .tooltip-content { bottom: auto; top: 100%; margin-top: 5px; }
         
-        footer { text-align: center; color: var(--text-sub); font-size: 0.8rem; margin-top: 40px; margin-bottom: 20px; }
+        /* Language & Misc */
+        .lang-switch { position: absolute; top: 0; right: 0; background: var(--bg-card); border: 1px solid var(--border); color: #fff; padding: 5px 10px; cursor: pointer; border-radius: 15px; }
+        .hidden { display: none !important; }
+        .boss-card { padding: 15px; border: 1px solid #e74c3c; background: #222; border-radius: 8px; }
+        .boss-header { display: flex; justify-content: space-between; color: #aaa; font-size: 0.8rem; margin-bottom: 5px; }
+        .progress-track { background: #444; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; }
+        .hof-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; padding: 15px; }
+        .hof-item { display: flex; align-items: center; background: #222; padding: 10px; border-radius: 6px; border: 1px solid var(--border); }
+        .hof-icon { font-size: 1.5rem; margin-right: 10px; }
+        .hof-wins { margin-left: auto; color: var(--accent); font-weight: bold; }
+        
+        footer { text-align: center; margin-top: 40px; color: var(--text-sub); font-size: 0.8rem; }
     </style>
-    
     <script>
         function toggleLang() {
             const btn = document.getElementById('langBtn');
-            const isPt = btn.innerText.includes('EN'); // Se diz 'Switch to EN', estamos em PT
-            
-            const ptElements = document.querySelectorAll('.lang-pt');
-            const enElements = document.querySelectorAll('.lang-en');
-            
+            const isPt = btn.innerText.includes('EN'); 
+            const ptEls = document.querySelectorAll('.lang-pt');
+            const enEls = document.querySelectorAll('.lang-en');
             if (isPt) {
-                // Mudar para Inglês
-                ptElements.forEach(el => el.classList.add('hidden'));
-                enElements.forEach(el => el.classList.remove('hidden'));
+                ptEls.forEach(el => el.classList.add('hidden'));
+                enEls.forEach(el => el.classList.remove('hidden'));
                 btn.innerText = '🇵🇹 PT';
                 localStorage.setItem('idle_lang', 'en');
             } else {
-                // Mudar para Português
-                enElements.forEach(el => el.classList.add('hidden'));
-                ptElements.forEach(el => el.classList.remove('hidden'));
+                enEls.forEach(el => el.classList.add('hidden'));
+                ptEls.forEach(el => el.classList.remove('hidden'));
                 btn.innerText = '🇬🇧 EN';
                 localStorage.setItem('idle_lang', 'pt');
             }
         }
-        
-        // Carregar preferência ao iniciar
-        window.onload = function() {
-            const saved = localStorage.getItem('idle_lang');
-            if (saved === 'en') {
-                toggleLang(); // Executa uma vez para virar EN
-            }
-        }
+        window.onload = function() { if(localStorage.getItem('idle_lang') === 'en') toggleLang(); }
     </script>
-    
     </head>
     <body>
       <div class="container">
           <button id="langBtn" class="lang-switch" onclick="toggleLang()">🇬🇧 EN</button>
-      
-          <header style="text-align: center; margin-bottom: 40px; margin-top: 20px;">
+          <header style="text-align: center; margin: 30px 0;">
             <h1 style="font-size: 2.5rem; margin-bottom: 5px;">⚔️ IdleRPG Global</h1>
-            <span style="color: var(--text-sub);">
-                <span class="lang-pt">Ranking em Tempo Real</span>
-                <span class="lang-en hidden">Real-Time Ranking</span>
-            </span>
           </header>
 
           
     <div class="grid-stats">
         <div class="card stat-card">
             <div class="icon">👥</div>
-            <div class="value">147</div>
-            <div class="label">
-                <span class="lang-pt">Jogadores</span>
-                <span class="lang-en hidden">Players</span>
-            </div>
+            <div class="value">149</div>
+            <div class="label"><span class="lang-pt">Jogadores</span><span class="lang-en hidden">Players</span></div>
         </div>
         <div class="card stat-card">
             <div class="icon">👹</div>
-            <div class="value">1</div>
-            <div class="label">
-                <span class="lang-pt">Bosses Ativos</span>
-                <span class="lang-en hidden">Active Bosses</span>
-            </div>
+            <div class="value">2</div>
+            <div class="label"><span class="lang-pt">Bosses Ativos</span><span class="lang-en hidden">Active Bosses</span></div>
         </div>
         <div class="card stat-card">
             <div class="icon">✨</div>
-            <div class="value">1,147,013</div>
-            <div class="label">
-                <span class="lang-pt">XP Total Global</span>
-                <span class="lang-en hidden">Global Total XP</span>
-            </div>
+            <div class="value">1,149,400</div>
+            <div class="label"><span class="lang-pt">XP Total Global</span><span class="lang-en hidden">Global Total XP</span></div>
         </div>
     </div>
     
+          <section class="card boss-section"><div class="card-header"><h2>☠️ Active Raids</h2></div><div class="boss-grid"><div class="boss-card"><div class="boss-header"><span class="boss-net">PTnet</span><span>5000 HP</span></div><h3 class="boss-name">Erro, O Bug</h3><div class="progress-track"><div class="progress-fill" style="width:100%;background:#2ecc71;"></div></div></div><div class="boss-card"><div class="boss-header"><span class="boss-net">Quakenet</span><span>4600 HP</span></div><h3 class="boss-name">Elysium Shade, The Divine Enigma</h3><div class="progress-track"><div class="progress-fill" style="width:100%;background:#2ecc71;"></div></div></div></div></section>
           
-    <section class="card boss-section">
-        <div class="card-header">
-            <h2>
-                <span class="lang-pt">☠️ Bosses Ativos (Raids)</span>
-                <span class="lang-en hidden">☠️ Active Bosses (Raids)</span>
-            </h2>
-        </div>
-        <div class="boss-grid">
+          
+    <div class="extra-stats-grid">
+        <div class="card"><div class="card-header"><h4>☠️ Boss Killers</h4></div><table class="mini-table"><tr><td>juanjocerero</td><td class='text-right'>10 💀</td></tr><tr><td>nuke</td><td class='text-right'>7 💀</td></tr><tr><td>nuke</td><td class='text-right'>7 💀</td></tr><tr><td>nuke</td><td class='text-right'>2 💀</td></tr><tr><td>nuke</td><td class='text-right'>2 💀</td></tr></table></div>
+        <div class="card"><div class="card-header"><h4>🐉 Top Pets</h4></div><table class="mini-table"><tr><td><span class='rar-epic'>Juancoceri Fiendling</span> <span class='subtle'>(juanjocerero)</span></td><td class='text-right'>Lvl 7</td></tr><tr><td><span class='rar-rare'>Radiant Cinderfox</span> <span class='subtle'>(nuke)</span></td><td class='text-right'>Lvl 1</td></tr><tr><td><span class='rar-common'>Nuke Pheromone Hounds</span> <span class='subtle'>(nuke)</span></td><td class='text-right'>Lvl 5</td></tr><tr><td><span class='rar-common'>Blast Hound</span> <span class='subtle'>(nuke)</span></td><td class='text-right'>Lvl 2</td></tr><tr><td><span class='rar-common'>Shadowtail Liushou</span> <span class='subtle'>(teamrat)</span></td><td class='text-right'>Lvl 1</td></tr></table></div>
+        <div class="card"><div class="card-header"><h4>⚡ God Tier Items</h4></div><table class="mini-table"><tr><td><span class='subtle'>[Head]</span> <span class='rar-legendary'>Neural Interface Crown</span></td><td class='text-right'>+175</td></tr><tr><td><span class='subtle'>[Body]</span> <span class='rar-legendary'>Capa de Toffee Celestial</span></td><td class='text-right'>+173</td></tr><tr><td><span class='subtle'>[Weapon]</span> <span class='rar-legendary'>Genetic Disruption Blade</span></td><td class='text-right'>+173</td></tr><tr><td><span class='subtle'>[Accessory]</span> <span class='rar-legendary'>Phantom Resonance Amulet</span></td><td class='text-right'>+169</td></tr><tr><td><span class='subtle'>[Feet]</span> <span class='rar-legendary'>Avatar Quantum Boots</span></td><td class='text-right'>+146</td></tr></table></div>
+        <div class="card"><div class="card-header"><h4>🌍 World War Wins</h4></div><table class="mini-table"><tr><td>Rizon</td><td class='text-right'>1 🏆</td></tr><tr><td>InTheMansion</td><td class='text-right'>1 🏆</td></tr><tr><td>Efnet</td><td class='text-right'>1 🏆</td></tr></table></div>
+    </div>
     
-        <div class="boss-card">
-            <div class="boss-header">
-                <span class="boss-net">PTnet</span>
-                <span class="boss-hp-text">5000 / 5000 HP</span>
-            </div>
-            <h3 class="boss-name">Erro, O Bug</h3>
-            <div class="progress-track">
-                <div class="progress-fill" style="width: 100%; background: #2ecc71;"></div>
-            </div>
-        </div>
-        </div></section>
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+          <div class="two-col-grid">
              
     <section class="card">
         <div class="card-header">
-            <h2>
-                <span class="lang-pt">🌐 Redes Conectadas</span>
-                <span class="lang-en hidden">🌐 Connected Networks</span>
-            </h2>
+            <h2><span class="lang-pt">🌐 Redes Conectadas</span><span class="lang-en hidden">🌐 Connected Networks</span></h2>
         </div>
         <div class="table-responsive">
             <table>
                 <thead>
                     <tr>
-                        <th>
-                            <span class="lang-pt">Rede</span>
-                            <span class="lang-en hidden">Network</span>
-                        </th>
-                        <th class="text-center">
-                            <span class="lang-pt">Jogadores</span>
-                            <span class="lang-en hidden">Players</span>
-                        </th>
-                        <th class="text-right">
-                            <span class="lang-pt">XP Total</span>
-                            <span class="lang-en hidden">Total XP</span>
-                        </th>
+                        <th>Net</th>
+                        <th class="text-center">Players</th>
+                        <th class="text-right">Total XP</th>
                     </tr>
                 </thead>
                 <tbody>
     
         <tr>
-            <td class="primary-color font-bold">DALnet</td>
-            <td class="text-center">2</td>
-            <td class="text-right">39,138</td>
-        </tr>
-        
-        <tr>
-            <td class="primary-color font-bold">Efnet</td>
-            <td class="text-center">7</td>
-            <td class="text-right">70,582</td>
-        </tr>
-        
-        <tr>
-            <td class="primary-color font-bold">InTheMansion</td>
-            <td class="text-center">8</td>
-            <td class="text-right">121,291</td>
-        </tr>
-        
-        <tr>
-            <td class="primary-color font-bold">Libera</td>
-            <td class="text-center">8</td>
-            <td class="text-right">92,419</td>
-        </tr>
-        
-        <tr>
-            <td class="primary-color font-bold">PTirc</td>
-            <td class="text-center">4</td>
-            <td class="text-right">68,360</td>
+            <td class="primary-color font-bold">Undernet</td>
+            <td class="text-center">53</td>
+            <td class="text-right">457,319</td>
         </tr>
         
         <tr>
             <td class="primary-color font-bold">PTnet</td>
             <td class="text-center">16</td>
-            <td class="text-right">129,919</td>
+            <td class="text-right">130,199</td>
+        </tr>
+        
+        <tr>
+            <td class="primary-color font-bold">InTheMansion</td>
+            <td class="text-center">8</td>
+            <td class="text-right">121,435</td>
         </tr>
         
         <tr>
             <td class="primary-color font-bold">Quakenet</td>
             <td class="text-center">10</td>
-            <td class="text-right">94,329</td>
+            <td class="text-right">94,411</td>
+        </tr>
+        
+        <tr>
+            <td class="primary-color font-bold">Libera</td>
+            <td class="text-center">8</td>
+            <td class="text-right">92,569</td>
+        </tr>
+        
+        <tr>
+            <td class="primary-color font-bold">Efnet</td>
+            <td class="text-center">7</td>
+            <td class="text-right">70,774</td>
+        </tr>
+        
+        <tr>
+            <td class="primary-color font-bold">PTirc</td>
+            <td class="text-center">4</td>
+            <td class="text-right">68,461</td>
         </tr>
         
         <tr>
             <td class="primary-color font-bold">Rizon</td>
             <td class="text-center">2</td>
-            <td class="text-right">39,945</td>
+            <td class="text-right">39,985</td>
+        </tr>
+        
+        <tr>
+            <td class="primary-color font-bold">DALnet</td>
+            <td class="text-center">2</td>
+            <td class="text-right">39,178</td>
         </tr>
         
         <tr>
             <td class="primary-color font-bold">Snoonet</td>
             <td class="text-center">2</td>
-            <td class="text-right">35,001</td>
-        </tr>
-        
-        <tr>
-            <td class="primary-color font-bold">Undernet</td>
-            <td class="text-center">53</td>
-            <td class="text-right">456,029</td>
+            <td class="text-right">35,069</td>
         </tr>
         </tbody></table></div></section>
-             
-    <section class="card">
-        <div class="card-header">
-            <h2>
-                <span class="lang-pt">🏛️ Hall of Fame</span>
-                <span class="lang-en hidden">🏛️ Hall of Fame</span>
-            </h2>
-        </div>
-        <div class="hof-list">
-    
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">nuke</div>
-                <div class="hof-net">Libera</div>
-            </div>
-            <div class="hof-wins">
-                6 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">nuke</div>
-                <div class="hof-net">Snoonet</div>
-            </div>
-            <div class="hof-wins">
-                6 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">nuke</div>
-                <div class="hof-net">InTheMansion</div>
-            </div>
-            <div class="hof-wins">
-                5 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">nuke</div>
-                <div class="hof-net">PTirc</div>
-            </div>
-            <div class="hof-wins">
-                5 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">doc</div>
-                <div class="hof-net">PTirc</div>
-            </div>
-            <div class="hof-wins">
-                4 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">nuke</div>
-                <div class="hof-net">DALnet</div>
-            </div>
-            <div class="hof-wins">
-                4 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">nuke</div>
-                <div class="hof-net">Quakenet</div>
-            </div>
-            <div class="hof-wins">
-                4 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">~nuke</div>
-                <div class="hof-net">Rizon</div>
-            </div>
-            <div class="hof-wins">
-                4 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">nuke</div>
-                <div class="hof-net">PTnet</div>
-            </div>
-            <div class="hof-wins">
-                3 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        
-        <div class="hof-item">
-            <div class="hof-icon">👑</div>
-            <div class="hof-details">
-                <div class="hof-nick">Avatar</div>
-                <div class="hof-net">InTheMansion</div>
-            </div>
-            <div class="hof-wins">
-                2 
-                <span class="lang-pt">Vitórias</span>
-                <span class="lang-en hidden">Wins</span>
-            </div>
-        </div>
-        </div></section>
+             <section class="card"><div class="card-header"><h2>🏛️ Hall of Fame</h2></div><div class="hof-list"><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">nuke</div><div class="hof-net">Libera</div></div><div class="hof-wins">6 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">nuke</div><div class="hof-net">Snoonet</div></div><div class="hof-wins">6 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">nuke</div><div class="hof-net">InTheMansion</div></div><div class="hof-wins">5 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">nuke</div><div class="hof-net">PTirc</div></div><div class="hof-wins">5 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">doc</div><div class="hof-net">PTirc</div></div><div class="hof-wins">4 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">nuke</div><div class="hof-net">DALnet</div></div><div class="hof-wins">4 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">nuke</div><div class="hof-net">Quakenet</div></div><div class="hof-wins">4 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">~nuke</div><div class="hof-net">Rizon</div></div><div class="hof-wins">4 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">nuke</div><div class="hof-net">PTnet</div></div><div class="hof-wins">3 Wins</div></div><div class="hof-item"><div class="hof-icon">👑</div><div class="hof-details"><div class="hof-nick">Avatar</div><div class="hof-net">InTheMansion</div></div><div class="hof-wins">2 Wins</div></div></div></section>
           </div>
           
           
@@ -492,16 +216,10 @@
                     <tr>
                         <th>#</th>
                         <th>Nick</th>
-                        <th>
-                            <span class="lang-pt">Rede</span>
-                            <span class="lang-en hidden">Network</span>
-                        </th>
+                        <th>Net</th>
                         <th class="text-center">Lvl</th>
                         <th class="text-right">XP</th>
-                        <th class="text-right">
-                            <span class="lang-pt">Poder Total</span>
-                            <span class="lang-en hidden">Total Power</span>
-                        </th>
+                        <th class="text-right">Power</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -512,19 +230,14 @@
                 <div class="tooltip-wrapper">
                     🥇 nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Quantum Nerve Scythe (+141) <br> Head: Quantum Mindcap (+116) <br> Feet: Warpweave Sabatons of Echoes (+145) <br> Accessory: Nuclear Amulet of Revelations (+81) <br> Body: Nuclear Fusion Exosuit (+124)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-legendary">Quantum Nerve Scythe</span> (+141)<br>Head: <span class="rar-legendary">Quantum Mindcap</span> (+116)<br>Feet: <span class="rar-legendary">Warpweave Sabatons of Echoes</span> (+145)<br>Accessory: <span class="rar-legendary">Nuclear Amulet of Revelations</span> (+81)<br>Body: <span class="rar-legendary">Nuclear Fusion Exosuit</span> (+124)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">24</span></td>
-            <td class="text-right">23,639</td>
+            <td class="text-right">23,663</td>
             <td class="text-right power-val">⚔️ 631</td>
         </tr>
         
@@ -534,19 +247,14 @@
                 <div class="tooltip-wrapper">
                     🥈 nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Quantum Shielded Exosuit (+111) <br> Feet: Quantum Step Slippers (+65) <br> Weapon: Nuke’s Boomstick of Doom (+118) <br> Head: Bicorne of the Duelist (+76) <br> Accessory: Phantom Resonance Amulet (+169)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-legendary">Quantum Shielded Exosuit</span> (+111)<br>Feet: <span class="rar-epic">Quantum Step Slippers</span> (+65)<br>Weapon: <span class="rar-legendary">Nuke’s Boomstick of Doom</span> (+118)<br>Head: <span class="rar-epic">Bicorne of the Duelist</span> (+76)<br>Accessory: <span class="rar-legendary">Phantom Resonance Amulet</span> (+169)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right">21,827</td>
+            <td class="text-right">21,842</td>
             <td class="text-right power-val">⚔️ 561</td>
         </tr>
         
@@ -556,19 +264,14 @@
                 <div class="tooltip-wrapper">
                     🥉 Avatar
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Celestial Emblem Of Whispers (+52) <br> Head: Quantum Sigil Circlet (+84) <br> Body: Celestial Armor Shell (+64) <br> Weapon: Genetic Disruption Blade (+173) <br> Feet: Avatar Quantum Boots (+146)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-epic">Celestial Emblem Of Whispers</span> (+52)<br>Head: <span class="rar-legendary">Quantum Sigil Circlet</span> (+84)<br>Body: <span class="rar-epic">Celestial Armor Shell</span> (+64)<br>Weapon: <span class="rar-legendary">Genetic Disruption Blade</span> (+173)<br>Feet: <span class="rar-legendary">Avatar Quantum Boots</span> (+146)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right">21,883</td>
+            <td class="text-right">21,896</td>
             <td class="text-right power-val">⚔️ 541</td>
         </tr>
         
@@ -578,19 +281,14 @@
                 <div class="tooltip-wrapper">
                     nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> Radiant Cinderfox (Rare)
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Gale-Swept Starlight Sandals (+76) <br> Accessory: Celestial Aetherstone Band (+66) <br> Weapon: Eclipsed Vortex Blade (+60) <br> Head: Nuclear Void Top Crown (+127) <br> Body: Cloak of Forgotten Secrets (+160)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-rare">Radiant Cinderfox</span> (Rare)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-legendary">Gale-Swept Starlight Sandals</span> (+76)<br>Accessory: <span class="rar-epic">Celestial Aetherstone Band</span> (+66)<br>Weapon: <span class="rar-epic">Eclipsed Vortex Blade</span> (+60)<br>Head: <span class="rar-legendary">Nuclear Void Top Crown</span> (+127)<br>Body: <span class="rar-legendary">Cloak of Forgotten Secrets</span> (+160)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">33</span></td>
-            <td class="text-right">32,092</td>
+            <td class="text-right">32,117</td>
             <td class="text-right power-val">⚔️ 522</td>
         </tr>
         
@@ -600,19 +298,14 @@
                 <div class="tooltip-wrapper">
                     style
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Celestial Prism Cufflinks (+149) <br> Body: Quantum Essence Armor (+43) <br> Feet: Echoing Shadow Sabatons (+68) <br> Weapon: Fang of the Star Reaver (+80) <br> Head: Celestial Mind Conduit (+163)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-legendary">Celestial Prism Cufflinks</span> (+149)<br>Body: <span class="rar-epic">Quantum Essence Armor</span> (+43)<br>Feet: <span class="rar-epic">Echoing Shadow Sabatons</span> (+68)<br>Weapon: <span class="rar-epic">Fang of the Star Reaver</span> (+80)<br>Head: <span class="rar-legendary">Celestial Mind Conduit</span> (+163)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,865</td>
+            <td class="text-right">17,890</td>
             <td class="text-right power-val">⚔️ 521</td>
         </tr>
         
@@ -622,19 +315,14 @@
                 <div class="tooltip-wrapper">
                     nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Quantum Synapse Crown (+71) <br> Accessory: Quantum Prism Pendant (+98) <br> Feet: Quantum Gait Amplifiers (+85) <br> Body: Nuke-Proof Jelly Suit (+109) <br> Weapon: Nuke of Ancestral Ruin (+130)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-legendary">Quantum Synapse Crown</span> (+71)<br>Accessory: <span class="rar-legendary">Quantum Prism Pendant</span> (+98)<br>Feet: <span class="rar-legendary">Quantum Gait Amplifiers</span> (+85)<br>Body: <span class="rar-legendary">Nuke-Proof Jelly Suit</span> (+109)<br>Weapon: <span class="rar-legendary">Nuke of Ancestral Ruin</span> (+130)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right">21,273</td>
+            <td class="text-right">21,288</td>
             <td class="text-right power-val">⚔️ 515</td>
         </tr>
         
@@ -644,19 +332,14 @@
                 <div class="tooltip-wrapper">
                     style
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Celestial Dynamo Medallion (+102) <br> Body: Cortex Enhancement Shell (+78) <br> Head: Dashing Feathered Tri-Cornered Hat (+145) <br> Weapon: Plasma Reaver Blade (+105) <br> Feet: Boots of Daring Deeds (+63)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-legendary">Celestial Dynamo Medallion</span> (+102)<br>Body: <span class="rar-epic">Cortex Enhancement Shell</span> (+78)<br>Head: <span class="rar-legendary">Dashing Feathered Tri-Cornered Hat</span> (+145)<br>Weapon: <span class="rar-legendary">Plasma Reaver Blade</span> (+105)<br>Feet: <span class="rar-epic">Boots of Daring Deeds</span> (+63)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">12</span></td>
-            <td class="text-right">11,362</td>
+            <td class="text-right">11,406</td>
             <td class="text-right power-val">⚔️ 505</td>
         </tr>
         
@@ -666,19 +349,14 @@
                 <div class="tooltip-wrapper">
                     nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> Blast Hound (Common)
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Quantum Flux Crown (+123) <br> Feet: Quantum Echo Boots (+119) <br> Weapon: Fused Weapon (+90) <br> Accessory: Chrono-gear Charmed Amulet (+72) <br> Body: Armour of the Celestial Guardian (+60)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-common">Blast Hound</span> (Common)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-legendary">Quantum Flux Crown</span> (+123)<br>Feet: <span class="rar-legendary">Quantum Echo Boots</span> (+119)<br>Weapon: <span class="rar-legendary">Fused Weapon</span> (+90)<br>Accessory: <span class="rar-epic">Chrono-gear Charmed Amulet</span> (+72)<br>Body: <span class="rar-epic">Armour of the Celestial Guardian</span> (+60)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right">21,814</td>
+            <td class="text-right">21,824</td>
             <td class="text-right power-val">⚔️ 486</td>
         </tr>
         
@@ -688,19 +366,14 @@
                 <div class="tooltip-wrapper">
                     nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> Nuke Pheromone Hounds (Common)
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Quantum Pulse Sabre (+130) <br> Accessory: Elysium Particle Ring (+53) <br> Head: Tempered Head (+71) <br> Feet: Ancient Feet (+81) <br> Body: Nuclear Tapestry of Oblivion (+63)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-common">Nuke Pheromone Hounds</span> (Common)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-legendary">Quantum Pulse Sabre</span> (+130)<br>Accessory: <span class="rar-epic">Elysium Particle Ring</span> (+53)<br>Head: <span class="rar-epic">Tempered Head</span> (+71)<br>Feet: <span class="rar-epic">Ancient Feet</span> (+81)<br>Body: <span class="rar-epic">Nuclear Tapestry of Oblivion</span> (+63)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">25</span></td>
-            <td class="text-right">24,345</td>
+            <td class="text-right">24,370</td>
             <td class="text-right power-val">⚔️ 423</td>
         </tr>
         
@@ -710,19 +383,14 @@
                 <div class="tooltip-wrapper">
                     juanjocerero
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> Juancoceri Fiendling (Epic)
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Reinforced Body (+82) <br> Head: Fused Head (+98) <br> Feet: Tempered Feet (+50) <br> Accessory: Aetheric Chronometer Pendant (+60) <br> Weapon: Wasteland Reaver Blade (+106)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-epic">Juancoceri Fiendling</span> (Epic)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-epic">Reinforced Body</span> (+82)<br>Head: <span class="rar-epic">Fused Head</span> (+98)<br>Feet: <span class="rar-rare">Tempered Feet</span> (+50)<br>Accessory: <span class="rar-epic">Aetheric Chronometer Pendant</span> (+60)<br>Weapon: <span class="rar-legendary">Wasteland Reaver Blade</span> (+106)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">27</span></td>
-            <td class="text-right">26,188</td>
+            <td class="text-right">26,213</td>
             <td class="text-right power-val">⚔️ 423</td>
         </tr>
         
@@ -732,19 +400,14 @@
                 <div class="tooltip-wrapper">
                     teamrat
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> Shadowtail Liushou (Common)
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Quantum Thornblade (+97) <br> Body: Godslayer Celestial Qi Robe (+141) <br> Head: Goggles of Arcane Vision (+56) <br> Feet: Pneumatic Spring Boots (+31) <br> Accessory: Teamrat's Enigmatic Medallion (+76)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> <span class="rar-common">Shadowtail Liushou</span> (Common)</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-legendary">Quantum Thornblade</span> (+97)<br>Body: <span class="rar-mythic">Godslayer Celestial Qi Robe</span> (+141)<br>Head: <span class="rar-epic">Goggles of Arcane Vision</span> (+56)<br>Feet: <span class="rar-rare">Pneumatic Spring Boots</span> (+31)<br>Accessory: <span class="rar-epic">Teamrat's Enigmatic Medallion</span> (+76)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right">15,622</td>
+            <td class="text-right">15,647</td>
             <td class="text-right power-val">⚔️ 417</td>
         </tr>
         
@@ -754,19 +417,14 @@
                 <div class="tooltip-wrapper">
                     nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Nuclear Fumble Bomb (+76) <br> Accessory: Quantum Prism Ankh (+69) <br> Head: Neural Flux Helmet (+62) <br> Feet: Celestial Step Sandals (+40) <br> Body: Quantum Exosuit of Eternity (+140)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-legendary">Nuclear Fumble Bomb</span> (+76)<br>Accessory: <span class="rar-epic">Quantum Prism Ankh</span> (+69)<br>Head: <span class="rar-epic">Neural Flux Helmet</span> (+62)<br>Feet: <span class="rar-epic">Celestial Step Sandals</span> (+40)<br>Body: <span class="rar-legendary">Quantum Exosuit of Eternity</span> (+140)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">25</span></td>
-            <td class="text-right">24,214</td>
+            <td class="text-right">24,239</td>
             <td class="text-right power-val">⚔️ 412</td>
         </tr>
         
@@ -776,19 +434,14 @@
                 <div class="tooltip-wrapper">
                     toffee
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Celestial Synapse Ring (+62) <br> Weapon: Quantum Whirlwind Blade (+28) <br> Head: Whimsical Aura Circlet (+60) <br> Feet: Ethereal Starlight Sandals (+65) <br> Body: Capa de Toffee Celestial (+173)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-epic">Celestial Synapse Ring</span> (+62)<br>Weapon: <span class="rar-rare">Quantum Whirlwind Blade</span> (+28)<br>Head: <span class="rar-epic">Whimsical Aura Circlet</span> (+60)<br>Feet: <span class="rar-epic">Ethereal Starlight Sandals</span> (+65)<br>Body: <span class="rar-legendary">Capa de Toffee Celestial</span> (+173)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">21</span></td>
-            <td class="text-right">20,187</td>
+            <td class="text-right">20,243</td>
             <td class="text-right power-val">⚔️ 409</td>
         </tr>
         
@@ -798,19 +451,14 @@
                 <div class="tooltip-wrapper">
                     NullPointer
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Quantum Armorweave Cloak (+20) <br> Accessory: Celestial Echo Amulet (+46) <br> Head: Neural Interface Crown (+175) <br> Weapon: Blades of the Ancients (+65) <br> Feet: Cytoskeletal Reinforcement Boots (+78)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-rare">Quantum Armorweave Cloak</span> (+20)<br>Accessory: <span class="rar-epic">Celestial Echo Amulet</span> (+46)<br>Head: <span class="rar-legendary">Neural Interface Crown</span> (+175)<br>Weapon: <span class="rar-epic">Blades of the Ancients</span> (+65)<br>Feet: <span class="rar-epic">Cytoskeletal Reinforcement Boots</span> (+78)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right">14,283</td>
+            <td class="text-right">14,308</td>
             <td class="text-right power-val">⚔️ 399</td>
         </tr>
         
@@ -820,19 +468,14 @@
                 <div class="tooltip-wrapper">
                     style
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Chrono-Mask of Whispers (+122) <br> Weapon: Etherblade Resonance Dagger (+84) <br> Feet: Soot-Caked Stompers (+75) <br> Accessory: Galactic Aura Enhancer (+74) <br> Body: Capa do Elegante Duelo (+12)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-legendary">Chrono-Mask of Whispers</span> (+122)<br>Weapon: <span class="rar-legendary">Etherblade Resonance Dagger</span> (+84)<br>Feet: <span class="rar-epic">Soot-Caked Stompers</span> (+75)<br>Accessory: <span class="rar-epic">Galactic Aura Enhancer</span> (+74)<br>Body: <span class="rar-common">Capa do Elegante Duelo</span> (+12)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right">15,264</td>
+            <td class="text-right">15,289</td>
             <td class="text-right power-val">⚔️ 383</td>
         </tr>
         
@@ -842,19 +485,14 @@
                 <div class="tooltip-wrapper">
                     Gore1337
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Starlit Void Treads (+26) <br> Head: Voidshade Helm (+99) <br> Accessory: Celestial Aether Ring (+22) <br> Weapon: Shadowforge Wraithblade (+138) <br> Body: Neural Augmentation Exoskeleton (+71)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-rare">Starlit Void Treads</span> (+26)<br>Head: <span class="rar-legendary">Voidshade Helm</span> (+99)<br>Accessory: <span class="rar-rare">Celestial Aether Ring</span> (+22)<br>Weapon: <span class="rar-legendary">Shadowforge Wraithblade</span> (+138)<br>Body: <span class="rar-epic">Neural Augmentation Exoskeleton</span> (+71)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,092</td>
+            <td class="text-right">12,117</td>
             <td class="text-right power-val">⚔️ 369</td>
         </tr>
         
@@ -864,19 +502,14 @@
                 <div class="tooltip-wrapper">
                     style
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Whispering Starlink Skin (+27) <br> Weapon: Phantom Echo Blades (+23) <br> Head: Phantasmic Neural Crown (+124) <br> Feet: Cogs and Gears Boots (+23) <br> Body: Veil of Urban Shadows (+154)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-rare">Whispering Starlink Skin</span> (+27)<br>Weapon: <span class="rar-rare">Phantom Echo Blades</span> (+23)<br>Head: <span class="rar-legendary">Phantasmic Neural Crown</span> (+124)<br>Feet: <span class="rar-rare">Cogs and Gears Boots</span> (+23)<br>Body: <span class="rar-legendary">Veil of Urban Shadows</span> (+154)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">17</span></td>
-            <td class="text-right">16,425</td>
+            <td class="text-right">16,435</td>
             <td class="text-right power-val">⚔️ 368</td>
         </tr>
         
@@ -886,19 +519,14 @@
                 <div class="tooltip-wrapper">
                     |DarkRis3
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Spectral Aegis of Eternity (+132) <br> Weapon: Arcane Veil Blade (+8) <br> Head: Skyward Aviator's Helmet (+168) <br> Accessory: DarkRis3's Shadow Amulet (+28) <br> Feet: Boots of Celestial Dance (+13)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-legendary">Spectral Aegis of Eternity</span> (+132)<br>Weapon: <span class="rar-common">Arcane Veil Blade</span> (+8)<br>Head: <span class="rar-legendary">Skyward Aviator's Helmet</span> (+168)<br>Accessory: <span class="rar-rare">DarkRis3's Shadow Amulet</span> (+28)<br>Feet: <span class="rar-common">Boots of Celestial Dance</span> (+13)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,919</td>
+            <td class="text-right">12,944</td>
             <td class="text-right power-val">⚔️ 362</td>
         </tr>
         
@@ -908,19 +536,14 @@
                 <div class="tooltip-wrapper">
                     odie
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Elder Veil of Abyssal Steps (+75) <br> Head: Cranial Protection Dome (+61) <br> Body: Armadura das Sombras Eternas (+70) <br> Weapon: Stolen Shadow Revolver (+59) <br> Accessory: Crown of Olympian Favor (+73)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-epic">Elder Veil of Abyssal Steps</span> (+75)<br>Head: <span class="rar-epic">Cranial Protection Dome</span> (+61)<br>Body: <span class="rar-epic">Armadura das Sombras Eternas</span> (+70)<br>Weapon: <span class="rar-epic">Stolen Shadow Revolver</span> (+59)<br>Accessory: <span class="rar-epic">Crown of Olympian Favor</span> (+73)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right">8,275</td>
+            <td class="text-right">8,300</td>
             <td class="text-right power-val">⚔️ 347</td>
         </tr>
         
@@ -930,19 +553,14 @@
                 <div class="tooltip-wrapper">
                     user
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Quantum Thornblade (+62) <br> Head: Neural Mirage Crown (+67) <br> Accessory: Celestial Memory Orb (+46) <br> Body: Aetherbound Radiant Exosuit (+76) <br> Feet: Chrono-Infused Footgear (+66)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-epic">Quantum Thornblade</span> (+62)<br>Head: <span class="rar-epic">Neural Mirage Crown</span> (+67)<br>Accessory: <span class="rar-epic">Celestial Memory Orb</span> (+46)<br>Body: <span class="rar-legendary">Aetherbound Radiant Exosuit</span> (+76)<br>Feet: <span class="rar-epic">Chrono-Infused Footgear</span> (+66)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">22</span></td>
-            <td class="text-right">21,937</td>
+            <td class="text-right">21,988</td>
             <td class="text-right power-val">⚔️ 339</td>
         </tr>
         
@@ -952,19 +570,14 @@
                 <div class="tooltip-wrapper">
                     jupe
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Armadura de Vento Sussurrante (+25) <br> Weapon: Espada de Luz Estelar (+23) <br> Accessory: Anel da Tempestade Eterna (+10) <br> Feet: Botas do Destino Efêmero (+88) <br> Head: Coroa do Curupira (+156)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-rare">Armadura de Vento Sussurrante</span> (+25)<br>Weapon: <span class="rar-rare">Espada de Luz Estelar</span> (+23)<br>Accessory: <span class="rar-common">Anel da Tempestade Eterna</span> (+10)<br>Feet: <span class="rar-legendary">Botas do Destino Efêmero</span> (+88)<br>Head: <span class="rar-legendary">Coroa do Curupira</span> (+156)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,418</td>
+            <td class="text-right">17,443</td>
             <td class="text-right power-val">⚔️ 320</td>
         </tr>
         
@@ -974,19 +587,14 @@
                 <div class="tooltip-wrapper">
                     style
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Quantum Thornblade (+47) <br> Feet: Chrono-Wave Sandals (+65) <br> Body: Ethereal Circuit Suit (+69) <br> Head: Helm of Etherial Shadows (+53) <br> Accessory: Anel do Vento Obscuro (+66)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-epic">Quantum Thornblade</span> (+47)<br>Feet: <span class="rar-epic">Chrono-Wave Sandals</span> (+65)<br>Body: <span class="rar-epic">Ethereal Circuit Suit</span> (+69)<br>Head: <span class="rar-epic">Helm of Etherial Shadows</span> (+53)<br>Accessory: <span class="rar-epic">Anel do Vento Obscuro</span> (+66)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">19</span></td>
-            <td class="text-right">18,118</td>
+            <td class="text-right">18,143</td>
             <td class="text-right power-val">⚔️ 319</td>
         </tr>
         
@@ -996,19 +604,14 @@
                 <div class="tooltip-wrapper">
                     |DarkRis3
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Chrono-Catalyst Band (+29) <br> Weapon: Spectral Rift Blaster (+28) <br> Feet: Phantom Echo Boots (+98) <br> Body: Celestial Embrace Plate (+35) <br> Head: Duster of the Outlaw (+86)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-rare">Chrono-Catalyst Band</span> (+29)<br>Weapon: <span class="rar-rare">Spectral Rift Blaster</span> (+28)<br>Feet: <span class="rar-legendary">Phantom Echo Boots</span> (+98)<br>Body: <span class="rar-epic">Celestial Embrace Plate</span> (+35)<br>Head: <span class="rar-legendary">Duster of the Outlaw</span> (+86)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right">15,418</td>
+            <td class="text-right">15,443</td>
             <td class="text-right power-val">⚔️ 292</td>
         </tr>
         
@@ -1018,19 +621,14 @@
                 <div class="tooltip-wrapper">
                     Egg0
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Ethereal Gait Sandals (+44) <br> Weapon: Redeemer's Last Stand (+88) <br> Head: Helm of Aegis Shielding (+32) <br> Accessory: Gatsby's Shadow Gem (+69) <br> Body: Aetheric Exoskeletal Harness (+47)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-epic">Ethereal Gait Sandals</span> (+44)<br>Weapon: <span class="rar-legendary">Redeemer's Last Stand</span> (+88)<br>Head: <span class="rar-rare">Helm of Aegis Shielding</span> (+32)<br>Accessory: <span class="rar-epic">Gatsby's Shadow Gem</span> (+69)<br>Body: <span class="rar-epic">Aetheric Exoskeletal Harness</span> (+47)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right">8,567</td>
+            <td class="text-right">8,592</td>
             <td class="text-right power-val">⚔️ 289</td>
         </tr>
         
@@ -1040,19 +638,14 @@
                 <div class="tooltip-wrapper">
                     Genuina
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Lâmina Estelar Vortex (+10) <br> Accessory: Luvas de Etherium (+125) <br> Body: Cota de Escamas Celestiais (+63) <br> Feet: Botas do Vento Sussurrante (+58) <br> Head: Coroa do Pensamento Torto (+7)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Lâmina Estelar Vortex</span> (+10)<br>Accessory: <span class="rar-legendary">Luvas de Etherium</span> (+125)<br>Body: <span class="rar-epic">Cota de Escamas Celestiais</span> (+63)<br>Feet: <span class="rar-epic">Botas do Vento Sussurrante</span> (+58)<br>Head: <span class="rar-common">Coroa do Pensamento Torto</span> (+7)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right">13,718</td>
+            <td class="text-right">13,743</td>
             <td class="text-right power-val">⚔️ 277</td>
         </tr>
         
@@ -1062,19 +655,14 @@
                 <div class="tooltip-wrapper">
                     Bodyguard
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Bracelete de Escudo Prismático (+45) <br> Weapon: Adaga do Sussurro Antigo (+33) <br> Feet: Botas do Vínculo Guardião (+33) <br> Body: Armadura do Dragão Antigo (+94) <br> Head: Coroa das Almas Perdidas (+58)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-epic">Bracelete de Escudo Prismático</span> (+45)<br>Weapon: <span class="rar-rare">Adaga do Sussurro Antigo</span> (+33)<br>Feet: <span class="rar-rare">Botas do Vínculo Guardião</span> (+33)<br>Body: <span class="rar-legendary">Armadura do Dragão Antigo</span> (+94)<br>Head: <span class="rar-epic">Coroa das Almas Perdidas</span> (+58)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right">13,781</td>
+            <td class="text-right">13,806</td>
             <td class="text-right power-val">⚔️ 277</td>
         </tr>
         
@@ -1084,19 +672,14 @@
                 <div class="tooltip-wrapper">
                     termure
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Chrono-Whisper Pendant (+31) <br> Body: Celestial Aegis of Eternity (+37) <br> Head: Capacete do Conhecimento Oculto (+30) <br> Weapon: Aço da Tempestade (+43) <br> Feet: Chausson of Eternal Tickles (+108)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-epic">Chrono-Whisper Pendant</span> (+31)<br>Body: <span class="rar-epic">Celestial Aegis of Eternity</span> (+37)<br>Head: <span class="rar-rare">Capacete do Conhecimento Oculto</span> (+30)<br>Weapon: <span class="rar-epic">Aço da Tempestade</span> (+43)<br>Feet: <span class="rar-legendary">Chausson of Eternal Tickles</span> (+108)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,364</td>
+            <td class="text-right">12,374</td>
             <td class="text-right power-val">⚔️ 262</td>
         </tr>
         
@@ -1106,19 +689,14 @@
                 <div class="tooltip-wrapper">
                     GGore665
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Etheric Tendril Boots (+34) <br> Accessory: Quantum Dreamcatcher Amulet (+63) <br> Body: Quantum Ethereal Exosuit (+41) <br> Head: Celestial Voltage Helm (+46) <br> Weapon: Moonlit Serpent Talon (+60)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-epic">Etheric Tendril Boots</span> (+34)<br>Accessory: <span class="rar-epic">Quantum Dreamcatcher Amulet</span> (+63)<br>Body: <span class="rar-epic">Quantum Ethereal Exosuit</span> (+41)<br>Head: <span class="rar-epic">Celestial Voltage Helm</span> (+46)<br>Weapon: <span class="rar-epic">Moonlit Serpent Talon</span> (+60)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right">15,590</td>
+            <td class="text-right">15,600</td>
             <td class="text-right power-val">⚔️ 260</td>
         </tr>
         
@@ -1128,19 +706,14 @@
                 <div class="tooltip-wrapper">
                     Killua
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Cobalt Stormblade of Fury (+8) <br> Accessory: Ethereal Sigil of Affinity (+35) <br> Head: Crown of Shadows (+52) <br> Body: Killua's Biomech Exoskeleton (+77) <br> Feet: Astral Propulsion Boots (+72)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Cobalt Stormblade of Fury</span> (+8)<br>Accessory: <span class="rar-epic">Ethereal Sigil of Affinity</span> (+35)<br>Head: <span class="rar-epic">Crown of Shadows</span> (+52)<br>Body: <span class="rar-epic">Killua's Biomech Exoskeleton</span> (+77)<br>Feet: <span class="rar-epic">Astral Propulsion Boots</span> (+72)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right">8,342</td>
+            <td class="text-right">8,367</td>
             <td class="text-right power-val">⚔️ 253</td>
         </tr>
         
@@ -1150,19 +723,14 @@
                 <div class="tooltip-wrapper">
                     R2D2
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Droidy McJokeBot (+142) <br> Head: Capacete de Cibervigia (+44) <br> Feet: Botas de Antigravidade (+15) <br> Body: Carapaça Cerebral Engenhada (+25) <br> Accessory: Cabo Sináptico Mágico (+5)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-legendary">Droidy McJokeBot</span> (+142)<br>Head: <span class="rar-epic">Capacete de Cibervigia</span> (+44)<br>Feet: <span class="rar-rare">Botas de Antigravidade</span> (+15)<br>Body: <span class="rar-rare">Carapaça Cerebral Engenhada</span> (+25)<br>Accessory: <span class="rar-common">Cabo Sináptico Mágico</span> (+5)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,808</td>
+            <td class="text-right">17,833</td>
             <td class="text-right power-val">⚔️ 249</td>
         </tr>
         
@@ -1172,19 +740,14 @@
                 <div class="tooltip-wrapper">
                     termure
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Chrono-Thread Pulseband (+20) <br> Body: Chrono-Weave Exosuit (+133) <br> Head: Celestial Conductor Helm (+5) <br> Feet: Neuro-Enhanced Kicks (+7) <br> Weapon: Termure's Shadow Revolver (+56)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-rare">Chrono-Thread Pulseband</span> (+20)<br>Body: <span class="rar-legendary">Chrono-Weave Exosuit</span> (+133)<br>Head: <span class="rar-common">Celestial Conductor Helm</span> (+5)<br>Feet: <span class="rar-common">Neuro-Enhanced Kicks</span> (+7)<br>Weapon: <span class="rar-epic">Termure's Shadow Revolver</span> (+56)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">11</span></td>
-            <td class="text-right">10,572</td>
+            <td class="text-right">10,597</td>
             <td class="text-right power-val">⚔️ 232</td>
         </tr>
         
@@ -1194,19 +757,14 @@
                 <div class="tooltip-wrapper">
                     Razvan
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Razvan's Riddling Rapture (+29) <br> Accessory: Coração de Curupira (+112) <br> Weapon: Eldritch Blade of Madness (+10) <br> Feet: Quantum Strider Plates (+17) <br> Body: Specter-Bound Attire (+56)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-rare">Razvan's Riddling Rapture</span> (+29)<br>Accessory: <span class="rar-legendary">Coração de Curupira</span> (+112)<br>Weapon: <span class="rar-common">Eldritch Blade of Madness</span> (+10)<br>Feet: <span class="rar-rare">Quantum Strider Plates</span> (+17)<br>Body: <span class="rar-epic">Specter-Bound Attire</span> (+56)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">7</span></td>
-            <td class="text-right">6,733</td>
+            <td class="text-right">6,745</td>
             <td class="text-right power-val">⚔️ 231</td>
         </tr>
         
@@ -1216,19 +774,14 @@
                 <div class="tooltip-wrapper">
                     taco
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Quantum Salsa Mediator (+90) <br> Body: Celestial Aegis of Echoes (+15) <br> Weapon: Aetheric Shadowblade (+18) <br> Feet: Taco Treads of Fate (+36) <br> Head: Tinfoil Hat of Confusion (+59)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-legendary">Quantum Salsa Mediator</span> (+90)<br>Body: <span class="rar-rare">Celestial Aegis of Echoes</span> (+15)<br>Weapon: <span class="rar-rare">Aetheric Shadowblade</span> (+18)<br>Feet: <span class="rar-rare">Taco Treads of Fate</span> (+36)<br>Head: <span class="rar-epic">Tinfoil Hat of Confusion</span> (+59)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">11</span></td>
-            <td class="text-right">10,489</td>
+            <td class="text-right">10,514</td>
             <td class="text-right power-val">⚔️ 229</td>
         </tr>
         
@@ -1238,19 +791,14 @@
                 <div class="tooltip-wrapper">
                     robot
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Bracelete de Circuito Eléctrico (+63) <br> Head: Cascos de Neon (+29) <br> Feet: Botas do Vento Celestial (+70) <br> Weapon: Estrela Destruidora Quântica (+11) <br> Body: Armadura de Ferro Vulcânico (+40)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-epic">Bracelete de Circuito Eléctrico</span> (+63)<br>Head: <span class="rar-rare">Cascos de Neon</span> (+29)<br>Feet: <span class="rar-epic">Botas do Vento Celestial</span> (+70)<br>Weapon: <span class="rar-common">Estrela Destruidora Quântica</span> (+11)<br>Body: <span class="rar-rare">Armadura de Ferro Vulcânico</span> (+40)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">12</span></td>
-            <td class="text-right">11,470</td>
+            <td class="text-right">11,495</td>
             <td class="text-right power-val">⚔️ 225</td>
         </tr>
         
@@ -1260,19 +808,14 @@
                 <div class="tooltip-wrapper">
                     robot0
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Celestial Circuit Shell (+83) <br> Accessory: Neurolink Statis Gauntlet (+32) <br> Weapon: Quantum Blade of robot0 (+10) <br> Head: Skywatcher’s Steel Helm (+52) <br> Feet: Eldritch Stompers of Despair (+29)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-legendary">Celestial Circuit Shell</span> (+83)<br>Accessory: <span class="rar-rare">Neurolink Statis Gauntlet</span> (+32)<br>Weapon: <span class="rar-common">Quantum Blade of robot0</span> (+10)<br>Head: <span class="rar-epic">Skywatcher’s Steel Helm</span> (+52)<br>Feet: <span class="rar-rare">Eldritch Stompers of Despair</span> (+29)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right">8,148</td>
+            <td class="text-right">8,173</td>
             <td class="text-right power-val">⚔️ 215</td>
         </tr>
         
@@ -1282,19 +825,14 @@
                 <div class="tooltip-wrapper">
                     pybot
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Exoesqueleto Cibernético (+64) <br> Head: Capacete do Eclipse Sombrio (+52) <br> Accessory: Anel do Vento Sussurrante (+54) <br> Weapon: Lâmina do Culto Ancião (+13) <br> Feet: Botas da Tempestade Machinista (+15)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-epic">Exoesqueleto Cibernético</span> (+64)<br>Head: <span class="rar-epic">Capacete do Eclipse Sombrio</span> (+52)<br>Accessory: <span class="rar-epic">Anel do Vento Sussurrante</span> (+54)<br>Weapon: <span class="rar-common">Lâmina do Culto Ancião</span> (+13)<br>Feet: <span class="rar-common">Botas da Tempestade Machinista</span> (+15)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right">13,900</td>
+            <td class="text-right">13,980</td>
             <td class="text-right power-val">⚔️ 212</td>
         </tr>
         
@@ -1304,19 +842,14 @@
                 <div class="tooltip-wrapper">
                     FreakZoid
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Neural Pulse Lance (+27) <br> Body: Quantum Fleshweave Armor (+21) <br> Feet: Botas do Destino (+55) <br> Head: Luminous Veil of Insights (+63) <br> Accessory: Celestial Harmony Amulet (+33)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-rare">Neural Pulse Lance</span> (+27)<br>Body: <span class="rar-rare">Quantum Fleshweave Armor</span> (+21)<br>Feet: <span class="rar-epic">Botas do Destino</span> (+55)<br>Head: <span class="rar-epic">Luminous Veil of Insights</span> (+63)<br>Accessory: <span class="rar-rare">Celestial Harmony Amulet</span> (+33)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,517</td>
+            <td class="text-right">12,527</td>
             <td class="text-right power-val">⚔️ 212</td>
         </tr>
         
@@ -1326,13 +859,8 @@
                 <div class="tooltip-wrapper">
                     muirthemne
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Crown of Ether Winds (+30) <br> Body: Spectral Aegis Cloak (+21) <br> Weapon: Phantom Blade of Eldritch Fury (+24) <br> Feet: Silken Slippers of Muirthemne (+69) <br> Accessory: Fedoras of Fate (+48)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-rare">Crown of Ether Winds</span> (+30)<br>Body: <span class="rar-rare">Spectral Aegis Cloak</span> (+21)<br>Weapon: <span class="rar-rare">Phantom Blade of Eldritch Fury</span> (+24)<br>Feet: <span class="rar-epic">Silken Slippers of Muirthemne</span> (+69)<br>Accessory: <span class="rar-epic">Fedoras of Fate</span> (+48)</div>
                     </div>
                 </div>
             </td>
@@ -1348,19 +876,14 @@
                 <div class="tooltip-wrapper">
                     Tempo
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Capacete Temporal de Lumina (+1) <br> Body: Exoesqueleto do Caos (+38) <br> Weapon: Lâmina do Tempo Eterno (+31) <br> Feet: Botas do Silêncio Fatal (+13) <br> Accessory: Colar do Caçador de Recompensas (+113)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-common">Capacete Temporal de Lumina</span> (+1)<br>Body: <span class="rar-rare">Exoesqueleto do Caos</span> (+38)<br>Weapon: <span class="rar-rare">Lâmina do Tempo Eterno</span> (+31)<br>Feet: <span class="rar-common">Botas do Silêncio Fatal</span> (+13)<br>Accessory: <span class="rar-legendary">Colar do Caçador de Recompensas</span> (+113)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right">13,279</td>
+            <td class="text-right">13,304</td>
             <td class="text-right power-val">⚔️ 210</td>
         </tr>
         
@@ -1370,19 +893,14 @@
                 <div class="tooltip-wrapper">
                     nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Carapaça de Plasma (+60) <br> Accessory: Anel da Eternidade Sombria (+59) <br> Weapon: Nuke’s Celestial Devastator (+25) <br> Feet: Botas da Resistência Eterna (+15) <br> Head: Capacete de Engrenagens Antigas (+32)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-epic">Carapaça de Plasma</span> (+60)<br>Accessory: <span class="rar-epic">Anel da Eternidade Sombria</span> (+59)<br>Weapon: <span class="rar-rare">Nuke’s Celestial Devastator</span> (+25)<br>Feet: <span class="rar-common">Botas da Resistência Eterna</span> (+15)<br>Head: <span class="rar-rare">Capacete de Engrenagens Antigas</span> (+32)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">16</span></td>
-            <td class="text-right">15,377</td>
+            <td class="text-right">15,402</td>
             <td class="text-right power-val">⚔️ 207</td>
         </tr>
         
@@ -1392,19 +910,14 @@
                 <div class="tooltip-wrapper">
                     Benfica
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Anel da Vitória Eterna (+12) <br> Body: Armadura do Eclipse Sombrio (+60) <br> Head: Capuz das Sombras Sussurrantes (+78) <br> Weapon: Adaga do Abismo Insento (+15) <br> Feet: Botas do Vento Celestial (+12)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-rare">Anel da Vitória Eterna</span> (+12)<br>Body: <span class="rar-epic">Armadura do Eclipse Sombrio</span> (+60)<br>Head: <span class="rar-epic">Capuz das Sombras Sussurrantes</span> (+78)<br>Weapon: <span class="rar-common">Adaga do Abismo Insento</span> (+15)<br>Feet: <span class="rar-common">Botas do Vento Celestial</span> (+12)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right">13,894</td>
+            <td class="text-right">13,919</td>
             <td class="text-right power-val">⚔️ 191</td>
         </tr>
         
@@ -1414,19 +927,14 @@
                 <div class="tooltip-wrapper">
                     mIrc-OP
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Graviton Accelerators (+7) <br> Head: Capacete da Morte Sombria (+37) <br> Weapon: Espada de Eurínome (+25) <br> Body: Garment of mIrc-OP Dreams (+27) <br> Accessory: mIrc-OP's Radiant Resonator (+75)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Graviton Accelerators</span> (+7)<br>Head: <span class="rar-rare">Capacete da Morte Sombria</span> (+37)<br>Weapon: <span class="rar-rare">Espada de Eurínome</span> (+25)<br>Body: <span class="rar-rare">Garment of mIrc-OP Dreams</span> (+27)<br>Accessory: <span class="rar-epic">mIrc-OP's Radiant Resonator</span> (+75)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">4</span></td>
-            <td class="text-right">3,059</td>
+            <td class="text-right">3,069</td>
             <td class="text-right power-val">⚔️ 175</td>
         </tr>
         
@@ -1436,19 +944,14 @@
                 <div class="tooltip-wrapper">
                     Sukuna
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Crown of Eldritch Whispers (+31) <br> Accessory: Narwhal Nose Ring (+15) <br> Body: Biomimetic Exoskeletal Weave (+21) <br> Feet: Dusty Spur Boots (+24) <br> Weapon: Spectral Reaver Blade (+74)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-rare">Crown of Eldritch Whispers</span> (+31)<br>Accessory: <span class="rar-common">Narwhal Nose Ring</span> (+15)<br>Body: <span class="rar-rare">Biomimetic Exoskeletal Weave</span> (+21)<br>Feet: <span class="rar-rare">Dusty Spur Boots</span> (+24)<br>Weapon: <span class="rar-epic">Spectral Reaver Blade</span> (+74)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right">8,279</td>
+            <td class="text-right">8,321</td>
             <td class="text-right power-val">⚔️ 174</td>
         </tr>
         
@@ -1458,19 +961,14 @@
                 <div class="tooltip-wrapper">
                     nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Nuke’s Nuanced Noggin Norm (+51) <br> Accessory: Celestial Amulet of Shadows (+9) <br> Body: Cuirass of Eternal Shadows (+13) <br> Weapon: Gene-Splicer Armament (+69) <br> Feet: Boots of Celestial Stride (+15)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-epic">Nuke’s Nuanced Noggin Norm</span> (+51)<br>Accessory: <span class="rar-common">Celestial Amulet of Shadows</span> (+9)<br>Body: <span class="rar-common">Cuirass of Eternal Shadows</span> (+13)<br>Weapon: <span class="rar-epic">Gene-Splicer Armament</span> (+69)<br>Feet: <span class="rar-common">Boots of Celestial Stride</span> (+15)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right">13,369</td>
+            <td class="text-right">13,394</td>
             <td class="text-right power-val">⚔️ 171</td>
         </tr>
         
@@ -1480,19 +978,14 @@
                 <div class="tooltip-wrapper">
                     egg
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Capacete de EchoSombra (+10) <br> Weapon: Lâmina de Sombra Celeste (+42) <br> Accessory: Anel dos Ecos Eternos (+13) <br> Feet: Botas do Vento Celestial (+10) <br> Body: Coração de Fumaça (+68)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-common">Capacete de EchoSombra</span> (+10)<br>Weapon: <span class="rar-epic">Lâmina de Sombra Celeste</span> (+42)<br>Accessory: <span class="rar-rare">Anel dos Ecos Eternos</span> (+13)<br>Feet: <span class="rar-common">Botas do Vento Celestial</span> (+10)<br>Body: <span class="rar-epic">Coração de Fumaça</span> (+68)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right">13,654</td>
+            <td class="text-right">13,679</td>
             <td class="text-right power-val">⚔️ 157</td>
         </tr>
         
@@ -1502,19 +995,14 @@
                 <div class="tooltip-wrapper">
                     alicia
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Manto de Estrelas Vivas (+7) <br> Head: Capacete Cibernético de Cérebro (+46) <br> Accessory: Buckle of the Outlaw (+15) <br> Feet: Sole of the Survivor (+75)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Manto de Estrelas Vivas</span> (+7)<br>Head: <span class="rar-epic">Capacete Cibernético de Cérebro</span> (+46)<br>Accessory: <span class="rar-common">Buckle of the Outlaw</span> (+15)<br>Feet: <span class="rar-epic">Sole of the Survivor</span> (+75)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,850</td>
+            <td class="text-right">12,875</td>
             <td class="text-right power-val">⚔️ 156</td>
         </tr>
         
@@ -1524,19 +1012,14 @@
                 <div class="tooltip-wrapper">
                     Frieren
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Frieren's Frosted Flareblade (+30) <br> Body: Radiant Survival Exo-Suit (+56) <br> Accessory: Gears of Chrono Manipulation (+15) <br> Feet: Sandalha Encantada da Jurema (+12) <br> Head: Helm of the Titans (+25)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-rare">Frieren's Frosted Flareblade</span> (+30)<br>Body: <span class="rar-epic">Radiant Survival Exo-Suit</span> (+56)<br>Accessory: <span class="rar-common">Gears of Chrono Manipulation</span> (+15)<br>Feet: <span class="rar-common">Sandalha Encantada da Jurema</span> (+12)<br>Head: <span class="rar-rare">Helm of the Titans</span> (+25)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right">8,255</td>
+            <td class="text-right">8,280</td>
             <td class="text-right power-val">⚔️ 147</td>
         </tr>
         
@@ -1546,19 +1029,14 @@
                 <div class="tooltip-wrapper">
                     BlackApple
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Celestial Sigil of Harmony (+22) <br> Head: Crown of Celestial Whispers (+26) <br> Body: Shadowweave Armor of BlackApple (+36) <br> Feet: Silken Treads of Destiny (+33) <br> Weapon: Chrono-Cog Revolver (+19)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-rare">Celestial Sigil of Harmony</span> (+22)<br>Head: <span class="rar-rare">Crown of Celestial Whispers</span> (+26)<br>Body: <span class="rar-rare">Shadowweave Armor of BlackApple</span> (+36)<br>Feet: <span class="rar-rare">Silken Treads of Destiny</span> (+33)<br>Weapon: <span class="rar-rare">Chrono-Cog Revolver</span> (+19)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">10</span></td>
-            <td class="text-right">9,160</td>
+            <td class="text-right">9,185</td>
             <td class="text-right power-val">⚔️ 146</td>
         </tr>
         
@@ -1568,19 +1046,14 @@
                 <div class="tooltip-wrapper">
                     Killua
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Botas da Tempestade Eléctrica (+26) <br> Weapon: Phantom Shadowblade (+25) <br> Body: Quantum Exosuit Armor (+70)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-rare">Botas da Tempestade Eléctrica</span> (+26)<br>Weapon: <span class="rar-rare">Phantom Shadowblade</span> (+25)<br>Body: <span class="rar-epic">Quantum Exosuit Armor</span> (+70)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,261</td>
+            <td class="text-right">17,286</td>
             <td class="text-right power-val">⚔️ 139</td>
         </tr>
         
@@ -1590,19 +1063,14 @@
                 <div class="tooltip-wrapper">
                     Ajah
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Arcane Nimbus Sandals (+20) <br> Weapon: Ajah's Arcane Arbalest (+90) <br> Head: Capacete da Tempestade Eterna (+6) <br> Accessory: Survivor's Talisman (+8)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-rare">Arcane Nimbus Sandals</span> (+20)<br>Weapon: <span class="rar-legendary">Ajah's Arcane Arbalest</span> (+90)<br>Head: <span class="rar-common">Capacete da Tempestade Eterna</span> (+6)<br>Accessory: <span class="rar-common">Survivor's Talisman</span> (+8)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,327</td>
+            <td class="text-right">12,352</td>
             <td class="text-right power-val">⚔️ 137</td>
         </tr>
         
@@ -1612,19 +1080,14 @@
                 <div class="tooltip-wrapper">
                     nicole
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Lâmina de Plasma Arcana (+3) <br> Body: Armadura de Ébano Celestial (+62) <br> Head: Nicole's Temporal Top Hat (+38) <br> Accessory: Bracelete do Vapor Antigo (+15)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Lâmina de Plasma Arcana</span> (+3)<br>Body: <span class="rar-epic">Armadura de Ébano Celestial</span> (+62)<br>Head: <span class="rar-rare">Nicole's Temporal Top Hat</span> (+38)<br>Accessory: <span class="rar-common">Bracelete do Vapor Antigo</span> (+15)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,032</td>
+            <td class="text-right">17,057</td>
             <td class="text-right power-val">⚔️ 136</td>
         </tr>
         
@@ -1634,19 +1097,14 @@
                 <div class="tooltip-wrapper">
                     Jarvis
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Quantum Mind Crown (+21) <br> Weapon: Lâmina de Cristal Etéreo (+35) <br> Feet: Chrono-Cogs Sandals (+16) <br> Body: Armadura de Nanofibras (+40) <br> Accessory: Socks of Eternal Nonsense (+15)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-rare">Quantum Mind Crown</span> (+21)<br>Weapon: <span class="rar-epic">Lâmina de Cristal Etéreo</span> (+35)<br>Feet: <span class="rar-rare">Chrono-Cogs Sandals</span> (+16)<br>Body: <span class="rar-epic">Armadura de Nanofibras</span> (+40)<br>Accessory: <span class="rar-common">Socks of Eternal Nonsense</span> (+15)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right">8,345</td>
+            <td class="text-right">8,370</td>
             <td class="text-right power-val">⚔️ 136</td>
         </tr>
         
@@ -1656,19 +1114,14 @@
                 <div class="tooltip-wrapper">
                     v0id
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Armadura Neural Quântica (+1) <br> Head: Capacete Nebuloso (+20) <br> Accessory: Bracelete de Nebulosa (+14) <br> Weapon: Lâmina de Fogo Perene (+86)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Armadura Neural Quântica</span> (+1)<br>Head: <span class="rar-rare">Capacete Nebuloso</span> (+20)<br>Accessory: <span class="rar-rare">Bracelete de Nebulosa</span> (+14)<br>Weapon: <span class="rar-legendary">Lâmina de Fogo Perene</span> (+86)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,345</td>
+            <td class="text-right">12,478</td>
             <td class="text-right power-val">⚔️ 134</td>
         </tr>
         
@@ -1678,13 +1131,8 @@
                 <div class="tooltip-wrapper">
                     R0B0T
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Botas Neurais de Aço (+7) <br> Head: Capa de Memória Neural (+41) <br> Body: Armadura de Ébano Celestial (+45) <br> Accessory: Nexus de Sinapses Viventes (+35)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Botas Neurais de Aço</span> (+7)<br>Head: <span class="rar-epic">Capa de Memória Neural</span> (+41)<br>Body: <span class="rar-epic">Armadura de Ébano Celestial</span> (+45)<br>Accessory: <span class="rar-rare">Nexus de Sinapses Viventes</span> (+35)</div>
                     </div>
                 </div>
             </td>
@@ -1700,19 +1148,14 @@
                 <div class="tooltip-wrapper">
                     Sluagh
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Falcão de Ether (+19) <br> Feet: Botas Sussurrantes da Névoa (+19) <br> Head: Helm of Ethereal Secrets (+52) <br> Body: Elysian Aegis of Valor (+4) <br> Accessory: Anel dos Sussurros Sluagh (+19)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-rare">Falcão de Ether</span> (+19)<br>Feet: <span class="rar-rare">Botas Sussurrantes da Névoa</span> (+19)<br>Head: <span class="rar-epic">Helm of Ethereal Secrets</span> (+52)<br>Body: <span class="rar-common">Elysian Aegis of Valor</span> (+4)<br>Accessory: <span class="rar-rare">Anel dos Sussurros Sluagh</span> (+19)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,335</td>
+            <td class="text-right">17,360</td>
             <td class="text-right power-val">⚔️ 131</td>
         </tr>
         
@@ -1722,19 +1165,14 @@
                 <div class="tooltip-wrapper">
                     Nezuko
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Botas do Sombras Vivas (+84) <br> Body: Crimson Wraith Weave (+2) <br> Accessory: Ethereal Shadow Bloom (+4) <br> Weapon: Espada da Eternidade Brilhante (+6) <br> Head: Neural Infusion Crown (+7)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-legendary">Botas do Sombras Vivas</span> (+84)<br>Body: <span class="rar-common">Crimson Wraith Weave</span> (+2)<br>Accessory: <span class="rar-common">Ethereal Shadow Bloom</span> (+4)<br>Weapon: <span class="rar-common">Espada da Eternidade Brilhante</span> (+6)<br>Head: <span class="rar-common">Neural Infusion Crown</span> (+7)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,373</td>
+            <td class="text-right">17,398</td>
             <td class="text-right power-val">⚔️ 121</td>
         </tr>
         
@@ -1744,19 +1182,14 @@
                 <div class="tooltip-wrapper">
                     Gon
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Anel de Luminância Cósmica (+11) <br> Feet: Botas do Vento Etéreo (+31) <br> Head: Capacete do Vento Cortante (+47) <br> Weapon: Lâmina de Tempestade (+8) <br> Body: Armadura Celestial de Gon (+5)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-rare">Anel de Luminância Cósmica</span> (+11)<br>Feet: <span class="rar-epic">Botas do Vento Etéreo</span> (+31)<br>Head: <span class="rar-epic">Capacete do Vento Cortante</span> (+47)<br>Weapon: <span class="rar-common">Lâmina de Tempestade</span> (+8)<br>Body: <span class="rar-common">Armadura Celestial de Gon</span> (+5)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,391</td>
+            <td class="text-right">17,416</td>
             <td class="text-right power-val">⚔️ 120</td>
         </tr>
         
@@ -1766,19 +1199,14 @@
                 <div class="tooltip-wrapper">
                     Kunik
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Aegis of Ethereal Shadows (+7) <br> Accessory: Celestial Spirit Medallion (+73) <br> Weapon: Photon Pulsar Blaster (+33)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Aegis of Ethereal Shadows</span> (+7)<br>Accessory: <span class="rar-epic">Celestial Spirit Medallion</span> (+73)<br>Weapon: <span class="rar-rare">Photon Pulsar Blaster</span> (+33)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,425</td>
+            <td class="text-right">5,450</td>
             <td class="text-right power-val">⚔️ 119</td>
         </tr>
         
@@ -1788,19 +1216,14 @@
                 <div class="tooltip-wrapper">
                     EightyTwo
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Debugging Spoon (+10) <br> Body: Revestimento de Plasma (+10) <br> Accessory: Temporal Echo Gem (+7) <br> Head: Quantum Crown of Whispers (+8) <br> Feet: Shadowstep Sole (+58)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Debugging Spoon</span> (+10)<br>Body: <span class="rar-common">Revestimento de Plasma</span> (+10)<br>Accessory: <span class="rar-common">Temporal Echo Gem</span> (+7)<br>Head: <span class="rar-common">Quantum Crown of Whispers</span> (+8)<br>Feet: <span class="rar-epic">Shadowstep Sole</span> (+58)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,158</td>
+            <td class="text-right">17,183</td>
             <td class="text-right power-val">⚔️ 111</td>
         </tr>
         
@@ -1810,19 +1233,14 @@
                 <div class="tooltip-wrapper">
                     Futebol
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Botas de Neon Arcano (+23) <br> Weapon: Lâmina do Crepúsculo Eterno (+9) <br> Head: Capacete de Infinito Estelar (+12) <br> Body: Véu Espectral de Rivenwood (+21) <br> Accessory: Anel de Pulsar Celestial (+27)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-rare">Botas de Neon Arcano</span> (+23)<br>Weapon: <span class="rar-common">Lâmina do Crepúsculo Eterno</span> (+9)<br>Head: <span class="rar-common">Capacete de Infinito Estelar</span> (+12)<br>Body: <span class="rar-rare">Véu Espectral de Rivenwood</span> (+21)<br>Accessory: <span class="rar-rare">Anel de Pulsar Celestial</span> (+27)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
-            <td class="text-right">13,686</td>
+            <td class="text-right">13,711</td>
             <td class="text-right power-val">⚔️ 106</td>
         </tr>
         
@@ -1832,19 +1250,14 @@
                 <div class="tooltip-wrapper">
                     Irc0p
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Chapeau of Chaotic Confusion (+13) <br> Weapon: Smoke-Filled 45 ACP (+15) <br> Head: Chapeau of Eternal Nonsense (+13) <br> Feet: Botas do Destino (+20) <br> Body: Celestial Exosuit of Eternity (+39)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-common">Chapeau of Chaotic Confusion</span> (+13)<br>Weapon: <span class="rar-common">Smoke-Filled 45 ACP</span> (+15)<br>Head: <span class="rar-common">Chapeau of Eternal Nonsense</span> (+13)<br>Feet: <span class="rar-rare">Botas do Destino</span> (+20)<br>Body: <span class="rar-rare">Celestial Exosuit of Eternity</span> (+39)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right">2,563</td>
+            <td class="text-right">2,573</td>
             <td class="text-right power-val">⚔️ 103</td>
         </tr>
         
@@ -1854,19 +1267,14 @@
                 <div class="tooltip-wrapper">
                     bot
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Debugging Sword 3000 (+15) <br> Accessory: Bracelete de Etherflux (+11) <br> Head: Coroa do Taco Queimado (+45) <br> Body: Bot de Aço Invulnerável (+11)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-rare">Debugging Sword 3000</span> (+15)<br>Accessory: <span class="rar-rare">Bracelete de Etherflux</span> (+11)<br>Head: <span class="rar-epic">Coroa do Taco Queimado</span> (+45)<br>Body: <span class="rar-common">Bot de Aço Invulnerável</span> (+11)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,768</td>
+            <td class="text-right">17,793</td>
             <td class="text-right power-val">⚔️ 100</td>
         </tr>
         
@@ -1876,19 +1284,14 @@
                 <div class="tooltip-wrapper">
                     camila
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Capacete de Cibernético Alquímico (+4) <br> Body: Chrono-Silk Bodysuit (+7) <br> Accessory: Chrono-Engraved Gearwheel (+20) <br> Feet: Nano-Enhanced Stompers (+9) <br> Weapon: Doomsday Ray Gun (+40)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-common">Capacete de Cibernético Alquímico</span> (+4)<br>Body: <span class="rar-common">Chrono-Silk Bodysuit</span> (+7)<br>Accessory: <span class="rar-rare">Chrono-Engraved Gearwheel</span> (+20)<br>Feet: <span class="rar-common">Nano-Enhanced Stompers</span> (+9)<br>Weapon: <span class="rar-rare">Doomsday Ray Gun</span> (+40)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,404</td>
+            <td class="text-right">17,429</td>
             <td class="text-right power-val">⚔️ 98</td>
         </tr>
         
@@ -1898,19 +1301,14 @@
                 <div class="tooltip-wrapper">
                     Sukuna
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Sukuna's Snack Stash (+27) <br> Head: Crowned Echo Mask (+7) <br> Body: Armadura de Sangue Sombrio (+7) <br> Accessory: Spectral Gaze Locket (+22) <br> Feet: Botas do Sussurro de Sukuna (+10)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-rare">Sukuna's Snack Stash</span> (+27)<br>Head: <span class="rar-common">Crowned Echo Mask</span> (+7)<br>Body: <span class="rar-common">Armadura de Sangue Sombrio</span> (+7)<br>Accessory: <span class="rar-rare">Spectral Gaze Locket</span> (+22)<br>Feet: <span class="rar-common">Botas do Sussurro de Sukuna</span> (+10)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,459</td>
+            <td class="text-right">17,484</td>
             <td class="text-right power-val">⚔️ 91</td>
         </tr>
         
@@ -1920,19 +1318,14 @@
                 <div class="tooltip-wrapper">
                     jupe4316
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Coroa de Lúmen (+7) <br> Accessory: Bracelete da Eternidade (+18) <br> Feet: Botas de Salto Estelar (+24) <br> Weapon: Lâmina do Jupe Profano (+25)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-common">Coroa de Lúmen</span> (+7)<br>Accessory: <span class="rar-rare">Bracelete da Eternidade</span> (+18)<br>Feet: <span class="rar-rare">Botas de Salto Estelar</span> (+24)<br>Weapon: <span class="rar-rare">Lâmina do Jupe Profano</span> (+25)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">15</span></td>
-            <td class="text-right">14,015</td>
+            <td class="text-right">14,040</td>
             <td class="text-right power-val">⚔️ 89</td>
         </tr>
         
@@ -1942,19 +1335,14 @@
                 <div class="tooltip-wrapper">
                     hltv
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Chrono-Phase Sandals (+4) <br> Weapon: Eclipsebane Thornblade (+23) <br> Head: HLTV Neural Interface Cap (+35) <br> Accessory: Neuro-Link Interface (+7) <br> Body: Aegis of Eternal Resilience (+7)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Chrono-Phase Sandals</span> (+4)<br>Weapon: <span class="rar-rare">Eclipsebane Thornblade</span> (+23)<br>Head: <span class="rar-rare">HLTV Neural Interface Cap</span> (+35)<br>Accessory: <span class="rar-common">Neuro-Link Interface</span> (+7)<br>Body: <span class="rar-common">Aegis of Eternal Resilience</span> (+7)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">10</span></td>
-            <td class="text-right">9,161</td>
+            <td class="text-right">9,186</td>
             <td class="text-right power-val">⚔️ 86</td>
         </tr>
         
@@ -1964,19 +1352,14 @@
                 <div class="tooltip-wrapper">
                     Falcon
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Celestial Dragon Blade (+8) <br> Head: Falcon's Feathered Fiasco (+63)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Celestial Dragon Blade</span> (+8)<br>Head: <span class="rar-epic">Falcon's Feathered Fiasco</span> (+63)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,458</td>
+            <td class="text-right">5,483</td>
             <td class="text-right power-val">⚔️ 77</td>
         </tr>
         
@@ -1986,19 +1369,14 @@
                 <div class="tooltip-wrapper">
                     Frieren
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Phantom Rune Sandals (+8) <br> Weapon: Lâmina de Fogo Abissal (+42) <br> Body: Cota de Escamas de Dragão (+8)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Phantom Rune Sandals</span> (+8)<br>Weapon: <span class="rar-epic">Lâmina de Fogo Abissal</span> (+42)<br>Body: <span class="rar-common">Cota de Escamas de Dragão</span> (+8)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,437</td>
+            <td class="text-right">17,462</td>
             <td class="text-right power-val">⚔️ 76</td>
         </tr>
         
@@ -2008,19 +1386,14 @@
                 <div class="tooltip-wrapper">
                     Egg
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Celestial Aegis Circlet (+26) <br> Body: Camiseta de Nuvem Dançante (+12) <br> Feet: Sapatos de Pato Voador (+27)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-rare">Celestial Aegis Circlet</span> (+26)<br>Body: <span class="rar-common">Camiseta de Nuvem Dançante</span> (+12)<br>Feet: <span class="rar-rare">Sapatos de Pato Voador</span> (+27)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,381</td>
+            <td class="text-right">5,406</td>
             <td class="text-right power-val">⚔️ 71</td>
         </tr>
         
@@ -2030,13 +1403,8 @@
                 <div class="tooltip-wrapper">
                     Rapha-Q
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Botas do Pistoleiro Fantasma (+31) <br> Head: Coroa da Galáxia Ancestral (+38)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-rare">Botas do Pistoleiro Fantasma</span> (+31)<br>Head: <span class="rar-rare">Coroa da Galáxia Ancestral</span> (+38)</div>
                     </div>
                 </div>
             </td>
@@ -2052,19 +1420,14 @@
                 <div class="tooltip-wrapper">
                     ekun
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Capacete de Névoa Anímica (+1) <br> Weapon: Colt do Justiceiro Sussurrante (+5) <br> Body: Colete do Caçador Solitário (+7) <br> Accessory: Coração do Vapor (+13) <br> Feet: Botas do Sussurro Antigo (+33)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-common">Capacete de Névoa Anímica</span> (+1)<br>Weapon: <span class="rar-common">Colt do Justiceiro Sussurrante</span> (+5)<br>Body: <span class="rar-common">Colete do Caçador Solitário</span> (+7)<br>Accessory: <span class="rar-common">Coração do Vapor</span> (+13)<br>Feet: <span class="rar-rare">Botas do Sussurro Antigo</span> (+33)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
-            <td class="text-right">8,345</td>
+            <td class="text-right">8,370</td>
             <td class="text-right power-val">⚔️ 68</td>
         </tr>
         
@@ -2074,19 +1437,14 @@
                 <div class="tooltip-wrapper">
                     nuke
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Quantum Singularity Blaster (+4) <br> Feet: Voidwalker Sandals (+11) <br> Accessory: Pulseira do Caos Quântico (+15) <br> Head: Coroa de Radiação (+10) <br> Body: Celestial Dragon Robe (+9)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Quantum Singularity Blaster</span> (+4)<br>Feet: <span class="rar-rare">Voidwalker Sandals</span> (+11)<br>Accessory: <span class="rar-rare">Pulseira do Caos Quântico</span> (+15)<br>Head: <span class="rar-common">Coroa de Radiação</span> (+10)<br>Body: <span class="rar-common">Celestial Dragon Robe</span> (+9)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,377</td>
+            <td class="text-right">17,402</td>
             <td class="text-right power-val">⚔️ 67</td>
         </tr>
         
@@ -2096,19 +1454,14 @@
                 <div class="tooltip-wrapper">
                     r0b0t
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Coroa de Luminância (+7) <br> Weapon: Lâmina Eclipsante (+18) <br> Body: Quantum Weave Exoskeleton (+8) <br> Feet: Botas de Ferro Predadoras (+5) <br> Accessory: Relojoeiro de Aço Antigo (+9)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-common">Coroa de Luminância</span> (+7)<br>Weapon: <span class="rar-rare">Lâmina Eclipsante</span> (+18)<br>Body: <span class="rar-common">Quantum Weave Exoskeleton</span> (+8)<br>Feet: <span class="rar-common">Botas de Ferro Predadoras</span> (+5)<br>Accessory: <span class="rar-common">Relojoeiro de Aço Antigo</span> (+9)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
-            <td class="text-right">17,331</td>
+            <td class="text-right">17,356</td>
             <td class="text-right power-val">⚔️ 65</td>
         </tr>
         
@@ -2118,19 +1471,14 @@
                 <div class="tooltip-wrapper">
                     old1
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Quantum Spun Exosuit (+12) <br> Feet: Celestial Echo Sandals (+10) <br> Weapon: Arcane Pulse Repeater (+28) <br> Head: Chrono-Crystal Circlet (+2)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-rare">Quantum Spun Exosuit</span> (+12)<br>Feet: <span class="rar-common">Celestial Echo Sandals</span> (+10)<br>Weapon: <span class="rar-rare">Arcane Pulse Repeater</span> (+28)<br>Head: <span class="rar-common">Chrono-Crystal Circlet</span> (+2)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,330</td>
+            <td class="text-right">12,355</td>
             <td class="text-right power-val">⚔️ 65</td>
         </tr>
         
@@ -2140,13 +1488,8 @@
                 <div class="tooltip-wrapper">
                     mtN
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Nebula Strider Boots (+2) <br> Body: Quantum Skinweave Armor (+7) <br> Accessory: Quantum Dreamcatcher Amulet (+29) <br> Head: Whispering Circuit Helm (+8) <br> Weapon: Quantum Thornblade (+10)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Nebula Strider Boots</span> (+2)<br>Body: <span class="rar-common">Quantum Skinweave Armor</span> (+7)<br>Accessory: <span class="rar-rare">Quantum Dreamcatcher Amulet</span> (+29)<br>Head: <span class="rar-common">Whispering Circuit Helm</span> (+8)<br>Weapon: <span class="rar-common">Quantum Thornblade</span> (+10)</div>
                     </div>
                 </div>
             </td>
@@ -2162,19 +1505,14 @@
                 <div class="tooltip-wrapper">
                     mIrc-OP
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Shadowed Justice Piece (+15) <br> Head: mIrc-OP's Wacky Hat of Nonsense (+42)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Shadowed Justice Piece</span> (+15)<br>Head: <span class="rar-epic">mIrc-OP's Wacky Hat of Nonsense</span> (+42)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right">2,798</td>
+            <td class="text-right">2,823</td>
             <td class="text-right power-val">⚔️ 60</td>
         </tr>
         
@@ -2184,19 +1522,14 @@
                 <div class="tooltip-wrapper">
                     peer
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Peitoral de Alquimia Celestial (+7) <br> Weapon: Lâmina Quântica Ressonante (+7) <br> Accessory: Bracelete Interdimensional (+8) <br> Feet: Botas de Vento Etéreo (+11) <br> Head: Coroa de Nebulosa Arcanja (+10)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Peitoral de Alquimia Celestial</span> (+7)<br>Weapon: <span class="rar-common">Lâmina Quântica Ressonante</span> (+7)<br>Accessory: <span class="rar-common">Bracelete Interdimensional</span> (+8)<br>Feet: <span class="rar-rare">Botas de Vento Etéreo</span> (+11)<br>Head: <span class="rar-common">Coroa de Nebulosa Arcanja</span> (+10)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,344</td>
+            <td class="text-right">5,369</td>
             <td class="text-right power-val">⚔️ 49</td>
         </tr>
         
@@ -2206,13 +1539,8 @@
                 <div class="tooltip-wrapper">
                     CKr
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Neural Thread Weave (+24) <br> Weapon: Quantum Spire Blade (+10) <br> Accessory: Chrono-Gemstone Ring (+5)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-rare">Neural Thread Weave</span> (+24)<br>Weapon: <span class="rar-common">Quantum Spire Blade</span> (+10)<br>Accessory: <span class="rar-common">Chrono-Gemstone Ring</span> (+5)</div>
                     </div>
                 </div>
             </td>
@@ -2228,19 +1556,14 @@
                 <div class="tooltip-wrapper">
                     juli-e
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Jewel-e's Trinket Treat (+1) <br> Body: Juli-Elysian Armor (+35)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-common">Jewel-e's Trinket Treat</span> (+1)<br>Body: <span class="rar-rare">Juli-Elysian Armor</span> (+35)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,646</td>
+            <td class="text-right">5,671</td>
             <td class="text-right power-val">⚔️ 42</td>
         </tr>
         
@@ -2250,19 +1573,14 @@
                 <div class="tooltip-wrapper">
                     style
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Luminescent Chameleon Cloak (+7) <br> Body: Chrono-Silk Exosuit (+16) <br> Head: Chrono-Mind Inverter (+6)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-common">Luminescent Chameleon Cloak</span> (+7)<br>Body: <span class="rar-rare">Chrono-Silk Exosuit</span> (+16)<br>Head: <span class="rar-common">Chrono-Mind Inverter</span> (+6)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
-            <td class="text-right">12,759</td>
+            <td class="text-right">12,784</td>
             <td class="text-right power-val">⚔️ 42</td>
         </tr>
         
@@ -2272,19 +1590,14 @@
                 <div class="tooltip-wrapper">
                     Owl
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Ethereal Aegis of Shadows (+10) <br> Head: Owl's Cosmic Neuro-Circuitry (+14) <br> Weapon: Heavenly Dragonblade (+9)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Ethereal Aegis of Shadows</span> (+10)<br>Head: <span class="rar-common">Owl's Cosmic Neuro-Circuitry</span> (+14)<br>Weapon: <span class="rar-common">Heavenly Dragonblade</span> (+9)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,466</td>
+            <td class="text-right">5,491</td>
             <td class="text-right power-val">⚔️ 39</td>
         </tr>
         
@@ -2294,19 +1607,14 @@
                 <div class="tooltip-wrapper">
                     Razvan`
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Wyrmstone Blade of Eternity (+9) <br> Feet: Sombra de Pasos (+9) <br> Body: Raiment of Razvan's Shadow (+8)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Wyrmstone Blade of Eternity</span> (+9)<br>Feet: <span class="rar-common">Sombra de Pasos</span> (+9)<br>Body: <span class="rar-common">Raiment of Razvan's Shadow</span> (+8)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,787</td>
+            <td class="text-right">5,812</td>
             <td class="text-right power-val">⚔️ 32</td>
         </tr>
         
@@ -2316,19 +1624,14 @@
                 <div class="tooltip-wrapper">
                     pybot
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Head: Goggles of Infinite Vision (+9) <br> Body: Pybot Exoskeletal Interface (+12)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-common">Goggles of Infinite Vision</span> (+9)<br>Body: <span class="rar-common">Pybot Exoskeletal Interface</span> (+12)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,528</td>
+            <td class="text-right">5,553</td>
             <td class="text-right power-val">⚔️ 27</td>
         </tr>
         
@@ -2338,19 +1641,14 @@
                 <div class="tooltip-wrapper">
                     blablabla
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Amulet of Hidden Realities (+10) <br> Feet: Silken Lotus Step (+10)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-common">Amulet of Hidden Realities</span> (+10)<br>Feet: <span class="rar-common">Silken Lotus Step</span> (+10)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,476</td>
+            <td class="text-right">5,501</td>
             <td class="text-right power-val">⚔️ 26</td>
         </tr>
         
@@ -2360,19 +1658,14 @@
                 <div class="tooltip-wrapper">
                     cuddzey
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Cuddzey's Wobbly Embrace (+13) <br> Head: Cowpoke Stetson Hat (+5)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Cuddzey's Wobbly Embrace</span> (+13)<br>Head: <span class="rar-common">Cowpoke Stetson Hat</span> (+5)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,425</td>
+            <td class="text-right">5,450</td>
             <td class="text-right power-val">⚔️ 24</td>
         </tr>
         
@@ -2382,13 +1675,8 @@
                 <div class="tooltip-wrapper">
                     Ionut-
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Radiation-Resistant Exosuit (+15)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Radiation-Resistant Exosuit</span> (+15)</div>
                     </div>
                 </div>
             </td>
@@ -2402,15 +1690,27 @@
             <td>87</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
+                    Irc0p
+                    <div class="tooltip-content">
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Aetheric Gearblade</span> (+13)</div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Undernet</td>
+            <td class="text-center"><span class="badge">4</span></td>
+            <td class="text-right">3,019</td>
+            <td class="text-right power-val">⚔️ 17</td>
+        </tr>
+        
+        <tr class="">
+            <td>88</td>
+            <td class="font-bold nickname-cell">
+                <div class="tooltip-wrapper">
                     ao_makse
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Quantum Stilt Boots (+3) <br> Head: Makse's Fedora of Fate (+11)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Quantum Stilt Boots</span> (+3)<br>Head: <span class="rar-common">Makse's Fedora of Fate</span> (+11)</div>
                     </div>
                 </div>
             </td>
@@ -2421,46 +1721,19 @@
         </tr>
         
         <tr class="">
-            <td>88</td>
-            <td class="font-bold nickname-cell">
-                <div class="tooltip-wrapper">
-                    Irc0p
-                    <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Aetheric Gearblade (+13)
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Undernet</td>
-            <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right">2,994</td>
-            <td class="text-right power-val">⚔️ 16</td>
-        </tr>
-        
-        <tr class="">
             <td>89</td>
             <td class="font-bold nickname-cell">
                 <div class="tooltip-wrapper">
                     payiurtuk
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Payiurtuk's Dark Trench Coat (+7)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Payiurtuk's Dark Trench Coat</span> (+7)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">8</span></td>
-            <td class="text-right">7,055</td>
+            <td class="text-right">7,080</td>
             <td class="text-right power-val">⚔️ 15</td>
         </tr>
         
@@ -2470,19 +1743,14 @@
                 <div class="tooltip-wrapper">
                     GMonster
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Blades of Eternal Valor (+10)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Blades of Eternal Valor</span> (+10)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right">2,865</td>
+            <td class="text-right">2,890</td>
             <td class="text-right power-val">⚔️ 13</td>
         </tr>
         
@@ -2492,19 +1760,14 @@
                 <div class="tooltip-wrapper">
                     cuddzy
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Feet: Astral Wraithstep Sandals (+5) <br> Accessory: Dusty Badge of Honor (+6)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Feet: <span class="rar-common">Astral Wraithstep Sandals</span> (+5)<br>Accessory: <span class="rar-common">Dusty Badge of Honor</span> (+6)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">1</span></td>
-            <td class="text-right">446</td>
+            <td class="text-right">471</td>
             <td class="text-right power-val">⚔️ 12</td>
         </tr>
         
@@ -2514,19 +1777,14 @@
                 <div class="tooltip-wrapper">
                     Skinner
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Accessory: Dusty Trail Trinket (+9)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Accessory: <span class="rar-common">Dusty Trail Trinket</span> (+9)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
-            <td class="text-right">1,196</td>
+            <td class="text-right">1,221</td>
             <td class="text-right power-val">⚔️ 11</td>
         </tr>
         
@@ -2536,19 +1794,14 @@
                 <div class="tooltip-wrapper">
                     news
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Body: Aegis of Temporal Shadows (+4)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Aegis of Temporal Shadows</span> (+4)</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
-            <td class="text-right">5,325</td>
+            <td class="text-right">5,350</td>
             <td class="text-right power-val">⚔️ 10</td>
         </tr>
         
@@ -2558,13 +1811,8 @@
                 <div class="tooltip-wrapper">
                     Calypso
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Arcane Shadowblade of Elysium (+7)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Arcane Shadowblade of Elysium</span> (+7)</div>
                     </div>
                 </div>
             </td>
@@ -2580,13 +1828,8 @@
                 <div class="tooltip-wrapper">
                     IdleGame
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            Weapon: Debugging Scepter of Awkwardness (+3)
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>Weapon: <span class="rar-common">Debugging Scepter of Awkwardness</span> (+3)</div>
                     </div>
                 </div>
             </td>
@@ -2602,19 +1845,14 @@
                 <div class="tooltip-wrapper">
                     oldschool`
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            ---
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>---</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">3</span></td>
-            <td class="text-right">2,793</td>
+            <td class="text-right">2,875</td>
             <td class="text-right power-val">⚔️ 3</td>
         </tr>
         
@@ -2624,19 +1862,14 @@
                 <div class="tooltip-wrapper">
                     GGore
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            ---
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>---</div>
                     </div>
                 </div>
             </td>
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
-            <td class="text-right">1,236</td>
+            <td class="text-right">1,261</td>
             <td class="text-right power-val">⚔️ 2</td>
         </tr>
         
@@ -2646,13 +1879,8 @@
                 <div class="tooltip-wrapper">
                     tuga
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            ---
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>---</div>
                     </div>
                 </div>
             </td>
@@ -2668,13 +1896,8 @@
                 <div class="tooltip-wrapper">
                     Futebol
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            ---
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>---</div>
                     </div>
                 </div>
             </td>
@@ -2690,13 +1913,8 @@
                 <div class="tooltip-wrapper">
                     CebolaImovel52
                     <div class="tooltip-content">
-                        <div class="tt-section">
-                            <strong>🐉 Pet:</strong> ---
-                        </div>
-                        <div class="tt-section">
-                            <strong>⚔️ Equip:</strong><br>
-                            ---
-                        </div>
+                        <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                        <div class="tt-section"><strong>⚔️ Equip:</strong><br>---</div>
                     </div>
                 </div>
             </td>
@@ -2707,9 +1925,7 @@
         </tr>
         </tbody></table></div></section>
           
-          <footer>
-             IdleRPG Bot • <a href="https://github.com/dannyzen/idlegame" style="color: #7c4dff; text-decoration: none;">GitHub</a>
-          </footer>
+          <footer>IdleRPG Bot • <a href="#" style="color: #7c4dff;">GitHub</a></footer>
       </div>
     </body>
     </html>
