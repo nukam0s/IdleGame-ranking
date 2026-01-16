@@ -14,91 +14,13 @@
         .container { max-width: 1100px; margin: 0 auto; position: relative; }
         h2, h4 { margin: 0; color: var(--text-main); }
         .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .card-header { padding: 15px 20px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         
-        /* --- AVATAR & PLAYER FLEX --- */
-        .player-flex { display: flex; align-items: center; gap: 10px; }
-        .player-avatar { 
-            width: 36px; height: 36px; 
-            border-radius: 50%; 
-            background: #2a2a35; 
-            border: 2px solid #333;
-        }
-        .nick-row { display: flex; align-items: center; gap: 4px; }
-        .rank-num { font-weight: bold; font-size: 1rem; text-align: center; width: 30px; }
-
-        /* --- BARRAS DE PROGRESSO --- */
-        .relative-cell { position: relative; z-index: 1; overflow: hidden; }
-        .bar-fill { 
-            position: absolute; top: 0; left: 0; bottom: 0; 
-            height: 100%; opacity: 0.15; z-index: -1; 
-            transition: width 1s ease;
-        }
-        .cell-text { position: relative; z-index: 2; }
-
-        /* --- PODIUM STYLING (Top 3) --- */
-        tr.rank-1 { background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent); border-left: 3px solid #ffd700; }
-        tr.rank-2 { background: linear-gradient(90deg, rgba(192, 192, 192, 0.1), transparent); border-left: 3px solid #c0c0c0; }
-        tr.rank-3 { background: linear-gradient(90deg, rgba(205, 127, 50, 0.1), transparent); border-left: 3px solid #cd7f32; }
-
-        tr.rank-1 .player-avatar { border-color: #ffd700; box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
-        tr.rank-2 .player-avatar { border-color: #c0c0c0; }
-        tr.rank-3 .player-avatar { border-color: #cd7f32; }
-        
-        /* --- BARRAS DE PROGRESSO NA TABELA --- */
-        .relative-cell { position: relative; z-index: 1; overflow: hidden; }
-        .bar-fill { 
-            position: absolute; 
-            top: 0; left: 0; bottom: 0; /* Alinhado à esquerda */
-            height: 100%; 
-            opacity: 0.15; /* Transparência para não tapar o texto */
-            z-index: -1; 
-            transition: width 1s ease;
-        }
-        .cell-text { position: relative; z-index: 2; }
-        
-        /* HEADER FLEXÍVEL PARA FILTROS */
-        .card-header { 
-            padding: 15px 20px; 
-            border-bottom: 1px solid var(--border); 
-            background: rgba(255,255,255,0.02); 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-wrap: wrap; /* Permite quebrar linha em telemóveis */
-            gap: 15px;
-        }
-        
-        /* GRUPO DE FILTROS */
-        .filter-group {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            background: #2a2a35; 
-            border: 1px solid #444; 
-            color: #aaa;
-            padding: 6px 12px; 
-            border-radius: 6px; 
-            cursor: pointer;
-            font-size: 0.75rem; 
-            font-weight: 600;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-        }
-
+        /* FILTROS */
+        .filter-group { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; justify-content: center; }
+        .filter-btn { background: #2a2a35; border: 1px solid #444; color: #aaa; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.75rem; font-weight: 600; transition: all 0.2s; font-family: 'Inter', sans-serif; }
         .filter-btn:hover { background: #333; color: #fff; }
-        
-        .filter-btn.active {
-            background: var(--accent); 
-            color: #fff; 
-            border-color: var(--accent);
-            box-shadow: 0 0 10px rgba(124, 77, 255, 0.3);
-        }
-        
+        .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 0 10px rgba(124, 77, 255, 0.3); }
         .filter-divider { width: 1px; height: 20px; background: #444; margin: 0 5px; }
 
         .grid-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
@@ -106,7 +28,7 @@
         .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
         @media (max-width: 768px) { .two-col-grid { grid-template-columns: 1fr; } .card-header { flex-direction: column; align-items: flex-start; } .filter-group { width: 100%; justify-content: flex-start; } }
 
-        /* --- LÓGICA DE GAVETA (ACCORDION) --- */
+        /* GAVETAS */
         .hover-card { transition: all 0.3s ease; height: fit-content; }
         .hover-content { max-height: 0; opacity: 0; padding: 0 15px; overflow: hidden; transition: max-height 0.5s ease-out, opacity 0.3s ease, padding 0.3s ease; }
         .hover-card:hover .hover-content { max-height: 500px; opacity: 1; padding: 15px; }
@@ -120,6 +42,7 @@
         .stat-card .icon { font-size: 2rem; } .stat-card .value { font-size: 2rem; font-weight: 800; }
         .chart-container { position: relative; height: 180px; width: 100%; }
 
+        /* TABELA */
         .table-responsive { overflow-x: auto; width: 100%; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 12px 15px; border-bottom: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
@@ -128,7 +51,8 @@
         .mini-table { width: 100%; }
         .mini-table td { padding: 8px 12px; font-size: 0.85rem; border-bottom: 1px solid #2a2a35; }
         .mini-table tr:last-child td { border-bottom: none; }
-        tbody tr:hover { background: var(--bg-hover); }
+        tbody tr:hover { background: var(--bg-hover); cursor: pointer; } /* Cursor Pointer adicionado */
+        
         .text-right { text-align: right; } .text-center { text-align: center; }
         .font-bold { font-weight: 600; } .subtle { color: var(--text-sub); font-size: 0.8rem; }
         .net-tag { color: var(--text-sub); font-size: 0.75rem; margin-left: 4px; }
@@ -148,11 +72,45 @@
         .rar-mythic { color: #e74c3c; font-weight: 900; text-shadow: 0 0 10px rgba(231, 76, 60, 0.6); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; text-shadow: 0 0 15px red; } 100% { opacity: 0.8; } }
 
-        .tooltip-wrapper { position: relative; display: inline-block; cursor: help; }
+        /* AVATAR & PLAYER FLEX */
+        .player-flex { display: flex; align-items: center; gap: 10px; }
+        .player-avatar { width: 36px; height: 36px; border-radius: 50%; background: #2a2a35; border: 2px solid #333; }
+        .nick-row { display: flex; align-items: center; gap: 4px; }
+        .rank-num { font-weight: bold; font-size: 1rem; text-align: center; width: 30px; }
+
+        /* BARRAS DE PROGRESSO */
+        .relative-cell { position: relative; z-index: 1; overflow: hidden; }
+        .bar-fill { position: absolute; top: 0; left: 0; bottom: 0; height: 100%; opacity: 0.15; z-index: -1; transition: width 1s ease; }
+        .cell-text { position: relative; z-index: 2; }
+
+        /* PODIUM */
+        tr.rank-1 { background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent); border-left: 3px solid #ffd700; }
+        tr.rank-2 { background: linear-gradient(90deg, rgba(192, 192, 192, 0.1), transparent); border-left: 3px solid #c0c0c0; }
+        tr.rank-3 { background: linear-gradient(90deg, rgba(205, 127, 50, 0.1), transparent); border-left: 3px solid #cd7f32; }
+        tr.rank-1 .player-avatar { border-color: #ffd700; box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+        tr.rank-2 .player-avatar { border-color: #c0c0c0; }
+        tr.rank-3 .player-avatar { border-color: #cd7f32; }
+
+        /* --- TOOLTIP (Apenas para Desktop) --- */
+        .tooltip-wrapper { position: relative; display: inline-block; }
         .tooltip-content { visibility: hidden; width: 260px; background: rgba(0,0,0,0.95); color: #fff; padding: 12px; position: absolute; z-index: 999; bottom: 125%; left: 50%; transform: translateX(-50%); border: 1px solid var(--accent); border-radius: 6px; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
-        .tooltip-wrapper:hover .tooltip-content { visibility: visible; opacity: 1; }
+        @media (min-width: 769px) { .tooltip-wrapper:hover .tooltip-content { visibility: visible; opacity: 1; } }
         tr:nth-child(-n+3) .tooltip-content { bottom: auto; top: 100%; margin-top: 5px; }
 
+        /* --- MODAL (NOVO) --- */
+        .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; display:none; justify-content:center; align-items:center; backdrop-filter: blur(5px); }
+        .modal-card { background: var(--bg-card); border: 1px solid var(--accent); border-radius: 16px; padding: 25px; width: 90%; max-width: 400px; position: relative; box-shadow: 0 0 30px rgba(124, 77, 255, 0.2); animation: popIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28); }
+        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-close { position: absolute; top: 15px; right: 15px; background:none; border:none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        .modal-avatar { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--accent); margin: 0 auto 15px; display: block; background: #2a2a35; }
+        .modal-title { text-align: center; font-size: 1.5rem; margin-bottom: 5px; font-weight: 800; display:flex; justify-content:center; align-items:center; gap:5px; }
+        .modal-subtitle { text-align: center; color: var(--text-sub); font-size: 0.9rem; margin-bottom: 20px; }
+        .modal-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .modal-stat-box { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; text-align: center; }
+        .modal-stat-label { font-size: 0.75rem; color: #aaa; text-transform: uppercase; }
+        .modal-stat-val { font-size: 1.1rem; font-weight: bold; }
+        .modal-gear { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 15px; font-size: 0.9rem; border: 1px solid #333; max-height: 200px; overflow-y: auto; }
+        
         .lang-switch { position: absolute; top: 0; right: 0; background: var(--bg-card); border: 1px solid var(--border); color: #fff; padding: 5px 10px; cursor: pointer; border-radius: 15px; }
         .hidden { display: none !important; }
         .boss-card { padding: 15px; border: 1px solid #e74c3c; background: #222; border-radius: 8px; margin-bottom: 10px; }
@@ -234,10 +192,8 @@
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("playersTable");
             switching = true;
-            dir = "desc"; 
-            
+            dir = "desc";
             if(n === 1 || n === 2) dir = "asc";
-
             while (switching) {
                 switching = false;
                 rows = table.rows;
@@ -245,10 +201,8 @@
                     shouldSwitch = false;
                     x = rows[i].getElementsByTagName("TD")[n];
                     y = rows[i + 1].getElementsByTagName("TD")[n];
-                    
                     var xVal = x.getAttribute("data-val") ? parseInt(x.getAttribute("data-val")) : x.innerText.toLowerCase();
                     var yVal = y.getAttribute("data-val") ? parseInt(y.getAttribute("data-val")) : y.innerText.toLowerCase();
-                    
                     if (dir == "asc") {
                         if (xVal > yVal) { shouldSwitch = true; break; }
                     } else if (dir == "desc") {
@@ -265,30 +219,61 @@
             }
         }
 
-        // --- NOVA FUNÇÃO DE FILTRO POR REDE ---
         function filterByNetwork(network, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
             var table = document.getElementById("playersTable");
             var tr = table.getElementsByTagName("tr");
-            
             for (var i = 1; i < tr.length; i++) { 
                 var tdNet = tr[i].getElementsByTagName("td")[2]; 
                 if (tdNet) {
                     var netText = tdNet.textContent || tdNet.innerText;
-                    
                     if (network === 'all') {
                         tr[i].style.display = "";
                     } else {
-                        if (netText.trim() === network) {
-                            tr[i].style.display = "";
-                        } else {
-                            tr[i].style.display = "none";
-                        }
+                        if (netText.trim() === network) { tr[i].style.display = ""; } 
+                        else { tr[i].style.display = "none"; }
                     }
                 }
             }
+        }
+
+        // --- LÓGICA DO MODAL (POP-UP) ---
+        function openProfile(row) {
+            // Extrair dados da linha clicada
+            const avatarSrc = row.querySelector('.player-avatar').src;
+            const nickRow = row.querySelector('.nick-row').innerHTML; // Mantém badges
+            const net = row.cells[2].innerText;
+            const lvl = row.cells[3].innerText;
+            const xp = row.cells[4].innerText;
+            const pwr = row.cells[5].innerText;
+            
+            // Extrair conteúdo do Tooltip (Gear + Pet)
+            const tooltipHTML = row.querySelector('.tooltip-content').innerHTML;
+
+            // Preencher o Modal
+            document.getElementById('m-avatar').src = avatarSrc;
+            document.getElementById('m-nick').innerHTML = nickRow; // Insere HTML para manter as badges
+            document.getElementById('m-net').innerText = '@' + net;
+            
+            document.getElementById('m-val-lvl').innerText = lvl;
+            document.getElementById('m-val-xp').innerText = xp;
+            document.getElementById('m-val-pwr').innerText = pwr;
+            
+            document.getElementById('m-gear-content').innerHTML = tooltipHTML;
+
+            // Mostrar
+            document.getElementById('profileModal').style.display = 'flex';
+        }
+        
+        function closeProfile() {
+            document.getElementById('profileModal').style.display = 'none';
+        }
+        
+        // Fechar ao clicar fora
+        window.onclick = function(event) {
+            const m = document.getElementById('profileModal');
+            if (event.target == m) m.style.display = "none";
         }
 
         window.onload = function() { 
@@ -323,7 +308,7 @@
         </div>
         <div class="card stat-card">
             <div class="icon">✨</div>
-            <div class="value">1,448,913</div>
+            <div class="value">1,449,089</div>
             <div class="label"><span class="lang-pt">XP Total Global</span><span class="lang-en hidden">Global Total XP</span></div>
         </div>
     </div>
@@ -476,7 +461,7 @@
                     <span class='net-tag'>@Quakenet</span>
                 </td>
                 <td class='text-right' style="color: #4cd137; font-weight:bold;">
-                    +6,619 XP
+                    +6,621 XP
                 </td>
             </tr>
             
@@ -486,7 +471,7 @@
                     <span class='net-tag'>@InTheMansion</span>
                 </td>
                 <td class='text-right' style="color: #4cd137; font-weight:bold;">
-                    +5,919 XP
+                    +5,921 XP
                 </td>
             </tr>
             
@@ -496,7 +481,7 @@
                     <span class='net-tag'>@InTheMansion</span>
                 </td>
                 <td class='text-right' style="color: #4cd137; font-weight:bold;">
-                    +5,094 XP
+                    +5,096 XP
                 </td>
             </tr>
             
@@ -506,7 +491,7 @@
                     <span class='net-tag'>@Libera</span>
                 </td>
                 <td class='text-right' style="color: #4cd137; font-weight:bold;">
-                    +4,845 XP
+                    +4,847 XP
                 </td>
             </tr>
             
@@ -516,7 +501,7 @@
                     <span class='net-tag'>@Undernet</span>
                 </td>
                 <td class='text-right' style="color: #4cd137; font-weight:bold;">
-                    +4,524 XP
+                    +4,526 XP
                 </td>
             </tr>
             </table></div></div>
@@ -574,7 +559,7 @@
     </div>
     
         <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌍 Guerras</span><span class="lang-en hidden">🌍 World Wars</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td>Rizon</td><td class='text-right'>1 🏆</td></tr><tr><td>InTheMansion</td><td class='text-right'>1 🏆</td></tr><tr><td>Efnet</td><td class='text-right'>1 🏆</td></tr></table></div></div>
-        <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌐 Redes</span><span class="lang-en hidden">🌐 Networks</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>56 👤 <span class='subtle'>(593,960)</span></td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>17 👤 <span class='subtle'>(161,653)</span></td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>9 👤 <span class='subtle'>(140,407)</span></td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>11 👤 <span class='subtle'>(126,733)</span></td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>8 👤 <span class='subtle'>(116,851)</span></td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>8 👤 <span class='subtle'>(93,379)</span></td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>5 👤 <span class='subtle'>(80,209)</span></td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>3 👤 <span class='subtle'>(47,071)</span></td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>3 👤 <span class='subtle'>(46,369)</span></td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>3 👤 <span class='subtle'>(42,281)</span></td></tr></table></div></div>
+        <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌐 Redes</span><span class="lang-en hidden">🌐 Networks</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>56 👤 <span class='subtle'>(594,050)</span></td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>17 👤 <span class='subtle'>(161,671)</span></td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>9 👤 <span class='subtle'>(140,415)</span></td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>11 👤 <span class='subtle'>(126,749)</span></td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>8 👤 <span class='subtle'>(116,863)</span></td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>8 👤 <span class='subtle'>(93,393)</span></td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>5 👤 <span class='subtle'>(80,215)</span></td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>3 👤 <span class='subtle'>(47,075)</span></td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>3 👤 <span class='subtle'>(46,373)</span></td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>3 👤 <span class='subtle'>(42,285)</span></td></tr></table></div></div>
         
     <div class="card hover-card">
         <div class="card-header">
@@ -596,7 +581,7 @@
                 <button class="filter-btn active" onclick="filterByNetwork('all', this)">
                     <span class="lang-pt">Todos</span><span class="lang-en hidden">All</span>
                 </button>
-                <button class="filter-btn" onclick="filterByNetwork('DALnet', this)">DALnet</button><button class="filter-btn" onclick="filterByNetwork('Efnet', this)">Efnet</button><button class="filter-btn" onclick="filterByNetwork('InTheMansion', this)">InTheMansion</button><button class="filter-btn" onclick="filterByNetwork('Libera', this)">Libera</button><button class="filter-btn" onclick="filterByNetwork('PTirc', this)">PTirc</button><button class="filter-btn" onclick="filterByNetwork('PTnet', this)">PTnet</button><button class="filter-btn" onclick="filterByNetwork('Quakenet', this)">Quakenet</button><button class="filter-btn" onclick="filterByNetwork('Rizon', this)">Rizon</button><button class="filter-btn" onclick="filterByNetwork('Snoonet', this)">Snoonet</button><button class="filter-btn" onclick="filterByNetwork('Undernet', this)">Undernet</button>
+                <button class="filter-btn" onclick="filterByNetwork('DALnet', this); event.stopPropagation();">DALnet</button><button class="filter-btn" onclick="filterByNetwork('Efnet', this); event.stopPropagation();">Efnet</button><button class="filter-btn" onclick="filterByNetwork('InTheMansion', this); event.stopPropagation();">InTheMansion</button><button class="filter-btn" onclick="filterByNetwork('Libera', this); event.stopPropagation();">Libera</button><button class="filter-btn" onclick="filterByNetwork('PTirc', this); event.stopPropagation();">PTirc</button><button class="filter-btn" onclick="filterByNetwork('PTnet', this); event.stopPropagation();">PTnet</button><button class="filter-btn" onclick="filterByNetwork('Quakenet', this); event.stopPropagation();">Quakenet</button><button class="filter-btn" onclick="filterByNetwork('Rizon', this); event.stopPropagation();">Rizon</button><button class="filter-btn" onclick="filterByNetwork('Snoonet', this); event.stopPropagation();">Snoonet</button><button class="filter-btn" onclick="filterByNetwork('Undernet', this); event.stopPropagation();">Undernet</button>
                 <div class="filter-divider"></div>
                 <button class="filter-btn" onclick="sortTable(4)">XP <span style="opacity:0.5">▼</span></button>
                 <button class="filter-btn" onclick="sortTable(5)">
@@ -610,7 +595,8 @@
                 <thead>
                     <tr>
                         <th class="sortable" onclick="sortTable(0)">#</th>
-                        <th class="sortable" onclick="sortTable(1)">Hero</th> <th class="sortable" onclick="sortTable(2)">Net</th>
+                        <th class="sortable" onclick="sortTable(1)">Hero</th>
+                        <th class="sortable" onclick="sortTable(2)">Net</th>
                         <th class="sortable text-center" onclick="sortTable(3)">Lvl</th>
                         <th class="sortable text-right" onclick="sortTable(4)">XP</th>
                         <th class="sortable text-right" onclick="sortTable(5)">Power</th>
@@ -618,7 +604,7 @@
                 </thead>
                 <tbody>
     
-        <tr class="rank-1">
+        <tr class="rank-1" onclick="openProfile(this)">
             <td><div class="rank-num">🥇</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -643,9 +629,9 @@
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">28</span></td>
             
-            <td class="text-right relative-cell" data-val="27359">
-                <div class="bar-fill" style="width: 69.75244116972185%; background: #3498db;"></div>
-                <span class="cell-text">27,359</span>
+            <td class="text-right relative-cell" data-val="27361">
+                <div class="bar-fill" style="width: 69.75398342893563%; background: #3498db;"></div>
+                <span class="cell-text">27,361</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="653">
@@ -654,7 +640,7 @@
             </td>
         </tr>
         
-        <tr class="rank-2">
+        <tr class="rank-2" onclick="openProfile(this)">
             <td><div class="rank-num">🥈</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -679,9 +665,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">40</span></td>
             
-            <td class="text-right relative-cell" data-val="39223">
+            <td class="text-right relative-cell" data-val="39225">
                 <div class="bar-fill" style="width: 100%; background: #3498db;"></div>
-                <span class="cell-text">39,223</span>
+                <span class="cell-text">39,225</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="641">
@@ -690,7 +676,7 @@
             </td>
         </tr>
         
-        <tr class="rank-3">
+        <tr class="rank-3" onclick="openProfile(this)">
             <td><div class="rank-num">🥉</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -715,9 +701,9 @@
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">26</span></td>
             
-            <td class="text-right relative-cell" data-val="25457">
-                <div class="bar-fill" style="width: 64.90324554470591%; background: #3498db;"></div>
-                <span class="cell-text">25,457</span>
+            <td class="text-right relative-cell" data-val="25459">
+                <div class="bar-fill" style="width: 64.90503505417463%; background: #3498db;"></div>
+                <span class="cell-text">25,459</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="640">
@@ -726,7 +712,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">4</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -751,9 +737,9 @@
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">15</span></td>
             
-            <td class="text-right relative-cell" data-val="14919">
-                <div class="bar-fill" style="width: 38.03635621956505%; background: #3498db;"></div>
-                <span class="cell-text">14,919</span>
+            <td class="text-right relative-cell" data-val="14921">
+                <div class="bar-fill" style="width: 38.03951561504143%; background: #3498db;"></div>
+                <span class="cell-text">14,921</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="639">
@@ -762,7 +748,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">5</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -787,9 +773,9 @@
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">22</span></td>
             
-            <td class="text-right relative-cell" data-val="21446">
-                <div class="bar-fill" style="width: 54.67710272034265%; background: #3498db;"></div>
-                <span class="cell-text">21,446</span>
+            <td class="text-right relative-cell" data-val="21448">
+                <div class="bar-fill" style="width: 54.67941363926067%; background: #3498db;"></div>
+                <span class="cell-text">21,448</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="633">
@@ -798,7 +784,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">6</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -823,9 +809,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">26</span></td>
             
-            <td class="text-right relative-cell" data-val="25893">
-                <div class="bar-fill" style="width: 66.0148382326696%; background: #3498db;"></div>
-                <span class="cell-text">25,893</span>
+            <td class="text-right relative-cell" data-val="25895">
+                <div class="bar-fill" style="width: 66.01657106437222%; background: #3498db;"></div>
+                <span class="cell-text">25,895</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="562">
@@ -834,7 +820,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">7</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -859,9 +845,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">30</span></td>
             
-            <td class="text-right relative-cell" data-val="29905">
-                <div class="bar-fill" style="width: 76.24353058154654%; background: #3498db;"></div>
-                <span class="cell-text">29,905</span>
+            <td class="text-right relative-cell" data-val="29907">
+                <div class="bar-fill" style="width: 76.24474187380497%; background: #3498db;"></div>
+                <span class="cell-text">29,907</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="556">
@@ -870,7 +856,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">8</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -895,9 +881,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15004">
-                <div class="bar-fill" style="width: 38.2530658032277%; background: #3498db;"></div>
-                <span class="cell-text">15,004</span>
+            <td class="text-right relative-cell" data-val="15006">
+                <div class="bar-fill" style="width: 38.25621414913958%; background: #3498db;"></div>
+                <span class="cell-text">15,006</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="542">
@@ -906,7 +892,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">9</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -931,9 +917,9 @@
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">25</span></td>
             
-            <td class="text-right relative-cell" data-val="24920">
-                <div class="bar-fill" style="width: 63.53415088086072%; background: #3498db;"></div>
-                <span class="cell-text">24,920</span>
+            <td class="text-right relative-cell" data-val="24922">
+                <div class="bar-fill" style="width: 63.53601019757807%; background: #3498db;"></div>
+                <span class="cell-text">24,922</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="528">
@@ -942,7 +928,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">10</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -967,9 +953,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">32</span></td>
             
-            <td class="text-right relative-cell" data-val="31752">
-                <div class="bar-fill" style="width: 80.95250235831017%; background: #3498db;"></div>
-                <span class="cell-text">31,752</span>
+            <td class="text-right relative-cell" data-val="31754">
+                <div class="bar-fill" style="width: 80.95347355003186%; background: #3498db;"></div>
+                <span class="cell-text">31,754</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="522">
@@ -978,7 +964,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">11</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1003,9 +989,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">29</span></td>
             
-            <td class="text-right relative-cell" data-val="28829">
-                <div class="bar-fill" style="width: 73.50024220482881%; background: #3498db;"></div>
-                <span class="cell-text">28,829</span>
+            <td class="text-right relative-cell" data-val="28831">
+                <div class="bar-fill" style="width: 73.50159337157424%; background: #3498db;"></div>
+                <span class="cell-text">28,831</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="520">
@@ -1014,7 +1000,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">12</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1039,9 +1025,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">30</span></td>
             
-            <td class="text-right relative-cell" data-val="29566">
-                <div class="bar-fill" style="width: 75.37924177140964%; background: #3498db;"></div>
-                <span class="cell-text">29,566</span>
+            <td class="text-right relative-cell" data-val="29568">
+                <div class="bar-fill" style="width: 75.38049713193116%; background: #3498db;"></div>
+                <span class="cell-text">29,568</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="462">
@@ -1050,7 +1036,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">13</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1075,9 +1061,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">20</span></td>
             
-            <td class="text-right relative-cell" data-val="19288">
-                <div class="bar-fill" style="width: 49.1752288198251%; background: #3498db;"></div>
-                <span class="cell-text">19,288</span>
+            <td class="text-right relative-cell" data-val="19290">
+                <div class="bar-fill" style="width: 49.17782026768642%; background: #3498db;"></div>
+                <span class="cell-text">19,290</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="433">
@@ -1086,7 +1072,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">14</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1111,9 +1097,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">19</span></td>
             
-            <td class="text-right relative-cell" data-val="18878">
-                <div class="bar-fill" style="width: 48.129923769217044%; background: #3498db;"></div>
-                <span class="cell-text">18,878</span>
+            <td class="text-right relative-cell" data-val="18880">
+                <div class="bar-fill" style="width: 48.13256851497769%; background: #3498db;"></div>
+                <span class="cell-text">18,880</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="424">
@@ -1122,7 +1108,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">15</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1147,9 +1133,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">24</span></td>
             
-            <td class="text-right relative-cell" data-val="23704">
-                <div class="bar-fill" style="width: 60.43392907222803%; background: #3498db;"></div>
-                <span class="cell-text">23,704</span>
+            <td class="text-right relative-cell" data-val="23706">
+                <div class="bar-fill" style="width: 60.43594646271511%; background: #3498db;"></div>
+                <span class="cell-text">23,706</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="422">
@@ -1158,7 +1144,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">16</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1183,9 +1169,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15954">
-                <div class="bar-fill" style="width: 40.675114091221985%; background: #3498db;"></div>
-                <span class="cell-text">15,954</span>
+            <td class="text-right relative-cell" data-val="15956">
+                <div class="bar-fill" style="width: 40.678138942001276%; background: #3498db;"></div>
+                <span class="cell-text">15,956</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="411">
@@ -1194,7 +1180,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">17</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1219,9 +1205,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">20</span></td>
             
-            <td class="text-right relative-cell" data-val="19659">
-                <div class="bar-fill" style="width: 50.12110241439971%; background: #3498db;"></div>
-                <span class="cell-text">19,659</span>
+            <td class="text-right relative-cell" data-val="19661">
+                <div class="bar-fill" style="width: 50.12364563416188%; background: #3498db;"></div>
+                <span class="cell-text">19,661</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="387">
@@ -1230,7 +1216,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">18</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1255,9 +1241,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15696">
-                <div class="bar-fill" style="width: 40.01733676669301%; background: #3498db;"></div>
-                <span class="cell-text">15,696</span>
+            <td class="text-right relative-cell" data-val="15698">
+                <div class="bar-fill" style="width: 40.020395156150414%; background: #3498db;"></div>
+                <span class="cell-text">15,698</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="382">
@@ -1266,7 +1252,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">19</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1292,7 +1278,7 @@
             <td class="text-center"><span class="badge">10</span></td>
             
             <td class="text-right relative-cell" data-val="9813">
-                <div class="bar-fill" style="width: 25.018484052724165%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 25.017208413001914%; background: #3498db;"></div>
                 <span class="cell-text">9,813</span>
             </td>
             
@@ -1302,7 +1288,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">20</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1327,9 +1313,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">12</span></td>
             
-            <td class="text-right relative-cell" data-val="11930">
-                <div class="bar-fill" style="width: 30.415827448180917%; background: #3498db;"></div>
-                <span class="cell-text">11,930</span>
+            <td class="text-right relative-cell" data-val="11932">
+                <div class="bar-fill" style="width: 30.419375398342897%; background: #3498db;"></div>
+                <span class="cell-text">11,932</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="356">
@@ -1338,7 +1324,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">21</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1363,9 +1349,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">26</span></td>
             
-            <td class="text-right relative-cell" data-val="25932">
-                <div class="bar-fill" style="width: 66.11426968870305%; background: #3498db;"></div>
-                <span class="cell-text">25,932</span>
+            <td class="text-right relative-cell" data-val="25934">
+                <div class="bar-fill" style="width: 66.11599745060548%; background: #3498db;"></div>
+                <span class="cell-text">25,934</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="354">
@@ -1374,7 +1360,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">22</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1399,9 +1385,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20202">
-                <div class="bar-fill" style="width: 51.50549422532698%; background: #3498db;"></div>
-                <span class="cell-text">20,202</span>
+            <td class="text-right relative-cell" data-val="20204">
+                <div class="bar-fill" style="width: 51.50796685787126%; background: #3498db;"></div>
+                <span class="cell-text">20,204</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="337">
@@ -1410,7 +1396,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">23</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1435,9 +1421,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">17</span></td>
             
-            <td class="text-right relative-cell" data-val="16526">
-                <div class="bar-fill" style="width: 42.133442113045916%; background: #3498db;"></div>
-                <span class="cell-text">16,526</span>
+            <td class="text-right relative-cell" data-val="16528">
+                <div class="bar-fill" style="width: 42.1363926067559%; background: #3498db;"></div>
+                <span class="cell-text">16,528</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="332">
@@ -1446,7 +1432,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">24</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1471,9 +1457,9 @@
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">22</span></td>
             
-            <td class="text-right relative-cell" data-val="21611">
-                <div class="bar-fill" style="width: 55.09777426509957%; background: #3498db;"></div>
-                <span class="cell-text">21,611</span>
+            <td class="text-right relative-cell" data-val="21613">
+                <div class="bar-fill" style="width: 55.10006373486297%; background: #3498db;"></div>
+                <span class="cell-text">21,613</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="332">
@@ -1482,7 +1468,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">25</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1507,9 +1493,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">20</span></td>
             
-            <td class="text-right relative-cell" data-val="19364">
-                <div class="bar-fill" style="width: 49.36899268286464%; background: #3498db;"></div>
-                <span class="cell-text">19,364</span>
+            <td class="text-right relative-cell" data-val="19366">
+                <div class="bar-fill" style="width: 49.371574251115355%; background: #3498db;"></div>
+                <span class="cell-text">19,366</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="331">
@@ -1518,7 +1504,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">26</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1543,9 +1529,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">17</span></td>
             
-            <td class="text-right relative-cell" data-val="16000">
-                <div class="bar-fill" style="width: 40.792392218851184%; background: #3498db;"></div>
-                <span class="cell-text">16,000</span>
+            <td class="text-right relative-cell" data-val="16002">
+                <div class="bar-fill" style="width: 40.79541108986616%; background: #3498db;"></div>
+                <span class="cell-text">16,002</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="325">
@@ -1554,7 +1540,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">27</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1579,9 +1565,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15282">
-                <div class="bar-fill" style="width: 38.96183361803024%; background: #3498db;"></div>
-                <span class="cell-text">15,282</span>
+            <td class="text-right relative-cell" data-val="15284">
+                <div class="bar-fill" style="width: 38.96494582536648%; background: #3498db;"></div>
+                <span class="cell-text">15,284</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="319">
@@ -1590,7 +1576,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">28</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1615,9 +1601,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">18</span></td>
             
-            <td class="text-right relative-cell" data-val="17718">
-                <div class="bar-fill" style="width: 45.172475333350334%; background: #3498db;"></div>
-                <span class="cell-text">17,718</span>
+            <td class="text-right relative-cell" data-val="17720">
+                <div class="bar-fill" style="width: 45.17527087316762%; background: #3498db;"></div>
+                <span class="cell-text">17,720</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="310">
@@ -1626,7 +1612,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">29</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1651,9 +1637,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">13</span></td>
             
-            <td class="text-right relative-cell" data-val="12295">
-                <div class="bar-fill" style="width: 31.346403895673458%; background: #3498db;"></div>
-                <span class="cell-text">12,295</span>
+            <td class="text-right relative-cell" data-val="12297">
+                <div class="bar-fill" style="width: 31.349904397705547%; background: #3498db;"></div>
+                <span class="cell-text">12,297</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="303">
@@ -1662,7 +1648,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">30</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1687,9 +1673,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">12</span></td>
             
-            <td class="text-right relative-cell" data-val="11724">
-                <div class="bar-fill" style="width: 29.89062539836321%; background: #3498db;"></div>
-                <span class="cell-text">11,724</span>
+            <td class="text-right relative-cell" data-val="11726">
+                <div class="bar-fill" style="width: 29.894200127469727%; background: #3498db;"></div>
+                <span class="cell-text">11,726</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="295">
@@ -1698,7 +1684,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">31</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1723,9 +1709,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">11</span></td>
             
-            <td class="text-right relative-cell" data-val="10421">
-                <div class="bar-fill" style="width: 26.568594957040514%; background: #3498db;"></div>
-                <span class="cell-text">10,421</span>
+            <td class="text-right relative-cell" data-val="10423">
+                <div class="bar-fill" style="width: 26.572339069471003%; background: #3498db;"></div>
+                <span class="cell-text">10,423</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="292">
@@ -1734,7 +1720,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">32</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1759,9 +1745,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15552">
-                <div class="bar-fill" style="width: 39.65020523672335%; background: #3498db;"></div>
-                <span class="cell-text">15,552</span>
+            <td class="text-right relative-cell" data-val="15554">
+                <div class="bar-fill" style="width: 39.65328234544296%; background: #3498db;"></div>
+                <span class="cell-text">15,554</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="290">
@@ -1770,7 +1756,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">33</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1795,9 +1781,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">20</span></td>
             
-            <td class="text-right relative-cell" data-val="19240">
-                <div class="bar-fill" style="width: 49.05285164316855%; background: #3498db;"></div>
-                <span class="cell-text">19,240</span>
+            <td class="text-right relative-cell" data-val="19242">
+                <div class="bar-fill" style="width: 49.055449330783944%; background: #3498db;"></div>
+                <span class="cell-text">19,242</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="281">
@@ -1806,7 +1792,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">34</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1831,9 +1817,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">17</span></td>
             
-            <td class="text-right relative-cell" data-val="16123">
-                <div class="bar-fill" style="width: 41.1059837340336%; background: #3498db;"></div>
-                <span class="cell-text">16,123</span>
+            <td class="text-right relative-cell" data-val="16125">
+                <div class="bar-fill" style="width: 41.10898661567878%; background: #3498db;"></div>
+                <span class="cell-text">16,125</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="270">
@@ -1842,7 +1828,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">35</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1867,9 +1853,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20779">
-                <div class="bar-fill" style="width: 52.97656986971929%; background: #3498db;"></div>
-                <span class="cell-text">20,779</span>
+            <td class="text-right relative-cell" data-val="20781">
+                <div class="bar-fill" style="width: 52.978967495219884%; background: #3498db;"></div>
+                <span class="cell-text">20,781</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="262">
@@ -1878,7 +1864,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">36</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1903,9 +1889,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">20</span></td>
             
-            <td class="text-right relative-cell" data-val="19674">
-                <div class="bar-fill" style="width: 50.15934528210488%; background: #3498db;"></div>
-                <span class="cell-text">19,674</span>
+            <td class="text-right relative-cell" data-val="19676">
+                <div class="bar-fill" style="width: 50.161886551943915%; background: #3498db;"></div>
+                <span class="cell-text">19,676</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="256">
@@ -1914,7 +1900,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">37</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1939,9 +1925,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">18</span></td>
             
-            <td class="text-right relative-cell" data-val="17947">
-                <div class="bar-fill" style="width: 45.75631644698264%; background: #3498db;"></div>
-                <span class="cell-text">17,947</span>
+            <td class="text-right relative-cell" data-val="17949">
+                <div class="bar-fill" style="width: 45.75908221797323%; background: #3498db;"></div>
+                <span class="cell-text">17,949</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="254">
@@ -1950,7 +1936,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">38</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -1975,9 +1961,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">18</span></td>
             
-            <td class="text-right relative-cell" data-val="17124">
-                <div class="bar-fill" style="width: 43.658057772225476%; background: #3498db;"></div>
-                <span class="cell-text">17,124</span>
+            <td class="text-right relative-cell" data-val="17126">
+                <div class="bar-fill" style="width: 43.660930528999366%; background: #3498db;"></div>
+                <span class="cell-text">17,126</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="254">
@@ -1986,7 +1972,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">39</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2011,9 +1997,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15329">
-                <div class="bar-fill" style="width: 39.081661270173115%; background: #3498db;"></div>
-                <span class="cell-text">15,329</span>
+            <td class="text-right relative-cell" data-val="15331">
+                <div class="bar-fill" style="width: 39.08476736775016%; background: #3498db;"></div>
+                <span class="cell-text">15,331</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="253">
@@ -2022,7 +2008,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">40</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2047,9 +2033,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">18</span></td>
             
-            <td class="text-right relative-cell" data-val="17438">
-                <div class="bar-fill" style="width: 44.458608469520435%; background: #3498db;"></div>
-                <span class="cell-text">17,438</span>
+            <td class="text-right relative-cell" data-val="17440">
+                <div class="bar-fill" style="width: 44.461440407903126%; background: #3498db;"></div>
+                <span class="cell-text">17,440</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="250">
@@ -2058,7 +2044,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">41</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2083,9 +2069,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">15</span></td>
             
-            <td class="text-right relative-cell" data-val="14645">
-                <div class="bar-fill" style="width: 37.337786502817224%; background: #3498db;"></div>
-                <span class="cell-text">14,645</span>
+            <td class="text-right relative-cell" data-val="14647">
+                <div class="bar-fill" style="width: 37.34098151688974%; background: #3498db;"></div>
+                <span class="cell-text">14,647</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="248">
@@ -2094,7 +2080,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">42</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2120,7 +2106,7 @@
             <td class="text-center"><span class="badge">6</span></td>
             
             <td class="text-right relative-cell" data-val="5585">
-                <div class="bar-fill" style="width: 14.239094408892742%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 14.238368387507967%; background: #3498db;"></div>
                 <span class="cell-text">5,585</span>
             </td>
             
@@ -2130,7 +2116,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">43</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2155,9 +2141,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">14</span></td>
             
-            <td class="text-right relative-cell" data-val="13292">
-                <div class="bar-fill" style="width: 33.88827983581062%; background: #3498db;"></div>
-                <span class="cell-text">13,292</span>
+            <td class="text-right relative-cell" data-val="13294">
+                <div class="bar-fill" style="width: 33.89165073295092%; background: #3498db;"></div>
+                <span class="cell-text">13,294</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="245">
@@ -2166,7 +2152,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">44</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2191,9 +2177,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">14</span></td>
             
-            <td class="text-right relative-cell" data-val="13189">
-                <div class="bar-fill" style="width: 33.62567881090177%; background: #3498db;"></div>
-                <span class="cell-text">13,189</span>
+            <td class="text-right relative-cell" data-val="13191">
+                <div class="bar-fill" style="width: 33.62906309751434%; background: #3498db;"></div>
+                <span class="cell-text">13,191</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="238">
@@ -2202,7 +2188,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">45</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2227,9 +2213,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">22</span></td>
             
-            <td class="text-right relative-cell" data-val="21174">
-                <div class="bar-fill" style="width: 53.98363205262219%; background: #3498db;"></div>
-                <span class="cell-text">21,174</span>
+            <td class="text-right relative-cell" data-val="21176">
+                <div class="bar-fill" style="width: 53.98597833014659%; background: #3498db;"></div>
+                <span class="cell-text">21,176</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="230">
@@ -2238,7 +2224,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">46</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2263,9 +2249,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15984">
-                <div class="bar-fill" style="width: 40.75159982663234%; background: #3498db;"></div>
-                <span class="cell-text">15,984</span>
+            <td class="text-right relative-cell" data-val="15986">
+                <div class="bar-fill" style="width: 40.75462077756533%; background: #3498db;"></div>
+                <span class="cell-text">15,986</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="225">
@@ -2274,7 +2260,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">47</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2300,7 +2286,7 @@
             <td class="text-center"><span class="badge">19</span></td>
             
             <td class="text-right relative-cell" data-val="18489">
-                <div class="bar-fill" style="width: 47.138158733396224%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 47.135755258126196%; background: #3498db;"></div>
                 <span class="cell-text">18,489</span>
             </td>
             
@@ -2310,7 +2296,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">48</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2335,9 +2321,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">13</span></td>
             
-            <td class="text-right relative-cell" data-val="12013">
-                <div class="bar-fill" style="width: 30.627437982816204%; background: #3498db;"></div>
-                <span class="cell-text">12,013</span>
+            <td class="text-right relative-cell" data-val="12015">
+                <div class="bar-fill" style="width: 30.630975143403443%; background: #3498db;"></div>
+                <span class="cell-text">12,015</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="218">
@@ -2346,7 +2332,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">49</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2371,9 +2357,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">12</span></td>
             
-            <td class="text-right relative-cell" data-val="11515">
-                <div class="bar-fill" style="width: 29.357774775004465%; background: #3498db;"></div>
-                <span class="cell-text">11,515</span>
+            <td class="text-right relative-cell" data-val="11517">
+                <div class="bar-fill" style="width: 29.36137667304015%; background: #3498db;"></div>
+                <span class="cell-text">11,517</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="216">
@@ -2382,7 +2368,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">50</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2407,9 +2393,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">17</span></td>
             
-            <td class="text-right relative-cell" data-val="16937">
-                <div class="bar-fill" style="width: 43.181296688167656%; background: #3498db;"></div>
-                <span class="cell-text">16,937</span>
+            <td class="text-right relative-cell" data-val="16939">
+                <div class="bar-fill" style="width: 43.18419375398343%; background: #3498db;"></div>
+                <span class="cell-text">16,939</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="212">
@@ -2418,7 +2404,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">51</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2443,9 +2429,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">6</span></td>
             
-            <td class="text-right relative-cell" data-val="5893">
-                <div class="bar-fill" style="width: 15.024347959105627%; background: #3498db;"></div>
-                <span class="cell-text">5,893</span>
+            <td class="text-right relative-cell" data-val="5895">
+                <div class="bar-fill" style="width: 15.028680688336522%; background: #3498db;"></div>
+                <span class="cell-text">5,895</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="211">
@@ -2454,7 +2440,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">52</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2479,9 +2465,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">5</span></td>
             
-            <td class="text-right relative-cell" data-val="4120">
-                <div class="bar-fill" style="width: 10.504040996354181%; background: #3498db;"></div>
-                <span class="cell-text">4,120</span>
+            <td class="text-right relative-cell" data-val="4122">
+                <div class="bar-fill" style="width: 10.508604206500955%; background: #3498db;"></div>
+                <span class="cell-text">4,122</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="199">
@@ -2490,7 +2476,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">53</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2515,9 +2501,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">22</span></td>
             
-            <td class="text-right relative-cell" data-val="21179">
-                <div class="bar-fill" style="width: 53.996379675190575%; background: #3498db;"></div>
-                <span class="cell-text">21,179</span>
+            <td class="text-right relative-cell" data-val="21181">
+                <div class="bar-fill" style="width: 53.9987253027406%; background: #3498db;"></div>
+                <span class="cell-text">21,181</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="185">
@@ -2526,7 +2512,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">54</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2551,9 +2537,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">12</span></td>
             
-            <td class="text-right relative-cell" data-val="11956">
-                <div class="bar-fill" style="width: 30.48211508553655%; background: #3498db;"></div>
-                <span class="cell-text">11,956</span>
+            <td class="text-right relative-cell" data-val="11958">
+                <div class="bar-fill" style="width: 30.485659655831736%; background: #3498db;"></div>
+                <span class="cell-text">11,958</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="185">
@@ -2562,7 +2548,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">55</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2587,9 +2573,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
             
-            <td class="text-right relative-cell" data-val="12023">
-                <div class="bar-fill" style="width: 30.65293322795299%; background: #3498db;"></div>
-                <span class="cell-text">12,023</span>
+            <td class="text-right relative-cell" data-val="12025">
+                <div class="bar-fill" style="width: 30.65646908859146%; background: #3498db;"></div>
+                <span class="cell-text">12,025</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="184">
@@ -2598,7 +2584,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">56</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2623,9 +2609,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">12</span></td>
             
-            <td class="text-right relative-cell" data-val="11417">
-                <div class="bar-fill" style="width: 29.107921372664%; background: #3498db;"></div>
-                <span class="cell-text">11,417</span>
+            <td class="text-right relative-cell" data-val="11419">
+                <div class="bar-fill" style="width: 29.111536010197582%; background: #3498db;"></div>
+                <span class="cell-text">11,419</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="178">
@@ -2634,7 +2620,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">57</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2659,9 +2645,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8417">
-                <div class="bar-fill" style="width: 21.4593478316294%; background: #3498db;"></div>
-                <span class="cell-text">8,417</span>
+            <td class="text-right relative-cell" data-val="8419">
+                <div class="bar-fill" style="width: 21.463352453792226%; background: #3498db;"></div>
+                <span class="cell-text">8,419</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="175">
@@ -2670,7 +2656,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">58</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2695,9 +2681,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15074">
-                <div class="bar-fill" style="width: 38.431532519185176%; background: #3498db;"></div>
-                <span class="cell-text">15,074</span>
+            <td class="text-right relative-cell" data-val="15076">
+                <div class="bar-fill" style="width: 38.434671765455704%; background: #3498db;"></div>
+                <span class="cell-text">15,076</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="169">
@@ -2706,7 +2692,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">59</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2731,9 +2717,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20460">
-                <div class="bar-fill" style="width: 52.16327154985595%; background: #3498db;"></div>
-                <span class="cell-text">20,460</span>
+            <td class="text-right relative-cell" data-val="20462">
+                <div class="bar-fill" style="width: 52.16571064372212%; background: #3498db;"></div>
+                <span class="cell-text">20,462</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="167">
@@ -2742,7 +2728,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">60</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2767,9 +2753,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8326">
-                <div class="bar-fill" style="width: 21.227341100884686%; background: #3498db;"></div>
-                <span class="cell-text">8,326</span>
+            <td class="text-right relative-cell" data-val="8328">
+                <div class="bar-fill" style="width: 21.23135755258126%; background: #3498db;"></div>
+                <span class="cell-text">8,328</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="154">
@@ -2778,7 +2764,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">61</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2803,9 +2789,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15351">
-                <div class="bar-fill" style="width: 39.13775080947403%; background: #3498db;"></div>
-                <span class="cell-text">15,351</span>
+            <td class="text-right relative-cell" data-val="15353">
+                <div class="bar-fill" style="width: 39.1408540471638%; background: #3498db;"></div>
+                <span class="cell-text">15,353</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="153">
@@ -2814,7 +2800,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">62</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2839,9 +2825,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20227">
-                <div class="bar-fill" style="width: 51.56923233816894%; background: #3498db;"></div>
-                <span class="cell-text">20,227</span>
+            <td class="text-right relative-cell" data-val="20229">
+                <div class="bar-fill" style="width: 51.571701720841304%; background: #3498db;"></div>
+                <span class="cell-text">20,229</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="152">
@@ -2850,7 +2836,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">63</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2875,9 +2861,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20002">
-                <div class="bar-fill" style="width: 50.99558932259134%; background: #3498db;"></div>
-                <span class="cell-text">20,002</span>
+            <td class="text-right relative-cell" data-val="20004">
+                <div class="bar-fill" style="width: 50.99808795411089%; background: #3498db;"></div>
+                <span class="cell-text">20,004</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="149">
@@ -2886,7 +2872,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">64</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2911,9 +2897,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20248">
-                <div class="bar-fill" style="width: 51.62277235295617%; background: #3498db;"></div>
-                <span class="cell-text">20,248</span>
+            <td class="text-right relative-cell" data-val="20250">
+                <div class="bar-fill" style="width: 51.625239005736134%; background: #3498db;"></div>
+                <span class="cell-text">20,250</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="144">
@@ -2922,7 +2908,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">65</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2947,9 +2933,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20204">
-                <div class="bar-fill" style="width: 51.510593274354335%; background: #3498db;"></div>
-                <span class="cell-text">20,204</span>
+            <td class="text-right relative-cell" data-val="20206">
+                <div class="bar-fill" style="width: 51.51306564690886%; background: #3498db;"></div>
+                <span class="cell-text">20,206</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="133">
@@ -2958,7 +2944,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">66</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -2983,9 +2969,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">7</span></td>
             
-            <td class="text-right relative-cell" data-val="6364">
-                <div class="bar-fill" style="width: 16.22517400504806%; background: #3498db;"></div>
-                <span class="cell-text">6,364</span>
+            <td class="text-right relative-cell" data-val="6366">
+                <div class="bar-fill" style="width: 16.229445506692162%; background: #3498db;"></div>
+                <span class="cell-text">6,366</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="129">
@@ -2994,7 +2980,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">67</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3019,9 +3005,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8317">
-                <div class="bar-fill" style="width: 21.20439538026158%; background: #3498db;"></div>
-                <span class="cell-text">8,317</span>
+            <td class="text-right relative-cell" data-val="8319">
+                <div class="bar-fill" style="width: 21.208413001912046%; background: #3498db;"></div>
+                <span class="cell-text">8,319</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="127">
@@ -3030,7 +3016,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">68</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3055,9 +3041,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">20</span></td>
             
-            <td class="text-right relative-cell" data-val="19884">
-                <div class="bar-fill" style="width: 50.6947454299773%; background: #3498db;"></div>
-                <span class="cell-text">19,884</span>
+            <td class="text-right relative-cell" data-val="19886">
+                <div class="bar-fill" style="width: 50.69725940089229%; background: #3498db;"></div>
+                <span class="cell-text">19,886</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="123">
@@ -3066,7 +3052,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">69</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3091,9 +3077,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20168">
-                <div class="bar-fill" style="width: 51.41881039186191%; background: #3498db;"></div>
-                <span class="cell-text">20,168</span>
+            <td class="text-right relative-cell" data-val="20170">
+                <div class="bar-fill" style="width: 51.421287444232%; background: #3498db;"></div>
+                <span class="cell-text">20,170</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="122">
@@ -3102,7 +3088,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">70</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3127,9 +3113,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8324">
-                <div class="bar-fill" style="width: 21.22224205185733%; background: #3498db;"></div>
-                <span class="cell-text">8,324</span>
+            <td class="text-right relative-cell" data-val="8326">
+                <div class="bar-fill" style="width: 21.226258763543658%; background: #3498db;"></div>
+                <span class="cell-text">8,326</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="122">
@@ -3138,7 +3124,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">71</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3163,9 +3149,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
             
-            <td class="text-right relative-cell" data-val="5952">
-                <div class="bar-fill" style="width: 15.17476990541264%; background: #3498db;"></div>
-                <span class="cell-text">5,952</span>
+            <td class="text-right relative-cell" data-val="5954">
+                <div class="bar-fill" style="width: 15.179094964945824%; background: #3498db;"></div>
+                <span class="cell-text">5,954</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="116">
@@ -3174,7 +3160,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">72</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3199,9 +3185,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8307">
-                <div class="bar-fill" style="width: 21.1789001351248%; background: #3498db;"></div>
-                <span class="cell-text">8,307</span>
+            <td class="text-right relative-cell" data-val="8309">
+                <div class="bar-fill" style="width: 21.182919056724028%; background: #3498db;"></div>
+                <span class="cell-text">8,309</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="112">
@@ -3210,7 +3196,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">73</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3235,9 +3221,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20944">
-                <div class="bar-fill" style="width: 53.397241414476206%; background: #3498db;"></div>
-                <span class="cell-text">20,944</span>
+            <td class="text-right relative-cell" data-val="20946">
+                <div class="bar-fill" style="width: 53.39961759082218%; background: #3498db;"></div>
+                <span class="cell-text">20,946</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="111">
@@ -3246,7 +3232,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">74</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3271,9 +3257,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20387">
-                <div class="bar-fill" style="width: 51.97715626035745%; background: #3498db;"></div>
-                <span class="cell-text">20,387</span>
+            <td class="text-right relative-cell" data-val="20389">
+                <div class="bar-fill" style="width: 51.97960484384958%; background: #3498db;"></div>
+                <span class="cell-text">20,389</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="109">
@@ -3282,7 +3268,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">75</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3307,9 +3293,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">21</span></td>
             
-            <td class="text-right relative-cell" data-val="20361">
-                <div class="bar-fill" style="width: 51.91086862300182%; background: #3498db;"></div>
-                <span class="cell-text">20,361</span>
+            <td class="text-right relative-cell" data-val="20363">
+                <div class="bar-fill" style="width: 51.91332058636073%; background: #3498db;"></div>
+                <span class="cell-text">20,363</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="104">
@@ -3318,7 +3304,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">76</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3343,9 +3329,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">13</span></td>
             
-            <td class="text-right relative-cell" data-val="12114">
-                <div class="bar-fill" style="width: 30.884939958697704%; background: #3498db;"></div>
-                <span class="cell-text">12,114</span>
+            <td class="text-right relative-cell" data-val="12116">
+                <div class="bar-fill" style="width: 30.88846398980242%; background: #3498db;"></div>
+                <span class="cell-text">12,116</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="103">
@@ -3354,7 +3340,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">77</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3379,9 +3365,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">18</span></td>
             
-            <td class="text-right relative-cell" data-val="17213">
-                <div class="bar-fill" style="width: 43.88496545394284%; background: #3498db;"></div>
-                <span class="cell-text">17,213</span>
+            <td class="text-right relative-cell" data-val="17215">
+                <div class="bar-fill" style="width: 43.88782664117272%; background: #3498db;"></div>
+                <span class="cell-text">17,215</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="102">
@@ -3390,7 +3376,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">78</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3415,9 +3401,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">16</span></td>
             
-            <td class="text-right relative-cell" data-val="15708">
-                <div class="bar-fill" style="width: 40.04793106085715%; background: #3498db;"></div>
-                <span class="cell-text">15,708</span>
+            <td class="text-right relative-cell" data-val="15710">
+                <div class="bar-fill" style="width: 40.050987890376035%; background: #3498db;"></div>
+                <span class="cell-text">15,710</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="99">
@@ -3426,7 +3412,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">79</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3451,9 +3437,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8392">
-                <div class="bar-fill" style="width: 21.395609718787444%; background: #3498db;"></div>
-                <span class="cell-text">8,392</span>
+            <td class="text-right relative-cell" data-val="8394">
+                <div class="bar-fill" style="width: 21.399617590822178%; background: #3498db;"></div>
+                <span class="cell-text">8,394</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="98">
@@ -3462,7 +3448,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">80</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3487,9 +3473,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8296">
-                <div class="bar-fill" style="width: 21.15085536547434%; background: #3498db;"></div>
-                <span class="cell-text">8,296</span>
+            <td class="text-right relative-cell" data-val="8298">
+                <div class="bar-fill" style="width: 21.15487571701721%; background: #3498db;"></div>
+                <span class="cell-text">8,298</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="84">
@@ -3498,7 +3484,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">81</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3523,9 +3509,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">12</span></td>
             
-            <td class="text-right relative-cell" data-val="11230">
-                <div class="bar-fill" style="width: 28.63116028860617%; background: #3498db;"></div>
-                <span class="cell-text">11,230</span>
+            <td class="text-right relative-cell" data-val="11232">
+                <div class="bar-fill" style="width: 28.634799235181646%; background: #3498db;"></div>
+                <span class="cell-text">11,232</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="82">
@@ -3534,7 +3520,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">82</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3559,9 +3545,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8794">
-                <div class="bar-fill" style="width: 22.42051857328608%; background: #3498db;"></div>
-                <span class="cell-text">8,794</span>
+            <td class="text-right relative-cell" data-val="8796">
+                <div class="bar-fill" style="width: 22.424474187380497%; background: #3498db;"></div>
+                <span class="cell-text">8,796</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="82">
@@ -3570,7 +3556,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">83</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3596,7 +3582,7 @@
             <td class="text-center"><span class="badge">1</span></td>
             
             <td class="text-right relative-cell" data-val="600">
-                <div class="bar-fill" style="width: 1.5297147082069193%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.5296367112810707%; background: #3498db;"></div>
                 <span class="cell-text">600</span>
             </td>
             
@@ -3606,7 +3592,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">84</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3631,9 +3617,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">6</span></td>
             
-            <td class="text-right relative-cell" data-val="5758">
-                <div class="bar-fill" style="width: 14.680162149759072%; background: #3498db;"></div>
-                <span class="cell-text">5,758</span>
+            <td class="text-right relative-cell" data-val="5760">
+                <div class="bar-fill" style="width: 14.68451242829828%; background: #3498db;"></div>
+                <span class="cell-text">5,760</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="73">
@@ -3642,7 +3628,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">85</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3668,7 +3654,7 @@
             <td class="text-center"><span class="badge">4</span></td>
             
             <td class="text-right relative-cell" data-val="3044">
-                <div class="bar-fill" style="width: 7.760752619636438%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 7.760356915232633%; background: #3498db;"></div>
                 <span class="cell-text">3,044</span>
             </td>
             
@@ -3678,7 +3664,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">86</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3703,9 +3689,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">4</span></td>
             
-            <td class="text-right relative-cell" data-val="3199">
-                <div class="bar-fill" style="width: 8.155928919256558%; background: #3498db;"></div>
-                <span class="cell-text">3,199</span>
+            <td class="text-right relative-cell" data-val="3201">
+                <div class="bar-fill" style="width: 8.160611854684513%; background: #3498db;"></div>
+                <span class="cell-text">3,201</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="67">
@@ -3714,7 +3700,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">87</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3739,9 +3725,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8345">
-                <div class="bar-fill" style="width: 21.27578206664457%; background: #3498db;"></div>
-                <span class="cell-text">8,345</span>
+            <td class="text-right relative-cell" data-val="8347">
+                <div class="bar-fill" style="width: 21.279796048438495%; background: #3498db;"></div>
+                <span class="cell-text">8,347</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="65">
@@ -3750,7 +3736,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">88</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3775,9 +3761,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">9</span></td>
             
-            <td class="text-right relative-cell" data-val="8197">
-                <div class="bar-fill" style="width: 20.898452438620197%; background: #3498db;"></div>
-                <span class="cell-text">8,197</span>
+            <td class="text-right relative-cell" data-val="8199">
+                <div class="bar-fill" style="width: 20.90248565965583%; background: #3498db;"></div>
+                <span class="cell-text">8,199</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="58">
@@ -3786,7 +3772,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">89</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3812,7 +3798,7 @@
             <td class="text-center"><span class="badge">5</span></td>
             
             <td class="text-right relative-cell" data-val="5000">
-                <div class="bar-fill" style="width: 12.747622568390996%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 12.746972594008923%; background: #3498db;"></div>
                 <span class="cell-text">5,000</span>
             </td>
             
@@ -3822,7 +3808,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">90</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3847,9 +3833,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">10</span></td>
             
-            <td class="text-right relative-cell" data-val="9065">
-                <div class="bar-fill" style="width: 23.111439716492875%; background: #3498db;"></div>
-                <span class="cell-text">9,065</span>
+            <td class="text-right relative-cell" data-val="9067">
+                <div class="bar-fill" style="width: 23.11536010197578%; background: #3498db;"></div>
+                <span class="cell-text">9,067</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="49">
@@ -3858,7 +3844,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">91</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3883,9 +3869,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">7</span></td>
             
-            <td class="text-right relative-cell" data-val="6264">
-                <div class="bar-fill" style="width: 15.970221553680238%; background: #3498db;"></div>
-                <span class="cell-text">6,264</span>
+            <td class="text-right relative-cell" data-val="6266">
+                <div class="bar-fill" style="width: 15.974506054811982%; background: #3498db;"></div>
+                <span class="cell-text">6,266</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="48">
@@ -3894,7 +3880,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">92</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3919,9 +3905,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">4</span></td>
             
-            <td class="text-right relative-cell" data-val="3924">
-                <div class="bar-fill" style="width: 10.004334191673253%; background: #3498db;"></div>
-                <span class="cell-text">3,924</span>
+            <td class="text-right relative-cell" data-val="3926">
+                <div class="bar-fill" style="width: 10.008922880815806%; background: #3498db;"></div>
+                <span class="cell-text">3,926</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="35">
@@ -3930,7 +3916,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">93</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3955,9 +3941,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">5</span></td>
             
-            <td class="text-right relative-cell" data-val="4637">
-                <div class="bar-fill" style="width: 11.82214516992581%; background: #3498db;"></div>
-                <span class="cell-text">4,637</span>
+            <td class="text-right relative-cell" data-val="4639">
+                <div class="bar-fill" style="width: 11.826641172721478%; background: #3498db;"></div>
+                <span class="cell-text">4,639</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="34">
@@ -3966,7 +3952,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">94</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -3992,7 +3978,7 @@
             <td class="text-center"><span class="badge">3</span></td>
             
             <td class="text-right relative-cell" data-val="2545">
-                <div class="bar-fill" style="width: 6.488539887311016%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 6.488209050350542%; background: #3498db;"></div>
                 <span class="cell-text">2,545</span>
             </td>
             
@@ -4002,7 +3988,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">95</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -4028,7 +4014,7 @@
             <td class="text-center"><span class="badge">2</span></td>
             
             <td class="text-right relative-cell" data-val="1922">
-                <div class="bar-fill" style="width: 4.9001861152894985%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 4.89993626513703%; background: #3498db;"></div>
                 <span class="cell-text">1,922</span>
             </td>
             
@@ -4038,7 +4024,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">96</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -4063,9 +4049,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">7</span></td>
             
-            <td class="text-right relative-cell" data-val="6075">
-                <div class="bar-fill" style="width: 15.488361420595059%; background: #3498db;"></div>
-                <span class="cell-text">6,075</span>
+            <td class="text-right relative-cell" data-val="6077">
+                <div class="bar-fill" style="width: 15.492670490758446%; background: #3498db;"></div>
+                <span class="cell-text">6,077</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="26">
@@ -4074,7 +4060,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">97</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -4100,7 +4086,7 @@
             <td class="text-center"><span class="badge">2</span></td>
             
             <td class="text-right relative-cell" data-val="1835">
-                <div class="bar-fill" style="width: 4.678377482599496%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 4.678138942001275%; background: #3498db;"></div>
                 <span class="cell-text">1,835</span>
             </td>
             
@@ -4110,7 +4096,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">98</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -4136,7 +4122,7 @@
             <td class="text-center"><span class="badge">1</span></td>
             
             <td class="text-right relative-cell" data-val="782">
-                <div class="bar-fill" style="width: 1.9937281696963516%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.9936265137029956%; background: #3498db;"></div>
                 <span class="cell-text">782</span>
             </td>
             
@@ -4146,7 +4132,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">99</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -4172,7 +4158,7 @@
             <td class="text-center"><span class="badge">2</span></td>
             
             <td class="text-right relative-cell" data-val="1227">
-                <div class="bar-fill" style="width: 3.1282665782831502%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 3.1281070745697894%; background: #3498db;"></div>
                 <span class="cell-text">1,227</span>
             </td>
             
@@ -4182,7 +4168,7 @@
             </td>
         </tr>
         
-        <tr class="">
+        <tr class="" onclick="openProfile(this)">
             <td><div class="rank-num">100</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
@@ -4227,6 +4213,29 @@
              </a>
           </footer>
       </div>
+
+      <div id="profileModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeProfile()">×</button>
+            <img id="m-avatar" src="" class="modal-avatar">
+            <h3 id="m-nick" class="modal-title">Nick</h3>
+            <div id="m-net" class="modal-subtitle">@Network</div>
+            
+            <div class="modal-stats-grid">
+                <div class="modal-stat-box"><div class="modal-stat-val" id="m-val-lvl">0</div><div class="modal-stat-label">Level</div></div>
+                <div class="modal-stat-box"><div class="modal-stat-val" id="m-val-xp">0</div><div class="modal-stat-label">XP</div></div>
+                <div class="modal-stat-box" style="grid-column: span 2;"><div class="modal-stat-val" style="color:#f1c40f" id="m-val-pwr">0</div><div class="modal-stat-label">Power</div></div>
+            </div>
+            
+            <div class="modal-gear" id="m-gear-content">
+                </div>
+            
+            <div style="text-align:center; margin-top:15px; font-size:0.75rem; color:#666;">
+                 <span class="lang-pt">Clique fora para fechar</span><span class="lang-en hidden">Click outside to close</span>
+            </div>
+        </div>
+      </div>
+
     </body>
     </html>
     
