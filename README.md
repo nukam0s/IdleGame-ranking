@@ -42,7 +42,6 @@
 **EN**: *Your progress is **permanent within each IRC network**. Levels, items, and achievements persist across sessions, but each network is an independent universe.*
 
 ---
----
 
 ## 📈 Sistema de Progressão (XP Escalado) | Progression System (Scaled XP)
 
