@@ -77,13 +77,13 @@
 - 🎯 **Participa em Eventos**: World Boss, Aventuras Diárias e World War dão centenas de XP.
 - ⚔️ **Duelos Diários**: 3 lutas por dia podem render 150-300 XP.
 - 📜 **Quests Interativas**: Respostas criativas dão bónus de até 200 XP.
-- 🏆 **Top Rankings**: Estar no Top 3 Diário/Mensal dá recompensas extra.
+- 🏆 **Top Rankings**: Estar no Top 3 Diário/Mensal dá recompensas de item extra.
 
 **EN**:
 - *🎯 **Join Events**: World Boss, Daily Adventures, and World War grant hundreds of XP.*
 - *⚔️ **Daily Duels**: 3 fights per day can yield 150-300 XP.*
 - *📜 **Interactive Quests**: Creative answers grant bonuses up to 200 XP.*
-- *🏆 **Top Rankings**: Being in the Daily/Monthly Top 3 gives extra rewards.*
+- *🏆 **Top Rankings**: Being in the Daily/Monthly Top 3 gives extra item rewards.*
 
 ---
 
