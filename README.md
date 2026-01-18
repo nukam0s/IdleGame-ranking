@@ -42,6 +42,51 @@
 **EN**: *Your progress is **permanent within each IRC network**. Levels, items, and achievements persist across sessions, but each network is an independent universe.*
 
 ---
+---
+
+## 📈 Sistema de Progressão (XP Escalado) | Progression System (Scaled XP)
+
+**PT**: O IdleGame utiliza um **sistema de XP escalado** onde cada nível requer progressivamente mais experiência. Isto cria uma curva de progressão equilibrada que recompensa jogadores dedicados.
+
+**EN**: *IdleGame uses a **scaled XP system** where each level progressively requires more experience. This creates a balanced progression curve that rewards dedicated players.*
+
+### 🎯 Tabela de Níveis | Level Table
+
+| Nível / Level | XP Total | XP para Próximo / XP to Next | Tempo Estimado* / Estimated Time* |
+|:-------------:|:--------:|:----------------------------:|:---------------------------------:|
+| **1** | 0 | 1.000 | - |
+| **2** | 1.000 | 1.828 | ~17 min |
+| **3** | 2.828 | 2.620 | ~25 min |
+| **5** | 8.000 | 3.623 | ~1 hora |
+| **10** | 31.623 | 6.856 | ~5 horas |
+| **15** | 58.480 | 9.653 | ~15 horas |
+| **20** | 126.491 | 12.247 | ~1.5 dias |
+| **25** | 197.642 | 14.715 | ~3 dias |
+| **30** | 284.604 | 17.101 | ~5 dias |
+| **40** | 505.964 | 21.544 | ~2 semanas |
+| **50** | 790.569 | 25.743 | ~4 semanas |
+| **75** | 1.837.117 | 37.011 | ~3 meses |
+| **100** | 3.162.278 | 47.434 | ~6 meses |
+
+<sub>*Baseado apenas em XP Passivo (+1 XP/30s = 120 XP/hora). Eventos, quests e duelos aceleram drasticamente a progressão!</sub>
+
+<sub>*Based only on Passive XP (+1 XP/30s = 120 XP/hour). Events, quests, and duels drastically speed up progression!*
+
+### 💡 Dicas de Progressão Rápida | Fast Progression Tips
+
+**PT**:
+- 🎯 **Participa em Eventos**: World Boss, Aventuras Diárias e World War dão centenas de XP.
+- ⚔️ **Duelos Diários**: 3 lutas por dia podem render 150-300 XP.
+- 📜 **Quests Interativas**: Respostas criativas dão bónus de até 200 XP.
+- 🏆 **Top Rankings**: Estar no Top 3 Diário/Mensal dá recompensas extra.
+
+**EN**:
+- *🎯 **Join Events**: World Boss, Daily Adventures, and World War grant hundreds of XP.*
+- *⚔️ **Daily Duels**: 3 fights per day can yield 150-300 XP.*
+- *📜 **Interactive Quests**: Creative answers grant bonuses up to 200 XP.*
+- *🏆 **Top Rankings**: Being in the Daily/Monthly Top 3 gives extra rewards.*
+
+---
 
 ## 🧠 Aventuras Dinâmicas com IA | Dynamic AI Adventures
 **PT**: O **IdleGame** utiliza **OpenAI gpt-4o-mini** para gerar quests, loots e pets em tempo real. Cada item é único e baseado no teu nickname.
