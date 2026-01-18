@@ -231,7 +231,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        const chartData = {"econ_labels": ["Common (135)", "Rare (44)", "Epic (22)"], "econ_data": [135, 44, 22], "econ_colors": ["#b0b0b0", "#3498db", "#9b59b6"], "net_labels": ["Undernet", "PTnet", "InTheMansion", "Quakenet", "PTirc", "Efnet", "Libera", "Snoonet", "DALnet", "Rizon"], "net_data": [47, 11, 4, 8, 3, 7, 6, 2, 2, 2]};
+        const chartData = {"econ_labels": ["Common (136)", "Rare (44)", "Epic (23)"], "econ_data": [136, 44, 23], "econ_colors": ["#b0b0b0", "#3498db", "#9b59b6"], "net_labels": ["Undernet", "PTnet", "InTheMansion", "Quakenet", "PTirc", "Efnet", "Libera", "Snoonet", "DALnet", "Rizon"], "net_data": [47, 11, 4, 8, 3, 8, 6, 2, 2, 2]};
 
         function initCharts() {
             Chart.defaults.color = '#a0a0b0';
@@ -392,7 +392,7 @@
     <div class="grid-stats">
         <div class="card stat-card">
             <div class="icon">👥</div>
-            <div class="value">65 / 136</div>
+            <div class="value">3 / 137</div>
             <div class="label">
                 <span class="lang-pt">Jogadores (On/Total)</span>
                 <span class="lang-en hidden">Players (On/Total)</span>
@@ -400,12 +400,12 @@
         </div>
         <div class="card stat-card">
             <div class="icon">👹</div>
-            <div class="value">0</div>
+            <div class="value">1</div>
             <div class="label"><span class="lang-pt">Bosses Ativos</span><span class="lang-en hidden">Active Bosses</span></div>
         </div>
         <div class="card stat-card">
             <div class="icon">✨</div>
-            <div class="value">194,237</div>
+            <div class="value">195,653</div>
             <div class="label"><span class="lang-pt">XP Total Global</span><span class="lang-en hidden">Global Total XP</span></div>
         </div>
     </div>
@@ -434,7 +434,9 @@
         </div>
     </div>
     
-          
+          <section class="card hover-card boss-section"><div class="card-header"><h2><span class="lang-pt">☠️ Raids Ativas</span><span class="lang-en hidden">☠️ Active Raids</span></h2></div>
+    <div class="hover-content">
+        <div class="boss-grid"><div class="boss-card"><div class="boss-header"><span class="boss-net">PTirc</span><span>3970 HP</span></div><h3 class="boss-name">Erebus the Eternal, Harbinger of Shadows</h3><div class="progress-track"><div class="progress-fill" style="width:100%;background:#2ecc71;"></div></div></div></div></div></section>
           
     <div class="extra-stats-grid">
         
@@ -539,13 +541,19 @@
         <div class="card-header">
             <h4><span class="lang-pt">🚀 Top Diário (Hoje)</span><span class="lang-en hidden">🚀 Top Daily (Today)</span></h4>
         </div>
-        <div class="hover-content"><table class="mini-table"><tr><td><span class='font-bold'>juanjocerero</span><span class='net-tag'>@InTheMansion</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+8,115 XP</td></tr><tr><td><span class='font-bold'>user</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+7,418 XP</td></tr><tr><td><span class='font-bold'>nuke</span><span class='net-tag'>@InTheMansion</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+5,849 XP</td></tr><tr><td><span class='font-bold'>nuke</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+5,449 XP</td></tr><tr><td><span class='font-bold'>style</span><span class='net-tag'>@Libera</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+2,816 XP</td></tr></table></div></div>
+        <div class="hover-content"><table class="mini-table"><tr><td><span class='font-bold'>juanjocerero</span><span class='net-tag'>@InTheMansion</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+8,268 XP</td></tr><tr><td><span class='font-bold'>user</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+7,431 XP</td></tr><tr><td><span class='font-bold'>nuke</span><span class='net-tag'>@InTheMansion</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+5,862 XP</td></tr><tr><td><span class='font-bold'>nuke</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+5,462 XP</td></tr><tr><td><span class='font-bold'>style</span><span class='net-tag'>@Libera</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+2,829 XP</td></tr></table></div></div>
         
     <div class="card hover-card">
         <div class="card-header">
             <h4><span class="lang-pt">🆕 Novos Aventureiros</span><span class="lang-en hidden">🆕 New Adventurers</span></h4>
         </div>
         <div class="hover-content"><table class="mini-table">
+            <tr>
+                <td style="width:35px;"><img src="https://robohash.org/style.png?set=set1&size=30x30&bgset=bg2" style="width:25px;height:25px;border-radius:50%;vertical-align:middle;border:1px solid #444;"></td>
+                <td><span class="font-bold">style</span><span class="net-tag">@Efnet</span></td>
+                <td class="text-right"><span class="badge" style="background:#2ecc71;color:#000;">NEW</span></td>
+            </tr>
+            
             <tr>
                 <td style="width:35px;"><img src="https://robohash.org/limnoria.users.undernet.org.png?set=set1&size=30x30&bgset=bg2" style="width:25px;height:25px;border-radius:50%;vertical-align:middle;border:1px solid #444;"></td>
                 <td><span class="font-bold">limnoria.users.undernet.org</span><span class="net-tag">@Undernet</span></td>
@@ -567,12 +575,6 @@
             <tr>
                 <td style="width:35px;"><img src="https://robohash.org/2a01:4f9:4a:f007::b.png?set=set1&size=30x30&bgset=bg2" style="width:25px;height:25px;border-radius:50%;vertical-align:middle;border:1px solid #444;"></td>
                 <td><span class="font-bold">2a01:4f9:4a:f007::b</span><span class="net-tag">@Undernet</span></td>
-                <td class="text-right"><span class="badge" style="background:#2ecc71;color:#000;">NEW</span></td>
-            </tr>
-            
-            <tr>
-                <td style="width:35px;"><img src="https://robohash.org/2606:a8c0:11:1a:c476:61ff:fe42:c09e.png?set=set1&size=30x30&bgset=bg2" style="width:25px;height:25px;border-radius:50%;vertical-align:middle;border:1px solid #444;"></td>
-                <td><span class="font-bold">2606:a8c0:11:1a:c476:61ff:fe42:c09e</span><span class="net-tag">@Undernet</span></td>
                 <td class="text-right"><span class="badge" style="background:#2ecc71;color:#000;">NEW</span></td>
             </tr>
             </table></div></div>
@@ -670,7 +672,7 @@
         <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🏛️ Galeria da Fama</span><span class="lang-en hidden">🏛️ Hall of Fame</span></h4></div><div class="hover-content"><table class="mini-table"></table></div></div>
         
         <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌍 Guerras</span><span class="lang-en hidden">🌍 World Wars</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td>Libera</td><td class='text-right'>1 🏆</td></tr></table></div></div>
-        <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌐 Dominância</span><span class="lang-en hidden">🌐 Dominance</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>85,463 XP</td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>19,910 XP</td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>18,186 XP</td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>16,625 XP</td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>14,660 XP</td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>13,819 XP</td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>13,644 XP</td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>4,024 XP</td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>4,021 XP</td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>3,885 XP</td></tr></table></div></div>
+        <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌐 Dominância</span><span class="lang-en hidden">🌐 Dominance</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>86,048 XP</td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>20,119 XP</td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>18,378 XP</td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>16,729 XP</td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>14,699 XP</td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>13,914 XP</td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>13,722 XP</td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>4,050 XP</td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>4,047 XP</td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>3,947 XP</td></tr></table></div></div>
         
     <div class="card hover-card">
         <div class="card-header">
@@ -783,8 +785,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/juanjocerero.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/juanjocerero.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">juanjocerero </div>
@@ -806,9 +808,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">5</span></td>
             
-            <td class="text-right relative-cell" data-val="8115">
+            <td class="text-right relative-cell" data-val="8268">
                 <div class="bar-fill" style="width: 100%; background: #3498db;"></div>
-                <span class="cell-text">8,115</span>
+                <span class="cell-text">8,268</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="295">
@@ -822,8 +824,47 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/tempo.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/|DarkRis3.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <div class="nick-row">|DarkRis3 </div>
+                        
+                        <div style="font-size: 0.75rem; color: #666; font-weight: normal; margin-top: 2px;">
+                             <span class="lang-pt"></span><span class="lang-en hidden"></span>
+                        </div>
+                        
+                        <div class="tooltip-content">
+                            <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                            <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-rare">Brass Aviator Goggles</span> (+49)<br>Accessory: <span class="rar-rare">Bounty Charm</span> (+52)<br>Weapon: <span class="rar-rare">Sidearm</span> (+27)<br>Feet: <span class="rar-epic">DarkRis3's Dashing Footwear</span> (+111)<br>Body: <span class="rar-common">Armor Layer</span> (+24)</div>
+                            <div class="tt-section" style="margin-top:5px; font-size:0.75rem; color:#aaa;">
+                                Boss Kills: 0 | Streak: 0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Libera</td>
+            <td class="text-center"><span class="badge">2</span></td>
+            
+            <td class="text-right relative-cell" data-val="2299">
+                <div class="bar-fill" style="width: 27.805999032414125%; background: #3498db;"></div>
+                <span class="cell-text">2,299</span>
+            </td>
+            
+            <td class="text-right power-val relative-cell" data-val="275">
+                <div class="bar-fill" style="width: 93.22033898305084%; background: #e74c3c;"></div>
+                <span class="cell-text">⚔️ 275</span>
+            </td>
+        </tr>
+        
+        <tr class="rank-3" onclick="openProfile(this)">
+            <td><div class="rank-num">🥉</div></td>
+            <td class="font-bold nickname-cell">
+                <div class="player-flex">
+                    <div class="avatar-wrapper">
+                        <img src="https://robohash.org/tempo.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">tempo </div>
@@ -845,9 +886,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2295">
-                <div class="bar-fill" style="width: 28.280961182994456%; background: #3498db;"></div>
-                <span class="cell-text">2,295</span>
+            <td class="text-right relative-cell" data-val="2308">
+                <div class="bar-fill" style="width: 27.91485244315433%; background: #3498db;"></div>
+                <span class="cell-text">2,308</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="274">
@@ -856,16 +897,16 @@
             </td>
         </tr>
         
-        <tr class="rank-3" onclick="openProfile(this)">
-            <td><div class="rank-num">🥉</div></td>
+        <tr class="" onclick="openProfile(this)">
+            <td><div class="rank-num">4</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/|DarkRis3.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Razvan.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
-                        <div class="nick-row">|DarkRis3 </div>
+                        <div class="nick-row">Razvan </div>
                         
                         <div style="font-size: 0.75rem; color: #666; font-weight: normal; margin-top: 2px;">
                              <span class="lang-pt"></span><span class="lang-en hidden"></span>
@@ -873,7 +914,7 @@
                         
                         <div class="tooltip-content">
                             <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                            <div class="tt-section"><strong>⚔️ Equip:</strong><br>Head: <span class="rar-rare">Brass Aviator Goggles</span> (+49)<br>Accessory: <span class="rar-rare">Bounty Charm</span> (+52)<br>Weapon: <span class="rar-rare">Sidearm</span> (+27)<br>Feet: <span class="rar-epic">DarkRis3's Dashing Footwear</span> (+111)</div>
+                            <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Cursed Hauberk of Shadows</span> (+22)<br>Accessory: <span class="rar-epic">Gadget Slot</span> (+87)<br>Feet: <span class="rar-epic">Gravity Boots</span> (+111)</div>
                             <div class="tt-section" style="margin-top:5px; font-size:0.75rem; color:#aaa;">
                                 Boss Kills: 0 | Streak: 0
                             </div>
@@ -881,22 +922,22 @@
                     </div>
                 </div>
             </td>
-            <td class="subtle">Libera</td>
+            <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2286">
-                <div class="bar-fill" style="width: 28.170055452865068%; background: #3498db;"></div>
-                <span class="cell-text">2,286</span>
+            <td class="text-right relative-cell" data-val="1909">
+                <div class="bar-fill" style="width: 23.089017900338654%; background: #3498db;"></div>
+                <span class="cell-text">1,909</span>
             </td>
             
-            <td class="text-right power-val relative-cell" data-val="251">
-                <div class="bar-fill" style="width: 85.08474576271186%; background: #e74c3c;"></div>
-                <span class="cell-text">⚔️ 251</span>
+            <td class="text-right power-val relative-cell" data-val="232">
+                <div class="bar-fill" style="width: 78.64406779661017%; background: #e74c3c;"></div>
+                <span class="cell-text">⚔️ 232</span>
             </td>
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">4</div></td>
+            <td><div class="rank-num">5</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
@@ -923,9 +964,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">4</span></td>
             
-            <td class="text-right relative-cell" data-val="7418">
-                <div class="bar-fill" style="width: 91.41096734442391%; background: #3498db;"></div>
-                <span class="cell-text">7,418</span>
+            <td class="text-right relative-cell" data-val="7431">
+                <div class="bar-fill" style="width: 89.87663280116111%; background: #3498db;"></div>
+                <span class="cell-text">7,431</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="212">
@@ -935,12 +976,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">5</div></td>
+            <td><div class="rank-num">6</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/nuke.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/nuke.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">nuke </div>
@@ -962,9 +1003,9 @@
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1921">
-                <div class="bar-fill" style="width: 23.672211953173136%; background: #3498db;"></div>
-                <span class="cell-text">1,921</span>
+            <td class="text-right relative-cell" data-val="1970">
+                <div class="bar-fill" style="width: 23.82680212868892%; background: #3498db;"></div>
+                <span class="cell-text">1,970</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="211">
@@ -974,12 +1015,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">6</div></td>
+            <td><div class="rank-num">7</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/termure.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/termure.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">termure </div>
@@ -1001,9 +1042,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1750">
-                <div class="bar-fill" style="width: 21.565003080714725%; background: #3498db;"></div>
-                <span class="cell-text">1,750</span>
+            <td class="text-right relative-cell" data-val="1763">
+                <div class="bar-fill" style="width: 21.323173681664247%; background: #3498db;"></div>
+                <span class="cell-text">1,763</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="184">
@@ -1013,12 +1054,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">7</div></td>
+            <td><div class="rank-num">8</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/toffee.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/toffee.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">toffee </div>
@@ -1040,9 +1081,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2380">
-                <div class="bar-fill" style="width: 29.32840418977203%; background: #3498db;"></div>
-                <span class="cell-text">2,380</span>
+            <td class="text-right relative-cell" data-val="2393">
+                <div class="bar-fill" style="width: 28.942912433478472%; background: #3498db;"></div>
+                <span class="cell-text">2,393</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="178">
@@ -1052,12 +1093,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">8</div></td>
+            <td><div class="rank-num">9</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/egg0.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/egg0.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">egg0 </div>
@@ -1079,9 +1120,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1911">
-                <div class="bar-fill" style="width: 23.54898336414048%; background: #3498db;"></div>
-                <span class="cell-text">1,911</span>
+            <td class="text-right relative-cell" data-val="1924">
+                <div class="bar-fill" style="width: 23.270440251572328%; background: #3498db;"></div>
+                <span class="cell-text">1,924</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="173">
@@ -1091,12 +1132,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">9</div></td>
+            <td><div class="rank-num">10</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/GGore665.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/GGore665.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">GGore665 </div>
@@ -1118,9 +1159,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1987">
-                <div class="bar-fill" style="width: 24.485520640788664%; background: #3498db;"></div>
-                <span class="cell-text">1,987</span>
+            <td class="text-right relative-cell" data-val="2000">
+                <div class="bar-fill" style="width: 24.189646831156264%; background: #3498db;"></div>
+                <span class="cell-text">2,000</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="154">
@@ -1130,7 +1171,7 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">10</div></td>
+            <td><div class="rank-num">11</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
@@ -1157,9 +1198,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2298">
-                <div class="bar-fill" style="width: 28.317929759704253%; background: #3498db;"></div>
-                <span class="cell-text">2,298</span>
+            <td class="text-right relative-cell" data-val="2311">
+                <div class="bar-fill" style="width: 27.951136913401065%; background: #3498db;"></div>
+                <span class="cell-text">2,311</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="149">
@@ -1169,12 +1210,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">11</div></td>
+            <td><div class="rank-num">12</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">style </div>
@@ -1196,9 +1237,9 @@
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2123">
-                <div class="bar-fill" style="width: 26.161429451632777%; background: #3498db;"></div>
-                <span class="cell-text">2,123</span>
+            <td class="text-right relative-cell" data-val="2136">
+                <div class="bar-fill" style="width: 25.834542815674894%; background: #3498db;"></div>
+                <span class="cell-text">2,136</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="147">
@@ -1208,12 +1249,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">12</div></td>
+            <td><div class="rank-num">13</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Irc0p.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Irc0p.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Irc0p </div>
@@ -1235,9 +1276,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2676">
-                <div class="bar-fill" style="width: 32.975970425138634%; background: #3498db;"></div>
-                <span class="cell-text">2,676</span>
+            <td class="text-right relative-cell" data-val="2689">
+                <div class="bar-fill" style="width: 32.5229801644896%; background: #3498db;"></div>
+                <span class="cell-text">2,689</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="143">
@@ -1247,12 +1288,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">13</div></td>
+            <td><div class="rank-num">14</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/BlackApple.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/BlackApple.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">BlackApple </div>
@@ -1274,9 +1315,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2269">
-                <div class="bar-fill" style="width: 27.96056685150955%; background: #3498db;"></div>
-                <span class="cell-text">2,269</span>
+            <td class="text-right relative-cell" data-val="2282">
+                <div class="bar-fill" style="width: 27.6003870343493%; background: #3498db;"></div>
+                <span class="cell-text">2,282</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="143">
@@ -1286,7 +1327,7 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">14</div></td>
+            <td><div class="rank-num">15</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
@@ -1313,9 +1354,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2143">
-                <div class="bar-fill" style="width: 26.40788662969809%; background: #3498db;"></div>
-                <span class="cell-text">2,143</span>
+            <td class="text-right relative-cell" data-val="2156">
+                <div class="bar-fill" style="width: 26.076439283986453%; background: #3498db;"></div>
+                <span class="cell-text">2,156</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="142">
@@ -1325,12 +1366,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">15</div></td>
+            <td><div class="rank-num">16</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Gore1337.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Gore1337.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Gore1337 </div>
@@ -1352,9 +1393,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1959">
-                <div class="bar-fill" style="width: 24.140480591497226%; background: #3498db;"></div>
-                <span class="cell-text">1,959</span>
+            <td class="text-right relative-cell" data-val="1972">
+                <div class="bar-fill" style="width: 23.85099177552008%; background: #3498db;"></div>
+                <span class="cell-text">1,972</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="130">
@@ -1364,12 +1405,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">16</div></td>
+            <td><div class="rank-num">17</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/taco.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/taco.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">taco </div>
@@ -1391,9 +1432,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2603">
-                <div class="bar-fill" style="width: 32.07640172520025%; background: #3498db;"></div>
-                <span class="cell-text">2,603</span>
+            <td class="text-right relative-cell" data-val="2616">
+                <div class="bar-fill" style="width: 31.64005805515239%; background: #3498db;"></div>
+                <span class="cell-text">2,616</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="127">
@@ -1403,12 +1444,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">17</div></td>
+            <td><div class="rank-num">18</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/termure.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/termure.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">termure </div>
@@ -1430,9 +1471,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1874">
-                <div class="bar-fill" style="width: 23.093037584719657%; background: #3498db;"></div>
-                <span class="cell-text">1,874</span>
+            <td class="text-right relative-cell" data-val="1887">
+                <div class="bar-fill" style="width: 22.822931785195934%; background: #3498db;"></div>
+                <span class="cell-text">1,887</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="125">
@@ -1442,7 +1483,7 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">18</div></td>
+            <td><div class="rank-num">19</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
@@ -1469,9 +1510,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1711">
-                <div class="bar-fill" style="width: 21.08441158348737%; background: #3498db;"></div>
-                <span class="cell-text">1,711</span>
+            <td class="text-right relative-cell" data-val="1724">
+                <div class="bar-fill" style="width: 20.8514755684567%; background: #3498db;"></div>
+                <span class="cell-text">1,724</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="124">
@@ -1481,12 +1522,12 @@
         </tr>
         
         <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">19</div></td>
+            <td><div class="rank-num">20</div></td>
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">style </div>
@@ -1506,55 +1547,16 @@
                 </div>
             </td>
             <td class="subtle">Libera</td>
-            <td class="text-center"><span class="badge">2</span></td>
+            <td class="text-center"><span class="badge">3</span></td>
             
-            <td class="text-right relative-cell" data-val="2816">
-                <div class="bar-fill" style="width: 34.70117067159581%; background: #3498db;"></div>
-                <span class="cell-text">2,816</span>
+            <td class="text-right relative-cell" data-val="2829">
+                <div class="bar-fill" style="width: 34.21625544267054%; background: #3498db;"></div>
+                <span class="cell-text">2,829</span>
             </td>
             
-            <td class="text-right power-val relative-cell" data-val="122">
-                <div class="bar-fill" style="width: 41.35593220338983%; background: #e74c3c;"></div>
-                <span class="cell-text">⚔️ 122</span>
-            </td>
-        </tr>
-        
-        <tr class="" onclick="openProfile(this)">
-            <td><div class="rank-num">20</div></td>
-            <td class="font-bold nickname-cell">
-                <div class="player-flex">
-                    <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Razvan.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
-                    </div>
-                    <div class="tooltip-wrapper">
-                        <div class="nick-row">Razvan </div>
-                        
-                        <div style="font-size: 0.75rem; color: #666; font-weight: normal; margin-top: 2px;">
-                             <span class="lang-pt"></span><span class="lang-en hidden"></span>
-                        </div>
-                        
-                        <div class="tooltip-content">
-                            <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
-                            <div class="tt-section"><strong>⚔️ Equip:</strong><br>Body: <span class="rar-common">Cursed Hauberk of Shadows</span> (+22)<br>Accessory: <span class="rar-epic">Gadget Slot</span> (+87)</div>
-                            <div class="tt-section" style="margin-top:5px; font-size:0.75rem; color:#aaa;">
-                                Boss Kills: 0 | Streak: 0
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td class="subtle">Quakenet</td>
-            <td class="text-center"><span class="badge">2</span></td>
-            
-            <td class="text-right relative-cell" data-val="1896">
-                <div class="bar-fill" style="width: 23.364140480591498%; background: #3498db;"></div>
-                <span class="cell-text">1,896</span>
-            </td>
-            
-            <td class="text-right power-val relative-cell" data-val="121">
-                <div class="bar-fill" style="width: 41.01694915254237%; background: #e74c3c;"></div>
-                <span class="cell-text">⚔️ 121</span>
+            <td class="text-right power-val relative-cell" data-val="123">
+                <div class="bar-fill" style="width: 41.69491525423729%; background: #e74c3c;"></div>
+                <span class="cell-text">⚔️ 123</span>
             </td>
         </tr>
         
@@ -1563,8 +1565,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">style </div>
@@ -1586,9 +1588,9 @@
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1971">
-                <div class="bar-fill" style="width: 24.288354898336415%; background: #3498db;"></div>
-                <span class="cell-text">1,971</span>
+            <td class="text-right relative-cell" data-val="1984">
+                <div class="bar-fill" style="width: 23.996129656507016%; background: #3498db;"></div>
+                <span class="cell-text">1,984</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="116">
@@ -1602,8 +1604,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/sukuna.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/sukuna.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">sukuna </div>
@@ -1625,9 +1627,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1898">
-                <div class="bar-fill" style="width: 23.38878619839803%; background: #3498db;"></div>
-                <span class="cell-text">1,898</span>
+            <td class="text-right relative-cell" data-val="1911">
+                <div class="bar-fill" style="width: 23.11320754716981%; background: #3498db;"></div>
+                <span class="cell-text">1,911</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="116">
@@ -1641,8 +1643,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/FreakZoid.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/FreakZoid.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">FreakZoid </div>
@@ -1664,9 +1666,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2239">
-                <div class="bar-fill" style="width: 27.590881084411585%; background: #3498db;"></div>
-                <span class="cell-text">2,239</span>
+            <td class="text-right relative-cell" data-val="2252">
+                <div class="bar-fill" style="width: 27.237542331881954%; background: #3498db;"></div>
+                <span class="cell-text">2,252</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="113">
@@ -1680,8 +1682,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/nuke.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/nuke.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">nuke </div>
@@ -1703,9 +1705,9 @@
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2053">
-                <div class="bar-fill" style="width: 25.29882932840419%; background: #3498db;"></div>
-                <span class="cell-text">2,053</span>
+            <td class="text-right relative-cell" data-val="2066">
+                <div class="bar-fill" style="width: 24.98790517658442%; background: #3498db;"></div>
+                <span class="cell-text">2,066</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="104">
@@ -1719,8 +1721,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">style </div>
@@ -1742,9 +1744,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2319">
-                <div class="bar-fill" style="width: 28.576709796672827%; background: #3498db;"></div>
-                <span class="cell-text">2,319</span>
+            <td class="text-right relative-cell" data-val="2332">
+                <div class="bar-fill" style="width: 28.205128205128204%; background: #3498db;"></div>
+                <span class="cell-text">2,332</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="104">
@@ -1781,9 +1783,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1863">
-                <div class="bar-fill" style="width: 22.957486136783732%; background: #3498db;"></div>
-                <span class="cell-text">1,863</span>
+            <td class="text-right relative-cell" data-val="1876">
+                <div class="bar-fill" style="width: 22.689888727624577%; background: #3498db;"></div>
+                <span class="cell-text">1,876</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="97">
@@ -1797,8 +1799,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Avatar.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Avatar.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Avatar </div>
@@ -1820,9 +1822,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1842">
-                <div class="bar-fill" style="width: 22.69870609981516%; background: #3498db;"></div>
-                <span class="cell-text">1,842</span>
+            <td class="text-right relative-cell" data-val="1855">
+                <div class="bar-fill" style="width: 22.435897435897438%; background: #3498db;"></div>
+                <span class="cell-text">1,855</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="96">
@@ -1836,8 +1838,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/nuke.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/nuke.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">nuke </div>
@@ -1859,9 +1861,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">4</span></td>
             
-            <td class="text-right relative-cell" data-val="5849">
-                <div class="bar-fill" style="width: 72.07640172520024%; background: #3498db;"></div>
-                <span class="cell-text">5,849</span>
+            <td class="text-right relative-cell" data-val="5862">
+                <div class="bar-fill" style="width: 70.89985486211901%; background: #3498db;"></div>
+                <span class="cell-text">5,862</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="95">
@@ -1875,8 +1877,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/tuga.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/tuga.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">tuga </div>
@@ -1898,9 +1900,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1752">
-                <div class="bar-fill" style="width: 21.589648798521257%; background: #3498db;"></div>
-                <span class="cell-text">1,752</span>
+            <td class="text-right relative-cell" data-val="1765">
+                <div class="bar-fill" style="width: 21.3473633284954%; background: #3498db;"></div>
+                <span class="cell-text">1,765</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="93">
@@ -1914,8 +1916,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/bot.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/bot.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">bot </div>
@@ -1937,9 +1939,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1929">
-                <div class="bar-fill" style="width: 23.77079482439926%; background: #3498db;"></div>
-                <span class="cell-text">1,929</span>
+            <td class="text-right relative-cell" data-val="1942">
+                <div class="bar-fill" style="width: 23.488147073052733%; background: #3498db;"></div>
+                <span class="cell-text">1,942</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="90">
@@ -1953,8 +1955,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/frieren.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/frieren.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">frieren </div>
@@ -1976,9 +1978,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1930">
-                <div class="bar-fill" style="width: 23.783117683302528%; background: #3498db;"></div>
-                <span class="cell-text">1,930</span>
+            <td class="text-right relative-cell" data-val="1943">
+                <div class="bar-fill" style="width: 23.50024189646831%; background: #3498db;"></div>
+                <span class="cell-text">1,943</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="81">
@@ -1992,8 +1994,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/killua.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/killua.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">killua </div>
@@ -2015,9 +2017,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1919">
-                <div class="bar-fill" style="width: 23.647566235366604%; background: #3498db;"></div>
-                <span class="cell-text">1,919</span>
+            <td class="text-right relative-cell" data-val="1932">
+                <div class="bar-fill" style="width: 23.367198838896954%; background: #3498db;"></div>
+                <span class="cell-text">1,932</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="75">
@@ -2054,9 +2056,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">4</span></td>
             
-            <td class="text-right relative-cell" data-val="5449">
-                <div class="bar-fill" style="width: 67.14725816389402%; background: #3498db;"></div>
-                <span class="cell-text">5,449</span>
+            <td class="text-right relative-cell" data-val="5462">
+                <div class="bar-fill" style="width: 66.06192549588776%; background: #3498db;"></div>
+                <span class="cell-text">5,462</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="73">
@@ -2070,8 +2072,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/mIrc-OP.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/mIrc-OP.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">mIrc-OP </div>
@@ -2093,9 +2095,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1895">
-                <div class="bar-fill" style="width: 23.35181762168823%; background: #3498db;"></div>
-                <span class="cell-text">1,895</span>
+            <td class="text-right relative-cell" data-val="1908">
+                <div class="bar-fill" style="width: 23.076923076923077%; background: #3498db;"></div>
+                <span class="cell-text">1,908</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="72">
@@ -2109,8 +2111,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/bodyguard.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/bodyguard.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">bodyguard </div>
@@ -2132,9 +2134,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1960">
-                <div class="bar-fill" style="width: 24.15280345040049%; background: #3498db;"></div>
-                <span class="cell-text">1,960</span>
+            <td class="text-right relative-cell" data-val="1973">
+                <div class="bar-fill" style="width: 23.863086598935656%; background: #3498db;"></div>
+                <span class="cell-text">1,973</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="72">
@@ -2148,8 +2150,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Irc0p.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Irc0p.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Irc0p </div>
@@ -2171,9 +2173,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1932">
-                <div class="bar-fill" style="width: 23.807763401109057%; background: #3498db;"></div>
-                <span class="cell-text">1,932</span>
+            <td class="text-right relative-cell" data-val="1945">
+                <div class="bar-fill" style="width: 23.524431543299468%; background: #3498db;"></div>
+                <span class="cell-text">1,945</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="70">
@@ -2187,8 +2189,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/pybot.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/pybot.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">pybot </div>
@@ -2210,9 +2212,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1826">
-                <div class="bar-fill" style="width: 22.50154035736291%; background: #3498db;"></div>
-                <span class="cell-text">1,826</span>
+            <td class="text-right relative-cell" data-val="1839">
+                <div class="bar-fill" style="width: 22.242380261248186%; background: #3498db;"></div>
+                <span class="cell-text">1,839</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="69">
@@ -2226,8 +2228,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">style </div>
@@ -2249,9 +2251,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2390">
-                <div class="bar-fill" style="width: 29.451632778804683%; background: #3498db;"></div>
-                <span class="cell-text">2,390</span>
+            <td class="text-right relative-cell" data-val="2403">
+                <div class="bar-fill" style="width: 29.063860667634252%; background: #3498db;"></div>
+                <span class="cell-text">2,403</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="68">
@@ -2265,8 +2267,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/ekun.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/ekun.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">ekun </div>
@@ -2288,9 +2290,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1912">
-                <div class="bar-fill" style="width: 23.561306223043747%; background: #3498db;"></div>
-                <span class="cell-text">1,912</span>
+            <td class="text-right relative-cell" data-val="1925">
+                <div class="bar-fill" style="width: 23.282535074987905%; background: #3498db;"></div>
+                <span class="cell-text">1,925</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="62">
@@ -2304,8 +2306,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/robot0.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/robot0.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">robot0 </div>
@@ -2327,9 +2329,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1791">
-                <div class="bar-fill" style="width: 22.070240295748615%; background: #3498db;"></div>
-                <span class="cell-text">1,791</span>
+            <td class="text-right relative-cell" data-val="1804">
+                <div class="bar-fill" style="width: 21.81906144170295%; background: #3498db;"></div>
+                <span class="cell-text">1,804</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="62">
@@ -2343,8 +2345,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/benfica.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/benfica.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">benfica </div>
@@ -2366,9 +2368,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1863">
-                <div class="bar-fill" style="width: 22.957486136783732%; background: #3498db;"></div>
-                <span class="cell-text">1,863</span>
+            <td class="text-right relative-cell" data-val="1955">
+                <div class="bar-fill" style="width: 23.64537977745525%; background: #3498db;"></div>
+                <span class="cell-text">1,955</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="61">
@@ -2382,8 +2384,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/peer.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/peer.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">peer </div>
@@ -2405,9 +2407,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1878">
-                <div class="bar-fill" style="width: 23.142329020332717%; background: #3498db;"></div>
-                <span class="cell-text">1,878</span>
+            <td class="text-right relative-cell" data-val="1891">
+                <div class="bar-fill" style="width: 22.87131107885825%; background: #3498db;"></div>
+                <span class="cell-text">1,891</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="60">
@@ -2421,8 +2423,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/egg.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/egg.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">egg </div>
@@ -2444,9 +2446,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2108">
-                <div class="bar-fill" style="width: 25.9765865680838%; background: #3498db;"></div>
-                <span class="cell-text">2,108</span>
+            <td class="text-right relative-cell" data-val="2121">
+                <div class="bar-fill" style="width: 25.65312046444122%; background: #3498db;"></div>
+                <span class="cell-text">2,121</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="57">
@@ -2460,8 +2462,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/teamr.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/teamr.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">teamr </div>
@@ -2483,9 +2485,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2227">
-                <div class="bar-fill" style="width: 27.4430067775724%; background: #3498db;"></div>
-                <span class="cell-text">2,227</span>
+            <td class="text-right relative-cell" data-val="2240">
+                <div class="bar-fill" style="width: 27.092404450895017%; background: #3498db;"></div>
+                <span class="cell-text">2,240</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="54">
@@ -2499,8 +2501,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/GMonster.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/GMonster.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">GMonster </div>
@@ -2522,9 +2524,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1713">
-                <div class="bar-fill" style="width: 21.109057301293902%; background: #3498db;"></div>
-                <span class="cell-text">1,713</span>
+            <td class="text-right relative-cell" data-val="1726">
+                <div class="bar-fill" style="width: 20.875665215287857%; background: #3498db;"></div>
+                <span class="cell-text">1,726</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="52">
@@ -2538,8 +2540,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">style </div>
@@ -2561,9 +2563,9 @@
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1964">
-                <div class="bar-fill" style="width: 24.202094886013555%; background: #3498db;"></div>
-                <span class="cell-text">1,964</span>
+            <td class="text-right relative-cell" data-val="1977">
+                <div class="bar-fill" style="width: 23.91146589259797%; background: #3498db;"></div>
+                <span class="cell-text">1,977</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="52">
@@ -2600,9 +2602,9 @@
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1898">
-                <div class="bar-fill" style="width: 23.38878619839803%; background: #3498db;"></div>
-                <span class="cell-text">1,898</span>
+            <td class="text-right relative-cell" data-val="1911">
+                <div class="bar-fill" style="width: 23.11320754716981%; background: #3498db;"></div>
+                <span class="cell-text">1,911</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="50">
@@ -2616,8 +2618,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/robot.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/robot.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">robot </div>
@@ -2639,9 +2641,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1589">
-                <div class="bar-fill" style="width: 19.581022797288973%; background: #3498db;"></div>
-                <span class="cell-text">1,589</span>
+            <td class="text-right relative-cell" data-val="1602">
+                <div class="bar-fill" style="width: 19.37590711175617%; background: #3498db;"></div>
+                <span class="cell-text">1,602</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="50">
@@ -2655,8 +2657,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/IRC0.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/IRC0.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">IRC0 </div>
@@ -2678,9 +2680,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="43">
@@ -2694,8 +2696,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/v0id.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/v0id.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">v0id </div>
@@ -2717,9 +2719,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="37">
@@ -2733,8 +2735,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/hltv.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/hltv.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">hltv </div>
@@ -2756,9 +2758,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2304">
-                <div class="bar-fill" style="width: 28.39186691312384%; background: #3498db;"></div>
-                <span class="cell-text">2,304</span>
+            <td class="text-right relative-cell" data-val="2317">
+                <div class="bar-fill" style="width: 28.023705853894533%; background: #3498db;"></div>
+                <span class="cell-text">2,317</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="36">
@@ -2772,8 +2774,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Skinner.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Skinner.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Skinner </div>
@@ -2795,9 +2797,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="36">
@@ -2811,8 +2813,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/futebol.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/futebol.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">futebol </div>
@@ -2834,9 +2836,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1851">
-                <div class="bar-fill" style="width: 22.809611829944547%; background: #3498db;"></div>
-                <span class="cell-text">1,851</span>
+            <td class="text-right relative-cell" data-val="1864">
+                <div class="bar-fill" style="width: 22.54475084663764%; background: #3498db;"></div>
+                <span class="cell-text">1,864</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="36">
@@ -2850,8 +2852,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Jarvis.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Jarvis.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Jarvis </div>
@@ -2873,9 +2875,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="35">
@@ -2889,8 +2891,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Kunik.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Kunik.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Kunik </div>
@@ -2912,9 +2914,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="32">
@@ -2928,8 +2930,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/mIrc-OP.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/mIrc-OP.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">mIrc-OP </div>
@@ -2951,9 +2953,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1641">
-                <div class="bar-fill" style="width: 20.221811460258778%; background: #3498db;"></div>
-                <span class="cell-text">1,641</span>
+            <td class="text-right relative-cell" data-val="1654">
+                <div class="bar-fill" style="width: 20.004837929366232%; background: #3498db;"></div>
+                <span class="cell-text">1,654</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="31">
@@ -2967,8 +2969,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Sukuna.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Sukuna.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Sukuna </div>
@@ -2990,9 +2992,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1892">
-                <div class="bar-fill" style="width: 23.314849044978438%; background: #3498db;"></div>
-                <span class="cell-text">1,892</span>
+            <td class="text-right relative-cell" data-val="1905">
+                <div class="bar-fill" style="width: 23.040638606676342%; background: #3498db;"></div>
+                <span class="cell-text">1,905</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="30">
@@ -3006,8 +3008,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Gon.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Gon.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Gon </div>
@@ -3029,9 +3031,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="27">
@@ -3045,8 +3047,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/r0b0t.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/r0b0t.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">r0b0t </div>
@@ -3068,9 +3070,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1939">
-                <div class="bar-fill" style="width: 23.894023413431917%; background: #3498db;"></div>
-                <span class="cell-text">1,939</span>
+            <td class="text-right relative-cell" data-val="1952">
+                <div class="bar-fill" style="width: 23.609095307208513%; background: #3498db;"></div>
+                <span class="cell-text">1,952</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="25">
@@ -3084,8 +3086,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/old1.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/old1.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">old1 </div>
@@ -3107,9 +3109,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1892">
-                <div class="bar-fill" style="width: 23.314849044978438%; background: #3498db;"></div>
-                <span class="cell-text">1,892</span>
+            <td class="text-right relative-cell" data-val="1905">
+                <div class="bar-fill" style="width: 23.040638606676342%; background: #3498db;"></div>
+                <span class="cell-text">1,905</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="24">
@@ -3123,8 +3125,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Frieren.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Frieren.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Frieren </div>
@@ -3146,9 +3148,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="23">
@@ -3162,8 +3164,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/jupe4316.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/jupe4316.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">jupe4316 </div>
@@ -3185,9 +3187,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="23">
@@ -3201,8 +3203,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Sluagh.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Sluagh.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Sluagh </div>
@@ -3224,9 +3226,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2323">
-                <div class="bar-fill" style="width: 28.62600123228589%; background: #3498db;"></div>
-                <span class="cell-text">2,323</span>
+            <td class="text-right relative-cell" data-val="2336">
+                <div class="bar-fill" style="width: 28.25350749879052%; background: #3498db;"></div>
+                <span class="cell-text">2,336</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="22">
@@ -3263,9 +3265,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1793">
-                <div class="bar-fill" style="width: 22.094886013555147%; background: #3498db;"></div>
-                <span class="cell-text">1,793</span>
+            <td class="text-right relative-cell" data-val="1806">
+                <div class="bar-fill" style="width: 21.843251088534107%; background: #3498db;"></div>
+                <span class="cell-text">1,806</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3279,8 +3281,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/alicia.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/alicia.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">alicia </div>
@@ -3302,9 +3304,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1763">
-                <div class="bar-fill" style="width: 21.725200246457177%; background: #3498db;"></div>
-                <span class="cell-text">1,763</span>
+            <td class="text-right relative-cell" data-val="1776">
+                <div class="bar-fill" style="width: 21.480406386066765%; background: #3498db;"></div>
+                <span class="cell-text">1,776</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3318,8 +3320,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/EightyTwo.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/EightyTwo.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">EightyTwo </div>
@@ -3341,9 +3343,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1917">
-                <div class="bar-fill" style="width: 23.622920517560072%; background: #3498db;"></div>
-                <span class="cell-text">1,917</span>
+            <td class="text-right relative-cell" data-val="1930">
+                <div class="bar-fill" style="width: 23.343009192065793%; background: #3498db;"></div>
+                <span class="cell-text">1,930</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3357,8 +3359,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/R2D2.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/R2D2.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">R2D2 </div>
@@ -3380,9 +3382,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1730">
-                <div class="bar-fill" style="width: 21.318545902649415%; background: #3498db;"></div>
-                <span class="cell-text">1,730</span>
+            <td class="text-right relative-cell" data-val="1743">
+                <div class="bar-fill" style="width: 21.081277213352685%; background: #3498db;"></div>
+                <span class="cell-text">1,743</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3396,8 +3398,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/alexandre.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/alexandre.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">alexandre </div>
@@ -3419,9 +3421,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3435,8 +3437,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Killua.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Killua.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Killua </div>
@@ -3458,9 +3460,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2428">
-                <div class="bar-fill" style="width: 29.919901417128774%; background: #3498db;"></div>
-                <span class="cell-text">2,428</span>
+            <td class="text-right relative-cell" data-val="2441">
+                <div class="bar-fill" style="width: 29.523463957426223%; background: #3498db;"></div>
+                <span class="cell-text">2,441</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3474,8 +3476,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/nicole.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/nicole.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">nicole </div>
@@ -3497,9 +3499,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3513,8 +3515,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/camila.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/camila.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">camila </div>
@@ -3536,9 +3538,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1917">
-                <div class="bar-fill" style="width: 23.622920517560072%; background: #3498db;"></div>
-                <span class="cell-text">1,917</span>
+            <td class="text-right relative-cell" data-val="1930">
+                <div class="bar-fill" style="width: 23.343009192065793%; background: #3498db;"></div>
+                <span class="cell-text">1,930</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3552,8 +3554,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Nezuko.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Nezuko.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Nezuko </div>
@@ -3575,9 +3577,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3591,8 +3593,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/jupe.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/jupe.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">jupe </div>
@@ -3614,9 +3616,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1933">
-                <div class="bar-fill" style="width: 23.820086260012324%; background: #3498db;"></div>
-                <span class="cell-text">1,933</span>
+            <td class="text-right relative-cell" data-val="1946">
+                <div class="bar-fill" style="width: 23.536526366715048%; background: #3498db;"></div>
+                <span class="cell-text">1,946</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3630,8 +3632,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Ajah.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Ajah.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Ajah </div>
@@ -3653,9 +3655,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2209">
-                <div class="bar-fill" style="width: 27.22119531731362%; background: #3498db;"></div>
-                <span class="cell-text">2,209</span>
+            <td class="text-right relative-cell" data-val="2222">
+                <div class="bar-fill" style="width: 26.874697629414612%; background: #3498db;"></div>
+                <span class="cell-text">2,222</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3669,8 +3671,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/GGore.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/GGore.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">GGore </div>
@@ -3692,9 +3694,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2133">
-                <div class="bar-fill" style="width: 26.28465804066543%; background: #3498db;"></div>
-                <span class="cell-text">2,133</span>
+            <td class="text-right relative-cell" data-val="2146">
+                <div class="bar-fill" style="width: 25.95549104983067%; background: #3498db;"></div>
+                <span class="cell-text">2,146</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3708,8 +3710,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Razvan`.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Razvan`.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Razvan` </div>
@@ -3731,9 +3733,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3747,8 +3749,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/oldschool`.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/oldschool`.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">oldschool` </div>
@@ -3770,9 +3772,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1964">
-                <div class="bar-fill" style="width: 24.202094886013555%; background: #3498db;"></div>
-                <span class="cell-text">1,964</span>
+            <td class="text-right relative-cell" data-val="1977">
+                <div class="bar-fill" style="width: 23.91146589259797%; background: #3498db;"></div>
+                <span class="cell-text">1,977</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3809,9 +3811,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1921">
-                <div class="bar-fill" style="width: 23.672211953173136%; background: #3498db;"></div>
-                <span class="cell-text">1,921</span>
+            <td class="text-right relative-cell" data-val="1934">
+                <div class="bar-fill" style="width: 23.39138848572811%; background: #3498db;"></div>
+                <span class="cell-text">1,934</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3825,8 +3827,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/CuDdZ.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/CuDdZ.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">CuDdZ </div>
@@ -3848,9 +3850,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1610">
-                <div class="bar-fill" style="width: 19.839802834257547%; background: #3498db;"></div>
-                <span class="cell-text">1,610</span>
+            <td class="text-right relative-cell" data-val="1623">
+                <div class="bar-fill" style="width: 19.62989840348331%; background: #3498db;"></div>
+                <span class="cell-text">1,623</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3864,8 +3866,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/juli-e.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/juli-e.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">juli-e </div>
@@ -3887,9 +3889,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3903,8 +3905,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Falcon.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Falcon.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Falcon </div>
@@ -3926,9 +3928,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3942,8 +3944,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Futebol.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Futebol.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Futebol </div>
@@ -3965,9 +3967,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1935">
-                <div class="bar-fill" style="width: 23.844731977818853%; background: #3498db;"></div>
-                <span class="cell-text">1,935</span>
+            <td class="text-right relative-cell" data-val="1948">
+                <div class="bar-fill" style="width: 23.5607160135462%; background: #3498db;"></div>
+                <span class="cell-text">1,948</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -3981,8 +3983,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/blablabla.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/blablabla.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">blablabla </div>
@@ -4004,9 +4006,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1909">
-                <div class="bar-fill" style="width: 23.524337646333947%; background: #3498db;"></div>
-                <span class="cell-text">1,909</span>
+            <td class="text-right relative-cell" data-val="1922">
+                <div class="bar-fill" style="width: 23.24625060474117%; background: #3498db;"></div>
+                <span class="cell-text">1,922</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -4020,8 +4022,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/pybot.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/pybot.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">pybot </div>
@@ -4043,9 +4045,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -4059,8 +4061,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/news.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/news.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">news </div>
@@ -4082,9 +4084,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -4098,8 +4100,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Owl.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/Owl.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Owl </div>
@@ -4121,9 +4123,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1770">
-                <div class="bar-fill" style="width: 21.811460258780038%; background: #3498db;"></div>
-                <span class="cell-text">1,770</span>
+            <td class="text-right relative-cell" data-val="1783">
+                <div class="bar-fill" style="width: 21.56507014997581%; background: #3498db;"></div>
+                <span class="cell-text">1,783</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -4137,8 +4139,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/payiurtuk.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/payiurtuk.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">payiurtuk </div>
@@ -4160,9 +4162,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1950">
-                <div class="bar-fill" style="width: 24.029574861367838%; background: #3498db;"></div>
-                <span class="cell-text">1,950</span>
+            <td class="text-right relative-cell" data-val="1963">
+                <div class="bar-fill" style="width: 23.742138364779876%; background: #3498db;"></div>
+                <span class="cell-text">1,963</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -4176,8 +4178,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/genuina.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/genuina.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">genuina </div>
@@ -4199,9 +4201,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="2215">
-                <div class="bar-fill" style="width: 27.295132470733208%; background: #3498db;"></div>
-                <span class="cell-text">2,215</span>
+            <td class="text-right relative-cell" data-val="2228">
+                <div class="bar-fill" style="width: 26.94726656990808%; background: #3498db;"></div>
+                <span class="cell-text">2,228</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -4215,8 +4217,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/|DarkRis3.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/|DarkRis3.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">|DarkRis3 </div>
@@ -4238,9 +4240,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">2</span></td>
             
-            <td class="text-right relative-cell" data-val="1319">
-                <div class="bar-fill" style="width: 16.25385089340727%; background: #3498db;"></div>
-                <span class="cell-text">1,319</span>
+            <td class="text-right relative-cell" data-val="1332">
+                <div class="bar-fill" style="width: 16.110304789550074%; background: #3498db;"></div>
+                <span class="cell-text">1,332</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="12">
@@ -4254,8 +4256,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/|DarkRis3.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
-                        <div class="online-indicator" title="Online Now"></div>
+                        <img src="https://robohash.org/|DarkRis3.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">|DarkRis3 </div>
@@ -4278,7 +4280,7 @@
             <td class="text-center"><span class="badge">1</span></td>
             
             <td class="text-right relative-cell" data-val="545">
-                <div class="bar-fill" style="width: 6.715958102279728%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 6.591678761490083%; background: #3498db;"></div>
                 <span class="cell-text">545</span>
             </td>
             
@@ -4317,7 +4319,7 @@
             <td class="text-center"><span class="badge">1</span></td>
             
             <td class="text-right relative-cell" data-val="571">
-                <div class="bar-fill" style="width: 7.036352433764634%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 6.906144170295114%; background: #3498db;"></div>
                 <span class="cell-text">571</span>
             </td>
             
@@ -4356,8 +4358,47 @@
             <td class="text-center"><span class="badge">1</span></td>
             
             <td class="text-right relative-cell" data-val="153">
-                <div class="bar-fill" style="width: 1.8853974121996304%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.8505079825834543%; background: #3498db;"></div>
                 <span class="cell-text">153</span>
+            </td>
+            
+            <td class="text-right power-val relative-cell" data-val="11">
+                <div class="bar-fill" style="width: 3.728813559322034%; background: #e74c3c;"></div>
+                <span class="cell-text">⚔️ 11</span>
+            </td>
+        </tr>
+        
+        <tr class="" onclick="openProfile(this)">
+            <td><div class="rank-num">93</div></td>
+            <td class="font-bold nickname-cell">
+                <div class="player-flex">
+                    <div class="avatar-wrapper">
+                        <img src="https://robohash.org/style.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
+                        
+                    </div>
+                    <div class="tooltip-wrapper">
+                        <div class="nick-row">style </div>
+                        
+                        <div style="font-size: 0.75rem; color: #666; font-weight: normal; margin-top: 2px;">
+                             <span class="lang-pt"></span><span class="lang-en hidden"></span>
+                        </div>
+                        
+                        <div class="tooltip-content">
+                            <div class="tt-section"><strong>🐉 Pet:</strong> ---</div>
+                            <div class="tt-section"><strong>⚔️ Equip:</strong><br>---</div>
+                            <div class="tt-section" style="margin-top:5px; font-size:0.75rem; color:#aaa;">
+                                Boss Kills: 0 | Streak: 0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="subtle">Efnet</td>
+            <td class="text-center"><span class="badge">1</span></td>
+            
+            <td class="text-right relative-cell" data-val="4">
+                <div class="bar-fill" style="width: 1%; background: #3498db;"></div>
+                <span class="cell-text">4</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="11">
