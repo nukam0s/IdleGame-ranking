@@ -49,43 +49,46 @@
 
 **EN**: *IdleGame uses a **scaled XP system** where each level progressively requires more experience. This creates a balanced progression curve that rewards dedicated players.*
 
-### 🎯 Tabela de Níveis | Level Table
+## 📈 Sistema de Progressão (XP Escalado) | Progression System (Scaled XP)
 
-| Nível / Level | XP Total | XP para Próximo / XP to Next | Tempo Estimado* / Estimated Time* |
-|:-------------:|:--------:|:----------------------------:|:---------------------------------:|
-| **1** | 0 | 1.000 | - |
-| **2** | 1.000 | 1.828 | ~17min |
-| **3** | 2.828 | 2.620 | ~25min |
-| **5** | 8.000 | 3.623 | ~1h |
-| **10** | 31.623 | 6.856 | ~5h |
-| **15** | 58.480 | 9.653 | ~15h |
-| **20** | 126.491 | 12.247 | ~1.5d |
-| **25** | 197.642 | 14.715 | ~3d |
-| **30** | 284.604 | 17.101 | ~5d |
-| **40** | 505.964 | 21.544 | ~2 weeks/semanas |
-| **50** | 790.569 | 25.743 | ~4 weeks/semanas |
-| **75** | 1.837.117 | 37.011 | ~3 months/meses |
-| **100** | 3.162.278 | 47.434 | ~6 months/meses |
+**PT**: O IdleGame utiliza uma curva de experiência exponencial. Com as novas automações (v2026), o teu personagem ganha XP consistentemente 24 horas por dia através de eventos automáticos, Raids e missões de grupo.
 
-<sub>*Baseado apenas em XP Passivo (+1 XP/30s = 120 XP/hora). Eventos, quests e duelos aceleram drasticamente a progressão!</sub>
+**EN**: *IdleGame uses an exponential experience curve. With the new automations (v2026), your character gains XP consistently 24 hours a day through auto-events, Raids, and group quests.*
 
-<sub>*Based only on Passive XP (+1 XP/30s = 120 XP/hour). Events, quests, and duels drastically speed up progression!*
+### 🎯 Tabela de Níveis Estimada | Estimated Level Table
+*Baseada numa média de 400 XP/hora (Idle + Auto Events) | Based on 400 XP/hr avg.*
+
+| Nível / Level | XP Total | Tempo Estimado (Auto) | Estimated Time (Auto) |
+|:-------------:|:--------:|:---------------------:|:---------------------:|
+| **1** | 0        | -                     | -                     |
+| **2** | 1.000    | ~2.5 Horas            | ~2.5 Hours            |
+| **3** | 2.828    | ~7 Horas              | ~7 Hours              |
+| **5** | 8.000    | ~20 Horas (1 Dia)     | ~20 Hours (1 Day)     |
+| **10** | 31.623   | ~3 Dias               | ~3 Days               |
+| **20** | 126.491  | ~13 Dias              | ~13 Days              |
+| **30** | 284.604  | ~1 Mês                | ~1 Month              |
+| **40** | 505.964  | ~1.5 Meses            | ~1.5 Months           |
+| **50** | 790.569  | ~2.5 Meses            | ~2.5 Months           |
+| **75** | 1.837.117| ~6 Meses              | ~6 Months             |
+| **100** | 3.162.278| ~10-12 Meses          | ~10-12 Months         |
+
+> **Nota**: Estes tempos assumem jogo 100% automático. Jogadores ativos que façam **Duelos (`!duel`)**, **Roubos (`!fight`)** e **Apostas** podem reduzir estes tempos para metade!
+
+> *Note: These times assume 100% automated play. Active players engaging in **Duels**, **Fights**, and **Bets** can cut these times in half!*
 
 ### 💡 Dicas de Progressão Rápida | Fast Progression Tips
 
 **PT**:
-- 🎯 **Participa em Eventos**: O Boss, Quests de Grupo e Invasões de Goblins dão centenas de XP.
-- ⚔️ **Duelos Diários**: 3 lutas por dia podem render 150-300 XP.
-- 📜 **Quests Interativas**: Respostas criativas a eventos raros dão bónus de até 200 XP.
-- 🏆 **Top Rankings**: Estar no Top 3 Diário/Mensal dá recompensas de item extra.
+- 🤖 **Mantém-te Online**: O bot agora trabalha por ti. Raids, Bosses e Caixas de Pandora são automáticos.
+- ⚔️ **Duelos Diários**: Usa os teus 3 `!fight` manuais todos os dias para picos de XP.
+- 🍀 **Sorte ou Azar**: A Caixa de Pandora automática pode dar avanços de 3000 XP instantâneos... ou atrasar-te um dia!
+- 🏆 **Equipa-te Bem**: O teu ganho em Raids depende do dano que dás. Mantém o teu Power alto (`!forge` e `!feed`).
 
 **EN**:
-- *🎯 **Join Events**: Bosses, Group Quests, and Goblin Invasions grant hundreds of XP.*
-- *⚔️ **Daily Duels**: 3 fights per day can yield 150-300 XP.*
-- *📜 **Interactive Quests**: Creative answers to rare events grant bonuses up to 200 XP.*
-- *🏆 **Top Rankings**: Being in the Daily/Monthly Top 3 gives extra item rewards.*
-
----
+- *🤖 **Stay Online**: The bot now works for you. Raids, Bosses, and Pandora's Box are automated.*
+- *⚔️ **Daily Duels**: Use your 3 manual `!fight` attempts daily for XP spikes.*
+- *🍀 **Luck or Bust**: The auto Pandora's Box can grant instant 3000 XP jumps... or set you back a day!*
+- *🏆 **Gear Up**: Your Raid gains depend on your damage. Keep your Power high (`!forge` and `!feed`).*
 
 ## 🧠 Aventuras Dinâmicas com IA | Dynamic AI Adventures
 **PT**: O **IdleGame** utiliza **OpenAI gpt-4o-mini** para gerar quests, loots e pets em tempo real. Cada item é único e baseado no teu nickname.
