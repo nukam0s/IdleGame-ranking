@@ -90,6 +90,8 @@
 - *🍀 **Luck or Bust**: The auto Pandora's Box can grant instant 3000 XP jumps... or set you back a day!*
 - *🏆 **Gear Up**: Your Raid gains depend on your damage. Keep your Power high (`!forge` and `!feed`).*
 
+---
+
 ## 🧠 Aventuras Dinâmicas com IA | Dynamic AI Adventures
 **PT**: O **IdleGame** utiliza **OpenAI gpt-4o-mini** para gerar quests, loots e pets em tempo real. Cada item é único e baseado no teu nickname.
 
