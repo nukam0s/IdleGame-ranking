@@ -74,15 +74,15 @@
 ### 💡 Dicas de Progressão Rápida | Fast Progression Tips
 
 **PT**:
-- 🎯 **Participa em Eventos**: World Boss, Aventuras Diárias e World War dão centenas de XP.
+- 🎯 **Participa em Eventos**: O Boss, Quests de Grupo e Invasões de Goblins dão centenas de XP.
 - ⚔️ **Duelos Diários**: 3 lutas por dia podem render 150-300 XP.
-- 📜 **Quests Interativas**: Respostas criativas dão bónus de até 200 XP.
+- 📜 **Quests Interativas**: Respostas criativas a eventos raros dão bónus de até 200 XP.
 - 🏆 **Top Rankings**: Estar no Top 3 Diário/Mensal dá recompensas de item extra.
 
 **EN**:
-- *🎯 **Join Events**: World Boss, Daily Adventures, and World War grant hundreds of XP.*
+- *🎯 **Join Events**: Bosses, Group Quests, and Goblin Invasions grant hundreds of XP.*
 - *⚔️ **Daily Duels**: 3 fights per day can yield 150-300 XP.*
-- *📜 **Interactive Quests**: Creative answers grant bonuses up to 200 XP.*
+- *📜 **Interactive Quests**: Creative answers to rare events grant bonuses up to 200 XP.*
 - *🏆 **Top Rankings**: Being in the Daily/Monthly Top 3 gives extra item rewards.*
 
 ---
@@ -133,22 +133,20 @@
 **EN**: *Your companions aren't just for stats! They participate in dynamic events that liven up the channel.*
 
 ### 🥊 Luta de Pets (Pet Brawl)
-**PT**: Evento **automático e raro** (~0.1%). O bot escolhe 2 pets aleatórios no canal para lutar.
-- **Vencedor**: Baseado em `Nível × Raridade` + Sorte (±20%). Ganha XP instantâneo.
+**PT**: Evento **automático**. O bot escolhe 2 pets aleatórios no canal para lutar.
+- **Vencedor**: Baseado em `Nível × Raridade` + Sorte. O Pet e o Dono ganham XP instantâneo.
 
-**EN**: * **Automatic and rare** event (~0.1%). The bot picks 2 random pets in the channel to fight.*
-- ***Winner**: Based on `Level × Rarity` + Luck (±20%). Gains instant XP.*
+**EN**: * **Automatic** event. The bot picks 2 random pets in the channel to fight.*
+- ***Winner**: Based on `Level × Rarity` + Luck. Pet and Owner gain instant XP.*
 
-### 🏁 Corrida de Apostas (Pet Race)
-**PT**: Evento interativo onde todos podem apostar XP!
-- **Aposta**: Usa `!bet <1 ou 2> <xp>` durante os 60s de preparação.
-- **Vencedor**: Ganha quem for mais rápido (com fator caos ±50%).
-- **Prémio**: Quem acerta recebe o **Dobro** da aposta! O dono do pet ganha um bónus.
+### 🏁 Corrida de Pets (Pet Race)
+**PT**: Evento de velocidade **automático**.
+- **O Evento**: O bot seleciona dois pets para uma corrida rápida de 10 segundos.
+- **Prémios**: O Dono e o Pet vencedor recebem XP diretamente. Sem apostas, apenas glória!
 
-**EN**: *Interactive event where everyone can bet XP!*
-- ***Bet**: Use `!bet <1 or 2> <xp>` during the 60s preparation.*
-- ***Winner**: The fastest wins (with chaos factor ±50%).*
-- ***Prize**: Winners get **Double** their bet! The pet owner gets a bonus.*
+**EN**: * **Automatic** speed event.*
+- ***The Event**: The bot selects two pets for a quick 10-second race.*
+- ***Prizes**: The Owner and the winning Pet receive XP directly. No bets, just glory!*
 
 ---
 
@@ -164,18 +162,20 @@
 ---
 
 ## 👺 Invasão de Goblins | Goblin Raid
-**PT**: Evento de velocidade com **3 a 10 tesouros**. Tens **60 segundos** para saquear o bando com `!atacar` (**35% de chance** por hit).
+**PT**: Ocorre uma invasão **automática**. Os Goblins tentam saquear os jogadores presentes no canal.
+- **Mecânica**: O bot itera sobre os jogadores. Se o jogador tiver sorte, consegue roubar um item ao Goblin (loot).
 
-**EN**: *Speed event with **3 to 10 treasures**. You have **60 seconds** to loot them using `!attack` (**35% chance** per hit).*
+**EN**: *An **automatic** invasion occurs. Goblins try to loot players present in the channel.*
+- ***Mechanics**: The bot iterates through players. If lucky, the player steals an item from the Goblin (loot).*
 
 ---
 
 ## 👹 World Bosses (Raids) | Titãs Mundiais
-**PT**: Enfrenta bosses com HP massivo. Ativa o **Auto-Ataque** com `!atacar` (golpes a cada 60s).
+**PT**: Enfrenta bosses com HP massivo. O **Auto-Ataque** é ativado automaticamente para todos os jogadores online no canal.
 - **MVP**: 30% chance de loot **MYTHIC**, 20% de **Ovo**, 50% apenas XP.
 - **Participação**: XP proporcional ao dano (Mínimo +50 XP).
 
-**EN**: *Face massive HP bosses. Enable **Auto-Attack** with `!attack` (strikes every 60s).*
+**EN**: *Face massive HP bosses. **Auto-Attack** is automatically enabled for all players online in the channel.*
 - ***MVP**: 30% **MYTHIC** loot chance, 20% **Egg**, 50% XP only.*
 - ***Participation**: XP proportional to damage (Minimum +50 XP).*
 
@@ -191,9 +191,11 @@
 ---
 
 ## 📦 A Caixa de Pandora | Pandora's Box
-**PT**: Risco extremo (**50/50**). Ganhos massivos (+3000 XP/Mythic) ou perda de **5% a 15% de XP** (máx. 2000).
+**PT**: A caixa aparece misteriosamente e **escolhe sozinha** uma vítima para a abrir.
+- **Consequência**: Risco extremo (**50/50**). Ganhos massivos (+XP/Mythic) ou Perda de XP.
 
-**EN**: *Extreme risk (**50/50**). Massive gains (+3000 XP/Mythic) or **5% to 15% XP loss** (max 2000).*
+**EN**: *The box appears mysteriously and **chooses on its own** a victim to open it.*
+- ***Consequence**: Extreme risk (**50/50**). Massive gains (+XP/Mythic) or XP Loss.*
 
 ---
 
@@ -223,15 +225,12 @@
 | `!hatch` | Choca um Ovo Misterioso para obter um novo Pet aleatório. | Hatch a Mystery Egg to obtain a new random Pet. |
 | `!feed [all]` | Alimenta o pet com itens da mochila para ganhar XP. | Feed your pet with backpack items to gain XP. |
 | `!absorver <id>` | O Pet Ativo devora o Pet <id> para um ganho massivo de XP. | Active Pet devours Pet <id> for a massive XP gain. |
-| `!bet <1/2> <xp>` | Apostar no Pet 1 ou 2 numa Corrida ativa (Ganhas o Dobro). | Bet on Pet 1 or 2 in an active Race (Win Double). |
 | `!trocar <id>` | Substitui o teu pet atual por outro do teu canil usando o ID. | Swap your active pet with another from your kennel using ID. |
 | `!forja [all]` | Funde os itens mais fracos para criar algo superior (30% upgrade). | Fuse your weakest items to create superior gear (30% upgrade). |
-| `!atacar` / `!f` | Ataca (ou liga Auto-Ataque) contra Bosses ou Goblins ativos. | Attack (or toggle Auto-Attack) against active Bosses or Goblins. |
-| `!abrir` / `!open` | Abre a Caixa de Pandora (Risco: Prémio Épico ou Perda de XP). | Open Pandora's Box (Risk: Epic Reward or XP Loss). |
 | `!fight <nick>` | Duelo amigável (3x/dia). 1% chance de ROUBAR um item! | Friendly duel (3x/day). 1% chance to STEAL an item! |
 | `!duel <nk> <xp>` | Desafia um jogador para uma aposta de XP real (Taxa: 10%). | Challenge a player for a real XP wager (10% Fee). |
 | `!aceitar` | Aceita um desafio de Duelo/Aposta pendente. | Accept a pending Duel/Bet challenge. |
-| `!resp <texto>` | Responde a uma Quest interativa da IA (Solo ou Grupo). | Answer an interactive AI Quest (Solo or Group). |
+| `!resp <texto>` | Responde a uma Quest interativa (Evento Raro). | Answer an interactive Quest (Rare Event). |
 | `!quests` / `!q` | Lista todas as missões e eventos ativos no canal. | Lists all active missions and events in the channel. |
 | `!historia` | Gera uma Crónica Épica baseada nos teus últimos 20 eventos. | Generate an Epic Chronicle based on your last 20 events. |
 | `!mw` | Lista dos criminosos "Mais Procurados" (Maiores Bounties). | List of the "Most Wanted" criminals (Highest Bounties). |
