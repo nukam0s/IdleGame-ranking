@@ -127,6 +127,29 @@
 - ***Bonus**: Pet Level × Rarity Multiplier (Common: x2 up to MYTHIC: x50).*
 - ***Evolution**: Use `!feed` or `!absorb <id>` to fuse pets for massive XP.*
 
+## 🐾 Eventos de Pets | Pet Events
+**PT**: Os teus companheiros não servem apenas para dar stats! Eles participam em eventos dinâmicos que animam o canal.
+
+**EN**: *Your companions aren't just for stats! They participate in dynamic events that liven up the channel.*
+
+### 🥊 Luta de Pets (Pet Brawl)
+**PT**: Evento **automático e raro** (~0.1%). O bot escolhe 2 pets aleatórios no canal para lutar.
+- **Vencedor**: Baseado em `Nível × Raridade` + Sorte (±20%). Ganha XP instantâneo.
+
+**EN**: * **Automatic and rare** event (~0.1%). The bot picks 2 random pets in the channel to fight.*
+- ***Winner**: Based on `Level × Rarity` + Luck (±20%). Gains instant XP.*
+
+### 🏁 Corrida de Apostas (Pet Race)
+**PT**: Evento interativo onde todos podem apostar XP!
+- **Aposta**: Usa `!bet <1 ou 2> <xp>` durante os 60s de preparação.
+- **Vencedor**: Ganha quem for mais rápido (com fator caos ±50%).
+- **Prémio**: Quem acerta recebe o **Dobro** da aposta! O dono do pet ganha um bónus.
+
+**EN**: *Interactive event where everyone can bet XP!*
+- ***Bet**: Use `!bet <1 or 2> <xp>` during the 60s preparation.*
+- ***Winner**: The fastest wins (with chaos factor ±50%).*
+- ***Prize**: Winners get **Double** their bet! The pet owner gets a bonus.*
+
 ---
 
 ## ⚒️ A Forja (Crafting) | The Forge
@@ -200,6 +223,7 @@
 | `!hatch` | Choca um Ovo Misterioso para obter um novo Pet aleatório. | Hatch a Mystery Egg to obtain a new random Pet. |
 | `!feed [all]` | Alimenta o pet com itens da mochila para ganhar XP. | Feed your pet with backpack items to gain XP. |
 | `!absorver <id>` | O Pet Ativo devora o Pet <id> para um ganho massivo de XP. | Active Pet devours Pet <id> for a massive XP gain. |
+| `!bet <1/2> <xp>` | Apostar no Pet 1 ou 2 numa Corrida ativa (Ganhas o Dobro). | Bet on Pet 1 or 2 in an active Race (Win Double). |
 | `!trocar <id>` | Substitui o teu pet atual por outro do teu canil usando o ID. | Swap your active pet with another from your kennel using ID. |
 | `!forja [all]` | Funde os itens mais fracos para criar algo superior (30% upgrade). | Fuse your weakest items to create superior gear (30% upgrade). |
 | `!atacar` / `!f` | Ataca (ou liga Auto-Ataque) contra Bosses ou Goblins ativos. | Attack (or toggle Auto-Attack) against active Bosses or Goblins. |
