@@ -195,6 +195,19 @@
 
 ---
 
+## 🏟️ Arena Royal (08:00) | Royal Arena
+**PT**: Um torneio **Battle Royale Global** que une todas as redes IRC conectadas, todos os dias às **08:00**.
+* **Inscrição**: Usa `!arena join` para entrar no combate (Custo: **500 XP**).
+* **O Pote**: Todo o XP das inscrições vai para um pote comum acumulado entre servidores.
+* **Vencedor**: O último sobrevivente leva o **Pote Total** e ganha um troféu de "Arena Win" no perfil.
+
+**EN**: *A **Global Battle Royale** tournament uniting all connected IRC networks, every day at **08:00 AM**.*
+* ***Registration**: Use `!arena join` to enter combat (Cost: **500 XP**).*
+* ***The Pot**: All entry fees go into a common pot accumulated across servers.*
+* ***Winner**: The last survivor takes the **Total Pot** and earns an "Arena Win" trophy on their profile.*
+
+---
+
 ## 📦 A Caixa de Pandora | Pandora's Box
 **PT**: A caixa aparece misteriosamente e **escolhe sozinha** uma vítima para a abrir.
 - **Consequência**: Risco extremo (**50/50**). Ganhos massivos (+XP/Mythic) ou Perda de XP.
@@ -238,6 +251,7 @@
 | `!resp <texto>` | Responde a uma Quest interativa (Evento Raro). | Answer an interactive Quest (Rare Event). |
 | `!quests` / `!q` | Lista todas as missões e eventos ativos no canal. | Lists all active missions and events in the channel. |
 | `!historia` | Gera uma Crónica Épica baseada nos teus últimos 20 eventos. | Generate an Epic Chronicle based on your last 20 events. |
+| `!arena [join/list]` | Inscreve-te no Battle Royale Global ou vê o pote atual. | Register for the Global Battle Royale or view the current pot. |
 | `!mw` | Lista dos criminosos "Mais Procurados" (Maiores Bounties). | List of the "Most Wanted" criminals (Highest Bounties). |
 | `!champs` | Lista dos jogadores com as maiores sequências de vitórias. | List of players with the highest win streaks. |
 | `!nick <nome>` | Muda o teu nome no jogo (3-15 caracteres alfanuméricos). | Change your in-game name (3-15 alphanumeric chars). |
