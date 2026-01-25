@@ -23,6 +23,29 @@
 
 ---
 
+### ✨ Sistema de Ascensão (Prestige) | Ascension System (Prestige)
+**PT**: Ao atingires o **Nível 50**, podes reencarnar e tornar-te uma lenda.
+- **O Sacrifício**: O teu Nível volta a 1 e perdes os itens comuns.
+- **A Recompensa**: Ganhas **+1 Estrela** (+10% Poder Permanente) e manténs os teus Pets.
+- **O Set Divino ("Exodia")**: Cada Ascensão (até à 5ª) garante uma peça de equipamento **Mítico (500 Power)** indestrutível. A cada reset, completas o set pela seguinte ordem:
+  1. 🥾 **Botas Divinas** (Ascensão 1)
+  2. 🛡️ **Armadura Divina** (Ascensão 2)
+  3. 🪖 **Capacete Divino** (Ascensão 3)
+  4. 🧿 **Amuleto Divino** (Ascensão 4)
+  5. ⚔️ **Arma Divina** (Ascensão 5 - Poder Máximo)
+
+**EN**: *Upon reaching **Level 50**, you can reincarnate to become a legend.*
+- ***The Sacrifice**: Your Level resets to 1 and common items are lost.*
+- ***The Reward**: You gain **+1 Star** (+10% Permanent Power) and keep your Pets.*
+- ***The Godly Set ("Exodia")**: Each Ascension (up to the 5th) guarantees an indestructible **Mythic (500 Power)** gear piece. With each reset, you complete the set in this order:*
+  1. *🥾 **Divine Boots** (Ascension 1)*
+  2. *🛡️ **Divine Armor** (Ascension 2)*
+  3. *🪖 **Divine Helm** (Ascension 3)*
+  4. *🧿 **Divine Amulet** (Ascension 4)*
+  5. *⚔️ **Divine Weapon** (Ascension 5 - Max Power)*
+
+---
+
 ## 🌍 Aventura Diária (13:00) | Daily Adventure
 **PT**: Um evento cooperativo que ocorre todos os dias às **13:00**. A IA narra uma jornada para uma equipa aleatória com destinos decididos pelo sistema.
 * **Sucesso (70%)**: **+400 a +700 XP** e **35%** de chance de item.
@@ -205,6 +228,23 @@
 * ***Registration**: Use `!arena join` to enter combat (Cost: **500 XP**).*
 * ***The Pot**: All entry fees go into a common pot accumulated across servers.*
 * ***Winner**: The last survivor takes the **Total Pot** and earns an "Arena Win" trophy on their profile.*
+
+---
+
+### 🎪 O Mercador do Vazio | The Void Merchant
+**PT**: Um viajante misterioso que aparece aleatoriamente no canal. Ele não quer dinheiro, quer a tua experiência de vida!
+- **Moeda**: Tu pagas com o teu próprio **XP**.
+- **Inventário Exclusivo**:
+  - 🦴 **Jaula do Vazio**: Contém sempre um Pet de elite (Raro a Mítico).
+  - 📦 **Baú dos Deuses**: Equipamento com poder acima do normal para o teu nível.
+  - 🧪 **Essência Pura**: XP concentrado para evoluir o teu Pet instantaneamente.
+
+**EN**: *A mysterious traveler that spawns randomly in the channel. He doesn't want money; he wants your life experience!*
+- ***Currency**: You pay with your own **XP**.*
+- ***Exclusive Inventory**:*
+  - *🦴 **Void Cage**: Always contains an elite Pet (Rare to Mythic).*
+  - *📦 **Godly Chest**: Gear with power levels far above average.*
+  - *🧪 **Pure Essence**: Concentrated XP to instantly level up your Pet.*
 
 ---
 
