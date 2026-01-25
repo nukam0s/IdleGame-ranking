@@ -44,7 +44,7 @@
 ---
 
 ### ✨ Sistema de Ascensão (Prestige) | Ascension System (Prestige)
-**PT**: Ao atingires o **Nível 50**, podes reencarnar e tornar-te uma lenda.
+**PT**: Ao atingires o **Nível 100**, podes reencarnar e tornar-te uma lenda.
 - **O Sacrifício**: O teu Nível volta a 1 e perdes os itens comuns.
 - **A Recompensa**: Ganhas **+1 Estrela** (+10% Poder Permanente) e manténs os teus Pets.
 - **O Set Divino ("Exodia")**: Cada Ascensão (até à 5ª) garante uma peça de equipamento **Mítico (500 Power)** indestrutível. A cada reset, completas o set pela seguinte ordem:
@@ -54,7 +54,7 @@
   4. 🧿 **Amuleto Divino** (Ascensão 4)
   5. ⚔️ **Arma Divina** (Ascensão 5 - Poder Máximo)
 
-**EN**: *Upon reaching **Level 50**, you can reincarnate to become a legend.*
+**EN**: *Upon reaching **Level 100**, you can reincarnate to become a legend.*
 - ***The Sacrifice**: Your Level resets to 1 and common items are lost.*
 - ***The Reward**: You gain **+1 Star** (+10% Permanent Power) and keep your Pets.*
 - ***The Godly Set ("Exodia")**: Each Ascension (up to the 5th) guarantees an indestructible **Mythic (500 Power)** gear piece. With each reset, you complete the set in this order:*
