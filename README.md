@@ -23,6 +23,26 @@
 
 ---
 
+## 🌍 Aventura Diária (13:00) | Daily Adventure
+**PT**: Um evento cooperativo que ocorre todos os dias às **13:00**. A IA narra uma jornada para uma equipa aleatória com destinos decididos pelo sistema.
+* **Sucesso (70%)**: **+400 a +700 XP** e **35%** de chance de item.
+* **Ferido (20%)**: **+50 a +150 XP** e **15%** de chance de item.
+* **Falha (10%)**: **-100 a -300 XP** e sem bónus.
+
+**EN**: *A cooperative narrative event occurring every day at **1:00 PM**. AI narrates a journey for a random team with fates decided by the system.*
+* ***Success (70%)**: **+400 to +700 XP** and **35%** item chance.*
+* ***Injured (20%)**: **+50 to +150 XP** and **15%** item chance.*
+* ***Failure (10%)**: **-100 to -300 XP** and no bonus.*
+
+---
+
+## 🧬 Progresso Local | Network-Based Progression
+**PT**: O teu progresso é **permanente dentro de cada rede IRC**. Nível, itens e conquistas acompanham-te entre sessões, mas cada rede é um universo independente.
+
+**EN**: *Your progress is **permanent within each IRC network**. Levels, items, and achievements persist across sessions, but each network is an independent universe.*
+
+---
+
 ### ✨ Sistema de Ascensão (Prestige) | Ascension System (Prestige)
 **PT**: Ao atingires o **Nível 50**, podes reencarnar e tornar-te uma lenda.
 - **O Sacrifício**: O teu Nível volta a 1 e perdes os itens comuns.
@@ -45,32 +65,6 @@
   5. *⚔️ **Divine Weapon** (Ascension 5 - Max Power)*
 
 ---
-
-## 🌍 Aventura Diária (13:00) | Daily Adventure
-**PT**: Um evento cooperativo que ocorre todos os dias às **13:00**. A IA narra uma jornada para uma equipa aleatória com destinos decididos pelo sistema.
-* **Sucesso (70%)**: **+400 a +700 XP** e **35%** de chance de item.
-* **Ferido (20%)**: **+50 a +150 XP** e **15%** de chance de item.
-* **Falha (10%)**: **-100 a -300 XP** e sem bónus.
-
-**EN**: *A cooperative narrative event occurring every day at **1:00 PM**. AI narrates a journey for a random team with fates decided by the system.*
-* ***Success (70%)**: **+400 to +700 XP** and **35%** item chance.*
-* ***Injured (20%)**: **+50 to +150 XP** and **15%** item chance.*
-* ***Failure (10%)**: **-100 to -300 XP** and no bonus.*
-
----
-
-## 🧬 Progresso Local | Network-Based Progression
-**PT**: O teu progresso é **permanente dentro de cada rede IRC**. Nível, itens e conquistas acompanham-te entre sessões, mas cada rede é um universo independente.
-
-**EN**: *Your progress is **permanent within each IRC network**. Levels, items, and achievements persist across sessions, but each network is an independent universe.*
-
----
-
-## 📈 Sistema de Progressão (XP Escalado) | Progression System (Scaled XP)
-
-**PT**: O IdleGame utiliza um **sistema de XP escalado** onde cada nível requer progressivamente mais experiência. Isto cria uma curva de progressão equilibrada que recompensa jogadores dedicados.
-
-**EN**: *IdleGame uses a **scaled XP system** where each level progressively requires more experience. This creates a balanced progression curve that rewards dedicated players.*
 
 ## 📈 Sistema de Progressão (XP Escalado) | Progression System (Scaled XP)
 
