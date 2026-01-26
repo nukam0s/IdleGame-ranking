@@ -14,6 +14,29 @@
 
 ---
 
+## 📅 Guia Rápido: O Teu Dia a Dia | Quick Guide: Your Daily Routine
+**PT**: O IdleGame recompensa tanto quem está AFK como quem joga ativamente. Segue esta rotina para maximizar a tua lenda:
+
+1.  **Presença (AFK)**: Basta estares no canal. Recebes XP passivo e participas automaticamente em **World Bosses**, **Invasões** e **Caixas de Pandora**.
+2.  **Gestão de Loot**: Quando voltares, verifica o `!inv`. Se tiveres a mochila cheia de itens fracos, usa `!forge all` para os fundir e tentar criar equipamento mais forte.
+3.  **Estratégia (Pet vs Gear)**: Tens de decidir onde investir os itens que sobram:
+    * Queres um companheiro forte? Usa `!feed all` para dar os itens ao teu Pet.
+    * Preferes poder bruto no personagem? Continua a fazer `!forge` para melhorar o teu set.
+4.  **Combate Ativo**: Tens 3 energias diárias. Usa `!fight <nick>` em oponentes que consigas vencer para ganhar XP rápido e aumentar a tua **Win Streak** (Série de Vitórias).
+5.  **Caça ao Prémio**: Fica atento aos **Contratos de Recompensa** (Bounty Contracts). Se o bot anunciar um alvo, tens **2 horas** para o derrotar e ganhar o triplo da recompensa!
+
+**EN**: *IdleGame rewards both AFK and active players. Follow this routine to maximize your legend:*
+
+1.  ***Presence (AFK)**: Just stay in the channel. You receive passive XP and automatically participate in **World Bosses**, **Invasions**, and **Pandora's Boxes**.*
+2.  ***Loot Management**: When you return, check `!inv`. If your backpack is full of weak items, use `!forge all` to fuse them and try to craft stronger gear.*
+3.  ***Strategy (Pet vs Gear)**: Decide where to invest your spare items:*
+    * *Want a strong companion? Use `!feed all` to give items to your Pet.*
+    * *Prefer raw character power? Keep using `!forge` to upgrade your set.*
+4.  ***Active Combat**: You have 3 daily energies. Use `!fight <nick>` on opponents you can beat to gain fast XP and increase your **Win Streak**.*
+5.  ***Bounty Hunting**: Watch out for **Bounty Contracts**. If the bot announces a target, you have **2 hours** to defeat them and earn triple the reward!*
+
+---
+
 ## ⏳ Progressão Passiva (Idle Real) | True Idle Progression
 **PT**: No IdleGame, o teu personagem evolui **mesmo sem escrever comandos**. Basta estares presente no canal para ganhar experiência passiva em cada ciclo do sistema.
 * **Recompensa**: **+1 XP** por cada ciclo de 30 segundos online.
