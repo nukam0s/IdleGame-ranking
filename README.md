@@ -280,6 +280,17 @@
 
 **EN**: *`!fight <nick>` (3x/day). There is a **1% chance** for the winner to **steal** an equipped item!*
 
+### 🤝 Ataque de Equipa (Team Up)
+**PT**: Estás com dificuldades contra um jogador muito forte? Chama reforços!
+- **Comando**: `!teamup <aliado> <inimigo>` envia um convite. O aliado aceita com `!join`.
+- **Mecânica 2vs1**: Os vossos poderes somam-se, mas sofrem uma **penalização de 10%** (falta de coordenação).
+- **Risco/Recompensa**: Se vencerem, o XP é **dividido pelos dois**. Se perderem, ambos perdem XP.
+
+**EN**: *Struggling against a strong player? Call for backup!*
+- ***Command**: `!teamup <ally> <enemy>` sends an invite. The ally accepts with `!join`.*
+- ***2vs1 Mechanics**: Your powers are combined but suffer a **10% penalty** (lack of coordination).*
+- ***Risk/Reward**: If you win, XP is **shared between both**. If you lose, both lose XP.*
+
 ### 💸 Apostas (Fight Club)
 **PT**: `!duel <nick> <xp>` para apostar XP real. Vencedor leva o pote (Taxa: 10%).
 
@@ -289,31 +300,45 @@
 
 ## 🕹️ Comandos Disponíveis | Available Commands
 
-| Comando / Command | PT (Português) | EN (English) |
-| :--- | :--- | :--- |
-| `!stats` / `!st` | Ver ficha técnica: Nível, XP, Poder, Duelos, Pet e Ranks. | View character sheet: Level, XP, Power, Duels, Pet, and Ranks. |
-| `!inv` / `!items` | Lista itens equipados, mochila e Ovos Misteriosos. | List equipped items, backpack, and Mystery Eggs. |
-| `!power` / `!pwr` | Detalhe do Poder Total (Base + Nível + Itens + Pet). | Breakdown of Total Power (Base + Level + Items + Pet). |
-| `!top [g] [xp]` | Ranking Top 5. Usa `g` para Global ou `xp` para ordenar por experiência. | Top 5 Ranking. Use `g` for Global or `xp` to sort by experience. |
-| `!pet` / `!p` | Status detalhado do teu companheiro ativo e bónus de combate. | Detailed active pet status and combat bonus. |
-| `!pets` | Canil: Lista todos os teus pets guardados e os seus IDs. | Kennel: List all your stored pets and their IDs. |
-| `!hatch` | Choca um Ovo Misterioso para obter um novo Pet aleatório. | Hatch a Mystery Egg to obtain a new random Pet. |
-| `!feed [all]` | Alimenta o pet com itens da mochila para ganhar XP. | Feed your pet with backpack items to gain XP. |
-| `!absorver <id>` | O Pet Ativo devora o Pet <id> para um ganho massivo de XP. | Active Pet devours Pet <id> for a massive XP gain. |
-| `!trocar <id>` | Substitui o teu pet atual por outro do teu canil usando o ID. | Swap your active pet with another from your kennel using ID. |
-| `!forja [all]` | Funde os itens mais fracos para criar algo superior (30% upgrade). | Fuse your weakest items to create superior gear (30% upgrade). |
-| `!fight <nick>` | Duelo amigável (3x/dia). 1% chance de ROUBAR um item! | Friendly duel (3x/day). 1% chance to STEAL an item! |
-| `!duel <nk> <xp>` | Desafia um jogador para uma aposta de XP real (Taxa: 10%). | Challenge a player for a real XP wager (10% Fee). |
-| `!aceitar` | Aceita um desafio de Duelo/Aposta pendente. | Accept a pending Duel/Bet challenge. |
-| `!resp <texto>` | Responde a uma Quest interativa (Evento Raro). | Answer an interactive Quest (Rare Event). |
-| `!quests` / `!q` | Lista todas as missões e eventos ativos no canal. | Lists all active missions and events in the channel. |
-| `!historia` | Gera uma Crónica Épica baseada nos teus últimos 20 eventos. | Generate an Epic Chronicle based on your last 20 events. |
-| `!arena [join/list]` | Inscreve-te no Battle Royale Global ou vê o pote atual. | Register for the Global Battle Royale or view the current pot. |
-| `!mw` | Lista dos criminosos "Mais Procurados" (Maiores Bounties). | List of the "Most Wanted" criminals (Highest Bounties). |
-| `!champs` | Lista dos jogadores com as maiores sequências de vitórias. | List of players with the highest win streaks. |
-| `!nick <nome>` | Muda o teu nome no jogo (3-15 caracteres alfanuméricos). | Change your in-game name (3-15 alphanumeric chars). |
-| `!token` | (Privado) Recebe o teu código para recuperar a conta no futuro. | (Private) Receive your code to recover your account in the future. |
-| `!recover <tk>` | (Privado) Recupera o teu progresso usando o teu token pessoal. | (Private) Recover your progress using your personal token. |
+### 👤 Perfil & Geral | Profile & General
+| Comando | Descrição (PT / EN) |
+| :--- | :--- |
+| `!stats` / `!st` | 🇵🇹 Ver ficha técnica: Nível, XP, Poder, Rankings.<br>🇬🇧 *View character sheet: Level, XP, Power, Ranks.* |
+| `!inv` / `!items` | 🇵🇹 Lista itens equipados, mochila e Ovos.<br>🇬🇧 *List equipped items, backpack, and Eggs.* |
+| `!power` / `!pwr` | 🇵🇹 Detalhe do cálculo do Poder Total.<br>🇬🇧 *Breakdown of Total Power calculation.* |
+| `!top [g] [xp]` | 🇵🇹 Ranking Top 5 (Global ou Local).<br>🇬🇧 *Top 5 Ranking (Global or Local).* |
+| `!nick <nome>` | 🇵🇹 Muda o teu nome no jogo.<br>🇬🇧 *Change your in-game name.* |
+| `!history` | 🇵🇹 Gera uma Crónica Épica (20 eventos).<br>🇬🇧 *Generate an Epic Chronicle (20 events).* |
+
+### ⚔️ Combate & Arena | Combat & Arena
+| Comando | Descrição (PT / EN) |
+| :--- | :--- |
+| `!fight <nick>` | 🇵🇹 Duelo amigável (3x/dia). 1% chance de roubo!<br>🇬🇧 *Friendly duel (3x/day). 1% chance to steal!* |
+| `!teamup <p2> <alvo>`| 🇵🇹 Convida aliado para ataque 2vs1 (divide XP).<br>🇬🇧 *Invite ally for 2vs1 attack (split XP).* |
+| `!join` | 🇵🇹 Aceita um pedido de parceria pendente.<br>🇬🇧 *Accept a pending team-up request.* |
+| `!duel <nk> <xp>` | 🇵🇹 Aposta de XP real (Taxa: 10%).<br>🇬🇧 *Real XP wager (10% Fee).* |
+| `!aceitar` | 🇵🇹 Aceita desafio de Duelo/Aposta.<br>🇬🇧 *Accept pending Duel/Bet.* |
+| `!arena [join/list]`| 🇵🇹 Battle Royale Global (Custo: 500 XP).<br>🇬🇧 *Global Battle Royale (Cost: 500 XP).* |
+| `!mw` / `!champs` | 🇵🇹 Ver Mais Procurados ou Campeões de vitórias.<br>🇬🇧 *View Most Wanted or Win Streak Champions.* |
+
+### 🐉 Pets & Forja | Pets & Forge
+| Comando | Descrição (PT / EN) |
+| :--- | :--- |
+| `!pet` / `!p` | 🇵🇹 Status do companheiro ativo.<br>🇬🇧 *Active companion status.* |
+| `!pets` | 🇵🇹 Canil: Lista todos os teus pets e IDs.<br>🇬🇧 *Kennel: List all your pets and IDs.* |
+| `!hatch` | 🇵🇹 Choca um Ovo Misterioso.<br>🇬🇧 *Hatch a Mystery Egg.* |
+| `!feed [all]` | 🇵🇹 Alimenta o pet com itens (Ganha XP).<br>🇬🇧 *Feed pet with items (Gain XP).* |
+| `!absorver <id>` | 🇵🇹 Funde pets para XP massivo.<br>🇬🇧 *Fuse pets for massive XP.* |
+| `!trocar <id>` | 🇵🇹 Troca o pet ativo pelo ID.<br>🇬🇧 *Swap active pet by ID.* |
+| `!forja [all]` | 🇵🇹 Funde itens fracos para subir raridade.<br>🇬🇧 *Fuse weak items to upgrade rarity.* |
+
+### 📜 Quests & Sistema | Quests & System
+| Comando | Descrição (PT / EN) |
+| :--- | :--- |
+| `!quests` / `!q` | 🇵🇹 Lista missões e eventos ativos.<br>🇬🇧 *List active missions and events.* |
+| `!resp <texto>` | 🇵🇹 Responde a uma Quest interativa.<br>🇬🇧 *Answer an interactive Quest.* |
+| `!token` | 🇵🇹 (Privado) Recebe o código de recuperação.<br>🇬🇧 *(Private) Get recovery code.* |
+| `!recover <tk>` | 🇵🇹 (Privado) Recupera conta via token.<br>🇬🇧 *(Private) Recover account via token.* |
 
 ---
 
