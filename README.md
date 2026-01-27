@@ -317,7 +317,7 @@
 | `!teamup <p2> <alvo>`| 🇵🇹 Convida aliado para ataque 2vs1 (divide XP).<br>🇬🇧 *Invite ally for 2vs1 attack (split XP).* |
 | `!join` | 🇵🇹 Aceita um pedido de parceria pendente.<br>🇬🇧 *Accept a pending team-up request.* |
 | `!duel <nk> <xp>` | 🇵🇹 Aposta de XP real (Taxa: 10%).<br>🇬🇧 *Real XP wager (10% Fee).* |
-| `!aceitar` | 🇵🇹 Aceita desafio de Duelo/Aposta.<br>🇬🇧 *Accept pending Duel/Bet.* |
+| `!ajudar` | 🇵🇹 Aceita desafio de Duelo/Aposta.<br>🇬🇧 *Accept pending Duel/Bet.* |
 | `!arena [join/list]`| 🇵🇹 Battle Royale Global (Custo: 500 XP).<br>🇬🇧 *Global Battle Royale (Cost: 500 XP).* |
 | `!mw` / `!champs` | 🇵🇹 Ver Mais Procurados ou Campeões de vitórias.<br>🇬🇧 *View Most Wanted or Win Streak Champions.* |
 
