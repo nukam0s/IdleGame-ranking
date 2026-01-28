@@ -282,7 +282,7 @@
 
 ### 🤝 Ataque de Equipa (Team Up)
 **PT**: Estás com dificuldades contra um jogador muito forte? Chama reforços!
-- **Comando**: `!teamup <aliado> <inimigo>` envia um convite. O aliado aceita com `!join`.
+- **Comando**: `!aliar <aliado> <inimigo>` envia um convite. O aliado aceita com `!ajudar`.
 - **Mecânica 2vs1**: Os vossos poderes somam-se, mas sofrem uma **penalização de 10%** (falta de coordenação).
 - **Risco/Recompensa**: Se vencerem, o XP é **dividido pelos dois**. Se perderem, ambos perdem XP.
 
