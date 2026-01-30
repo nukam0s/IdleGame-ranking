@@ -242,10 +242,8 @@
 
 ## 🌍 World War (22:00) | Guerra Mundial
 **PT**: Conflito diário global entre redes às **22:00**.
-- **Recompensa**: **+300 a +1500 XP** e **30%** de chance de item extra para os vencedores.
 
 **EN**: *Daily global network conflict at **10:00 PM**.*
-- ***Reward**: **+300 to +1500 XP** and **30%** extra item chance for winners.*
 
 ---
 
