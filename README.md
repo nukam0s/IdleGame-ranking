@@ -226,13 +226,11 @@
 
 ---
 
----
+## ⚔️ Network wars (01:00 & 16:00) | Guerra entre redes
 
-## ⚔️ Guerra de Redes (00:00 e 16:00) | Network War
+**PT**: Conflito épico automático entre duas redes IRC aleatórias, ocorre **2 vezes por dia** às **01:00** e **16:00**.
 
-**PT**: Conflito épico automático entre duas redes IRC aleatórias, ocorre **2 vezes por dia** às **00:00** e **16:00**.
-
-**EN**: *Epic automatic conflict between two random IRC networks, occurs **twice daily** at **00:00** and **16:00**.*
+**EN**: *Epic automatic conflict between two random IRC networks, occurs **twice daily** at **01:00** and **16:00**.*
 
 ### 📋 Requisitos | Requirements
 
