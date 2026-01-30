@@ -152,6 +152,66 @@
 
 ---
 
+## 📊 Estatísticas e Probabilidades / Stats & Probabilities
+
+Abaixo encontras os detalhes técnicos sobre as taxas de drop, multiplicadores de poder e funcionamento dos eventos.
+*Below are the technical details regarding drop rates, power multipliers, and event mechanics.*
+
+### ⚔️ Itens & Equipamento / Items & Gear
+
+Os itens são gerados com base em dois perfis de sorte: **Normal** (Aventuras, Farm) e **Boosted** (Bosses, Guerras, Goblins, Baús).
+*Items are generated based on two luck profiles: **Normal** (Adventures, Farm) and **Boosted** (Bosses, Wars, Goblins, Chests).*
+
+| Raridade / Rarity | Chance (Normal) | Chance (Boosted) | Poder Base / Base Power |
+| :--- | :---: | :---: | :---: |
+| **Common** | 70.0% | 30.0% | 10 - 25 |
+| **Rare** | 20.0% | 30.0% | 26 - 60 |
+| **Epic** | 9.0% | 25.0% | 61 - 120 |
+| **Legendary** | 0.9% | 13.5% | 121 - 250 |
+| **MYTHIC** | **0.1%** | **1.5%** | **251 - 500** |
+
+> **Nota:** Itens "Boosted" recebem um bónus adicional de **+20%** sobre o poder base gerado.
+> *Note: "Boosted" items receive an additional **+20%** bonus over the generated base power.*
+
+### 🐉 Companheiros / Pets
+
+Os pets multiplicam o seu nível por um fator de raridade para adicionar poder bruto ao jogador.
+*Pets multiply their level by a rarity factor to add raw power to the player.*
+
+| Raridade / Rarity | Multiplicador / Multiplier |
+| :--- | :---: |
+| **Common** | 2x |
+| **Uncommon** | 4x |
+| **Rare** | 8x |
+| **Epic** | 15x |
+| **Legendary** | 30x |
+| **MYTHIC** | **60x** |
+
+### ⚡ Fórmula de Poder Detalhada / Detailed Power Formula
+
+O teu poder total é calculado da seguinte forma:
+*Your total power is calculated as follows:*
+
+```math
+Total = (10 + (Lvl × 5) + Items + Pet) × (1 + (Ascension × 0.10))
+```
+
+1.  **Base:** 10 Pontos.
+2.  **Level:** 5 Pontos por nível do jogador. (*5 Points per player level*)
+3.  **Items:** Soma do poder dos itens equipados. (*Sum of equipped items*)
+4.  **Pet:** `Nível do Pet × Multiplicador`. (*Pet Level × Multiplier*)
+5.  **Ascensão:** +10% de Bónus Final por cada estrela. (*+10% Final Bonus per star*)
+
+### 🎲 Probabilidades de Eventos / Event Odds
+
+* **World Boss Egg:** 10% Chance (Acessório Lendário garantido).
+* **World Boss Mythic:** 0.1% Normal / 1.5% Boosted.
+* **Network Wars:** 20% Chance de Loot Boosted para os vencedores.
+* **Caixa de Pandora:** 50% Vitória (XP/Items/Ovo) / 50% Derrota (Perda de XP).
+* **Roubo PVP:** 1% de chance de roubar item equipado ao vencer `!fight`.
+
+---
+
 ## 📜 Contratos de Recompensa | Bounty Contracts (Mercenaries)
 **PT**: Criminosos com alto **Bounty** podem ter a sua cabeça a prémio!
 - **O Evento**: O bot anuncia um contrato sobre o criminoso mais procurado (Bounty > 500).
@@ -165,11 +225,11 @@
 
 ## 🐉 Pets & Companheiros | Pets & Companions
 **PT**: Choca ovos e cria monstros leais para bónus massivos de poder.
-- **Bónus**: `Nível do Pet × Multiplicador de Raridade` (Common: x2 até MYTHIC: x50).
+- **Bónus**: `Nível do Pet × Multiplicador de Raridade` (Common: x2 até MYTHIC: x60).
 - **Evolução**: Usa `!feed` ou `!absorver <id>` para fundir pets por XP massivo.
 
 **EN**: *Hatch eggs and raise loyal monsters for massive power bonuses.*
-- ***Bonus**: Pet Level × Rarity Multiplier (Common: x2 up to MYTHIC: x50).*
+- ***Bonus**: Pet Level × Rarity Multiplier (Common: x2 up to MYTHIC: x60).*
 - ***Evolution**: Use `!feed` or `!absorb <id>` to fuse pets for massive XP.*
 
 ## 🐾 Eventos de Pets | Pet Events
