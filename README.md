@@ -226,6 +226,22 @@
 
 ---
 
+---
+
+## ⚔️ Guerra de Redes (00:00 e 16:00) | Network War
+
+**PT**: Conflito épico automático entre duas redes IRC aleatórias, ocorre **2 vezes por dia** às **00:00** e **16:00**.
+
+**EN**: *Epic automatic conflict between two random IRC networks, occurs **twice daily** at **00:00** and **16:00**.*
+
+### 📋 Requisitos | Requirements
+
+**PT**: Mínimo de 2 redes com pelo menos 3 jogadores ativos cada. O evento é automaticamente cancelado se não houver redes suficientes.
+
+**EN**: *Minimum of 2 networks with at least 3 active players each. The event is automatically cancelled if there aren't enough networks.*
+
+---
+
 ## 🌍 World War (22:00) | Guerra Mundial
 **PT**: Conflito diário global entre redes às **22:00**.
 - **Recompensa**: **+300 a +1500 XP** e **30%** de chance de item extra para os vencedores.
