@@ -398,7 +398,7 @@ Total = (10 + (Lvl × 5) + Items + Pet) × (1 + (Ascension × 0.10))
 | :--- | :--- |
 | `!pet` / `!p` | 🇵🇹 Status do companheiro ativo.<br>🇬🇧 *Active companion status.* |
 | `!pets` | 🇵🇹 Canil: Lista todos os teus pets e IDs.<br>🇬🇧 *Kennel: List all your pets and IDs.* |
-| `!hatch` | 🇵🇹 Choca um Ovo Misterioso.<br>🇬🇧 *Hatch a Mystery Egg.* |
+| `!hatch [all]` | 🇵🇹 Choca um Ovo Misterioso.<br>🇬🇧 *Hatch a Mystery Egg.* |
 | `!feed [all]` | 🇵🇹 Alimenta o pet com itens (Ganha XP).<br>🇬🇧 *Feed pet with items (Gain XP).* |
 | `!absorver <id>` | 🇵🇹 Funde pets para XP massivo.<br>🇬🇧 *Fuse pets for massive XP.* |
 | `!trocar <id>` | 🇵🇹 Troca o pet ativo pelo ID.<br>🇬🇧 *Swap active pet by ID.* |
