@@ -162,13 +162,13 @@ Abaixo encontras os detalhes técnicos sobre as taxas de drop, multiplicadores d
 Os itens são gerados com base em dois perfis de sorte: **Normal** (Aventuras, Farm) e **Boosted** (Bosses, Guerras, Goblins, Baús).
 *Items are generated based on two luck profiles: **Normal** (Adventures, Farm) and **Boosted** (Bosses, Wars, Goblins, Chests).*
 
-| Raridade / Rarity | Chance (Normal) | Chance (Boosted) | Poder Base / Base Power |
-| :--- | :---: | :---: | :---: |
-| **Common** | 70.0% | 30.0% | 10 - 25 |
-| **Rare** | 20.0% | 30.0% | 26 - 60 |
-| **Epic** | 9.0% | 25.0% | 61 - 120 |
-| **Legendary** | 0.9% | 13.5% | 121 - 250 |
-| **MYTHIC** | **0.1%** | **1.5%** | **251 - 500** |
+| Raridade / Rarity | Chance (Normal) | Chance (Boosted) | Poder Base / Base Power | Max Power/Events (Boosted +20%) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Common** | 70.0% | 30.0% | 10 - 25 | **30** |
+| **Rare** | 20.0% | 30.0% | 26 - 60 | **72** |
+| **Epic** | 9.0% | 25.0% | 61 - 120 | **144** |
+| **Legendary** | 0.9% | 13.5% | 121 - 250 | **300** |
+| **MYTHIC** | **0.1%** | **1.5%** | **251 - 500** | **600** |
 
 > **Nota:** Itens "Boosted" recebem um bónus adicional de **+20%** sobre o poder base gerado.
 > *Note: "Boosted" items receive an additional **+20%** bonus over the generated base power.*
