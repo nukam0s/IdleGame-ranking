@@ -400,7 +400,7 @@ Total = (10 + (Lvl × 5) + Items + Pet) × (1 + (Ascension × 0.10))
 | `!pets` | 🇵🇹 Canil: Lista todos os teus pets e IDs.<br>🇬🇧 *Kennel: List all your pets and IDs.* |
 | `!hatch [all]` | 🇵🇹 Choca um Ovo Misterioso.<br>🇬🇧 *Hatch a Mystery Egg.* |
 | `!feed [all]` | 🇵🇹 Alimenta o pet com itens (Ganha XP).<br>🇬🇧 *Feed pet with items (Gain XP).* |
-| `!absorver <id>` | 🇵🇹 Funde pets para XP massivo.<br>🇬🇧 *Fuse pets for massive XP.* |
+| `!absorver <id> [all]` | 🇵🇹 Funde pets para XP massivo.<br>🇬🇧 *Fuse pets for massive XP.* |
 | `!trocar <id>` | 🇵🇹 Troca o pet ativo pelo ID.<br>🇬🇧 *Swap active pet by ID.* |
 | `!forja [all]` | 🇵🇹 Funde itens fracos para subir raridade.<br>🇬🇧 *Fuse weak items to upgrade rarity.* |
 
