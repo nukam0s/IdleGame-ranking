@@ -46,19 +46,6 @@
 
 ---
 
-## 🌍 Aventura Diária (13:00) | Daily Adventure
-**PT**: Um evento cooperativo que ocorre todos os dias às **13:00**. A IA narra uma jornada para uma equipa aleatória com destinos decididos pelo sistema.
-* **Sucesso (70%)**: **+400 a +700 XP** e **35%** de chance de item.
-* **Ferido (20%)**: **+50 a +150 XP** e **15%** de chance de item.
-* **Falha (10%)**: **-100 a -300 XP** e sem bónus.
-
-**EN**: *A cooperative narrative event occurring every day at **1:00 PM**. AI narrates a journey for a random team with fates decided by the system.*
-* ***Success (70%)**: **+400 to +700 XP** and **35%** item chance.*
-* ***Injured (20%)**: **+50 to +150 XP** and **15%** item chance.*
-* ***Failure (10%)**: **-100 to -300 XP** and no bonus.*
-
----
-
 ## 🧬 Progresso Local | Network-Based Progression
 **PT**: O teu progresso é **permanente dentro de cada rede IRC**. Nível, itens e conquistas acompanham-te entre sessões, mas cada rede é um universo independente.
 
@@ -263,6 +250,19 @@ Total = (10 + (Lvl × 5) + Items + Pet) × (1 + (Ascension × 0.10))
 **EN**: *Turn weak items into superior gear.*
 - *`!forge` fuses the 2 weakest items with a **30% rarity upgrade chance**.*
 - *`!forge 100` allows bulk recycling of items below 100 power.*
+
+---
+
+## 🌍 Aventura Diária (13:00) | Daily Adventure
+**PT**: Um evento cooperativo que ocorre todos os dias às **13:00**. A IA narra uma jornada para uma equipa aleatória com destinos decididos pelo sistema.
+* **Sucesso (70%)**: **+400 a +700 XP** e **35%** de chance de item.
+* **Ferido (20%)**: **+50 a +150 XP** e **15%** de chance de item.
+* **Falha (10%)**: **-100 a -300 XP** e sem bónus.
+
+**EN**: *A cooperative narrative event occurring every day at **1:00 PM**. AI narrates a journey for a random team with fates decided by the system.*
+* ***Success (70%)**: **+400 to +700 XP** and **35%** item chance.*
+* ***Injured (20%)**: **+50 to +150 XP** and **15%** item chance.*
+* ***Failure (10%)**: **-100 to -300 XP** and no bonus.*
 
 ---
 
