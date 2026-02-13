@@ -57,7 +57,7 @@
 **PT**: Ao atingires o **Nível 100**, podes reencarnar e tornar-te uma lenda.
 - **O Sacrifício**: O teu Nível volta a 1 e perdes os itens comuns.
 - **A Recompensa**: Ganhas **+1 Estrela** (+10% Poder Permanente) e manténs os teus Pets.
-- **O Set Divino ("Exodia")**: Cada Ascensão (até à 5ª) garante uma peça de equipamento **Mítico (500 Power)** indestrutível. A cada reset, completas o set pela seguinte ordem:
+- **O Set Divino ("Exodia")**: Cada Ascensão (até à 5ª) garante uma peça de equipamento **Mítico (600 Power)** indestrutível. A cada reset, completas o set pela seguinte ordem:
   1. 🥾 **Botas Divinas** (Ascensão 1)
   2. 🛡️ **Armadura Divina** (Ascensão 2)
   3. 🪖 **Capacete Divino** (Ascensão 3)
@@ -67,7 +67,7 @@
 **EN**: *Upon reaching **Level 100**, you can reincarnate to become a legend.*
 - ***The Sacrifice**: Your Level resets to 1 and common items are lost.*
 - ***The Reward**: You gain **+1 Star** (+10% Permanent Power) and keep your Pets.*
-- ***The Godly Set ("Exodia")**: Each Ascension (up to the 5th) guarantees an indestructible **Mythic (500 Power)** gear piece. With each reset, you complete the set in this order:*
+- ***The Godly Set ("Exodia")**: Each Ascension (up to the 5th) guarantees an indestructible **Mythic (600 Power)** gear piece. With each reset, you complete the set in this order:*
   1. *🥾 **Divine Boots** (Ascension 1)*
   2. *🛡️ **Divine Armor** (Ascension 2)*
   3. *🪖 **Divine Helm** (Ascension 3)*
