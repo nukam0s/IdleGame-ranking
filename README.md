@@ -321,19 +321,40 @@ Total = (10 + (Lvl × 5) + Items + Pet) × (1 + (Ascension × 0.10))
 ---
 
 ### 🎪 O Mercador do Vazio | The Void Merchant
-**PT**: Um viajante misterioso que aparece aleatoriamente no canal. Ele não quer dinheiro, quer a tua experiência de vida!
+**PT**: Um viajante misterioso que aparece aleatoriamente nas redes ligadas ao bot. Ele não quer dinheiro, quer a tua experiência de vida!
 - **Moeda**: Tu pagas com o teu próprio **XP**.
+- **Economia Dinâmica**: Para manter o jogo equilibrado, o Mercador é esperto. Os preços **aumentam 15% por cada nível** que o jogador tem. O que é barato para um novato, custa uma fortuna a um veterano!
 - **Inventário Exclusivo**:
-  - 🦴 **Jaula do Vazio**: Contém sempre um Pet de elite (Raro a Mítico).
-  - 📦 **Baú dos Deuses**: Equipamento com poder acima do normal para o teu nível.
-  - 🧪 **Essência Pura**: XP concentrado para evoluir o teu Pet instantaneamente.
+  - 🦴 **Jaula do Vazio**: Contém sempre um Pet de elite (Épico a Mítico).
+  - 📦 **Baú dos Deuses**: Equipamento garantido Lendário ou Mítico, com poder acima do normal.
+  - 🧪 **Essência Pura**: Dá 2500 XP diretos para evoluir o teu Pet ativo instantaneamente.
 
-**EN**: *A mysterious traveler that spawns randomly in the channel. He doesn't want money; he wants your life experience!*
+**EN**: *A mysterious traveler that spawns randomly across the connected networks. He doesn't want money; he wants your life experience!*
 - ***Currency**: You pay with your own **XP**.*
+- ***Dynamic Economy**: To keep the game balanced, the Merchant is smart. Prices **scale by 15% for each level** the player has. What is cheap for a beginner costs a fortune for a veteran!*
 - ***Exclusive Inventory**:*
-  - *🦴 **Void Cage**: Always contains an elite Pet (Rare to Mythic).*
-  - *📦 **Godly Chest**: Gear with power levels far above average.*
-  - *🧪 **Pure Essence**: Concentrated XP to instantly level up your Pet.*
+  - *🦴 **Void Cage**: Always contains an elite Pet (Epic to Mythic).*
+  - *📦 **Godly Chest**: Guaranteed Legendary or Mythic gear, with power levels far above average.*
+  - *🧪 **Pure Essence**: Grants 2500 XP directly to instantly level up your active Pet.*
+
+#### 📈 Tabela de Preços Dinâmicos | Dynamic Pricing Table (Examples)
+*A base price increases by 15% per player level.*
+
+| Level | 🧪 Essência / Essence | 🦴 Jaula / Cage | 📦 Baú / Chest |
+| :--- | :--- | :--- | :--- |
+| **Lvl 1** | 2,300 XP | 11,500 XP | 17,250 XP |
+| **Lvl 10** | 5,000 XP | 25,000 XP | 37,500 XP |
+| **Lvl 20** | 8,000 XP | 40,000 XP | 60,000 XP |
+| **Lvl 30** | 11,000 XP | 55,000 XP | 82,500 XP |
+| **Lvl 40** | 14,000 XP | 70,000 XP | 105,000 XP |
+| **Lvl 50** | 17,000 XP | 85,000 XP | 127,500 XP |
+| **Lvl 60** | 20,000 XP | 100,000 XP | 150,000 XP |
+| **Lvl 70** | 23,000 XP | 115,000 XP | 172,500 XP |
+| **Lvl 80** | 26,000 XP | 130,000 XP | 195,000 XP |
+| **Lvl 90** | 29,000 XP | 145,000 XP | 217,500 XP |
+| **Lvl 100** | 32,000 XP | 160,000 XP | 240,000 XP |
+| **Lvl 150** | 47,000 XP | 235,000 XP | 352,500 XP |
+| **Lvl 200** | 62,000 XP | 310,000 XP | 465,000 XP |
 
 ---
 
