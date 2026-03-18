@@ -241,7 +241,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        const chartData = {"econ_labels": ["Common (257)", "Rare (320)", "Epic (642)", "Legendary (474)", "MYTHIC (90)"], "econ_data": [257, 320, 642, 474, 90], "econ_colors": ["#b0b0b0", "#3498db", "#9b59b6", "#e67e22", "#e74c3c"], "net_labels": ["Undernet", "InTheMansion", "PTnet", "Efnet", "PTirc", "Libera", "Quakenet", "Rizon", "DALnet", "Snoonet"], "net_data": [73, 9, 19, 11, 6, 11, 10, 3, 4, 2]};
+        const chartData = {"econ_labels": ["Common (257)", "Rare (320)", "Epic (642)", "Legendary (474)", "MYTHIC (90)"], "econ_data": [257, 320, 642, 474, 90], "econ_colors": ["#b0b0b0", "#3498db", "#9b59b6", "#e67e22", "#e74c3c"], "net_labels": ["Undernet", "InTheMansion", "PTnet", "Efnet", "PTirc", "Libera", "Quakenet", "Rizon", "DALnet", "Snoonet"], "net_data": [73, 9, 19, 11, 6, 11, 10, 4, 4, 2]};
 
         function initCharts() {
             Chart.defaults.color = '#a0a0b0';
@@ -402,7 +402,7 @@
     <div class="grid-stats">
         <div class="card stat-card">
             <div class="icon">👥</div>
-            <div class="value">58 / 223</div>
+            <div class="value">60 / 224</div>
             <div class="label">
                 <span class="lang-pt">Jogadores (On/Total)</span>
                 <span class="lang-en hidden">Players (On/Total)</span>
@@ -410,12 +410,12 @@
         </div>
         <div class="card stat-card">
             <div class="icon">👹</div>
-            <div class="value">0</div>
+            <div class="value">1</div>
             <div class="label"><span class="lang-pt">Bosses Ativos</span><span class="lang-en hidden">Active Bosses</span></div>
         </div>
         <div class="card stat-card">
             <div class="icon">✨</div>
-            <div class="value">65,663,249</div>
+            <div class="value">65,663,997</div>
             <div class="label"><span class="lang-pt">XP Total Global</span><span class="lang-en hidden">Global Total XP</span></div>
         </div>
     </div>
@@ -444,7 +444,9 @@
         </div>
     </div>
     
-          
+          <section class="card hover-card boss-section"><div class="card-header"><h2><span class="lang-pt">☠️ Raids Ativas</span><span class="lang-en hidden">☠️ Active Raids</span></h2></div>
+    <div class="hover-content">
+        <div class="boss-grid"><div class="boss-card"><div class="boss-header"><span class="boss-net">Efnet</span><span>80590 HP</span></div><h3 class="boss-name">Zephyron the Celestial, God of the Tempest</h3><div class="progress-track"><div class="progress-fill" style="width:100%;background:#2ecc71;"></div></div></div></div></div></section>
           
     <div class="extra-stats-grid">
         
@@ -549,13 +551,19 @@
         <div class="card-header">
             <h4><span class="lang-pt">🚀 Top Diário (Hoje)</span><span class="lang-en hidden">🚀 Top Daily (Today)</span></h4>
         </div>
-        <div class="hover-content"><table class="mini-table"><tr><td><span class='font-bold'>juanjocerero</span><span class='net-tag'>@InTheMansion</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+52,057 XP</td></tr><tr><td><span class='font-bold'>PeGaSuS</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+48,755 XP</td></tr><tr><td><span class='font-bold'>user</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+33,298 XP</td></tr><tr><td><span class='font-bold'>nuke</span><span class='net-tag'>@PTnet</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+30,603 XP</td></tr><tr><td><span class='font-bold'>nuke</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+29,861 XP</td></tr></table></div></div>
+        <div class="hover-content"><table class="mini-table"><tr><td><span class='font-bold'>juanjocerero</span><span class='net-tag'>@InTheMansion</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+52,067 XP</td></tr><tr><td><span class='font-bold'>PeGaSuS</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+48,764 XP</td></tr><tr><td><span class='font-bold'>user</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+33,307 XP</td></tr><tr><td><span class='font-bold'>nuke</span><span class='net-tag'>@PTnet</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+30,613 XP</td></tr><tr><td><span class='font-bold'>nuke</span><span class='net-tag'>@PTirc</span></td><td class='text-right' style='color:#4cd137; font-weight:bold;'>+29,870 XP</td></tr></table></div></div>
         
     <div class="card hover-card">
         <div class="card-header">
             <h4><span class="lang-pt">🆕 Novos Aventureiros</span><span class="lang-en hidden">🆕 New Adventurers</span></h4>
         </div>
         <div class="hover-content"><table class="mini-table">
+            <tr>
+                <td style="width:35px;"><img src="https://robohash.org/iamnothere_7181.png?set=set1&size=30x30&bgset=bg2" style="width:25px;height:25px;border-radius:50%;vertical-align:middle;border:1px solid #444;"></td>
+                <td><span class="font-bold">iamnothere_7181</span><span class="net-tag">@Rizon</span></td>
+                <td class="text-right"><span class="badge" style="background:#2ecc71;color:#000;">NEW</span></td>
+            </tr>
+            
             <tr>
                 <td style="width:35px;"><img src="https://robohash.org/luana0.png?set=set1&size=30x30&bgset=bg2" style="width:25px;height:25px;border-radius:50%;vertical-align:middle;border:1px solid #444;"></td>
                 <td><span class="font-bold">luana0</span><span class="net-tag">@Undernet</span></td>
@@ -577,12 +585,6 @@
             <tr>
                 <td style="width:35px;"><img src="https://robohash.org/black.b0t.foo.png?set=set1&size=30x30&bgset=bg2" style="width:25px;height:25px;border-radius:50%;vertical-align:middle;border:1px solid #444;"></td>
                 <td><span class="font-bold">black.b0t.foo</span><span class="net-tag">@Undernet</span></td>
-                <td class="text-right"><span class="badge" style="background:#2ecc71;color:#000;">NEW</span></td>
-            </tr>
-            
-            <tr>
-                <td style="width:35px;"><img src="https://robohash.org/sukuna_e010.png?set=set1&size=30x30&bgset=bg2" style="width:25px;height:25px;border-radius:50%;vertical-align:middle;border:1px solid #444;"></td>
-                <td><span class="font-bold">sukuna_e010</span><span class="net-tag">@Efnet</span></td>
                 <td class="text-right"><span class="badge" style="background:#2ecc71;color:#000;">NEW</span></td>
             </tr>
             </table></div></div>
@@ -734,7 +736,7 @@
         <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🏛️ Galeria da Fama</span><span class="lang-en hidden">🏛️ Hall of Fame</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td>nuke<span class='net-tag'>@PTnet</span></td><td class='text-right'><span class='hof-wins-text'>46 Wins</span></td></tr><tr><td>juanjo<span class='net-tag'>@InTheMansion</span></td><td class='text-right'><span class='hof-wins-text'>42 Wins</span></td></tr><tr><td>dark<span class='net-tag'>@Libera</span></td><td class='text-right'><span class='hof-wins-text'>40 Wins</span></td></tr><tr><td>Sukuna<span class='net-tag'>@Efnet</span></td><td class='text-right'><span class='hof-wins-text'>35 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@Snoonet</span></td><td class='text-right'><span class='hof-wins-text'>31 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@Undernet</span></td><td class='text-right'><span class='hof-wins-text'>29 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@Quakenet</span></td><td class='text-right'><span class='hof-wins-text'>28 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@Rizon</span></td><td class='text-right'><span class='hof-wins-text'>27 Wins</span></td></tr><tr><td>~nuke<span class='net-tag'>@Rizon</span></td><td class='text-right'><span class='hof-wins-text'>25 Wins</span></td></tr><tr><td>nuke<span class='net-tag'>@DALnet</span></td><td class='text-right'><span class='hof-wins-text'>24 Wins</span></td></tr></table></div></div>
         
         <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌍 Guerras</span><span class="lang-en hidden">🌍 World Wars</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td>Undernet</td><td class='text-right'>11 🏆</td></tr><tr><td>Quakenet</td><td class='text-right'>8 🏆</td></tr><tr><td>PTnet</td><td class='text-right'>6 🏆</td></tr><tr><td>Efnet</td><td class='text-right'>5 🏆</td></tr><tr><td>Rizon</td><td class='text-right'>4 🏆</td></tr><tr><td>PTirc</td><td class='text-right'>4 🏆</td></tr><tr><td>Libera</td><td class='text-right'>4 🏆</td></tr><tr><td>InTheMansion</td><td class='text-right'>4 🏆</td></tr><tr><td>Snoonet</td><td class='text-right'>3 🏆</td></tr><tr><td>DALnet</td><td class='text-right'>2 🏆</td></tr></table></div></div>
-        <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌐 Dominância</span><span class="lang-en hidden">🌐 Dominance</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>23,333,466 XP</td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>11,519,056 XP</td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>10,003,451 XP</td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>7,146,763 XP</td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>5,964,658 XP</td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>5,612,898 XP</td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>994,368 XP</td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>504,099 XP</td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>467,980 XP</td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>116,510 XP</td></tr></table></div></div>
+        <div class="card hover-card"><div class="card-header"><h4><span class="lang-pt">🌐 Dominância</span><span class="lang-en hidden">🌐 Dominance</span></h4></div><div class="hover-content"><table class="mini-table"><tr><td><span class='primary-color font-bold'>Undernet</span></td><td class='text-right'>23,333,841 XP</td></tr><tr><td><span class='primary-color font-bold'>InTheMansion</span></td><td class='text-right'>11,519,126 XP</td></tr><tr><td><span class='primary-color font-bold'>PTnet</span></td><td class='text-right'>10,003,541 XP</td></tr><tr><td><span class='primary-color font-bold'>Efnet</span></td><td class='text-right'>7,146,813 XP</td></tr><tr><td><span class='primary-color font-bold'>PTirc</span></td><td class='text-right'>5,964,685 XP</td></tr><tr><td><span class='primary-color font-bold'>Libera</span></td><td class='text-right'>5,612,938 XP</td></tr><tr><td><span class='primary-color font-bold'>Quakenet</span></td><td class='text-right'>994,378 XP</td></tr><tr><td><span class='primary-color font-bold'>Rizon</span></td><td class='text-right'>504,155 XP</td></tr><tr><td><span class='primary-color font-bold'>DALnet</span></td><td class='text-right'>468,000 XP</td></tr><tr><td><span class='primary-color font-bold'>Snoonet</span></td><td class='text-right'>116,520 XP</td></tr></table></div></div>
         
     <div class="card hover-card">
         <div class="card-header">
@@ -892,9 +894,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">287</span></td>
             
-            <td class="text-right relative-cell" data-val="4852970">
+            <td class="text-right relative-cell" data-val="4852980">
                 <div class="bar-fill" style="width: 100%; background: #3498db;"></div>
-                <span class="cell-text">4,852,970</span>
+                <span class="cell-text">4,852,980</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="7463">
@@ -931,9 +933,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">214</span></td>
             
-            <td class="text-right relative-cell" data-val="3127456">
-                <div class="bar-fill" style="width: 64.44416511950413%; background: #3498db;"></div>
-                <span class="cell-text">3,127,456</span>
+            <td class="text-right relative-cell" data-val="3127465">
+                <div class="bar-fill" style="width: 64.4442177795911%; background: #3498db;"></div>
+                <span class="cell-text">3,127,465</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="5719">
@@ -970,9 +972,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">217</span></td>
             
-            <td class="text-right relative-cell" data-val="3185590">
-                <div class="bar-fill" style="width: 65.64207073194353%; background: #3498db;"></div>
-                <span class="cell-text">3,185,590</span>
+            <td class="text-right relative-cell" data-val="3185600">
+                <div class="bar-fill" style="width: 65.64214152953443%; background: #3498db;"></div>
+                <span class="cell-text">3,185,600</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="4764">
@@ -1009,9 +1011,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">145</span></td>
             
-            <td class="text-right relative-cell" data-val="1730491">
-                <div class="bar-fill" style="width: 35.6583906350132%; background: #3498db;"></div>
-                <span class="cell-text">1,730,491</span>
+            <td class="text-right relative-cell" data-val="1730501">
+                <div class="bar-fill" style="width: 35.65852321666275%; background: #3498db;"></div>
+                <span class="cell-text">1,730,501</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="4458">
@@ -1048,9 +1050,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">196</span></td>
             
-            <td class="text-right relative-cell" data-val="2729249">
-                <div class="bar-fill" style="width: 56.238736279020884%; background: #3498db;"></div>
-                <span class="cell-text">2,729,249</span>
+            <td class="text-right relative-cell" data-val="2729258">
+                <div class="bar-fill" style="width: 56.23880584712898%; background: #3498db;"></div>
+                <span class="cell-text">2,729,258</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="4349">
@@ -1087,9 +1089,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">163</span></td>
             
-            <td class="text-right relative-cell" data-val="2062833">
-                <div class="bar-fill" style="width: 42.50660935468383%; background: #3498db;"></div>
-                <span class="cell-text">2,062,833</span>
+            <td class="text-right relative-cell" data-val="2062843">
+                <div class="bar-fill" style="width: 42.50672782496528%; background: #3498db;"></div>
+                <span class="cell-text">2,062,843</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2939">
@@ -1126,9 +1128,9 @@
             <td class="subtle">PTirc</td>
             <td class="text-center"><span class="badge">23</span></td>
             
-            <td class="text-right relative-cell" data-val="107144">
-                <div class="bar-fill" style="width: 2.2078026445661108%; background: #3498db;"></div>
-                <span class="cell-text">107,144</span>
+            <td class="text-right relative-cell" data-val="107153">
+                <div class="bar-fill" style="width: 2.207983548252826%; background: #3498db;"></div>
+                <span class="cell-text">107,153</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2619">
@@ -1165,9 +1167,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">149</span></td>
             
-            <td class="text-right relative-cell" data-val="1815450">
-                <div class="bar-fill" style="width: 37.409050540184666%; background: #3498db;"></div>
-                <span class="cell-text">1,815,450</span>
+            <td class="text-right relative-cell" data-val="1815460">
+                <div class="bar-fill" style="width: 37.40917951444267%; background: #3498db;"></div>
+                <span class="cell-text">1,815,460</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2615">
@@ -1204,9 +1206,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">111</span></td>
             
-            <td class="text-right relative-cell" data-val="1159257">
-                <div class="bar-fill" style="width: 23.88757812226327%; background: #3498db;"></div>
-                <span class="cell-text">1,159,257</span>
+            <td class="text-right relative-cell" data-val="1159266">
+                <div class="bar-fill" style="width: 23.88771435283063%; background: #3498db;"></div>
+                <span class="cell-text">1,159,266</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2583">
@@ -1243,9 +1245,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">142</span></td>
             
-            <td class="text-right relative-cell" data-val="1686728">
-                <div class="bar-fill" style="width: 34.75661296072302%; background: #3498db;"></div>
-                <span class="cell-text">1,686,728</span>
+            <td class="text-right relative-cell" data-val="1686738">
+                <div class="bar-fill" style="width: 34.756747400566255%; background: #3498db;"></div>
+                <span class="cell-text">1,686,738</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2456">
@@ -1282,9 +1284,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">101</span></td>
             
-            <td class="text-right relative-cell" data-val="1002719">
-                <div class="bar-fill" style="width: 20.661965765294244%; background: #3498db;"></div>
-                <span class="cell-text">1,002,719</span>
+            <td class="text-right relative-cell" data-val="1002728">
+                <div class="bar-fill" style="width: 20.6621086425248%; background: #3498db;"></div>
+                <span class="cell-text">1,002,728</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2381">
@@ -1321,9 +1323,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">145</span></td>
             
-            <td class="text-right relative-cell" data-val="1738671">
-                <div class="bar-fill" style="width: 35.826947209646875%; background: #3498db;"></div>
-                <span class="cell-text">1,738,671</span>
+            <td class="text-right relative-cell" data-val="1738681">
+                <div class="bar-fill" style="width: 35.82707944397051%; background: #3498db;"></div>
+                <span class="cell-text">1,738,681</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2323">
@@ -1337,8 +1339,8 @@
             <td class="font-bold nickname-cell">
                 <div class="player-flex">
                     <div class="avatar-wrapper">
-                        <img src="https://robohash.org/Jarvis.png?set=set1&size=50x50&bgset=bg2" class="player-avatar offline-img" alt="av" loading="lazy">
-                        
+                        <img src="https://robohash.org/Jarvis.png?set=set1&size=50x50&bgset=bg2" class="player-avatar" alt="av" loading="lazy">
+                        <div class="online-indicator" title="Online Now"></div>
                     </div>
                     <div class="tooltip-wrapper">
                         <div class="nick-row">Jarvis <span title='Mythic Wielder'>🔱</span><span title='Veteran'>🎖️</span> <span class='bounty-val' title='Bounty: 3923 XP'>🎯 3,923</span></div>
@@ -1360,9 +1362,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">109</span></td>
             
-            <td class="text-right relative-cell" data-val="1127670">
-                <div class="bar-fill" style="width: 23.236698351731004%; background: #3498db;"></div>
-                <span class="cell-text">1,127,670</span>
+            <td class="text-right relative-cell" data-val="1127749">
+                <div class="bar-fill" style="width: 23.238278336197553%; background: #3498db;"></div>
+                <span class="cell-text">1,127,749</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2266">
@@ -1400,7 +1402,7 @@
             <td class="text-center"><span class="badge">127</span></td>
             
             <td class="text-right relative-cell" data-val="1418427">
-                <div class="bar-fill" style="width: 29.22801913055304%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 29.227958903601497%; background: #3498db;"></div>
                 <span class="cell-text">1,418,427</span>
             </td>
             
@@ -1438,9 +1440,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">147</span></td>
             
-            <td class="text-right relative-cell" data-val="1768248">
-                <div class="bar-fill" style="width: 36.436409044358406%; background: #3498db;"></div>
-                <span class="cell-text">1,768,248</span>
+            <td class="text-right relative-cell" data-val="1768258">
+                <div class="bar-fill" style="width: 36.43654002283133%; background: #3498db;"></div>
+                <span class="cell-text">1,768,258</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2188">
@@ -1477,9 +1479,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">126</span></td>
             
-            <td class="text-right relative-cell" data-val="1397699">
-                <div class="bar-fill" style="width: 28.800899243143892%; background: #3498db;"></div>
-                <span class="cell-text">1,397,699</span>
+            <td class="text-right relative-cell" data-val="1397709">
+                <div class="bar-fill" style="width: 28.801045955268723%; background: #3498db;"></div>
+                <span class="cell-text">1,397,709</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2141">
@@ -1516,9 +1518,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">109</span></td>
             
-            <td class="text-right relative-cell" data-val="1127101">
-                <div class="bar-fill" style="width: 23.224973572884235%; background: #3498db;"></div>
-                <span class="cell-text">1,127,101</span>
+            <td class="text-right relative-cell" data-val="1127111">
+                <div class="bar-fill" style="width: 23.225131774703378%; background: #3498db;"></div>
+                <span class="cell-text">1,127,111</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2083">
@@ -1555,9 +1557,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">96</span></td>
             
-            <td class="text-right relative-cell" data-val="937656">
-                <div class="bar-fill" style="width: 19.321281606933486%; background: #3498db;"></div>
-                <span class="cell-text">937,656</span>
+            <td class="text-right relative-cell" data-val="937666">
+                <div class="bar-fill" style="width: 19.321447852659603%; background: #3498db;"></div>
+                <span class="cell-text">937,666</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="2047">
@@ -1595,7 +1597,7 @@
             <td class="text-center"><span class="badge">40</span></td>
             
             <td class="text-right relative-cell" data-val="249541">
-                <div class="bar-fill" style="width: 5.14202642917636%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 5.1420158335703015%; background: #3498db;"></div>
                 <span class="cell-text">249,541</span>
             </td>
             
@@ -1633,9 +1635,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">89</span></td>
             
-            <td class="text-right relative-cell" data-val="835340">
-                <div class="bar-fill" style="width: 17.21296443209004%; background: #3498db;"></div>
-                <span class="cell-text">835,340</span>
+            <td class="text-right relative-cell" data-val="835349">
+                <div class="bar-fill" style="width: 17.21311441629679%; background: #3498db;"></div>
+                <span class="cell-text">835,349</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1914">
@@ -1672,9 +1674,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">119</span></td>
             
-            <td class="text-right relative-cell" data-val="1288042">
-                <div class="bar-fill" style="width: 26.54131387583274%; background: #3498db;"></div>
-                <span class="cell-text">1,288,042</span>
+            <td class="text-right relative-cell" data-val="1288052">
+                <div class="bar-fill" style="width: 26.54146524403562%; background: #3498db;"></div>
+                <span class="cell-text">1,288,052</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1895">
@@ -1711,9 +1713,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">93</span></td>
             
-            <td class="text-right relative-cell" data-val="894176">
-                <div class="bar-fill" style="width: 18.425335413159363%; background: #3498db;"></div>
-                <span class="cell-text">894,176</span>
+            <td class="text-right relative-cell" data-val="894186">
+                <div class="bar-fill" style="width: 18.425503505062867%; background: #3498db;"></div>
+                <span class="cell-text">894,186</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1864">
@@ -1750,9 +1752,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">95</span></td>
             
-            <td class="text-right relative-cell" data-val="924646">
-                <div class="bar-fill" style="width: 19.053198350700704%; background: #3498db;"></div>
-                <span class="cell-text">924,646</span>
+            <td class="text-right relative-cell" data-val="924656">
+                <div class="bar-fill" style="width: 19.053365148836384%; background: #3498db;"></div>
+                <span class="cell-text">924,656</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1852">
@@ -1789,9 +1791,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">128</span></td>
             
-            <td class="text-right relative-cell" data-val="1430889">
-                <div class="bar-fill" style="width: 29.484810332641658%; background: #3498db;"></div>
-                <span class="cell-text">1,430,889</span>
+            <td class="text-right relative-cell" data-val="1430899">
+                <div class="bar-fill" style="width: 29.48495563550643%; background: #3498db;"></div>
+                <span class="cell-text">1,430,899</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1784">
@@ -1828,9 +1830,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">64</span></td>
             
-            <td class="text-right relative-cell" data-val="509370">
-                <div class="bar-fill" style="width: 10.496046750752631%; background: #3498db;"></div>
-                <span class="cell-text">509,370</span>
+            <td class="text-right relative-cell" data-val="509380">
+                <div class="bar-fill" style="width: 10.496231181665697%; background: #3498db;"></div>
+                <span class="cell-text">509,380</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1777">
@@ -1867,9 +1869,9 @@
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">37</span></td>
             
-            <td class="text-right relative-cell" data-val="216154">
-                <div class="bar-fill" style="width: 4.4540559698493905%; background: #3498db;"></div>
-                <span class="cell-text">216,154</span>
+            <td class="text-right relative-cell" data-val="216164">
+                <div class="bar-fill" style="width: 4.454252850825678%; background: #3498db;"></div>
+                <span class="cell-text">216,164</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1753">
@@ -1906,9 +1908,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">95</span></td>
             
-            <td class="text-right relative-cell" data-val="925211">
-                <div class="bar-fill" style="width: 19.064840705794595%; background: #3498db;"></div>
-                <span class="cell-text">925,211</span>
+            <td class="text-right relative-cell" data-val="925221">
+                <div class="bar-fill" style="width: 19.06500747994016%; background: #3498db;"></div>
+                <span class="cell-text">925,221</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1746">
@@ -1946,7 +1948,7 @@
             <td class="text-center"><span class="badge">36</span></td>
             
             <td class="text-right relative-cell" data-val="208961">
-                <div class="bar-fill" style="width: 4.305837456238139%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 4.30582858367436%; background: #3498db;"></div>
                 <span class="cell-text">208,961</span>
             </td>
             
@@ -1984,9 +1986,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">112</span></td>
             
-            <td class="text-right relative-cell" data-val="1180304">
-                <div class="bar-fill" style="width: 24.321271303964377%; background: #3498db;"></div>
-                <span class="cell-text">1,180,304</span>
+            <td class="text-right relative-cell" data-val="1180314">
+                <div class="bar-fill" style="width: 24.321427246763843%; background: #3498db;"></div>
+                <span class="cell-text">1,180,314</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1721">
@@ -2023,9 +2025,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">114</span></td>
             
-            <td class="text-right relative-cell" data-val="1202669">
-                <div class="bar-fill" style="width: 24.782123112238487%; background: #3498db;"></div>
-                <span class="cell-text">1,202,669</span>
+            <td class="text-right relative-cell" data-val="1202679">
+                <div class="bar-fill" style="width: 24.78227810541152%; background: #3498db;"></div>
+                <span class="cell-text">1,202,679</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1665">
@@ -2062,9 +2064,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">122</span></td>
             
-            <td class="text-right relative-cell" data-val="1347033">
-                <div class="bar-fill" style="width: 27.75687877732605%; background: #3498db;"></div>
-                <span class="cell-text">1,347,033</span>
+            <td class="text-right relative-cell" data-val="1347043">
+                <div class="bar-fill" style="width: 27.75702764074857%; background: #3498db;"></div>
+                <span class="cell-text">1,347,043</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1657">
@@ -2102,7 +2104,7 @@
             <td class="text-center"><span class="badge">39</span></td>
             
             <td class="text-right relative-cell" data-val="236896">
-                <div class="bar-fill" style="width: 4.881464340393615%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 4.88145428169908%; background: #3498db;"></div>
                 <span class="cell-text">236,896</span>
             </td>
             
@@ -2140,9 +2142,9 @@
             <td class="subtle">Efnet</td>
             <td class="text-center"><span class="badge">119</span></td>
             
-            <td class="text-right relative-cell" data-val="1283447">
-                <div class="bar-fill" style="width: 26.446629589715165%; background: #3498db;"></div>
-                <span class="cell-text">1,283,447</span>
+            <td class="text-right relative-cell" data-val="1283457">
+                <div class="bar-fill" style="width: 26.4467811530235%; background: #3498db;"></div>
+                <span class="cell-text">1,283,457</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1633">
@@ -2179,9 +2181,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">54</span></td>
             
-            <td class="text-right relative-cell" data-val="393016">
-                <div class="bar-fill" style="width: 8.09846341518699%; background: #3498db;"></div>
-                <span class="cell-text">393,016</span>
+            <td class="text-right relative-cell" data-val="393026">
+                <div class="bar-fill" style="width: 8.098652786535283%; background: #3498db;"></div>
+                <span class="cell-text">393,026</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1604">
@@ -2218,9 +2220,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">89</span></td>
             
-            <td class="text-right relative-cell" data-val="835894">
-                <div class="bar-fill" style="width: 17.22438012186352%; background: #3498db;"></div>
-                <span class="cell-text">835,894</span>
+            <td class="text-right relative-cell" data-val="835904">
+                <div class="bar-fill" style="width: 17.224550688442978%; background: #3498db;"></div>
+                <span class="cell-text">835,904</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1588">
@@ -2257,9 +2259,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">60</span></td>
             
-            <td class="text-right relative-cell" data-val="461675">
-                <div class="bar-fill" style="width: 9.513246527384261%; background: #3498db;"></div>
-                <span class="cell-text">461,675</span>
+            <td class="text-right relative-cell" data-val="461685">
+                <div class="bar-fill" style="width: 9.513432983445224%; background: #3498db;"></div>
+                <span class="cell-text">461,685</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1574">
@@ -2296,9 +2298,9 @@
             <td class="subtle">Rizon</td>
             <td class="text-center"><span class="badge">40</span></td>
             
-            <td class="text-right relative-cell" data-val="247071">
-                <div class="bar-fill" style="width: 5.091129761774748%; background: #3498db;"></div>
-                <span class="cell-text">247,071</span>
+            <td class="text-right relative-cell" data-val="247081">
+                <div class="bar-fill" style="width: 5.0913253300034205%; background: #3498db;"></div>
+                <span class="cell-text">247,081</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1526">
@@ -2335,9 +2337,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">49</span></td>
             
-            <td class="text-right relative-cell" data-val="336765">
-                <div class="bar-fill" style="width: 6.939358784414493%; background: #3498db;"></div>
-                <span class="cell-text">336,765</span>
+            <td class="text-right relative-cell" data-val="336775">
+                <div class="bar-fill" style="width: 6.939550544201707%; background: #3498db;"></div>
+                <span class="cell-text">336,775</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1506">
@@ -2374,9 +2376,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">74</span></td>
             
-            <td class="text-right relative-cell" data-val="627426">
-                <div class="bar-fill" style="width: 12.928701393167483%; background: #3498db;"></div>
-                <span class="cell-text">627,426</span>
+            <td class="text-right relative-cell" data-val="627436">
+                <div class="bar-fill" style="width: 12.928880811377752%; background: #3498db;"></div>
+                <span class="cell-text">627,436</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1464">
@@ -2413,9 +2415,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">62</span></td>
             
-            <td class="text-right relative-cell" data-val="482604">
-                <div class="bar-fill" style="width: 9.94450820837549%; background: #3498db;"></div>
-                <span class="cell-text">482,604</span>
+            <td class="text-right relative-cell" data-val="482614">
+                <div class="bar-fill" style="width: 9.944693775783128%; background: #3498db;"></div>
+                <span class="cell-text">482,614</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1420">
@@ -2453,7 +2455,7 @@
             <td class="text-center"><span class="badge">79</span></td>
             
             <td class="text-right relative-cell" data-val="695890">
-                <div class="bar-fill" style="width: 14.339466347411998%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 14.339436799657118%; background: #3498db;"></div>
                 <span class="cell-text">695,890</span>
             </td>
             
@@ -2491,9 +2493,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">60</span></td>
             
-            <td class="text-right relative-cell" data-val="454587">
-                <div class="bar-fill" style="width: 9.367191637286034%; background: #3498db;"></div>
-                <span class="cell-text">454,587</span>
+            <td class="text-right relative-cell" data-val="454597">
+                <div class="bar-fill" style="width: 9.36737839430618%; background: #3498db;"></div>
+                <span class="cell-text">454,597</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1389">
@@ -2530,9 +2532,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">65</span></td>
             
-            <td class="text-right relative-cell" data-val="521679">
-                <div class="bar-fill" style="width: 10.749685244293701%; background: #3498db;"></div>
-                <span class="cell-text">521,679</span>
+            <td class="text-right relative-cell" data-val="521689">
+                <div class="bar-fill" style="width: 10.749869152561931%; background: #3498db;"></div>
+                <span class="cell-text">521,689</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1382">
@@ -2570,7 +2572,7 @@
             <td class="text-center"><span class="badge">81</span></td>
             
             <td class="text-right relative-cell" data-val="727615">
-                <div class="bar-fill" style="width: 14.99318973741853%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 14.993158842608048%; background: #3498db;"></div>
                 <span class="cell-text">727,615</span>
             </td>
             
@@ -2609,7 +2611,7 @@
             <td class="text-center"><span class="badge">48</span></td>
             
             <td class="text-right relative-cell" data-val="332332">
-                <div class="bar-fill" style="width: 6.848012660288442%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 6.847998549344939%; background: #3498db;"></div>
                 <span class="cell-text">332,332</span>
             </td>
             
@@ -2647,9 +2649,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">80</span></td>
             
-            <td class="text-right relative-cell" data-val="714732">
-                <div class="bar-fill" style="width: 14.727723435339596%; background: #3498db;"></div>
-                <span class="cell-text">714,732</span>
+            <td class="text-right relative-cell" data-val="714741">
+                <div class="bar-fill" style="width: 14.727878540608039%; background: #3498db;"></div>
+                <span class="cell-text">714,741</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1346">
@@ -2686,9 +2688,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">72</span></td>
             
-            <td class="text-right relative-cell" data-val="610668">
-                <div class="bar-fill" style="width: 12.583387080488857%; background: #3498db;"></div>
-                <span class="cell-text">610,668</span>
+            <td class="text-right relative-cell" data-val="610678">
+                <div class="bar-fill" style="width: 12.583567210250196%; background: #3498db;"></div>
+                <span class="cell-text">610,678</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1334">
@@ -2725,9 +2727,9 @@
             <td class="subtle">Libera</td>
             <td class="text-center"><span class="badge">100</span></td>
             
-            <td class="text-right relative-cell" data-val="997165">
-                <div class="bar-fill" style="width: 20.547520384424384%; background: #3498db;"></div>
-                <span class="cell-text">997,165</span>
+            <td class="text-right relative-cell" data-val="997175">
+                <div class="bar-fill" style="width: 20.54768410337566%; background: #3498db;"></div>
+                <span class="cell-text">997,175</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1323">
@@ -2764,9 +2766,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">59</span></td>
             
-            <td class="text-right relative-cell" data-val="443690">
-                <div class="bar-fill" style="width: 9.142648728510583%; background: #3498db;"></div>
-                <span class="cell-text">443,690</span>
+            <td class="text-right relative-cell" data-val="443700">
+                <div class="bar-fill" style="width: 9.142835948221505%; background: #3498db;"></div>
+                <span class="cell-text">443,700</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1306">
@@ -2803,9 +2805,9 @@
             <td class="subtle">DALnet</td>
             <td class="text-center"><span class="badge">27</span></td>
             
-            <td class="text-right relative-cell" data-val="137368">
-                <div class="bar-fill" style="width: 2.8305965213055098%; background: #3498db;"></div>
-                <span class="cell-text">137,368</span>
+            <td class="text-right relative-cell" data-val="137378">
+                <div class="bar-fill" style="width: 2.8307967475654134%; background: #3498db;"></div>
+                <span class="cell-text">137,378</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1269">
@@ -2842,9 +2844,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">69</span></td>
             
-            <td class="text-right relative-cell" data-val="566813">
-                <div class="bar-fill" style="width: 11.679713659882506%; background: #3498db;"></div>
-                <span class="cell-text">566,813</span>
+            <td class="text-right relative-cell" data-val="566823">
+                <div class="bar-fill" style="width: 11.679895651743877%; background: #3498db;"></div>
+                <span class="cell-text">566,823</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1269">
@@ -2881,9 +2883,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">47</span></td>
             
-            <td class="text-right relative-cell" data-val="318982">
-                <div class="bar-fill" style="width: 6.572923385061107%; background: #3498db;"></div>
-                <span class="cell-text">318,982</span>
+            <td class="text-right relative-cell" data-val="318992">
+                <div class="bar-fill" style="width: 6.573115899921285%; background: #3498db;"></div>
+                <span class="cell-text">318,992</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1265">
@@ -2920,9 +2922,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">39</span></td>
             
-            <td class="text-right relative-cell" data-val="234661">
-                <div class="bar-fill" style="width: 4.835410068473533%; background: #3498db;"></div>
-                <span class="cell-text">234,661</span>
+            <td class="text-right relative-cell" data-val="234671">
+                <div class="bar-fill" style="width: 4.835606163635539%; background: #3498db;"></div>
+                <span class="cell-text">234,671</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1264">
@@ -2959,9 +2961,9 @@
             <td class="subtle">Quakenet</td>
             <td class="text-center"><span class="badge">44</span></td>
             
-            <td class="text-right relative-cell" data-val="291507">
-                <div class="bar-fill" style="width: 6.006775232486498%; background: #3498db;"></div>
-                <span class="cell-text">291,507</span>
+            <td class="text-right relative-cell" data-val="291517">
+                <div class="bar-fill" style="width: 6.006968913945658%; background: #3498db;"></div>
+                <span class="cell-text">291,517</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1258">
@@ -2999,7 +3001,7 @@
             <td class="text-center"><span class="badge">44</span></td>
             
             <td class="text-right relative-cell" data-val="285337">
-                <div class="bar-fill" style="width: 5.879636593673565%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 5.87962447815569%; background: #3498db;"></div>
                 <span class="cell-text">285,337</span>
             </td>
             
@@ -3038,7 +3040,7 @@
             <td class="text-center"><span class="badge">31</span></td>
             
             <td class="text-right relative-cell" data-val="165949">
-                <div class="bar-fill" style="width: 3.419534841550638%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 3.4195277952927894%; background: #3498db;"></div>
                 <span class="cell-text">165,949</span>
             </td>
             
@@ -3076,9 +3078,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">68</span></td>
             
-            <td class="text-right relative-cell" data-val="552807">
-                <div class="bar-fill" style="width: 11.391106889183325%; background: #3498db;"></div>
-                <span class="cell-text">552,807</span>
+            <td class="text-right relative-cell" data-val="552817">
+                <div class="bar-fill" style="width: 11.3912894757448%; background: #3498db;"></div>
+                <span class="cell-text">552,817</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1224">
@@ -3116,7 +3118,7 @@
             <td class="text-center"><span class="badge">31</span></td>
             
             <td class="text-right relative-cell" data-val="171824">
-                <div class="bar-fill" style="width: 3.540594728588885%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 3.5405874328762943%; background: #3498db;"></div>
                 <span class="cell-text">171,824</span>
             </td>
             
@@ -3155,7 +3157,7 @@
             <td class="text-center"><span class="badge">49</span></td>
             
             <td class="text-right relative-cell" data-val="337577">
-                <div class="bar-fill" style="width: 6.956090806248545%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 6.956076472600341%; background: #3498db;"></div>
                 <span class="cell-text">337,577</span>
             </td>
             
@@ -3194,7 +3196,7 @@
             <td class="text-center"><span class="badge">46</span></td>
             
             <td class="text-right relative-cell" data-val="307230">
-                <div class="bar-fill" style="width: 6.330762399108175%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 6.330749354005167%; background: #3498db;"></div>
                 <span class="cell-text">307,230</span>
             </td>
             
@@ -3233,7 +3235,7 @@
             <td class="text-center"><span class="badge">55</span></td>
             
             <td class="text-right relative-cell" data-val="405841">
-                <div class="bar-fill" style="width: 8.362734572849204%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 8.362717340685517%; background: #3498db;"></div>
                 <span class="cell-text">405,841</span>
             </td>
             
@@ -3271,9 +3273,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">56</span></td>
             
-            <td class="text-right relative-cell" data-val="411629">
-                <div class="bar-fill" style="width: 8.482001743262375%; background: #3498db;"></div>
-                <span class="cell-text">411,629</span>
+            <td class="text-right relative-cell" data-val="411639">
+                <div class="bar-fill" style="width: 8.482190324295587%; background: #3498db;"></div>
+                <span class="cell-text">411,639</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1167">
@@ -3311,7 +3313,7 @@
             <td class="text-center"><span class="badge">21</span></td>
             
             <td class="text-right relative-cell" data-val="92579">
-                <div class="bar-fill" style="width: 1.9076771544023559%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.9076732234626974%; background: #3498db;"></div>
                 <span class="cell-text">92,579</span>
             </td>
             
@@ -3350,7 +3352,7 @@
             <td class="text-center"><span class="badge">39</span></td>
             
             <td class="text-right relative-cell" data-val="236195">
-                <div class="bar-fill" style="width: 4.867019577701901%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 4.867009548772094%; background: #3498db;"></div>
                 <span class="cell-text">236,195</span>
             </td>
             
@@ -3389,7 +3391,7 @@
             <td class="text-center"><span class="badge">29</span></td>
             
             <td class="text-right relative-cell" data-val="148544">
-                <div class="bar-fill" style="width: 3.0608884868441386%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 3.0608821796092296%; background: #3498db;"></div>
                 <span class="cell-text">148,544</span>
             </td>
             
@@ -3428,7 +3430,7 @@
             <td class="text-center"><span class="badge">34</span></td>
             
             <td class="text-right relative-cell" data-val="190909">
-                <div class="bar-fill" style="width: 3.9338590595037677%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 3.933850953434797%; background: #3498db;"></div>
                 <span class="cell-text">190,909</span>
             </td>
             
@@ -3466,9 +3468,9 @@
             <td class="subtle">Snoonet</td>
             <td class="text-center"><span class="badge">24</span></td>
             
-            <td class="text-right relative-cell" data-val="112138">
-                <div class="bar-fill" style="width: 2.310708700033176%; background: #3498db;"></div>
-                <span class="cell-text">112,138</span>
+            <td class="text-right relative-cell" data-val="112148">
+                <div class="bar-fill" style="width: 2.3109099975685043%; background: #3498db;"></div>
+                <span class="cell-text">112,148</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1090">
@@ -3506,7 +3508,7 @@
             <td class="text-center"><span class="badge">17</span></td>
             
             <td class="text-right relative-cell" data-val="69455">
-                <div class="bar-fill" style="width: 1.4311854390198169%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.4311824899340198%; background: #3498db;"></div>
                 <span class="cell-text">69,455</span>
             </td>
             
@@ -3545,7 +3547,7 @@
             <td class="text-center"><span class="badge">23</span></td>
             
             <td class="text-right relative-cell" data-val="106631">
-                <div class="bar-fill" style="width: 2.1972317982596223%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 2.197227270666683%; background: #3498db;"></div>
                 <span class="cell-text">106,631</span>
             </td>
             
@@ -3584,7 +3586,7 @@
             <td class="text-center"><span class="badge">40</span></td>
             
             <td class="text-right relative-cell" data-val="245833">
-                <div class="bar-fill" style="width: 5.065619610259285%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 5.06560917209632%; background: #3498db;"></div>
                 <span class="cell-text">245,833</span>
             </td>
             
@@ -3622,9 +3624,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">57</span></td>
             
-            <td class="text-right relative-cell" data-val="427260">
-                <div class="bar-fill" style="width: 8.804093163567877%; background: #3498db;"></div>
-                <span class="cell-text">427,260</span>
+            <td class="text-right relative-cell" data-val="427270">
+                <div class="bar-fill" style="width: 8.804281080902868%; background: #3498db;"></div>
+                <span class="cell-text">427,270</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="1017">
@@ -3662,7 +3664,7 @@
             <td class="text-center"><span class="badge">25</span></td>
             
             <td class="text-right relative-cell" data-val="119984">
-                <div class="bar-fill" style="width: 2.4723828913016153%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 2.472377796735202%; background: #3498db;"></div>
                 <span class="cell-text">119,984</span>
             </td>
             
@@ -3701,7 +3703,7 @@
             <td class="text-center"><span class="badge">20</span></td>
             
             <td class="text-right relative-cell" data-val="85879">
-                <div class="bar-fill" style="width: 1.7696173683332064%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.7696137218781038%; background: #3498db;"></div>
                 <span class="cell-text">85,879</span>
             </td>
             
@@ -3740,7 +3742,7 @@
             <td class="text-center"><span class="badge">15</span></td>
             
             <td class="text-right relative-cell" data-val="54236">
-                <div class="bar-fill" style="width: 1.1175836652606548%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.117581362379404%; background: #3498db;"></div>
                 <span class="cell-text">54,236</span>
             </td>
             
@@ -3778,9 +3780,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">39</span></td>
             
-            <td class="text-right relative-cell" data-val="234200">
-                <div class="bar-fill" style="width: 4.825910730954446%; background: #3498db;"></div>
-                <span class="cell-text">234,200</span>
+            <td class="text-right relative-cell" data-val="234210">
+                <div class="bar-fill" style="width: 4.826106845690689%; background: #3498db;"></div>
+                <span class="cell-text">234,210</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="972">
@@ -3817,9 +3819,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">58</span></td>
             
-            <td class="text-right relative-cell" data-val="439489">
-                <div class="bar-fill" style="width: 9.056083182051404%; background: #3498db;"></div>
-                <span class="cell-text">439,489</span>
+            <td class="text-right relative-cell" data-val="439499">
+                <div class="bar-fill" style="width: 9.05627058013839%; background: #3498db;"></div>
+                <span class="cell-text">439,499</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="970">
@@ -3856,9 +3858,9 @@
             <td class="subtle">PTnet</td>
             <td class="text-center"><span class="badge">58</span></td>
             
-            <td class="text-right relative-cell" data-val="437867">
-                <div class="bar-fill" style="width: 9.022660350259738%; background: #3498db;"></div>
-                <span class="cell-text">437,867</span>
+            <td class="text-right relative-cell" data-val="437877">
+                <div class="bar-fill" style="width: 9.022847817217462%; background: #3498db;"></div>
+                <span class="cell-text">437,877</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="960">
@@ -3935,7 +3937,7 @@
             <td class="text-center"><span class="badge">24</span></td>
             
             <td class="text-right relative-cell" data-val="116161">
-                <div class="bar-fill" style="width: 2.393606389489323%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 2.3936014572489483%; background: #3498db;"></div>
                 <span class="cell-text">116,161</span>
             </td>
             
@@ -3974,7 +3976,7 @@
             <td class="text-center"><span class="badge">33</span></td>
             
             <td class="text-right relative-cell" data-val="181018">
-                <div class="bar-fill" style="width: 3.7300457245769087%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 3.7300380384835705%; background: #3498db;"></div>
                 <span class="cell-text">181,018</span>
             </td>
             
@@ -4013,7 +4015,7 @@
             <td class="text-center"><span class="badge">38</span></td>
             
             <td class="text-right relative-cell" data-val="232620">
-                <div class="bar-fill" style="width: 4.79335334856799%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 4.793343471434047%; background: #3498db;"></div>
                 <span class="cell-text">232,620</span>
             </td>
             
@@ -4052,7 +4054,7 @@
             <td class="text-center"><span class="badge">27</span></td>
             
             <td class="text-right relative-cell" data-val="135244">
-                <div class="bar-fill" style="width: 2.7868295085277675%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 2.7868237660159325%; background: #3498db;"></div>
                 <span class="cell-text">135,244</span>
             </td>
             
@@ -4091,7 +4093,7 @@
             <td class="text-center"><span class="badge">40</span></td>
             
             <td class="text-right relative-cell" data-val="244372">
-                <div class="bar-fill" style="width: 5.035514334520922%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 5.035503958392575%; background: #3498db;"></div>
                 <span class="cell-text">244,372</span>
             </td>
             
@@ -4129,9 +4131,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">39</span></td>
             
-            <td class="text-right relative-cell" data-val="238709">
-                <div class="bar-fill" style="width: 4.918822906385162%; background: #3498db;"></div>
-                <span class="cell-text">238,709</span>
+            <td class="text-right relative-cell" data-val="238719">
+                <div class="bar-fill" style="width: 4.919018829667545%; background: #3498db;"></div>
+                <span class="cell-text">238,719</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="888">
@@ -4169,7 +4171,7 @@
             <td class="text-center"><span class="badge">34</span></td>
             
             <td class="text-right relative-cell" data-val="194957">
-                <div class="bar-fill" style="width: 4.017271897415397%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 4.017263619466801%; background: #3498db;"></div>
                 <span class="cell-text">194,957</span>
             </td>
             
@@ -4208,7 +4210,7 @@
             <td class="text-center"><span class="badge">21</span></td>
             
             <td class="text-right relative-cell" data-val="94063">
-                <div class="bar-fill" style="width: 1.9382563667197612%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.9382523727688967%; background: #3498db;"></div>
                 <span class="cell-text">94,063</span>
             </td>
             
@@ -4247,7 +4249,7 @@
             <td class="text-center"><span class="badge">24</span></td>
             
             <td class="text-right relative-cell" data-val="114667">
-                <div class="bar-fill" style="width: 2.3628211177897245%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 2.3628162489851596%; background: #3498db;"></div>
                 <span class="cell-text">114,667</span>
             </td>
             
@@ -4285,9 +4287,9 @@
             <td class="subtle">InTheMansion</td>
             <td class="text-center"><span class="badge">35</span></td>
             
-            <td class="text-right relative-cell" data-val="200873">
-                <div class="bar-fill" style="width: 4.139176627920635%; background: #3498db;"></div>
-                <span class="cell-text">200,873</span>
+            <td class="text-right relative-cell" data-val="200883">
+                <div class="bar-fill" style="width: 4.139374157734011%; background: #3498db;"></div>
+                <span class="cell-text">200,883</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="753">
@@ -4305,7 +4307,7 @@
                         <div class="online-indicator" title="Online Now"></div>
                     </div>
                     <div class="tooltip-wrapper">
-                        <div class="nick-row">Owl  <span class='bounty-val' title='Bounty: 1443 XP'>🎯 1,443</span></div>
+                        <div class="nick-row">Owl  <span class='bounty-val' title='Bounty: 1572 XP'>🎯 1,572</span></div>
                         
                         <div style="font-size: 0.75rem; color: #666; font-weight: normal; margin-top: 2px;">
                             ⚔️ <span class="lang-pt">Guerreiro</span><span class="lang-en hidden">Warrior</span>
@@ -4324,9 +4326,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">35</span></td>
             
-            <td class="text-right relative-cell" data-val="204434">
-                <div class="bar-fill" style="width: 4.212554373919477%; background: #3498db;"></div>
-                <span class="cell-text">204,434</span>
+            <td class="text-right relative-cell" data-val="204444">
+                <div class="bar-fill" style="width: 4.212751752531434%; background: #3498db;"></div>
+                <span class="cell-text">204,444</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="748">
@@ -4364,7 +4366,7 @@
             <td class="text-center"><span class="badge">16</span></td>
             
             <td class="text-right relative-cell" data-val="60366">
-                <div class="bar-fill" style="width: 1.243898066544817%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.2438955033814274%; background: #3498db;"></div>
                 <span class="cell-text">60,366</span>
             </td>
             
@@ -4403,7 +4405,7 @@
             <td class="text-center"><span class="badge">23</span></td>
             
             <td class="text-right relative-cell" data-val="108389">
-                <div class="bar-fill" style="width: 2.2334570376491096%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 2.23345243541082%; background: #3498db;"></div>
                 <span class="cell-text">108,389</span>
             </td>
             
@@ -4441,9 +4443,9 @@
             <td class="subtle">Undernet</td>
             <td class="text-center"><span class="badge">19</span></td>
             
-            <td class="text-right relative-cell" data-val="82118">
-                <div class="bar-fill" style="width: 1.692118434690509%; background: #3498db;"></div>
-                <span class="cell-text">82,118</span>
+            <td class="text-right relative-cell" data-val="82128">
+                <div class="bar-fill" style="width: 1.6923210068864905%; background: #3498db;"></div>
+                <span class="cell-text">82,128</span>
             </td>
             
             <td class="text-right power-val relative-cell" data-val="670">
@@ -4520,7 +4522,7 @@
             <td class="text-center"><span class="badge">19</span></td>
             
             <td class="text-right relative-cell" data-val="77881">
-                <div class="bar-fill" style="width: 1.6048110744554367%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.604807767598465%; background: #3498db;"></div>
                 <span class="cell-text">77,881</span>
             </td>
             
@@ -4598,7 +4600,7 @@
             <td class="text-center"><span class="badge">20</span></td>
             
             <td class="text-right relative-cell" data-val="88868">
-                <div class="bar-fill" style="width: 1.8312085176706225%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.8312047443014394%; background: #3498db;"></div>
                 <span class="cell-text">88,868</span>
             </td>
             
@@ -4637,7 +4639,7 @@
             <td class="text-center"><span class="badge">16</span></td>
             
             <td class="text-right relative-cell" data-val="58928">
-                <div class="bar-fill" style="width: 1.214266727385498%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 1.2142642252801372%; background: #3498db;"></div>
                 <span class="cell-text">58,928</span>
             </td>
             
@@ -4754,7 +4756,7 @@
             <td class="text-center"><span class="badge">22</span></td>
             
             <td class="text-right relative-cell" data-val="102555">
-                <div class="bar-fill" style="width: 2.1132419940778533%; background: #3498db;"></div>
+                <div class="bar-fill" style="width: 2.113237639553429%; background: #3498db;"></div>
                 <span class="cell-text">102,555</span>
             </td>
             
